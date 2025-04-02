@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description" content="A personal portfolio webpage for Anastassia Tarassova, junior developer.">
+  <meta name="author" content="Anastassia Tarassova">
+  <meta name="keywords" content="HTML, CSS, JS, Java, SQL, Personal, Portfolio, Web Dev, Women in STEM, Excellence">
+  <title>Anastassia's Web Dev Portfolio</title>
+
+  <!-- adding a favicon -->
+  <link rel="icon" type="image/x-image" href="../shared_assets/images/walrus_favicon_io/favicon.ico">
+
+  <!-- adding Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+
+  <!-- adding JS scripts -->
+  <script type="text/Javascript" src="../shared_assets/JS/0_navbar_active_highlight.js" defer></script>
+  <script type="text/Javascript" src="../shared_assets/JS/1_fluid_transitions.js" defer></script>
+  <script type="text/Javascript" src="../shared_assets/JS/2_modal.js" defer></script>
+  <script type="text/Javascript" src="../shared_assets/JS//3_review_carousel.js" defer></script>
+  <script type="text/Javascript" src="../shared_assets/JS/4_walruses.js" defer></script>
+  <script type="text/Javascript" src="../shared_assets/JS/5_featured_projects_effects.js" defer></script>
+  <script type="text/Javascript" src="../shared_assets/JS/6_form_validation.js" defer></script>
+  <script type="text/Javascript" src="../shared_assets/JS/7_table.js" defer></script>
+  <script type="text/Javascript" src="../shared_assets/JS/8_google_api.js" defer></script>
+  <script type="text/Javascript" src="../shared_assets/JS/9_books_read.js" defer></script>
+  <script type="text/Javascript" src="../shared_assets/JS/10_current_year.js" defer></script>
+
+  <!-- adding custom CSS -->
+  <link rel="stylesheet" href="../dist/css/main.css">
+</head>
+
+<body id="gradient-background">
+  <!--========================================== NAVBAR SECTION ==========================================-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <!-- Toggle button for small screens -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="navbar-item">
+            <a class="nav-link" href="FR_Page_Principale.html">Bienvenue</a>
+          </li>
+          <li class="navbar-item">
+            <a href="FR_skills.html">Comp&eacute;tences</a>
+          </li>
+          <li class="navbar-item">
+            <a href="FR_featured_projects.html">Projets</a>
+          </li>
+          <li class="navbar-item">
+            <a href="FR_hobbies.html">Passe-temps</a>
+          </li>
+          <li class="navbar-item">
+          <li class="navbar-links"><a href="FR_contact.html">Contact</a>
+          </li>
+          <!--Bootstrap dropdown-->
+          <li class="navbar-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Langues
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" data-bs-popper="none">
+              <li><a class="dropdown-item" href="../English/EN_portfolio_landing_page.html">English</a>
+              </li>
+              <li><a class="dropdown-item" href="../Russian/RU_portfolio_landing_page.html">Русский</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="content">
+    <section class="reading-reviews text-center py-5">
+      <h2>Lecures r&eacute;centes</h2>
+      <div class="transparent-background-warm">
+        <div class="reading">
+          <p>Ana a toujours &eacute;t&eacute; une lectrice passionn&eacute;e. Voici une liste de lectures
+            r&eacute;centes.</p>
+          <!-- Optional: Add reviews here as a list or grid -->
+          <ul class="books">
+            <li><strong>"My Favorite Thing Is Monsters"</strong> de Emil Ferris</li>
+            <li><strong>"Encaban&eacute;e"</strong> de Gabrielle Filteau-Chiba</li>
+            <li><strong>"Ahab's Wife"</strong> de Sena Jeter Naslund</li>
+            <li><strong>"The Enchantress of Florence"</strong> de Salman Rushdie</li>
+            <!-- Add more books here -->
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="watercolor-art-gallery py-5">
+      <h2 class="text-center">Peinture &agrave; l'aquarelle</h2>
+      <div class="transparent-background-cold">
+        <p class="text-center">Faire de l'aquarelle est relaxant.</p>
+        <p class="text-center">Voici quelques unes de mes peintures r&eacute;centes.</p>
+
+        <div class="paintings">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            <div class="col">
+              <a href="../shared_assets/images/IMG_20210208_090255_351.jpg" target="_blank">
+                <img src="../shared_assets/images/IMG_20210208_090255_351.jpg" alt="Watercolor Painting"
+                  class="img-fluid rounded-3" loading="lazy">
+              </a>
+            </div>
+            <div class="col">
+              <a href="../shared_assets/images/20250111_100225.jpg" target="_blank">
+                <img src="../shared_assets/images/20250111_100225.jpg" alt="Watercolor Painting"
+                  class="img-fluid rounded-3" loading="lazy">
+              </a>
+            </div>
+            <div class="col">
+              <a href="../shared_assets/images/IMG_20210217_090313_884.jpg" target="_blank">
+                <img src="../shared_assets/images/IMG_20210217_090313_884.jpg" alt="Watercolor Painting"
+                  class="img-fluid rounded-3" loading="lazy">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center">Pour plus d'art, visitez ma gallerie ci-dessous:</p>
+        <div class="text-center">
+          <button class="btn btn-primary">Plus d'Art</button>
+
+          <!--add 2nd ICA project here, the one with the art gallery (restructure and add Bootstrap to it beforehand)-->
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!--========================================== FOOTER SECTION ==========================================-->
+  <footer>
+    <div class="social-media">
+      <a href="https://github.com/Oliveena" target="_blank"><img src="../shared_assets/images/github-mark.png"
+          alt="GitHub logo" width="50" height="50"></a>
+      <a href="https://ca.linkedin.com/" target="_blank"><img
+          src="../shared_assets/images/linkedin-logo-linkedin-icon-transparent-free-png.webp" alt="LinkedIn logo"
+          width="50" height="50"></a>
+      <a href="https://www.instagram.com/" target="_blank"><img
+          src="../shared_assets/images/1725819461instagram-logo.png" alt="IG logo" width="50" height="50"></a>
+      <a href="https://www.meta.com/ca/" target="_blank"><img src="../shared_assets/images/Meta-Logo.png"
+          alt="META logo" width="50" height="50"></a>
+      <a href="https://www.youtube.com/" target="_blank"><img
+          src="../shared_assets/images/98ae159aa1bb8b4243fbe1f9e27d1b9f.png" alt="YouTube logo" width="50"
+          height="50"></a>
+    </div>
+    <p>&copy; <span id="our-year"></span> Anastassia Tarassova. All rights reserved.</p>
+  </footer>
+  <!-- Adding jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+
+
+  <!-- Adding Bootstrap 5 JS and Popper.js -->
+  <!-- Popper.js first, then Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/*========================== MIXINS ==========================*/
+
+/*making sure the element occupies 100vw at all times*/
+@mixin full-width {
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+@mixin basic-flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/*lateral margins*/
+@mixin lateral-space {
+  margin: 0 5vw;
+}
+
+/*centering a block element*/
+@mixin center-element {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+
+/*smoother transitions between webpages*/
+@mixin fade-in {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+/* reusable button style, color and button can be adjusted */
+@mixin btn-styles($bg-color, $border-color, $hover-transform: translate(-10deg), $scale: 1.2) {
+  background-color: $bg-color;
+  border: 2px solid $border-color;
+  transition: all 0.3s ease;
+
+
+  &:hover {
+    -webkit-transform: $hover-transform;
+        -ms-transform: $hover-transform;
+            transform: $hover-transform;
+    -webkit-box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
+            box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
+    -webkit-transform: scale($scale);
+        -ms-transform: scale($scale);
+            transform: scale($scale);
+    overflow: $overflow; 
+  }
+}

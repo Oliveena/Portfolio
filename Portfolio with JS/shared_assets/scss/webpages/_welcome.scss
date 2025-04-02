@@ -1,0 +1,110 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@import "../_mixins";
+@import "../variables";
+@import "../fonts";
+
+/*========================== WELCOME ==========================*/
+
+.welcome {
+    @include flexbox;
+    $gradient-start: rgba(map-get($colors, pink), 0.5);
+    $gradient-end: map-get($colors, lilac);
+    background: -webkit-gradient(linear, left bottom, left top, from($gradient-start), to($gradient-end));
+    background: -o-linear-gradient(bottom, $gradient-start, $gradient-end);
+    background: linear-gradient(0deg, $gradient-start, $gradient-end);
+    position: relative;
+    width: 100%;
+    height: 30vh;
+
+    #download_text {
+        text-align: center;
+        margin-bottom: 20px;
+        width: 100%; 
+        font-size: 1.5rem; 
+    }
+
+    .cv_download {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; 
+        -webkit-box-pack: justify; 
+            -ms-flex-pack: justify; 
+                justify-content: space-between; 
+        width: 100%; 
+        max-width: 30vw; 
+        margin-right: 10vw;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+
+        a:hover {
+            border: 1px solid rgba(map-get($colors, eggshell), 0.5);
+            -webkit-text-decoration: dotted;
+                    text-decoration: dotted;
+            color: rgba(map-get($colors, pink), 0.5);
+            
+        }
+ /* I couldn't override the Bootstrap style directly with the @media*/
+
+ .cv_download .btn {
+    background-color: map-get($colors, brown);
+    border: 2px solid map-get($colors, lilac);
+    padding: 0.8rem 1.5rem; 
+    font-size: 1rem; 
+  }
+}
+}
+
+@media screen and (max-width: 768px) {
+    .welcome {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        height: auto;  
+    }
+
+    .cv_download {
+        max-width: 80vw; 
+        margin-right: 0;  
+        -webkit-box-pack: center;  
+            -ms-flex-pack: center;  
+                justify-content: center;  
+    }
+
+    .cv_download .btn {
+        width: 100%;  
+        padding: 1rem; 
+        font-size: 1.2rem;  
+        margin: 10px 0; 
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .welcome {
+        height: auto;
+    }
+
+    .cv_download .btn {
+        width: 100%;  
+        padding: 1rem;  
+        font-size: 1rem;  
+        margin-bottom: 15px;  
+    }
+
+    #download_text {
+        font-size: 1.2rem;  
+    }
+}
+
+

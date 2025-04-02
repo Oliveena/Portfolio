@@ -1,0 +1,78 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@import "../_mixins";
+@import "../variables";
+@import "../fonts";
+
+#soft_skills {
+    @include flexbox;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: $margin-top;
+    padding: 2%;
+    color: map-get($colors, off-white);
+
+    h3 {
+        color: map-get($colors, eggshell);
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    p {
+        color: map-get($colors, eggshell);
+        padding: 1.2vw;
+        font-size: 1.5vw;
+        margin-top: $margin-top;
+    }
+
+    .skill {
+        font-size: 1.2vw;
+        color: map-get($colors, off-white);
+        padding: 0.5rem 1rem;
+        background-color: map-get($colors, eggshell);
+        border-radius: $radius;
+        -webkit-box-shadow: 0 2px 4px rgba(64, 61, 57, 0.3);
+                box-shadow: 0 2px 4px rgba(64, 61, 57, 0.3);
+        -webkit-transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.3s ease;
+        transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.3s ease;
+        -o-transition: transform 0.2s ease, box-shadow 0.3s ease;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+        transition: transform 0.2s ease, box-shadow 0.3s ease, -webkit-transform 0.2s ease, -webkit-box-shadow 0.3s ease;
+
+        &:hover {
+            -webkit-transform: translateY(-5px);
+                -ms-transform: translateY(-5px);
+                    transform: translateY(-5px);
+            -webkit-box-shadow: 0 6px 12px rgba(64, 61, 57, 0.3);
+                    box-shadow: 0 6px 12px rgba(64, 61, 57, 0.3);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    #soft_skills {
+        padding: 3%;
+    }
+
+    .skill {
+        font-size: 3rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    #soft_skills {
+        padding: 4vw;
+    }
+
+    .skill {
+        font-size: 10rem; 
+    }
+}

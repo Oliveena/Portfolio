@@ -1,0 +1,56 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+
+
+/*========================== VARIABLES ==========================*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*storage of all SCSS reusable variables*/
+
+$colors: (
+  eggshell: #ddfff7,
+  beige: #d8c99b,
+  yellow: #f2c078,
+  gold: #d8973c,
+  brown: #9c4764,
+  red: #a4243b,
+  bloodstone: #273e47,
+  lilac: #7d83ff,
+  light-blue: #5688c7,
+  navy-blue: #150578,
+  pink: #ba71fe,
+  light-pink: #f57daa
+);
+
+$main-font:'Raleway', Helvetica, serif-sans;
+
+$accent-font: 'RF Dewi', 'Raleway', Helvetica, serif-sans;
+
+$text-align-center: center;
+
+$box-sizing: border-box;
+
+$overflow: hidden;
+
+//all these could be one map of border-radiuses//
+$border-radius-usual: 10%;
+
+$radius: 5%;
+
+$asymetric: 15px 50px;
+// 
+
+$linear-gradient: linear-gradient(
+                0deg,
+                map-get($colors, light-blue),
+                map-get($colors, dark-blue)
+);
+
+$margin-top: 2vw;
+
+$shadow: 0 4px 8px 0 rgba(86, 136, 199, 0.5), 0 6px 20px 0 rgba(86, 136, 199, 0.75);  // RGB of map-get($colors, light-blue)

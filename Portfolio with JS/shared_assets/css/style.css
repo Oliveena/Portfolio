@@ -1,0 +1,132 @@
+/*
+Secondary palette (neon accents) https://www.color-meanings.com/neon-color-palettes/ 
+#FC1FF9  neon pink
+#BC0EEF  neon purple
+#443061  dark purple
+#E42536  --dark red-- not used
+#FC5E31  neon orange
+
+Primary palette generated from neon accents
+ https://coolors.co/visualizer/69306d-ebbab9-d2d6ef-f4fec1-f7e733-fc1ff9-bc0eef-443061-fc5e31
+
+ #69306d burgundy
+ #EBBAB9 beige 
+ #d2d6ef grey 
+ #F4FEC1 pale lime
+ #f7e733 yellow
+
+SO NEON 
+
+
+    --neon_pink:(--var) #FC1FF9; 
+    --neon_purple: (--var) #BC0EEF;
+    --dark_purple: (--var) #443061;
+    --dark_red: (--var) #E42536;
+    --neon_orange: (--var) #FC5E31;
+    --burgundy: (--var) #69306d ;
+    --beige: (--var) #EBBAB9;
+    --grey: (--var) #d2d6ef;
+    --pale_lime: (--var) #F4FEC1 ;
+    --yellow: (--var)  #f7e733;
+
+--tigers-eye: #b1740fff;
+--timberwolf: #D8CBC7ff;
+--lapis-lazuli: #416788ff;
+--indian-red: #e05263ff;
+--polynesian-blue: #054a91ff;
+--fandango: #B7239Bff;
+--canary: #FFE91Aff;
+--orange-pantone: #FE5700ff;
+}
+*/
+
+:root {
+  --eggshell: var(--#ddfff7);
+  --beige: var(--#d8c99b);
+  --yellow: var(--#f2c078);
+  --gold: var(--#d8973c);
+  --brown: var(--#bd632f);
+  --red: var(#a4243b) ;
+  --dark: var(--#273e47);
+  --lilac: var(--#7d83ff);
+  --light-blue: var(--#5688c7);
+  --navy-blue: var(--#150578);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "RF Dewi", "Raleway", Helvetica, serif, sans-serif;
+  font-size: 100%;
+}
+
+.container {
+  background: linear-gradient(0deg, var(--beige) var(--grey) var(--dark-purple));
+  display: grid;
+  row-gap: 1vw;
+  justify-content: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 0 0 10px 0;
+  padding: 10px;
+  background-color: var(--burgundy);
+  font-size: 2vw;
+  list-style-type: none;
+  position: fixed;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  font-size: smaller;
+  padding: 0 10px;
+  color: var(--pale_lime);
+  text-decoration: none;
+}
+.navbar-nav ul a:link {
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+  color: var(--neon_pink);
+  text-decoration: none;
+}
+.navbar-nav ul a:visited {
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+  color: var(--pale_lime);
+  text-decoration: none;
+}
+.navbar-nav ul a:hover {
+  background-color: var(--yellow);
+  border-radius: 5px;
+  text-decoration: none;
+}
+.navbar-nav ul a:active {
+  font-size: larger;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: var(--neon_purple);
+}
+
+header {
+  padding-top: 7vw;
+  color: var(--grey);
+}
+
+h1 {
+  font-family: "Marion", "RF Dewi", "Raleway", Helvetica, serif, sans-serif;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+

@@ -1,0 +1,190 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@import "../_mixins";
+@import "../variables";
+@import "../fonts";
+
+/*========================== TECH SKILLS  ==========================*/
+
+.tech_skills {
+    background-color: transparent;
+    margin-top: $margin-top;
+    
+    h2, h3 {
+        margin: 0 2vw;
+        color: map-get($colors, eggshell);
+    }
+
+    p {
+      color: map-get($colors, eggshell);
+      padding: 1.2vw;
+      font-size: 1.5vw;
+      margin-top: $margin-top;
+    }
+  
+
+
+.tech-skills-grid {
+    background-color: transparent;
+    display: -ms-grid;
+    display: grid; 
+    -ms-grid-columns: 1fr 1vw 1fr 1vw 1fr; 
+    grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    gap: 1vw;
+    width: 100%;
+    justify-items: center; 
+    margin: 3vw;
+    -webkit-box-sizing: $box-sizing;
+            box-sizing: $box-sizing;
+
+    .tech-skill {
+      display: block;
+      width: 100%;
+      height: auto;
+      -o-object-fit: contain;
+         object-fit: contain;
+      max-width: 10vw;
+      max-height: 10vw;
+      border-radius: $border-radius-usual;
+      overflow: $overflow;
+      -webkit-transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.5s ease;
+      transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.5s ease;
+      -o-transition: transform 0.2s ease, box-shadow 0.5s ease;
+      transition: transform 0.2s ease, box-shadow 0.5s ease;
+      transition: transform 0.2s ease, box-shadow 0.5s ease, -webkit-transform 0.2s ease, -webkit-box-shadow 0.5s ease;
+      background-color: transparent;
+      margin: 1vw;
+    
+      &:hover {
+        -webkit-transform: translate(-10deg);
+            -ms-transform: translate(-10deg);
+                transform: translate(-10deg);
+        -webkit-box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
+                box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
+        -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+                transform: scale(1.2);
+        overflow: $overflow;
+      }
+    }
+  }
+  
+
+
+.tech-skills-grid > *:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1
+  }
+  
+
+
+.tech-skills-grid > *:nth-child(2) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3
+  }
+  
+
+
+.tech-skills-grid > *:nth-child(3) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 5
+  }
+
+  .portfolio {
+    display: inline-block;
+    width: 15vw;
+    height: auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -webkit-transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.5s ease;
+    transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.5s ease;
+    -o-transition: transform 0.2s ease, box-shadow 0.5s ease;
+    transition: transform 0.2s ease, box-shadow 0.5s ease;
+    transition: transform 0.2s ease, box-shadow 0.5s ease, -webkit-transform 0.2s ease, -webkit-box-shadow 0.5s ease;
+    background-color: transparent;
+    margin: 0.5vw;
+
+      &:hover {
+        -webkit-transform: translate(-10deg);
+            -ms-transform: translate(-10deg);
+                transform: translate(-10deg);
+        -webkit-box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
+                box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
+        -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+                transform: scale(1.2);
+        overflow: $overflow;
+      }
+  }
+}
+
+  
+   /* ============================ RESPONSIVE LAYOUT ============================ */ 
+  
+   /* Large screens (Desktop - 3 columns)*/ 
+   @media (min-width: 1024px) {
+    .tech-skills-grid {
+      grid-template-columns: repeat(3, 1fr); 
+
+      .tech-skill {
+        max-width: 10vw;
+      }
+    }
+  }
+  
+  /*Medium screens (Tablets - 2 columns) */ 
+  @media screen and (max-width: 768px) {
+    .tech-skills-grid {
+      -ms-grid-columns: 1fr 2vw 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2vw;
+      margin: 2vw;
+    }
+  
+    .tech-skill {
+      margin: 2vw 0;
+      .tech-skill {
+      max-width: 12vw;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .tech-skills-grid {
+      -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr; 
+      margin: 1vw;
+      gap: 1.5vw;
+    }
+  
+    .tech-skill {
+      margin: 1vw 0;
+      .tech-skill {
+      max-width: 30vw;
+      }
+    }
+  }
+
+.tech_skills {
+    background-color: transparent;
+    margin-top: $margin-top;
+    
+    h2, h3 {
+        margin: 2vw 2vw;
+        color: map-get($colors, eggshell);
+    }
+
+    p {
+      color: map-get($colors, eggshell);
+      padding: 1.2vw;
+      font-size: 1.5vw;
+      margin-top: $margin-top;
+    }
+}

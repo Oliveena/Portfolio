@@ -1,0 +1,92 @@
+@import "../_mixins";
+@import "../variables";
+@import "../fonts";
+
+/*========================== FOOTER ==========================*/
+
+footer {
+	@include full-width;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	bottom: 0;
+	align-items: center;
+	background: linear-gradient(to right, map-get($colors, pink), map-get($colors, navy-blue));
+	color: map-get($colors, lilac);
+	padding: 1vw;
+	clear: both;
+
+	.social-media {
+		display: flex; 
+		gap: 20px; 
+	}
+
+	.social-media a {
+		display: inline-block;
+		overflow: $overflow;
+	}
+
+	.social-media img {
+		width: 50px; 
+		height: 50px;
+		transition: transform 0.3s ease; 
+	}
+
+	.social-media img:hover {
+		transform: rotate(-10deg) scale(1.1) translateY(-5px);
+	}
+
+	footer p {
+		margin-top: 10px;
+		text-align: center;
+	}
+
+	/* Media Query for Tablets */
+	@media (max-width: 768px) {
+		flex-direction: column; /* Stack items vertically on tablets */
+		padding: 2vw; /* Slightly larger padding for better spacing on tablets */
+		.social-media {
+			gap: 15px; /* Reduce the gap between social media icons */
+		}
+
+		.social-media img {
+			width: 40px; /* Resize icons to fit better on medium screens */
+			height: 40px;
+		}
+	}
+
+	/* Media Query for Phones */
+	@media (max-width: 480px) {
+		flex-direction: column; /* Stack footer content vertically on mobile */
+		padding: 3vw; /* Adjust padding for better mobile spacing */
+		.social-media {
+			gap: 10px; /* Smaller gap between icons */
+		}
+
+		.social-media img {
+			width: 30px; /* Smaller icons for mobile screens */
+			height: 30px;
+		}
+
+		footer p {
+			font-size: 14px; /* Slightly smaller text on mobile */
+		}
+	}
+
+	/* Media Query for Very Small Screens (e.g., portrait phones) */
+	@media (max-width: 320px) {
+		padding: 4vw; /* Even more padding on very small screens */
+		.social-media {
+			gap: 8px; /* Reduce gap even more on very small screens */
+		}
+
+		.social-media img {
+			width: 25px; /* Even smaller icons for very small screens */
+			height: 25px;
+		}
+
+		footer p {
+			font-size: 12px; /* Smaller text on small screens */
+		}
+	}
+}

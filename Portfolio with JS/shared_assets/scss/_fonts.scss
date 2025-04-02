@@ -1,0 +1,32 @@
+@import "_mixins";
+@import "variables";
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/*========================== FONTS ==========================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+h1, p {
+  text-align: center;
+}
+
+h3, h5, h6 {
+  font-family: $main-font;
+  padding: 2%;
+  margin: 1%;
+}
+
+h4 {
+  font-family: $main-font;
+  margin-top: 1vw;
+}
+
+p.legibility {
+  text-rendering: optimizeLegibility
+}

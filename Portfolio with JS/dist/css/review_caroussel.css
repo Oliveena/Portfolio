@@ -1,0 +1,114 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+/*========================== MIXINS ==========================*/
+/*making sure the element occupies 100vw at all times*/
+/*lateral margins*/
+/*centering a block element*/
+/*smoother transitions between webpages*/
+/* reusable button style, color and button can be adjusted */
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+/*========================== VARIABLES ==========================*/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+/*storage of all SCSS reusable variables*/
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+/*========================== MIXINS ==========================*/
+/*making sure the element occupies 100vw at all times*/
+/*lateral margins*/
+/*centering a block element*/
+/*smoother transitions between webpages*/
+/* reusable button style, color and button can be adjusted */
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+/*========================== VARIABLES ==========================*/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+/*storage of all SCSS reusable variables*/
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+/*========================== FONTS ==========================*/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+h1, p {
+  text-align: center;
+}
+
+h3, h5, h6 {
+  font-family: "Raleway", Helvetica, serif-sans;
+  padding: 2%;
+  margin: 1%;
+}
+
+h4 {
+  font-family: "Raleway", Helvetica, serif-sans;
+  margin-top: 1vw;
+}
+
+p.legibility {
+  text-rendering: optimizeLegibility;
+}
+
+/*========================== reset styles for clearing pre-made styles on any page ==========================*/
+.frame {
+  /**
+   * (optional) wrapper width, specifies width of the slider frame.
+   */
+  width: 880px;
+  position: relative;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.slides {
+  display: inline-block;
+}
+
+li {
+  position: relative;
+  display: inline-block;
+  /**
+   * (optional) if the content inside the slide element has a defined size.
+   */
+  width: 880px;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  display: block;
+  cursor: pointer;
+}
+
+.next {
+  right: 0;
+}
+
+.prev {
+  left: 0;
+}
+
+.next svg, .prev svg {
+  width: 25px;
+}/*# sourceMappingURL=review_caroussel.css.map */

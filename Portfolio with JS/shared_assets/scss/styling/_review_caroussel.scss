@@ -1,0 +1,96 @@
+@import "../_mixins";
+@import "../variables";
+@import "../fonts";
+
+
+/*========================== review carrousel on Welcome page  ==========================*/
+
+#testimonials {
+    @include flexbox;
+    flex-direction: column;
+// container
+    #reviews-display {
+        margin: 2vw;
+        padding: 2vw;
+        background-color: map-get($colors, navy-blue);
+        border-radius: $asymetric;
+        box-shadow: $shadow;
+        max-width: 50vw;
+        max-height: auto;
+    }
+
+//review itself 
+    .review {
+        background-color: #ffffff;
+        margin-bottom: 1vw;
+        padding: 1vw;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 15px 40px; // repeated $asymetric looked strange
+
+        p {
+            font-size: 2vw;
+            color: map-get($colors, light-blue);
+            text-shadow: 1px 1px map-get($colors, lilac);
+            letter-spacing: 0.5vw;
+
+            em {
+                font-style: italic;
+                line-height: 0.8;
+                text-shadow: 1px 0.5px map-get($colors, pink);
+            }
+        }
+
+    }
+
+    .carousel {
+        position: relative;
+        z-index: 1;
+    }
+
+    // arrows for spin control
+    .carousel-control-prev,
+    .carousel-control-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 5;
+        background-color: rgba(86, 136, 199, 0.5);
+        color: map-get($colors, eggshell);
+        border-radius: 25%;
+        padding: 1vw;
+    }
+
+    // left 
+    .carousel-control-prev {
+        left: 10px;
+
+    }
+
+    // right
+    .carousel-control-next {
+        right: 10px;
+    }
+
+    //  fit on small scrrens
+    @media (max-width: 768px) {
+        .review {
+            font-size: 4vw;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+#reviewForm {
+    @include basic-flexbox;
+    @include lateral-space;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    color: map-get($colors, lilac);
+    padding: 2%;
+}
