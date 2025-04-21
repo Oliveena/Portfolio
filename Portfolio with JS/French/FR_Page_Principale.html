@@ -95,23 +95,87 @@
         </header>
         <!--========================================== DOWNLOAD CV SECTION ==========================================-->
         <div class="welcome">
-            <div id="download_text">
-                <h3>Voil&agrave; mon r&eacute;sum&eacute;</h3>
-            </div>
-            <div class="cv_download">
-                <a href="../French/FR_assets/2024_Inf_Clin_CV_FR.pdf" id="pdf-link" download
-                    class="btn btn-primary btn-lg">
-                    PDF
-                </a>
-                <a href="../French/FR_assets/2024_Inf_Clin_CV_FR.pdf" id="word-link" download
-                    class="btn btn-primary btn-lg">
-                    Word
-                </a>
+            <div class="welcome text-center py-5">
+                <div id="download_text">
+                    <h3>Voil&agrave; mon r&eacute;sum&eacute;</h3>
+                </div>
+                <div class="cv_download mt-4">
+                    <button id="pdf-cv" class="btn btn-primary btn-lg mx-2" data-bs-toggle="modal"
+                        data-bs-target="#downloadModal" data-file="..\French\FR_assets\2024_Inf_Clin_CV_FR.pdf">
+                        PDF
+                    </button>
+                    <button id="word-cv" class="btn btn-success btn-lg mx-2" data-bs-toggle="modal"
+                        data-bs-target="#downloadModal" data-file="..\French\FR_assets\2024_Inf_Clin_CV_FR.docx">
+                        Word
+                    </button>
+                </div>
             </div>
         </div>
-        <!--I only have my French CV in PDF on this laptop, hence both buttons will point there.
-                    Normally, there would be a CV in each language/format in the folder specific to that language -->
-    </div>
+        <!--========================================== MODAL SECTION ==========================================-->
+        <!--basic Bootstrap modal-->
+        <!--Form ID: #downloadForm-->
+        <div class="modal fade" id="downloadModal" tabindex="-1" aria-labelledby="downloadModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="downloadModalLabel">SVP entrez vos informations:</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="downloadForm">
+                            <div class="mb-3">
+                                <label for="userName" class="form-label">Nom ou Nom de Compagnie</label>
+                                <input type="text" class="form-control" id="userName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="userEmail" class="form-label">Courriel</label>
+                                <input type="email" class="form-control" id="userEmail" required>
+                            </div>
+                            <button type="submit" class="btn btn-info">Envoyer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--========================================== TESTIMONIALS SECTION ==========================================-->
+        <!--using a Bootstrap carousel instead of a JS pacakge off GitHub-->
+        <h3 class="text-center mb-4">T&eacute;moignages</h3>
+        <div id="testimonials" class="container py-5 carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <!-- testimonials -->
+            <div id="reviews-display" class="carousel-inner">
+                <!--reviews are displayed in here-->
+            </div>
+
+            <!--carousel buttons-->
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonials" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Pr&eacute;cedent</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonials" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Suivant</span>
+            </button>
+        </div>
+
+        <!-- review form-->
+        <!-- Form ID #reviewForm-->
+        <div id="addReview" class="mt-5">
+            <h3 class="text-center mb-3">Ajouter votre t&eacute;moignage</h3>
+            <form id="reviewForm" class="mx-auto" style="max-width: 500px;">
+                <div class="mb-3">
+                    <label for="reviewText" class="form-label">Votre t&eacute;moignage:</label>
+                    <textarea id="reviewText" class="form-control" rows="4"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="reviewName" class="form-label">Votre Nom:</label>
+                    <input type="text" id="reviewName" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Soumettre le t&eacute;moignage</button>
+            </form>
+        </div>
+    </div>   
 
     <!--========================================== FOOTER SECTION ==========================================-->
     <footer>

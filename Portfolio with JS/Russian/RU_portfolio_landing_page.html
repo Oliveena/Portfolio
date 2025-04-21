@@ -103,16 +103,82 @@
             <h3>Скачать резюме</h3>
         </div>
         <div class="cv_download mt-4">
-            <a href="../French/FR_assets/2024_Inf_Clin_CV_FR.pdf" id="pdf-link" download
-                class="btn btn-primary btn-lg mx-2">
+            <button id="pdf-cv" class="btn btn-primary btn-lg mx-2" data-bs-toggle="modal"
+                data-bs-target="#downloadModal" data-file="..\French\FR_assets\2024_Inf_Clin_CV_FR.pdf">
                 PDF
-            </a>
-            <a href="../French/FR_assets/2024_Inf_Clin_CV_FR.pdf" id="word-link" download
-                class="btn btn-success btn-lg mx-2">
+            </button>
+            <button id="word-cv" class="btn btn-success btn-lg mx-2" data-bs-toggle="modal"
+                data-bs-target="#downloadModal" data-file="..\French\FR_assets\2024_Inf_Clin_CV_FR.docx">
                 Word
-            </a>
+            </button>
         </div>
     </div>
+</div>
+<!--========================================== MODAL SECTION ==========================================-->
+<!--basic Bootstrap modal-->
+<!--Form ID: #downloadForm-->
+<div class="modal fade" id="downloadModal" tabindex="-1" aria-labelledby="downloadModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="downloadModalLabel">Пожалуйста, введите ваши данные</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="downloadForm">
+                    <div class="mb-3">
+                        <label for="userName" class="form-label">ФИО или название компании</label>
+                        <input type="text" class="form-control" id="userName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="userEmail" class="form-label">Электронная почта</label>
+                        <input type="email" class="form-control" id="userEmail" required>
+                    </div>
+                    <button type="submit" class="btn btn-info">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--========================================== TESTIMONIALS SECTION ==========================================-->
+<!--using a Bootstrap carousel instead of a JS pacakge off GitHub-->
+<h3 class="text-center mb-4">Отзывы</h3>
+<div id="testimonials" class="container py-5 carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <!-- testimonials -->
+    <div id="reviews-display" class="carousel-inner">
+        <!--reviews are displayed in here-->
+    </div>
+
+    <!--carousel buttons-->
+    <button class="carousel-control-prev" type="button" data-bs-target="#testimonials" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Предыдущий</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#testimonials" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Следующий</span>
+    </button>
+</div>
+
+<!-- review form-->
+<!-- Form ID #reviewForm-->
+<div id="addReview" class="mt-5">
+    <h3 class="text-center mb-3">Добавьте ваш отзыв</h3>
+    <form id="reviewForm" class="mx-auto" style="max-width: 500px;">
+        <div class="mb-3">
+            <label for="reviewText" class="form-label">Ваш отзыв</label>
+            <textarea id="reviewText" class="form-control" rows="4"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="reviewName" class="form-label">Ваше ФИО</label>
+            <input type="text" id="reviewName" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Отправить отзыв</button>
+    </form>
+</div>
+</div>
 
 
     <!--========================================== FOOTER SECTION ==========================================-->

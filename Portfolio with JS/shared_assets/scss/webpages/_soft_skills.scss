@@ -15,14 +15,14 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: $margin-top;
+    margin-top: 0.25vw;
     padding: 2%;
     color: map-get($colors, off-white);
 
     h3 {
         color: map-get($colors, eggshell);
         font-size: 3rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.25rem;
         text-align: center;
     }
 
@@ -30,13 +30,13 @@
         color: map-get($colors, eggshell);
         padding: 1.2vw;
         font-size: 1.5vw;
-        margin-top: $margin-top;
+        margin-top: 1vw;
     }
 
     .skill {
         font-size: 1.2vw;
         color: map-get($colors, off-white);
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.5rem;
         background-color: map-get($colors, eggshell);
         border-radius: $radius;
         -webkit-box-shadow: 0 2px 4px rgba(64, 61, 57, 0.3);
