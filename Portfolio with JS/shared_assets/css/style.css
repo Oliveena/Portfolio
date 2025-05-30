@@ -1,7 +1,6 @@
 /*
-Secondary palette (neon accents) https://www.color-meanings.com/neon-color-palettes/ 
-#FC1FF9  neon pink
-#BC0EEF  neon purple
+Secondary palette (neon accents) https://www.color-meanings.com/neon-color-palettes/
+
 #443061  dark purple
 #E42536  --dark red-- not used
 #FC5E31  neon orange
@@ -10,15 +9,15 @@ Primary palette generated from neon accents
  https://coolors.co/visualizer/69306d-ebbab9-d2d6ef-f4fec1-f7e733-fc1ff9-bc0eef-443061-fc5e31
 
  #69306d burgundy
- #EBBAB9 beige 
- #d2d6ef grey 
+ #EBBAB9 beige
+ #d2d6ef grey
  #F4FEC1 pale lime
  #f7e733 yellow
 
-SO NEON 
+SO NEON
 
 
-    --neon_pink:(--var) #FC1FF9; 
+    --neon_pink:(--var) #FC1FF9;
     --neon_purple: (--var) #BC0EEF;
     --dark_purple: (--var) #443061;
     --dark_red: (--var) #E42536;
@@ -38,8 +37,9 @@ SO NEON
 --canary: #FFE91Aff;
 --orange-pantone: #FE5700ff;
 }
-*/
+ */
 
+/* Light theme defaults */
 :root {
   --eggshell: var(--#ddfff7);
   --beige: var(--#d8c99b);
@@ -51,6 +51,17 @@ SO NEON
   --lilac: var(--#7d83ff);
   --light-blue: var(--#5688c7);
   --navy-blue: var(--#150578);
+  --neon-pink: var(--#FC1FF9);
+  --neon-purple: var(--#BC0EEF);
+}
+
+/* Dark theme defaults */
+:root.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --nav-color: #1f1f1f;
+  --link-color: var(--neon-pink);
+  --link-hover-bg: var(--neon-purple);
 }
 
 * {

@@ -1,0 +1,55 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@import "../_mixins";
+@import "../variables";
+@import "../fonts";
+
+/*========================== reset styles for clearing pre-made styles on any page ==========================*/
+
+
+/* reset the margin/border of any page */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Raleway', Helvetica, sans-serif;
+  font-size: 100%;
+  list-style: none;
+}
+
+  /* display a link without lines*/
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+/* empty out any user input */
+input, textarea, select, button {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* reset images */
+img {
+  height: auto;
+  max-width: 100%;
+
+}
+
+/* resize text */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.5;
+}
