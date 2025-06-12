@@ -567,5 +567,3 @@ TARASSOVA_Anastassia_Portfolio_final_to_be_continued
 │     │  └─ _variables.scss
 │     └─ WebServicesPwP2 1.pptx
 └─ README.md
-
-```

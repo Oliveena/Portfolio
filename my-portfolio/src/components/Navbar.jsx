@@ -1,3 +1,5 @@
+"use client";
+
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -23,29 +25,19 @@ export default function Navbar() {
                 <div className={`${isCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                         <li className="navbar-item">
-                            <Link href="/EN_portfolio_landing_page">
-                                <a className="nav-link">Welcome</a>
-                            </Link>
+                            <Link href="/EN_portfolio_landing_page" className="nav-link">Welcome</Link>
                         </li>
                         <li className="navbar-item">
-                            <Link href="/EN_skills">
-                                <a className="nav-link">Skills</a>
-                            </Link>
+                            <Link href="/EN_skills" className="nav-link">Skills</Link>
                         </li>
                         <li className="navbar-item">
-                            <Link href="/EN_featured_projects">
-                                <a className="nav-link">Featured Projects</a>
-                            </Link>
+                            <Link href="/EN_featured_projects" className="nav-link">Featured Projects</Link>
                         </li>
                         <li className="navbar-item">
-                            <Link href="/EN_hobbies">
-                                <a className="nav-link">Hobbies</a>
-                            </Link>
+                            <Link href="/EN_hobbies" className="nav-link">Hobbies</Link>
                         </li>
                         <li className="navbar-item">
-                            <Link href="/EN_contact">
-                                <a className="nav-link">Contact</a>
-                            </Link>
+                            <Link href="/EN_contact" className="nav-link">Contact</Link>
                         </li>
 
                         <li className="navbar-item dropdown">
