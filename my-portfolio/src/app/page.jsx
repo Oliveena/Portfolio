@@ -1,8 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 
 export default function HomePage() {
   return (
@@ -17,7 +15,7 @@ export default function HomePage() {
           className="w-full object-cover"
         />
         <Image
-          src="images/f7ad9720-7002-4c57-8d44-0405b7e00ee2.jpg"
+          src="/images/f7ad9720-7002-4c57-8d44-0405b7e00ee2.jpg"
           alt="Ana's face"
           className="absolute top-1/6 right-1/2 translate-x-[150%] max-w-[25%] rounded-3xl z-20"
           loading="lazy"
@@ -114,7 +112,7 @@ export default function HomePage() {
           style={{ maxWidth: "500px" }}
           onSubmit={(e) => {
             e.preventDefault();
-            // Handle review submission here
+            // TODO: Handle review submission here
           }}
         >
           <div className="mb-3">
