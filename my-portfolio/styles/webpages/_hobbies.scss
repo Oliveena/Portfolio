@@ -1,0 +1,264 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@import "../_mixins";
+@import "../variables";
+@import "../fonts";
+
+/*========================== HOBBIES ==========================*/
+
+h2 {
+  margin: 1vw;
+  color: map-get($colors, eggshell);
+  text-shadow: 1px 1px map-get($colors, light-pink);
+}
+
+
+h3 {
+  color: map-get($colors, eggshell);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+p {
+  color: map-get($colors, eggshell);
+  padding: 1.2vw;
+  font-size: 1.5vw;
+  margin-top: $margin-top;
+}
+
+section {
+  @include flexbox;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-top: $margin-top;
+  color: map-get($colors, off-white);
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1rem 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    justify-items: center;
+    margin: 1vw;
+
+    li {
+      font-size: 1.2vw;
+      color: map-get($colors, off-white);
+      padding: 0.5rem 1rem;
+      background-color: map-get($colors, eggshell);
+      border-radius: $radius;
+      -webkit-box-shadow: 0 2px 4px rgba(64, 61, 57, 0.3);
+      box-shadow: 0 2px 4px rgba(64, 61, 57, 0.3);
+      -webkit-transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.3s ease;
+      transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.3s ease;
+      -o-transition: transform 0.2s ease, box-shadow 0.3s ease;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      transition: transform 0.2s ease, box-shadow 0.3s ease, -webkit-transform 0.2s ease, -webkit-box-shadow 0.3s ease;
+
+      &:hover {
+        -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        transform: translateY(-5px);
+        -webkit-box-shadow: 0 6px 12px rgba(64, 61, 57, 0.3);
+        box-shadow: 0 6px 12px rgba(64, 61, 57, 0.3);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// book suggestions slider
+#panel {
+  padding: 5px;
+  text-align: center;
+  background-color: map-get($colors, light-blue);
+  border: solid 1px map-get($colors, navy-blue);
+  padding: 50px;
+  display: none;
+}
+
+// table of book suggestions
+table,
+th,
+td {
+  text-align: left;
+  width: 50vw;
+  margin: 2vw auto;
+  border-collapse: collapse;
+  border: 1px solid map-get($colors, light-blue);
+  background-color: map-get($colors, eggshell);
+  border-collapse: collapse;
+  padding: 1vw;
+}
+
+th {
+  text-align: center;
+  background-color: map-get($colors, light-blue);
+}
+
+.form-container {
+  margin: 2vw;
+}
+
+// API 
+.book-container {
+  background-color: map-get($colors, eggshell);
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2vw;
+  padding: 1vw;
+  justify-content: space-evenly; 
+}
+
+// I could check for _variables and _mixins to make it more concise
+.book {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid map-get($colors, navy-blue);
+  background-color: map-get($colors, navy-blue);
+  margin: 1vw;
+  padding: 1vw;
+  width: 200px;
+  max-height: 50vh; 
+  overflow-y: auto;
+  resize: vertical;
+  box-sizing: border-box;
+  box-shadow: 2px 2px  map-get($colors, lilac);
+  // I could add a hover effect 
+}
+
+.book img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.book h3 {
+  font-size: 1.4em;
+  margin-bottom: 1vw;
+}
+
+.book p {
+  margin-bottom: 1vw;
+}
+
+.book a {
+  display: block;
+  font-size: 0.8em;
+  color: map-get($colors, navy-blue);
+  text-decoration: none;
+}
+
+.book a:hover {
+  text-decoration: underline;
+}
+ // I could add @media
+
+// watercolors 
+.watercolor-art-gallery {
+  padding: 3rem 0;
+
+  p {
+    color: map-get($colors, eggshell);
+    padding: 1.2vw;
+    font-size: 1.5vw;
+    margin-top: $margin-top;
+  }
+
+  .container {
+    .row {
+      margin-top: 2rem;
+    }
+
+    .col {
+      text-align: center;
+    }
+  }
+
+  button {
+    padding: 0.75rem 1.5rem;
+    margin: 2vw;
+    background-color: map-get($colors, light-blue);
+    border: none;
+    border-radius: $radius;
+    font-size: 1.2rem;
+    color: map-get($colors, white-roux);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background-color: map-get($colors, light-pink);
+      -webkit-transform: translate(-10deg);
+      -ms-transform: translate(-10deg);
+      transform: translate(-10deg);
+      -webkit-box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
+      box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
+      -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      transform: scale(1.2);
+      overflow: $overflow;
+    }
+  }
+}
+
+// BONUS: pure vanilla JS caroussel, https://www.cssscript.com/interactive-3d-rotating-gallery/
+/*
+.image-container{
+  position:relative;
+  width:200px;
+  height:200px;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateY(0deg);
+  transition: transform 0.7s;
+}
+.image-container span{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+}
+.image-container span img{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  border-radius: 5px;
+}
+.btn-container{
+  position:relative;
+  width:80%;
+}
+
+.btn{
+  position: absolute;
+  bottom:-80px;
+  background-color: orangered;
+  color:white;
+  padding:10px 20px;
+  border-radius: 5px;
+  border:none;
+  cursor: pointer;
+}
+.btn:hover{
+  filter:brightness(1.5);
+}
+#prev{
+  left:20%;
+}
+#next{
+  right:20%;
+}*/

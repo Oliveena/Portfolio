@@ -1,0 +1,46 @@
+body.dark-theme {
+  background-color: #121212;
+  color: #f0f0f0;
+
+  .navbar-nav {
+    background-color: darken(map-get($colors, navy-blue), 10%);
+    color: map-get($colors, lilac);
+
+    .navbar-item {
+      color: map-get($colors, lilac);
+
+      &:hover {
+        background-color: lighten(map-get($colors, pink), 10%);
+      }
+
+      &.active {
+        background-color: map-get($colors, light-blue);
+        color: map-get($colors, navy-blue);
+      }
+    }
+  }
+
+  #reviews-display {
+    background-color: darken(map-get($colors, navy-blue), 10%);
+  }
+
+  .review {
+    background-color: #1e1e1e;
+    color: map-get($colors, light-blue);
+
+    p {
+      color: map-get($colors, light-blue);
+      text-shadow: 1px 1px map-get($colors, lilac);
+
+      em {
+        color: lighten(map-get($colors, pink), 15%);
+      }
+    }
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    background-color: rgba(100, 100, 100, 0.4);
+    color: map-get($colors, lilac);
+  }
+}

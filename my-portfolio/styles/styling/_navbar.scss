@@ -1,0 +1,84 @@
+@import "../_mixins";
+@import "../variables";
+@import "../fonts";
+
+/*========================== NAVBAR ==========================*/
+
+.navbar-nav {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  background-color: map-get($colors, navy-blue);
+  color: map-get($colors, lilac);
+  position: fixed;
+  justify-content: space-evenly;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  margin-bottom: 0;
+  font-size: 2vw;
+  overflow: visible !important;
+
+  .navbar-item {
+    display: inline-block;
+    color: map-get($colors, lilac);
+    text-decoration: none;
+    transition: background-color 0.5s ease, font-weight 0.3s ease;
+
+    &:link,
+    &:visited {
+      color: map-get($colors, navy-blue);
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: map-get($colors, light-blue);
+      font-weight: bolder;
+    }
+
+    &.active {
+      color: map-get($colors, lilac);
+      text-decoration: underline;
+      background-color: map-get($colors, dark-blue); 
+      font-weight: bold;
+    }
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    min-width: 180px;
+    z-index: 1000;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    font-size: 3vw;
+    flex-direction: column;
+    background-color: map-get($colors, navy-blue);
+    color: map-get($colors, lilac);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .navbar-nav .navbar-item {
+    padding: 10px;
+    width: 100%; 
+  }
+}
+
+@media (max-width: 450px) {
+  .navbar-nav {
+    font-size: 4vw;
+    background-color: map-get($colors, navy-blue);
+    color: map-get($colors, lilac);
+  }
+}

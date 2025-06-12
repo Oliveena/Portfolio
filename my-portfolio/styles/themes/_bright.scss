@@ -1,0 +1,46 @@
+body.bright-theme {
+  background-color: #fdfdfd;
+  color: #111;
+
+  .navbar-nav {
+    background-color: map-get($colors, light-blue);
+    color: map-get($colors, navy-blue);
+
+    .navbar-item {
+      color: map-get($colors, navy-blue);
+
+      &:hover {
+        background-color: map-get($colors, pink);
+      }
+
+      &.active {
+        background-color: map-get($colors, navy-blue);
+        color: map-get($colors, lilac);
+      }
+    }
+  }
+
+  #reviews-display {
+    background-color: map-get($colors, navy-blue);
+  }
+
+  .review {
+    background-color: #ffffff;
+    color: map-get($colors, light-blue);
+
+    p {
+      color: map-get($colors, light-blue);
+      text-shadow: 1px 1px map-get($colors, lilac);
+
+      em {
+        color: map-get($colors, pink);
+      }
+    }
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    background-color: rgba(86, 136, 199, 0.5);
+    color: map-get($colors, eggshell);
+  }
+}
