@@ -5,7 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import './globals.css';
 import Script from 'next/script';
-import '../../styles/main.scss';
+import '../../styles/main.scss'; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,17 +28,15 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
-      </body>
-
-        
         <Script
           src="https://cdn.jsdelivr.net/npm/@popperjs/core@2/dist/umd/popper.min.js"
           strategy="beforeInteractive"
         />
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.min.js"
-          strategy="beforeInteractive"       
-          />
+          strategy="beforeInteractive"
+        />
+      </body>
     </html>
   );
 }

@@ -1,8 +1,23 @@
 'use client';
 
 import Image from 'next/image';
+import Modal from '@/components/Modal'; 
+import useDownloadModal from '@/hooks/useDownloadModal';
+import ReviewCarousel from '@/components/ReviewCarousel';
+
 
 export default function HomePage() {
+
+   const {
+    modalOpen,
+    openModal,
+    closeModal,
+    formData,
+    setFormData,
+    errors,
+    handleSubmit,
+  } = useDownloadModal();
+
   return (
     <main id="gradient-background" className="min-h-screen p-8">
       {/* Hero Section */}
@@ -40,108 +55,36 @@ export default function HomePage() {
 
       {/* Download CV Section */}
       <section className="text-center py-10">
-        <h3>Download my resume</h3>
-        <div className="mt-4 space-x-4">
-          <button className="btn btn-primary">PDF</button>
-          <button className="btn btn-success">Word</button>
-        </div>
+        <button
+  className="btn btn-primary"
+  onClick={() => openModal('/shared_assets/images/Resume.pdf')}
+>
+  PDF
+</button>
+<button
+  className="btn btn-success"
+  onClick={() => openModal('/shared_assets/images/Resume.docx')}
+>
+  Word
+</button>
+
       </section>
 
-      {/* Download Modal */}
-      <section>
-        <div
-          className="modal fade"
-          id="downloadModal"
-          tabIndex={-1}
-          aria-labelledby="downloadModalLabel"
-          aria-hidden="true"
-        >
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="downloadModalLabel">
-                  Please enter your details:
-                </h5>
-                <button
-                  type="button"
-                  className="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div className="modal-body">
-                <form id="downloadForm">
-                  <div className="mb-3">
-                    <label htmlFor="userName" className="form-label">
-                      Name or Company Name
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="userName"
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="userEmail" className="form-label">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      id="userEmail"
-                      required
-                    />
-                  </div>
-                  <button type="submit" className="btn btn-info">
-                    Submit
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    {modalOpen && (
+        <Modal
+          formData={formData}
+          setFormData={setFormData}
+          errors={errors}
+          onClose={closeModal}
+          onSubmit={handleSubmit}
+        />
+      )}
 
       {/* Add Review Section */}
-      <section id="addReview" className="mt-5">
-        <h3 className="text-center mb-3">Add Your Review</h3>
-        <form
-          id="reviewForm"
-          className="mx-auto"
-          style={{ maxWidth: "500px" }}
-          onSubmit={(e) => {
-            e.preventDefault();
-            // TODO: Handle review submission here
-          }}
-        >
-          <div className="mb-3">
-            <label htmlFor="reviewText" className="form-label">
-              Your Review:
-            </label>
-            <textarea
-              id="reviewText"
-              className="form-control"
-              rows={4}
-              required
-            ></textarea>
-          </div>
-          <div className="mb-3">
-            <label htmlFor="reviewName" className="form-label">
-              Your Name:
-            </label>
-            <input
-              type="text"
-              id="reviewName"
-              className="form-control"
-              required
-            />
-          </div>
-          <button type="submit" className="btn btn-primary w-100">
-            Submit Review
-          </button>
-        </form>
-      </section>
+  <section id="addReview" className="mt-5">
+    <h2 className="text-center mb-3">Add Your Review</h2>
+    <ReviewCarousel />
+  </section>
     </main>
   );
 }
