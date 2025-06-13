@@ -52,7 +52,7 @@
          object-fit: contain;
       max-width: 10vw;
       max-height: 10vw;
-      border-radius: $border-radius-usual;
+      border-radius: map-get($border-radius, usual);
       overflow: $overflow;
       -webkit-transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.5s ease;
       transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.5s ease;

@@ -1,11 +1,9 @@
-/*========================== FEATURED PROJECTS ==========================*/
 /*
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v8.4.14,
 * Autoprefixer: v10.4.7
 * Browsers: last 4 versions
 */
-
 @import "../_mixins";
 @import "../variables";
 @import "../fonts";
@@ -13,70 +11,64 @@
 /*========================== FEATURED PROJECTS ==========================*/
 
 h3 {
-    color: map-get($colors, eggshell);
-    text-shadow: 2px 2px map-get($colors, pink);
-    font-size: 2.5rem;
-    margin: 2vw;
+  color: map-get($colors, eggshell);
+  text-shadow: 2px 2px map-get($colors, pink);
+  font-size: 2.5rem;
+  margin: 2vw;
 }
 
 .row {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates responsive grid layout */
-    gap: 2vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 2vw;
 }
 
 .card {
-    background-color: map-get($colors, lilac);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    margin: 1rem;
-    padding: 1.5rem;
+  background-color: map-get($colors, lilac);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  margin: 1rem;
+  padding: 1.5rem;
 
-    /* Card Image */
-    .card-img-top {
-        object-fit: cover;
-        height: 300px;
+  .card-img-top {
+    object-fit: cover;
+    height: 300px;
+  }
+
+  .card-body {
+    padding: 1rem;
+    background-color: map-get($colors, eggshell);
+
+    p {
+      color: #333;
     }
-
-    .card-body {
-        padding: 1rem;
-        background-color: map-get($colors, eggshell);
-
-        p {
-            color: #333;
-        }
-    }
+  }
 }
 
 /* ========================= Responsive adjustments ========================== */
-
 @media screen and (max-width: 768px) {
-    #featured_projects {
-        padding: 3vw 2vw;
-    }
-
-    .card {
-        padding: 2rem;
-        margin: 1vw;
-    }
-
-    p {
-        font-size: 1.2rem;
-        max-width: 20rem;
-    }
+  #featured_projects {
+    padding: 3vw 2vw;
+  }
+  .card {
+    padding: 2rem;
+    margin: 1vw;
+  }
+  p {
+    font-size: 1.2rem;
+    max-width: 20rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    #featured_projects {
-        padding: 2vw 1.5vw;
-    }
-
-    .card {
-        padding: 1rem;
-    }
-
-    p {
-        font-size: 1.1rem;
-        max-width: 18rem;
-    }
+  #featured_projects {
+    padding: 2vw 1.5vw;
+  }
+  .card {
+    padding: 1rem;
+  }
+  p {
+    font-size: 1.1rem;
+    max-width: 18rem;
+  }
 }

@@ -17,9 +17,22 @@
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: 'Raleway', Helvetica, sans-serif;
+  font-family: "RF Dewi", "Raleway", Helvetica, serif, sans-serif;
   font-size: 100%;
   list-style: none;
+}
+
+body {
+    font-family: $main-font;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+}
+
+main {
+    flex-grow: 1;
 }
 
   /* display a link without lines*/

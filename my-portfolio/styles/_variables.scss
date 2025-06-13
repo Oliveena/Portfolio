@@ -5,8 +5,6 @@
 * Browsers: last 4 version
 */
 
-
-
 /*========================== VARIABLES ==========================*/
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -27,9 +25,9 @@ $colors: (
   light-pink: #f57daa
 );
 
-$main-font:'Raleway', Helvetica, serif-sans;
+$main-font: 'Raleway', Helvetica, sans-serif;
 
-$accent-font: 'RF Dewi', 'Raleway', Helvetica, serif-sans;
+$accent-font: 'RF Dewi', 'Raleway', Helvetica, sans-serif;
 
 $text-align-center: center;
 
@@ -37,8 +35,11 @@ $box-sizing: border-box;
 
 $overflow: hidden;
 
-//all these could be one map of border-radiuses//
-$border-radius-usual: 10%;
+$border-radius: (
+  usual: 10%,
+  small: 5%,
+  asymetric: 15px 50px
+);
 
 $radius: 5%;
 
@@ -47,9 +48,11 @@ $asymetric: 15px 50px;
 $linear-gradient: linear-gradient(
                 0deg,
                 map-get($colors, light-blue),
-                map-get($colors, dark-blue)
+                map-get($colors, navy-blue)
 );
 
 $margin-top: 2vw;
 
 $shadow: 0 4px 8px 0 rgba(86, 136, 199, 0.5), 0 6px 20px 0 rgba(86, 136, 199, 0.75);  // RGB of map-get($colors, light-blue)
+
+$hover-transform: scale(1.2) translate(-10deg);

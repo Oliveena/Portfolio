@@ -1035,10 +1035,6 @@ p.legibility {
   color: #7d83ff;
   margin-top: 2vw;
   padding: 2%;
-  /*
-  border-radius: $border-radius-usual;
-  box-shadow: 1rem 1rem rgba(64, 61, 57, 0.3);
-  */
 }
 .contact fieldset {
   display: block;

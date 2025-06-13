@@ -58,8 +58,9 @@ export default function ReviewCarousel({ onSubmit }) {
 
   return (
     <div className="mx-auto" style={{ maxWidth: '500px' }}>
+      <h3 class="text-center mb-4">Testimonials</h3>
       {/* Review Carousel Display */}
-      <div className="mb-4 border p-4 rounded bg-light">
+      <div id="testimonials" className="mb-4 border p-4 rounded bg-light">
         <p className="fst-italic">"{reviews[currentIndex].text}"</p>
         <p className="text-end">- {reviews[currentIndex].name}</p>
         <div className="d-flex justify-content-between mt-2">

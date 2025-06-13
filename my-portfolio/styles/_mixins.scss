@@ -14,6 +14,9 @@
   min-width: 100%;
 }
 
+// ========================== FLEXBOX ==========================
+
+
 @mixin basic-flexbox {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -62,10 +65,16 @@
 }
 
 /* reusable button style, color and button can be adjusted */
-@mixin btn-styles($bg-color, $border-color, $hover-transform: translate(-10deg), $scale: 1.2) {
+@mixin btn-styles($bg-color, $border-color, $scale: 1.2) {
   background-color: $bg-color;
   border: 2px solid $border-color;
   transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale($scale);
+    box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
+    overflow: hidden;
+  }
 
 
   &:hover {
@@ -77,6 +86,6 @@
     -webkit-transform: scale($scale);
         -ms-transform: scale($scale);
             transform: scale($scale);
-    overflow: $overflow; 
+    overflow: hidden;
   }
 }

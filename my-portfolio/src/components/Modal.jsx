@@ -5,7 +5,7 @@ import React from 'react';
 
 export default function Modal({ formData, setFormData, errors, onClose, onSubmit }) {
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div id="downloadModal" className="modal-fade fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-lg">
         <h2 className="text-xl font-semibold mb-4">Please enter your details:</h2>
 

@@ -44,3 +44,29 @@ body.bright-theme {
     color: map-get($colors, eggshell);
   }
 }
+
+
+body.bright-theme {
+  background-color: #ffffff;
+  color: #000000;
+
+  a, p, h1, h2, h3, h4, h5, h6, label {
+    color: #000000;
+  }
+
+  .navbar, footer {
+    background-color: #f8f9fa;
+    color: #000000;
+  }
+
+  .btn-outline-light {
+    border-color: #000000;
+    color: #000000;
+  }
+
+  .form-control {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ccc;
+  }
+}

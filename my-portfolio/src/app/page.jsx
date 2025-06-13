@@ -21,41 +21,52 @@ export default function HomePage() {
   return (
     <main id="gradient-background" className="min-h-screen p-8">
       {/* Hero Section */}
-      <header className="relative">
-        <Image
-          src="/images/vector1.jpg"
-          alt="banner"
-          width={1920}
-          height={600}
-          className="w-full object-cover"
-        />
+     <header className="hero position-relative text-light">
+  {/* Blurred background */}
+  <Image
+    src="/images/vector1.jpg"
+    alt="banner background"
+    fill
+    className="hero-img position-absolute w-100 h-100 object-fit-cover"
+  />
+
+  {/* Foreground content */}
+  <div className="container h-100">
+    <div className="row h-100 align-items-center justify-content-center text-center text-md-end position-relative" style={{ zIndex: 3 }}>
+      <div className="col-md-6 col-12 mb-4 mb-md-0" id="hero-text">
+        <h1 className="display-4 fw-bold">Hello, this is Ana</h1>
+        <h2 className="h3">Web Developer and Nurse Clinician</h2>
+        <p>
+          <a
+            href="/images/DeansList.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-decoration-underline"
+          >
+            Dean's List Recipient
+          </a>
+        </p>
+      </div>
+
+      <div className="col-md-6 col-12 text-center">
         <Image
           src="/images/f7ad9720-7002-4c57-8d44-0405b7e00ee2.jpg"
           alt="Ana's face"
-          className="absolute top-1/6 right-1/2 translate-x-[150%] max-w-[25%] rounded-3xl z-20"
+          className="img-fluid rounded-4 z-3 position-relative"
           loading="lazy"
           width={400}
           height={400}
         />
-        <div className="hero-text absolute top-20 right-1/4 z-30 text-white">
-          <h1 className="text-4xl font-bold">Hello, this is Ana</h1>
-          <h2 className="text-2xl">Web Developer and Nurse Clinician</h2>
-          <p>
-            <a
-              href="/shared_assets/images/DeansList.png"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Dean's List Recipient
-            </a>
-          </p>
-        </div>
-      </header>
+      </div>
+    </div>
+  </div>
+</header>
+
 
       {/* Download CV Section */}
-      <section className="text-center py-10">
-        <button
+      <section className="welcome text-center py-5">
+        <div className="cv_download mt-4">
+          <button
   className="btn btn-primary"
   onClick={() => openModal('/shared_assets/images/Resume.pdf')}
 >
@@ -68,7 +79,9 @@ export default function HomePage() {
   Word
 </button>
 
+        </div>
       </section>
+        
 
     {modalOpen && (
         <Modal

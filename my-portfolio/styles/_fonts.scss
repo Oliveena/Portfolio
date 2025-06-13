@@ -28,5 +28,35 @@ h4 {
 }
 
 p.legibility {
-  text-rendering: optimizeLegibility
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset input elements */
+input, textarea, select, button {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Reset images */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Reset margins and paddings for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.5;
 }

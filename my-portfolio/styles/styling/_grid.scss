@@ -4,23 +4,11 @@
 
 /*========================== BODY, GRID, other positioning info ==========================*/
 
-body {
-    font-family: $main-font;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow-y: auto;
-}
-
-main {
-    flex-grow: 1;
-}
+$gradient-start: rgba(map-get($colors, pink), 0.5);
+$gradient-end: map-get($colors, lilac);
 
 #gradient-background {
-    $gradient-start: rgba(map-get($colors, pink), 0.5);
-    $gradient-end: map-get($colors, lilac);
-    background: linear-gradient(0deg, $gradient-start, $gradient-end);
+  background: linear-gradient(0deg, $gradient-start, $gradient-end);
 }
 
 #vector-image {
@@ -35,4 +23,8 @@ main {
 .transparent-background-warm {
     @include full-width;
     background-color: rgba(156, 71, 100, 0.5);
+}
+
+.container {
+  background: linear-gradient(0deg, map-get($colors, beige), map-get($colors, grey), map-get($colors, dark-purple));
 }

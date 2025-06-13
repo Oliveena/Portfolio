@@ -1,6 +1,15 @@
 body.dark-theme {
-  background-color: #121212;
-  color: #f0f0f0;
+  background-color: map-get($colors, dark-bg, #121212); // fallback to #121212
+  color: #e0e0e0;
+
+  a, p, h1, h2, h3, h4, h5, h6, label {
+    color: #e0e0e0;
+  }
+
+  .navbar, footer {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+  }
 
   .navbar-nav {
     background-color: darken(map-get($colors, navy-blue), 10%);
@@ -42,5 +51,16 @@ body.dark-theme {
   .carousel-control-next {
     background-color: rgba(100, 100, 100, 0.4);
     color: map-get($colors, lilac);
+  }
+
+  .btn-outline-light {
+    border-color: #e0e0e0;
+    color: #e0e0e0;
+  }
+
+  .form-control {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border: 1px solid #444;
   }
 }
