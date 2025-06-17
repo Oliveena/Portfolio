@@ -3,78 +3,70 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const projects = [
   {
-    title: "Laravel Version of this same portfolio (in progress)",
-    description:
-      "I like a good challenge, so the past week was spent trying to recreate this portfolio with Laravel and Herd.",
-    image: "../shared_assets/images/LaravelPortfolio.png",
+    title: "Laravel Version of this Portfolio (in progress)",
+    description: "A Laravel + Herd experiment to recreate this portfolio from scratch.",
+    image: "/shared_assets/images/LaravelPortfolio.png",
     github: "https://github.com/Oliveena/fsd13portfolioana",
-    ppt: null,
   },
   {
     title: "DuProprio Clone",
-    description:
-      "An interactive Laravel website for potential buyers and realtors. It includes home listings and a blog section.",
-    image: "../shared_assets/images/RemaxClone.png",
+    description: "A Laravel-based real estate platform with listings and blogs.",
+    image: "/shared_assets/images/RemaxClone.png",
     github: "https://github.com/Oliveena/fsd13portfolioana",
-    ppt: "../shared_assets/20250328124727_RemaxClone.pptx",
+    ppt: "/shared_assets/20250328124727_RemaxClone.pptx",
   },
   {
     title: "BonjourSante Clone",
-    description:
-      "An interactive PHP website allowing users to book appointments with medical professionals.",
-    image: "../shared_assets/images/BonjourSante.png",
+    description: "A PHP-based appointment booking platform for medical professionals.",
+    image: "/shared_assets/images/BonjourSante.png",
     github: "https://github.com/Oliveena/fsd13portfolioana",
-    ppt: "../shared_assets/WebServicesPwP2 1.pptx",
+    ppt: "/shared_assets/WebServicesPwP2 1.pptx",
   },
   {
     title: "Auctions Website",
-    description: "An interactive PHP website for listing auctions and proposing your price.",
-    image: "../shared_assets/images/auctions.png",
+    description: "A PHP site for listing and bidding on auctions.",
+    image: "/shared_assets/images/auctions.png",
     github: "https://github.com/Oliveena/midterm1auctions",
-    ppt: null,
   },
   {
     title: "Blog Website",
-    description:
-      "A basic blog website in pure PHP that allows the creation of accounts, posting and commenting.",
-    image: "../shared_assets/images/jpeg.webp",
+    description: "A PHP blog with user login, post creation, and commenting.",
+    image: "/shared_assets/images/jpeg.webp",
     github: "https://github.com/Oliveena/artist-portfolio",
-    ppt: null,
   },
   {
     title: "Painter's Webpage",
-    description: "A front-end page for an artist portfolio, using Bootstrap.",
-    image: "../shared_assets/images/jpeg.webp",
+    description: "A Bootstrap-based front-end for an artist portfolio.",
+    image: "/shared_assets/images/jpeg.webp",
     github: "https://github.com/Oliveena/fsd13portfolioana",
-    ppt: null,
   },
 ];
 
 const ProjectCard = ({ project }) => (
-  <div className="col-12 col-sm-6 col-md-4 col-lg-4">
-    <div className="card">
-      <img src={project.image} className="card-img-top img-fluid" alt="Project" />
-      <div className="card-body rounded">
-        <p className="card-text text-primary">
-          <strong>{project.title}</strong>
-          <br />
-          {project.description}
-          {project.ppt && (
-            <>
-              <br />
-              PowerPoint presentation:{" "}
-              <strong>
-                <a href={project.ppt} target="_blank" rel="noopener noreferrer">
-                  here
-                </a>
-              </strong>
-            </>
-          )}
-          <br />
-          GitHub repo:{" "}
+  <div className="col-12 col-sm-6 col-md-4 mb-4">
+    <div className="card h-100 shadow-sm">
+      <img
+        src={project.image}
+        alt={project.title}
+        className="card-img-top"
+        style={{ objectFit: "cover", height: "200px" }}
+      />
+      <div className="card-body d-flex flex-column justify-content-between">
+        <h5 className="card-title">{project.title}</h5>
+        <p className="card-text">{project.description}</p>
+        {project.ppt && (
+          <p className="mb-1">
+            <strong>
+              <a href={project.ppt} target="_blank" rel="noopener noreferrer">
+                View PowerPoint
+              </a>
+            </strong>
+          </p>
+        )}
+        <p>
           <strong>
             <a href={project.github} target="_blank" rel="noopener noreferrer">
-              here
+              View on GitHub
             </a>
           </strong>
         </p>
@@ -83,20 +75,28 @@ const ProjectCard = ({ project }) => (
   </div>
 );
 
-const FeaturedProjects = () => {
+export default function FeaturedProjects() {
   return (
-    <section id="featured_projects" className="mt-5">
+    <section id="featured_projects" className="py-5">
       <div className="container">
-        <h3 className="mb-4">Featured Projects</h3>
-        <div className="row g-4 transparent-background-cold">
+        <h2 className="text-center mb-4">Featured Projects</h2>
+        <div className="row">
           {projects.map((project, idx) => (
             <ProjectCard key={idx} project={project} />
           ))}
         </div>
-        <h3 className="mt-5">And much more! Visit my GitHub below.</h3>
+        <div className="text-center mt-5">
+          <h5>...and much more! Visit my full GitHub below.</h5>
+          <a
+            className="btn btn-outline-primary mt-2"
+            href="https://github.com/Oliveena"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit GitHub
+          </a>
+        </div>
       </div>
     </section>
   );
-};
-
-export default FeaturedProjects;
+}

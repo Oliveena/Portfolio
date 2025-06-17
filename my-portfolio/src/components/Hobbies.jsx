@@ -1,97 +1,140 @@
-import React from 'react';
+import React, { useState } from "react";
+
+const books = [
+  {
+    title: "My Favorite Thing Is Monsters",
+    author: "Emil Ferris",
+    review: "A haunting and beautifully illustrated story about monsters, both real and imagined...",
+  },
+  {
+    title: "Encabanée",
+    author: "Gabrielle Filteau-Chiba",
+    review: "A poetic and meditative exploration of solitude in nature, written with raw elegance...",
+  },
+  {
+    title: "Ahab's Wife",
+    author: "Sena Jeter Naslund",
+    review: "A sweeping historical novel that reimagines the life of Captain Ahab’s wife with depth and grace...",
+  },
+  {
+    title: "The Enchantress of Florence",
+    author: "Salman Rushdie",
+    review: "A tale of magical realism connecting East and West, rich with storytelling and imagination...",
+  },
+];
+
+const initialPaintings = [
+  { src: "/shared_assets/images/IMG_20210208_090255_351.jpg", alt: "Vlad Dracula as a walrus" },
+  { src: "/shared_assets/images/20250111_100225.jpg", alt: "Birth of Venus as walruses" },
+  { src: "/shared_assets/images/IMG_20210217_090313_884.jpg", alt: "Girl with a Pearl Earring as a walrus" },
+];
+
+const extraPaintings = [
+  { src: "/shared_assets/images/20250111_095921.jpg", alt: "Frida Kahlo as a walrus" },
+  { src: "/shared_assets/images/IMG_20210131_221746_948.jpg", alt: "Napoleon as a walrus" },
+  { src: "/shared_assets/images/20250111_100242.jpg", alt: "Son of Man as a walrus" },
+];
 
 export default function Hobbies() {
+  const [showMorePaintings, setShowMorePaintings] = useState(false);
+
   return (
     <div id="content">
-      {/* ========================== READING SECTION ========================== */}
+      {/* =============== READING REVIEWS =============== */}
       <section className="reading-reviews text-center py-5">
         <h3>Reading Reviews</h3>
+        <div className="transparent-background-warm p-4">
+          <p>Ana has always been an avid reader. Here are some recent reads.</p>
+          <ul className="books list-unstyled">
+            {books.map((book, idx) => (
+              <li key={idx} className="flip my-3">
+                <strong>"{book.title}"</strong> by {book.author}
+                <div className="panel mt-2">{book.review}</div>
+              </li>
+            ))}
+          </ul>
 
-        <div className="transparent-background-warm">
-          <div className="reading">
-            <p>Ana has always been an avid reader. Here is a list of recent reads.</p>
-            <ul className="books">
-              <li className="flip"><strong>"My Favorite Thing Is Monsters"</strong> by Emil Ferris
-                <span className="panel" id="panel1">[...]</span>
-              </li>
-              <li className="flip"><strong>"Encabanée"</strong> by Gabrielle Filteau-Chiba
-                <span className="panel" id="panel2">[...]</span>
-              </li>
-              <li className="flip"><strong>"Ahab's Wife"</strong> by Sena Jeter Naslund
-                <span className="panel" id="panel3">[...]</span>
-              </li>
-              <li className="flip"><strong>"The Enchantress of Florence"</strong> by Salman Rushdie
-                <span className="panel" id="panel4">[...]</span>
-              </li>
-            </ul>
+          <div className="suggested-books mt-4">
+            <p>Books recommended by users</p>
+            {/* Table to be added here */}
           </div>
 
-          <p>Books recommended by users</p>
-          <div className="suggested-books">{/* Table here */}</div>
-
-          {/* Suggest a book form */}
-          <div className="contact">
-            <fieldset className="border p-4 rounded">
-              <p>Would you like to suggest a book?</p>
-              <form className="mx-auto" style={{ maxWidth: '500px' }}>
-                <div className="mb-3">
-                  <label htmlFor="bookTitle" className="form-label">Enter book title</label>
-                  <input type="text" id="bookTitle" className="form-control" />
-                </div>
-
-                <div className="mb-3">
-                  <label htmlFor="bookAuthor" className="form-label">Enter author name</label>
-                  <input type="text" id="bookAuthor" className="form-control" />
-                </div>
-
-                <div className="text-center">
-                  <button type="submit" className="btn btn-primary w-75">Add Book</button>
-                </div>
-              </form>
-            </fieldset>
-          </div>
-
-          {/* Google Book Search */}
-          <div className="contact">
-            <fieldset className="border p-4 rounded">
-              <p>Searching for a particular book? Here's Google Books API!</p>
+          {/* Book Suggestion Form */}
+          <fieldset className="border p-4 rounded mt-4 contact">
+            <p>Would you like to suggest a book?</p>
+            <form className="mx-auto" style={{ maxWidth: "500px" }}>
               <div className="mb-3">
-                <label htmlFor="search" className="form-label">Enter Book Title</label>
-                <input type="text" id="search" className="form-control" />
+                <label htmlFor="bookTitle" className="form-label">Book Title</label>
+                <input type="text" id="bookTitle" className="form-control" />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="bookAuthor" className="form-label">Author</label>
+                <input type="text" id="bookAuthor" className="form-control" />
               </div>
               <div className="text-center">
-                <button className="btn btn-primary w-100">Search</button>
+                <button type="submit" className="btn btn-primary w-75">Add Book</button>
               </div>
-              <div className="book-container mt-4" id="bookResults">{/* Results */}</div>
-            </fieldset>
-          </div>
+            </form>
+          </fieldset>
+
+          {/* Google Book Search */}
+          <fieldset className="border p-4 rounded mt-4 contact">
+            <p>Searching for a book? Try Google Books API!</p>
+            <div className="mb-3">
+              <label htmlFor="search" className="form-label">Enter Book Title</label>
+              <input type="text" id="search" className="form-control" />
+            </div>
+            <div className="text-center">
+              <button type="button" className="btn btn-primary w-100">Search</button>
+            </div>
+            <div className="book-container mt-4" id="bookResults">{/* Results here */}</div>
+          </fieldset>
         </div>
       </section>
 
-      {/* ========================== ART GALLERY SECTION ========================== */}
+      {/* =============== WATERCOLOR GALLERY =============== */}
       <section className="watercolor-art-gallery py-5">
         <h3 className="text-center">Watercolor Painting</h3>
+        <div className="transparent-background-cold p-4">
+          <p className="text-center">
+            Painting is very relaxing.<br />Here are some of my recent works.
+          </p>
 
-        <div className="transparent-background-cold">
-          <p className="text-center">Painting is very relaxing.<br /> Here are some of my recent paintings.</p>
-          <p className="text-center">Hover over them!</p>
-
-          <div className="paintings">
-            <div className="row row-cols-sm-2 row-cols-md-3 g-4">
-              <div className="col">
-                <a href="../shared_assets/images/IMG_20210208_090255_351.jpg" target="_blank" rel="noopener noreferrer">
-                  <img src="../shared_assets/images/IMG_20210208_090255_351.jpg" alt="Watercolor of Vlad Dracula as a walrus" className="img-fluid rounded-3" loading="lazy" />
+          <div className="row row-cols-sm-2 row-cols-md-3 g-4 paintings">
+            {initialPaintings.map((img, idx) => (
+              <div key={idx} className="col">
+                <a href={img.src} target="_blank" rel="noopener noreferrer">
+                  <img src={img.src} alt={img.alt} className="img-fluid rounded-3" loading="lazy" />
                 </a>
               </div>
-              {/* Repeat for other paintings */}
-            </div>
+            ))}
+
+            {showMorePaintings &&
+              extraPaintings.map((img, idx) => (
+                <div key={`extra-${idx}`} className="col">
+                  <a href={img.src} target="_blank" rel="noopener noreferrer">
+                    <img src={img.src} alt={img.alt} className="img-fluid rounded-3" loading="lazy" />
+                  </a>
+                </div>
+              ))}
           </div>
 
-          <div className="text-center">
-            <button className="btn btn-primary">More walruses!</button>
+          {/* Toggle buttons */}
+          <div className="text-center mt-4">
+            {!showMorePaintings ? (
+              <button className="btn btn-primary" onClick={() => setShowMorePaintings(true)}>
+                More walruses!
+              </button>
+            ) : (
+              <button className="btn btn-primary" onClick={() => setShowMorePaintings(false)}>
+                Less walruses...
+              </button>
+            )}
           </div>
-          <div className="text-center">
-            <button className="btn btn-primary">Less walruses...</button>
+
+          <div className="text-center mt-4">
+            <p>For more art, see my gallery</p>
+            <button className="btn btn-primary">Visit Gallery</button>
           </div>
         </div>
       </section>

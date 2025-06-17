@@ -1,21 +1,19 @@
-"use client";
-
 import React, { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, useLocation } from "react-router-dom";
 
 export default function MyNavbar() {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const toggleCollapse = () => setIsCollapsed(!isCollapsed);
 
-  const pathname = usePathname();
+  const location = useLocation();
+  const pathname = location.pathname;
 
   const navItems = [
-    { href: "/", label: "Welcome" },
-    { href: "/EN/skills", label: "Skills" },
-    { href: "/EN/projects", label: "Featured Projects" },
-    { href: "/EN/hobbies", label: "Hobbies" },
-    { href: "/EN/contact", label: "Contact" },
+    { to: "/", label: "Welcome" },
+    { to: "/EN/skills", label: "Skills" },
+    { to: "/EN/projects", label: "Featured Projects" },
+    { to: "/EN/hobbies", label: "Hobbies" },
+    { to: "/EN/contact", label: "Contact" },
   ];
 
   return (
@@ -34,15 +32,13 @@ export default function MyNavbar() {
 
         <div className={`${isCollapsed ? "collapse" : ""} navbar-collapse`} id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            {navItems.map(({ href, label }) => {
-              const isActive = pathname === href;
+            {navItems.map(({ to, label }) => {
+              const isActive = pathname === to;
 
               return (
-                <li key={href} className={`nav-item${isActive ? " active" : ""}`}>
-                  <Link href={href} legacyBehavior>
-                    <a className="nav-link" aria-current={isActive ? "page" : undefined}>
-                      {label}
-                    </a>
+                <li key={to} className={`nav-item${isActive ? " active" : ""}`}>
+                  <Link to={to} className="nav-link" aria-current={isActive ? "page" : undefined}>
+                    {label}
                   </Link>
                 </li>
               );
@@ -62,13 +58,13 @@ export default function MyNavbar() {
               </a>
               <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <li>
-                  <Link href="/French/FR_Page_Principale" legacyBehavior>
-                    <a className="dropdown-item">Français</a>
+                  <Link to="/French/FR_Page_Principale" className="dropdown-item">
+                    Français
                   </Link>
                 </li>
                 <li>
-                  <Link href="/Russian/RU_portfolio_landing_page" legacyBehavior>
-                    <a className="dropdown-item">Русский</a>
+                  <Link to="/Russian/RU_portfolio_landing_page" className="dropdown-item">
+                    Русский
                   </Link>
                 </li>
               </ul>

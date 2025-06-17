@@ -1,11 +1,10 @@
-'use client';
+// src/components/Home.jsx
+import React from 'react';
+import Modal from './Modal'; 
+import useDownloadModal from '../hooks/useDownloadModal';
+import ReviewCarousel from './ReviewCarousel';
 
-import Image from 'next/image';
-import Modal from '@/components/Modal'; 
-import useDownloadModal from '@/hooks/useDownloadModal';
-import ReviewCarousel from '@/components/ReviewCarousel';
-
-export default function HomePage() {
+export default function Home() {
   const {
     modalOpen,
     openModal,
@@ -17,22 +16,21 @@ export default function HomePage() {
   } = useDownloadModal();
 
   return (
-    <main className="min-h-screen p-8" id="gradient-background">
+    <>
       {/* Hero Section */}
       <header className="hero position-relative text-light w-100">
-        {/* Blurred background image */}
-        <Image
+        <img
           src="/images/vector1.jpg"
           alt="banner background"
-          fill
           className="position-absolute w-100 h-100 object-fit-cover"
+          style={{ objectFit: 'cover', zIndex: 1 }}
         />
-
-        {/* Foreground content */}
         <div className="container h-100 position-relative" style={{ zIndex: 3 }}>
           <div className="row h-100 align-items-center justify-content-center justify-content-md-between text-center text-md-start">
-            {/* Text Section */}
-            <div className="col-md-6 col-12 d-flex flex-column justify-content-center align-items-center align-items-md-start mb-4 mb-md-0" id="hero-text">
+            <div
+              className="col-md-6 col-12 d-flex flex-column justify-content-center align-items-center align-items-md-start mb-4 mb-md-0"
+              id="hero-text"
+            >
               <h1 className="display-4 fw-bold mt-2">Hello, this is Ana</h1>
               <h2 className="h3 m-2">Web Developer and Nurse Clinician</h2>
               <p className="fw-bold m-2">
@@ -46,16 +44,12 @@ export default function HomePage() {
                 </a>
               </p>
             </div>
-
-            {/* Image Section */}
             <div className="col-md-6 col-10 mx-auto mx-md-0">
-              <Image
+              <img
                 src="/images/f7ad9720-7002-4c57-8d44-0405b7e00ee2.jpg"
                 alt="Ana's face"
                 className="img-fluid rounded-4 position-relative"
                 loading="lazy"
-                width={400}
-                height={400}
                 style={{ maxWidth: '100%', height: 'auto' }}
               />
             </div>
@@ -96,6 +90,6 @@ export default function HomePage() {
         <h2 className="text-center mb-3">Add Your Review</h2>
         <ReviewCarousel />
       </section>
-    </main>
+    </>
   );
 }

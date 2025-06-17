@@ -693,3 +693,603 @@ TARASSOVA_Anastassia_Portfolio_final_to_be_continued
 └─ TARASSOVA_Anastassia_Portfolio_final_to_be_continued.iml
 
 ```
+```
+TARASSOVA_Anastassia_Portfolio_final_to_be_continued
+├─ .idea
+│  ├─ libraries
+│  │  └─ walrus_favicon_io.xml
+│  ├─ misc.xml
+│  ├─ modules.xml
+│  ├─ vcs.xml
+│  └─ workspace.xml
+├─ dist
+│  └─ css
+│     ├─ main.css
+│     └─ main.css.map
+├─ my-portfolio
+│  ├─ .next
+│  │  ├─ app-build-manifest.json
+│  │  ├─ app-path-routes-manifest.json
+│  │  ├─ build-manifest.json
+│  │  ├─ BUILD_ID
+│  │  ├─ cache
+│  │  │  ├─ .rscinfo
+│  │  │  ├─ eslint
+│  │  │  │  └─ .cache_wj3d1e
+│  │  │  ├─ images
+│  │  │  │  ├─ cUwdh0VVVwBDOZwNg8gj2n8ZvxyUiPhOAfHyOg2oNe0
+│  │  │  │  │  └─ 60.1750121402649.ppbZA7u97jUn8nWjloCZqDfCEmJYukQFiEG155s02Ls.Vy8iMTVhNDItMTk3MDc3OTA3Mzgi.webp
+│  │  │  │  ├─ I0uU3gfVVXr1YTrVbDvr8YW8TRpeSVRC-SI78MqAoBE
+│  │  │  │  │  └─ 60.1750101936362.U583z3hINgTqrHg0Jf8KWG2VaBMuQEAtrFq8U2qvt7k.Vy8iMWFhZGUtMTk3MDc3OTA3NGEi.webp
+│  │  │  │  ├─ nUf32ht6n0Fh6JsvgJTpGETbOHCS1KpLy-KqP6ZE9vg
+│  │  │  │  │  └─ 60.1750121402649.sNOMMzdU6foED8E14vyxuw1jJTNKBD9krjlSkOHdVpQ.Vy8iMWFhZGUtMTk3MDc3OTA3NGEi.webp
+│  │  │  │  ├─ VOPLsoZUZPPwDZ8sQCcGBOv2czjPoyA2T30UN1fKfrM
+│  │  │  │  │  └─ 60.1750101938176.WijRsLGImdyNWR4ICX72qdbjIn7BqHZyYRi3zBDNngs.Vy8iMWFhZGUtMTk3MDc3OTA3NGEi.webp
+│  │  │  │  └─ zMvydjMwiJxI8RGlHo0RAUv-YqY8U_svICThCijMhBk
+│  │  │  │     └─ 60.1750100354038.NpQdQNbILVKw704vxAs9eMkjnvqzdXIM43LonhPASS0.Vy8iMWFhZGUtMTk3MDc3OTA3NGEi.webp
+│  │  │  ├─ swc
+│  │  │  │  └─ plugins
+│  │  │  │     └─ v7_windows_x86_64_9.0.0
+│  │  │  └─ webpack
+│  │  │     ├─ client-development
+│  │  │     │  ├─ 0.pack.gz
+│  │  │     │  ├─ 1.pack.gz
+│  │  │     │  ├─ 10.pack.gz
+│  │  │     │  ├─ 11.pack.gz
+│  │  │     │  ├─ 12.pack.gz
+│  │  │     │  ├─ 2.pack.gz
+│  │  │     │  ├─ 3.pack.gz
+│  │  │     │  ├─ 4.pack.gz
+│  │  │     │  ├─ 5.pack.gz
+│  │  │     │  ├─ 6.pack.gz
+│  │  │     │  ├─ 7.pack.gz
+│  │  │     │  ├─ 8.pack.gz
+│  │  │     │  ├─ 9.pack.gz
+│  │  │     │  ├─ index.pack.gz
+│  │  │     │  └─ index.pack.gz.old
+│  │  │     ├─ client-production
+│  │  │     │  ├─ 0.pack
+│  │  │     │  ├─ 1.pack
+│  │  │     │  ├─ 10.pack
+│  │  │     │  ├─ 11.pack
+│  │  │     │  ├─ 12.pack
+│  │  │     │  ├─ 13.pack
+│  │  │     │  ├─ 14.pack
+│  │  │     │  ├─ 15.pack
+│  │  │     │  ├─ 16.pack
+│  │  │     │  ├─ 17.pack
+│  │  │     │  ├─ 18.pack
+│  │  │     │  ├─ 19.pack
+│  │  │     │  ├─ 2.pack
+│  │  │     │  ├─ 20.pack
+│  │  │     │  ├─ 21.pack
+│  │  │     │  ├─ 22.pack
+│  │  │     │  ├─ 23.pack
+│  │  │     │  ├─ 24.pack
+│  │  │     │  ├─ 25.pack
+│  │  │     │  ├─ 26.pack
+│  │  │     │  ├─ 3.pack
+│  │  │     │  ├─ 4.pack
+│  │  │     │  ├─ 5.pack
+│  │  │     │  ├─ 6.pack
+│  │  │     │  ├─ 7.pack
+│  │  │     │  ├─ 8.pack
+│  │  │     │  ├─ 9.pack
+│  │  │     │  ├─ index.pack
+│  │  │     │  └─ index.pack.old
+│  │  │     ├─ edge-server-production
+│  │  │     │  ├─ 0.pack
+│  │  │     │  └─ index.pack
+│  │  │     ├─ server-development
+│  │  │     │  ├─ 0.pack.gz
+│  │  │     │  ├─ 1.pack.gz
+│  │  │     │  ├─ 10.pack.gz
+│  │  │     │  ├─ 11.pack.gz
+│  │  │     │  ├─ 12.pack.gz
+│  │  │     │  ├─ 13.pack.gz
+│  │  │     │  ├─ 2.pack.gz
+│  │  │     │  ├─ 3.pack.gz
+│  │  │     │  ├─ 4.pack.gz
+│  │  │     │  ├─ 5.pack.gz
+│  │  │     │  ├─ 6.pack.gz
+│  │  │     │  ├─ 7.pack.gz
+│  │  │     │  ├─ 8.pack.gz
+│  │  │     │  ├─ 9.pack.gz
+│  │  │     │  ├─ index.pack.gz
+│  │  │     │  └─ index.pack.gz.old
+│  │  │     └─ server-production
+│  │  │        ├─ 0.pack
+│  │  │        ├─ 1.pack
+│  │  │        ├─ 10.pack
+│  │  │        ├─ 11.pack
+│  │  │        ├─ 12.pack
+│  │  │        ├─ 13.pack
+│  │  │        ├─ 14.pack
+│  │  │        ├─ 15.pack
+│  │  │        ├─ 16.pack
+│  │  │        ├─ 17.pack
+│  │  │        ├─ 18.pack
+│  │  │        ├─ 19.pack
+│  │  │        ├─ 2.pack
+│  │  │        ├─ 20.pack
+│  │  │        ├─ 21.pack
+│  │  │        ├─ 22.pack
+│  │  │        ├─ 23.pack
+│  │  │        ├─ 24.pack
+│  │  │        ├─ 25.pack
+│  │  │        ├─ 26.pack
+│  │  │        ├─ 27.pack
+│  │  │        ├─ 28.pack
+│  │  │        ├─ 3.pack
+│  │  │        ├─ 4.pack
+│  │  │        ├─ 5.pack
+│  │  │        ├─ 6.pack
+│  │  │        ├─ 7.pack
+│  │  │        ├─ 8.pack
+│  │  │        ├─ 9.pack
+│  │  │        ├─ index.pack
+│  │  │        └─ index.pack.old
+│  │  ├─ diagnostics
+│  │  │  ├─ build-diagnostics.json
+│  │  │  └─ framework.json
+│  │  ├─ export-marker.json
+│  │  ├─ images-manifest.json
+│  │  ├─ next-minimal-server.js.nft.json
+│  │  ├─ next-server.js.nft.json
+│  │  ├─ package.json
+│  │  ├─ prerender-manifest.json
+│  │  ├─ react-loadable-manifest.json
+│  │  ├─ required-server-files.json
+│  │  ├─ routes-manifest.json
+│  │  ├─ server
+│  │  │  ├─ app
+│  │  │  │  ├─ EN
+│  │  │  │  │  ├─ contact
+│  │  │  │  │  │  ├─ page.js
+│  │  │  │  │  │  ├─ page.js.nft.json
+│  │  │  │  │  │  └─ page_client-reference-manifest.js
+│  │  │  │  │  ├─ contact.html
+│  │  │  │  │  ├─ contact.meta
+│  │  │  │  │  ├─ contact.rsc
+│  │  │  │  │  ├─ featuredProjects
+│  │  │  │  │  │  ├─ page.js
+│  │  │  │  │  │  ├─ page.js.nft.json
+│  │  │  │  │  │  └─ page_client-reference-manifest.js
+│  │  │  │  │  ├─ featuredProjects.html
+│  │  │  │  │  ├─ featuredProjects.meta
+│  │  │  │  │  ├─ featuredProjects.rsc
+│  │  │  │  │  ├─ hobbies
+│  │  │  │  │  │  ├─ page.js
+│  │  │  │  │  │  ├─ page.js.nft.json
+│  │  │  │  │  │  └─ page_client-reference-manifest.js
+│  │  │  │  │  ├─ hobbies.html
+│  │  │  │  │  ├─ hobbies.meta
+│  │  │  │  │  ├─ hobbies.rsc
+│  │  │  │  │  ├─ skills
+│  │  │  │  │  │  ├─ page.js
+│  │  │  │  │  │  ├─ page.js.nft.json
+│  │  │  │  │  │  └─ page_client-reference-manifest.js
+│  │  │  │  │  ├─ skills.html
+│  │  │  │  │  ├─ skills.meta
+│  │  │  │  │  └─ skills.rsc
+│  │  │  │  ├─ en.html
+│  │  │  │  ├─ en.meta
+│  │  │  │  ├─ en.rsc
+│  │  │  │  ├─ favicon.ico
+│  │  │  │  │  ├─ route.js
+│  │  │  │  │  └─ route.js.nft.json
+│  │  │  │  ├─ favicon.ico.body
+│  │  │  │  ├─ favicon.ico.meta
+│  │  │  │  ├─ index.html
+│  │  │  │  ├─ index.meta
+│  │  │  │  ├─ index.rsc
+│  │  │  │  ├─ page.js
+│  │  │  │  ├─ page.js.nft.json
+│  │  │  │  ├─ page_client-reference-manifest.js
+│  │  │  │  ├─ _not-found
+│  │  │  │  │  ├─ page.js
+│  │  │  │  │  ├─ page.js.nft.json
+│  │  │  │  │  └─ page_client-reference-manifest.js
+│  │  │  │  ├─ _not-found.html
+│  │  │  │  ├─ _not-found.meta
+│  │  │  │  └─ _not-found.rsc
+│  │  │  ├─ app-paths-manifest.json
+│  │  │  ├─ chunks
+│  │  │  │  ├─ 447.js
+│  │  │  │  ├─ 548.js
+│  │  │  │  ├─ 658.js
+│  │  │  │  └─ 845.js
+│  │  │  ├─ functions-config-manifest.json
+│  │  │  ├─ interception-route-rewrite-manifest.js
+│  │  │  ├─ middleware-build-manifest.js
+│  │  │  ├─ middleware-manifest.json
+│  │  │  ├─ middleware-react-loadable-manifest.js
+│  │  │  ├─ next-font-manifest.js
+│  │  │  ├─ next-font-manifest.json
+│  │  │  ├─ pages
+│  │  │  │  ├─ 404.html
+│  │  │  │  ├─ en
+│  │  │  │  │  └─ 500.html
+│  │  │  │  ├─ fr
+│  │  │  │  │  └─ 500.html
+│  │  │  │  ├─ ru
+│  │  │  │  │  └─ 500.html
+│  │  │  │  ├─ _app.js
+│  │  │  │  ├─ _app.js.nft.json
+│  │  │  │  ├─ _document.js
+│  │  │  │  ├─ _document.js.nft.json
+│  │  │  │  ├─ _error.js
+│  │  │  │  └─ _error.js.nft.json
+│  │  │  ├─ pages-manifest.json
+│  │  │  ├─ server-reference-manifest.js
+│  │  │  ├─ server-reference-manifest.json
+│  │  │  └─ webpack-runtime.js
+│  │  ├─ static
+│  │  │  ├─ chunks
+│  │  │  │  ├─ 244-180df055f09931ce.js
+│  │  │  │  ├─ 341.df3329d77a5faa19.js
+│  │  │  │  ├─ 472.a3826d29d6854395.js
+│  │  │  │  ├─ 4bd1b696-f1f87c717f1f09c8.js
+│  │  │  │  ├─ 684-dd17301d74219cae.js
+│  │  │  │  ├─ 766-0a86fc68a9e269b0.js
+│  │  │  │  ├─ app
+│  │  │  │  │  ├─ EN
+│  │  │  │  │  │  ├─ contact
+│  │  │  │  │  │  │  └─ page-9bb648054181d7c0.js
+│  │  │  │  │  │  ├─ featuredProjects
+│  │  │  │  │  │  │  └─ page-72d81cc881d97ef2.js
+│  │  │  │  │  │  ├─ hobbies
+│  │  │  │  │  │  │  └─ page-5d64336a8d4d6432.js
+│  │  │  │  │  │  └─ skills
+│  │  │  │  │  │     └─ page-e613ca0872fdaba9.js
+│  │  │  │  │  ├─ layout-361a0fdc580ef4d6.js
+│  │  │  │  │  ├─ page-b1eda082dd6d20a4.js
+│  │  │  │  │  └─ _not-found
+│  │  │  │  │     └─ page-3ab45ebfd92cd56a.js
+│  │  │  │  ├─ framework-f593a28cde54158e.js
+│  │  │  │  ├─ main-1a89dd1cd3e7d40b.js
+│  │  │  │  ├─ main-app-c48d2a8f5606956d.js
+│  │  │  │  ├─ pages
+│  │  │  │  │  ├─ _app-92f2aae776f86b9c.js
+│  │  │  │  │  └─ _error-71d2b6a7b832d02a.js
+│  │  │  │  ├─ polyfills-42372ed130431b0a.js
+│  │  │  │  └─ webpack-e1af9a562d9a4b6e.js
+│  │  │  ├─ css
+│  │  │  │  ├─ 57c0264e2722c196.css
+│  │  │  │  ├─ ee79c911a9312e0b.css
+│  │  │  │  └─ f30152c0704fba31.css
+│  │  │  ├─ EE9-UtHFw0IkLQUKtgryZ
+│  │  │  │  ├─ _buildManifest.js
+│  │  │  │  └─ _ssgManifest.js
+│  │  │  └─ media
+│  │  │     ├─ 569ce4b8f30dc480-s.p.woff2
+│  │  │     ├─ 747892c23ea88013-s.woff2
+│  │  │     ├─ 8d697b304b401681-s.woff2
+│  │  │     ├─ 93f479601ee12b01-s.p.woff2
+│  │  │     ├─ 9610d9e46709d722-s.woff2
+│  │  │     └─ ba015fad6dcf6784-s.woff2
+│  │  ├─ trace
+│  │  └─ types
+│  │     ├─ app
+│  │     │  ├─ EN
+│  │     │  │  ├─ contact
+│  │     │  │  │  └─ page.ts
+│  │     │  │  ├─ featuredProjects
+│  │     │  │  │  └─ page.ts
+│  │     │  │  ├─ hobbies
+│  │     │  │  │  └─ page.ts
+│  │     │  │  └─ skills
+│  │     │  │     └─ page.ts
+│  │     │  ├─ layout.ts
+│  │     │  └─ page.ts
+│  │     ├─ cache-life.d.ts
+│  │     └─ package.json
+│  ├─ eslint.config.mjs
+│  ├─ jsconfig.json
+│  ├─ next.config.mjs
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ postcss.config.mjs
+│  ├─ public
+│  │  ├─ documents
+│  │  │  ├─ 2024_Inf_Clin_CV_FR.pdf
+│  │  │  ├─ 20250328124727_RemaxClone.pptx
+│  │  │  └─ WebServicesPwP2 1.pptx
+│  │  ├─ favicon.ico
+│  │  ├─ file.svg
+│  │  ├─ globe.svg
+│  │  ├─ images
+│  │  │  ├─ 1037--65505-800-u6q.jpg
+│  │  │  ├─ 1725819461instagram-logo.png
+│  │  │  ├─ 198747823f13e13270c6c8b87d0b1036a7631e78.jpeg
+│  │  │  ├─ 20250111_095825.jpg
+│  │  │  ├─ 20250111_095921.jpg
+│  │  │  ├─ 20250111_100225.jpg
+│  │  │  ├─ 20250111_100242.jpg
+│  │  │  ├─ 2062376.png
+│  │  │  ├─ 9781477319642.jpg
+│  │  │  ├─ 9781844081813-uk.jpg
+│  │  │  ├─ 9782894064993_large.webp
+│  │  │  ├─ 98ae159aa1bb8b4243fbe1f9e27d1b9f.png
+│  │  │  ├─ Ahabs-Wife.jpg
+│  │  │  ├─ auctions.png
+│  │  │  ├─ aws-academy-graduate-aws-academy-cloud-security-foundations.png
+│  │  │  ├─ BonjourSante.png
+│  │  │  ├─ bootstrap-logo-png-bootstrap-logo-390.png
+│  │  │  ├─ chateaux-de-la-colere-folio-livre-occasion-29825_1.jpg
+│  │  │  ├─ css3-logo-png-transparent.png
+│  │  │  ├─ DeansList.png
+│  │  │  ├─ Enchantress_of_florence.jpg
+│  │  │  ├─ f7ad9720-7002-4c57-8d44-0405b7e00ee2.jpg
+│  │  │  ├─ FCC.jpg
+│  │  │  ├─ figma.png
+│  │  │  ├─ github-mark.png
+│  │  │  ├─ goodnight-punpun-vol-1-9781421586205_hr.jpg
+│  │  │  ├─ html-logo.png
+│  │  │  ├─ icons8-home-64.png
+│  │  │  ├─ IMG_20210131_221746_948.jpg
+│  │  │  ├─ IMG_20210208_090255_351.jpg
+│  │  │  ├─ IMG_20210217_090313_884.jpg
+│  │  │  ├─ java.png
+│  │  │  ├─ javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png
+│  │  │  ├─ jpeg.webp
+│  │  │  ├─ laravel-logo-png-laravel-lumen-manipulating-route-parameters-syed-sirajul-islam-1024x400.png
+│  │  │  ├─ LaravelPortfolio.png
+│  │  │  ├─ linkedin-logo-linkedin-icon-transparent-free-png.webp
+│  │  │  ├─ Meta-Logo.png
+│  │  │  ├─ php-logo-bigger.png
+│  │  │  ├─ RemaxClone.png
+│  │  │  ├─ sql-database-icon-png-17.png
+│  │  │  ├─ thumbnail_20240601_143811.jpg
+│  │  │  ├─ vector1.jpg
+│  │  │  ├─ w3schools-1536.png
+│  │  │  ├─ walrus_favicon_io
+│  │  │  │  └─ site.webmanifest
+│  │  │  ├─ walrus_favicon_io.zip
+│  │  │  └─ walrus_progress
+│  │  │     ├─ 20250102_173417.jpg
+│  │  │     ├─ 20250102_182141.jpg
+│  │  │     ├─ 20250102_193255.jpg
+│  │  │     ├─ 20250102_194414.jpg
+│  │  │     ├─ 20250102_200253.jpg
+│  │  │     ├─ 20250102_201236.jpg
+│  │  │     └─ 20250108_221350.jpg
+│  │  ├─ next.svg
+│  │  ├─ vercel.svg
+│  │  └─ window.svg
+│  ├─ README.md
+│  ├─ src
+│  │  ├─ app
+│  │  │  ├─ EN
+│  │  │  │  ├─ contact
+│  │  │  │  │  └─ page.jsx
+│  │  │  │  ├─ featuredProjects
+│  │  │  │  │  └─ page.jsx
+│  │  │  │  ├─ hobbies
+│  │  │  │  │  └─ page.jsx
+│  │  │  │  └─ skills
+│  │  │  │     └─ page.jsx
+│  │  │  ├─ favicon.ico
+│  │  │  ├─ index.js
+│  │  │  ├─ layout.js
+│  │  │  └─ page.jsx
+│  │  ├─ App.js
+│  │  ├─ components
+│  │  │  ├─ Contact.jsx
+│  │  │  ├─ ContactForm.jsx
+│  │  │  ├─ featuredProjects.jsx
+│  │  │  ├─ Footer.jsx
+│  │  │  ├─ Form.jsx
+│  │  │  ├─ Hobbies.jsx
+│  │  │  ├─ MetaTags.jsx
+│  │  │  ├─ Modal.jsx
+│  │  │  ├─ Navbar.jsx
+│  │  │  ├─ ProjectCard.jsx
+│  │  │  ├─ ReviewCarousel.jsx
+│  │  │  ├─ Skills.jsx
+│  │  │  └─ ThemeToggle.jsx
+│  │  └─ hooks
+│  │     ├─ NavbarHighlight.jsx
+│  │     └─ useDownloadModal.jsx
+│  └─ styles
+│     ├─ main.scss
+│     ├─ styling
+│     │  ├─ _footer.scss
+│     │  ├─ _grid.scss
+│     │  ├─ _header.scss
+│     │  ├─ _navbar.scss
+│     │  ├─ _reset.scss
+│     │  └─ _review_caroussel.scss
+│     ├─ themes
+│     │  ├─ _bright.scss
+│     │  └─ _dark.scss
+│     ├─ webpages
+│     │  ├─ _contact.scss
+│     │  ├─ _featured_projects.scss
+│     │  ├─ _hobbies.scss
+│     │  ├─ _soft_skills.scss
+│     │  ├─ _tech_skills.scss
+│     │  └─ _welcome.scss
+│     ├─ _fonts.scss
+│     ├─ _mixins.scss
+│     └─ _variables.scss
+├─ out
+│  └─ production
+│     └─ TARASSOVA_Anastassia_Portfolio_final_to_be_continued
+│        ├─ constants
+│        │  └─ CommonConstants.class
+│        ├─ gui
+│        │  ├─ LoginGUI$1.class
+│        │  └─ LoginGUI.class
+│        └─ LoginApp.class
+├─ Portfolio with JS
+│  ├─ .htaccess
+│  ├─ .idea
+│  │  ├─ ICA 3 portfolio.iml
+│  │  ├─ misc.xml
+│  │  └─ modules.xml
+│  ├─ Brainstorming for Personal Portfolio.md
+│  ├─ dist
+│  │  └─ css
+│  │     ├─ bootstrap-grid.css
+│  │     ├─ bootstrap-grid.css.map
+│  │     ├─ bootstrap-reboot.css
+│  │     ├─ bootstrap-reboot.css.map
+│  │     ├─ bootstrap.css
+│  │     ├─ bootstrap.css.map
+│  │     ├─ docs.css
+│  │     ├─ docs.css.map
+│  │     ├─ main.css
+│  │     ├─ main.css.map
+│  │     ├─ review_caroussel.css
+│  │     └─ review_caroussel.css.map
+│  ├─ English
+│  │  ├─ .htaccess
+│  │  ├─ EN_contact.html
+│  │  ├─ EN_featured_projects.html
+│  │  ├─ EN_hobbies.html
+│  │  ├─ EN_portfolio_landing_page.html
+│  │  └─ EN_skills.html
+│  ├─ French
+│  │  ├─ FR_assets
+│  │  │  └─ 2024_Inf_Clin_CV_FR.pdf
+│  │  ├─ FR_contact.html
+│  │  ├─ FR_featured_projects.html
+│  │  ├─ FR_hobbies.html
+│  │  ├─ FR_Page_Principale.html
+│  │  └─ FR_skills.html
+│  ├─ index.html
+│  ├─ Lighthouse_validation
+│  │  ├─ using Lighthouse_1.png
+│  │  ├─ using Lighthouse_2.png
+│  │  ├─ using Lighthouse_3.png
+│  │  ├─ using Lighthouse_4.png
+│  │  └─ using_Lighthouse_0.png
+│  ├─ php
+│  │  └─ save.php
+│  ├─ Planning Analysis Sheet.docx
+│  ├─ Russian
+│  │  ├─ RU_contact.html
+│  │  ├─ RU_featured_projects.html
+│  │  ├─ RU_hobbies.html
+│  │  ├─ RU_portfolio_landing_page.html
+│  │  └─ RU_skills.html
+│  └─ shared_assets
+│     ├─ 2024_Inf_Clin_CV_FR.pdf
+│     ├─ 20250328124727_RemaxClone.pptx
+│     ├─ css
+│     │  ├─ style.css
+│     │  └─ style.css.map
+│     ├─ images
+│     │  ├─ 1037--65505-800-u6q.jpg
+│     │  ├─ 1725819461instagram-logo.png
+│     │  ├─ 198747823f13e13270c6c8b87d0b1036a7631e78.jpeg
+│     │  ├─ 20250111_095825.jpg
+│     │  ├─ 20250111_095921.jpg
+│     │  ├─ 20250111_100225.jpg
+│     │  ├─ 20250111_100242.jpg
+│     │  ├─ 2062376.png
+│     │  ├─ 9781477319642.jpg
+│     │  ├─ 9781844081813-uk.jpg
+│     │  ├─ 9782894064993_large.webp
+│     │  ├─ 98ae159aa1bb8b4243fbe1f9e27d1b9f.png
+│     │  ├─ Ahabs-Wife.jpg
+│     │  ├─ auctions.png
+│     │  ├─ aws-academy-graduate-aws-academy-cloud-security-foundations.png
+│     │  ├─ BonjourSante.png
+│     │  ├─ bootstrap-logo-png-bootstrap-logo-390.png
+│     │  ├─ chateaux-de-la-colere-folio-livre-occasion-29825_1.jpg
+│     │  ├─ css3-logo-png-transparent.png
+│     │  ├─ DeansList.png
+│     │  ├─ Enchantress_of_florence.jpg
+│     │  ├─ f7ad9720-7002-4c57-8d44-0405b7e00ee2.jpg
+│     │  ├─ FCC.jpg
+│     │  ├─ figma.png
+│     │  ├─ github-mark.png
+│     │  ├─ goodnight-punpun-vol-1-9781421586205_hr.jpg
+│     │  ├─ html-logo.png
+│     │  ├─ icons8-home-64.png
+│     │  ├─ IMG_20210131_221746_948.jpg
+│     │  ├─ IMG_20210208_090255_351.jpg
+│     │  ├─ IMG_20210217_090313_884.jpg
+│     │  ├─ java.png
+│     │  ├─ javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png
+│     │  ├─ jpeg.webp
+│     │  ├─ laravel-logo-png-laravel-lumen-manipulating-route-parameters-syed-sirajul-islam-1024x400.png
+│     │  ├─ LaravelPortfolio.png
+│     │  ├─ linkedin-logo-linkedin-icon-transparent-free-png.webp
+│     │  ├─ Meta-Logo.png
+│     │  ├─ php-logo-bigger.png
+│     │  ├─ RemaxClone.png
+│     │  ├─ sql-database-icon-png-17.png
+│     │  ├─ thumbnail_20240601_143811.jpg
+│     │  ├─ vector1.jpg
+│     │  ├─ w3schools-1536.png
+│     │  ├─ walrus_favicon_io
+│     │  │  ├─ android-chrome-192x192.png
+│     │  │  ├─ android-chrome-512x512.png
+│     │  │  ├─ apple-touch-icon.png
+│     │  │  ├─ favicon-16x16.png
+│     │  │  ├─ favicon-32x32.png
+│     │  │  ├─ favicon.ico
+│     │  │  └─ site.webmanifest
+│     │  ├─ walrus_favicon_io.zip
+│     │  └─ walrus_progress
+│     │     ├─ 20250102_173417.jpg
+│     │     ├─ 20250102_182141.jpg
+│     │     ├─ 20250102_193255.jpg
+│     │     ├─ 20250102_194414.jpg
+│     │     ├─ 20250102_200253.jpg
+│     │     ├─ 20250102_201236.jpg
+│     │     └─ 20250108_221350.jpg
+│     ├─ JS
+│     │  ├─ 0_navbar_active_highlight.js
+│     │  ├─ 10_current_year.js
+│     │  ├─ 11_dark_light_theme_toggle.js
+│     │  ├─ 1_fluid_transitions.js
+│     │  ├─ 2_modal.js
+│     │  ├─ 3_review_carousel.js
+│     │  ├─ 4_walruses.js
+│     │  ├─ 5_featured_projects_effects.js
+│     │  ├─ 6_form_validation.js
+│     │  ├─ 7_table.js
+│     │  ├─ 8_google_api.js
+│     │  └─ 9_books_read.js
+│     ├─ Login GUI
+│     │  ├─ .idea
+│     │  │  ├─ misc.xml
+│     │  │  └─ modules.xml
+│     │  ├─ Login GUI.iml
+│     │  └─ src
+│     │     ├─ constants
+│     │     │  └─ CommonConstants.java
+│     │     ├─ gui
+│     │     │  └─ LoginGUI.java
+│     │     └─ LoginApp.java
+│     ├─ scss
+│     │  ├─ main.scss
+│     │  ├─ styling
+│     │  │  ├─ _footer.scss
+│     │  │  ├─ _grid.scss
+│     │  │  ├─ _header.scss
+│     │  │  ├─ _navbar.scss
+│     │  │  ├─ _reset.scss
+│     │  │  └─ _review_caroussel.scss
+│     │  ├─ themes
+│     │  │  ├─ _bright.scss
+│     │  │  └─ _dark.scss
+│     │  ├─ webpages
+│     │  │  ├─ _contact.scss
+│     │  │  ├─ _featured_projects.scss
+│     │  │  ├─ _hobbies.scss
+│     │  │  ├─ _soft_skills.scss
+│     │  │  ├─ _tech_skills.scss
+│     │  │  └─ _welcome.scss
+│     │  ├─ _fonts.scss
+│     │  ├─ _mixins.scss
+│     │  └─ _variables.scss
+│     └─ WebServicesPwP2 1.pptx
+├─ README.md
+└─ TARASSOVA_Anastassia_Portfolio_final_to_be_continued.iml
+
+```
