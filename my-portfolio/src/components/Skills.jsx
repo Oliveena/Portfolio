@@ -1,16 +1,16 @@
 import React from "react";
 
 const techSkills = [
-  { alt: "AWS Certificate", src: "/shared_assets/images/aws-academy-graduate-aws-academy-cloud-security-foundations.png" },
-  { alt: "PHP Logo", src: "/shared_assets/images/php-logo-bigger.png" },
-  { alt: "Laravel Logo", src: "/shared_assets/images/laravel-logo-png-laravel-lumen-manipulating-route-parameters-syed-sirajul-islam-1024x400.png" },
-  { alt: "Bootstrap Logo", src: "/shared_assets/images/bootstrap-logo-png-bootstrap-logo-390.png" },
-  { alt: "HTML Logo", src: "/shared_assets/images/html-logo.png" },
-  { alt: "CSS Logo", src: "/shared_assets/images/css3-logo-png-transparent.png" },
-  { alt: "Figma Logo", src: "/shared_assets/images/figma.png" },
-  { alt: "JavaScript Logo", src: "/shared_assets/images/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png" },
-  { alt: "MySQL Logo", src: "/shared_assets/images/sql-database-icon-png-17.png" },
-  { alt: "Java Logo", src: "/shared_assets/images/java.png" },
+  { alt: "AWS Certificate", src: "/images/aws-academy-graduate-aws-academy-cloud-security-foundations.png" },
+  { alt: "PHP Logo", src: "/images/php-logo-bigger.png" },
+  { alt: "Laravel Logo", src: "/images/laravel-logo-png-laravel-lumen-manipulating-route-parameters-syed-sirajul-islam-1024x400.png" },
+  { alt: "Bootstrap Logo", src: "/images/bootstrap-logo-png-bootstrap-logo-390.png" },
+  { alt: "HTML Logo", src: "/images/html-logo.png" },
+  { alt: "CSS Logo", src: "/images/css3-logo-png-transparent.png" },
+  { alt: "Figma Logo", src: "/images/figma.png" },
+  { alt: "JavaScript Logo", src: "/images/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png" },
+  { alt: "MySQL Logo", src: "/images/sql-database-icon-png-17.png" },
+  { alt: "Java Logo", src: "/images/java.png" },
 ];
 
 const softSkills = [

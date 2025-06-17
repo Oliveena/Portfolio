@@ -24,15 +24,15 @@ const books = [
 ];
 
 const initialPaintings = [
-  { src: "/shared_assets/images/IMG_20210208_090255_351.jpg", alt: "Vlad Dracula as a walrus" },
-  { src: "/shared_assets/images/20250111_100225.jpg", alt: "Birth of Venus as walruses" },
-  { src: "/shared_assets/images/IMG_20210217_090313_884.jpg", alt: "Girl with a Pearl Earring as a walrus" },
+  { src: "/images/IMG_20210208_090255_351.jpg", alt: "Vlad Dracula as a walrus" },
+  { src: "/images/20250111_100225.jpg", alt: "Birth of Venus as walruses" },
+  { src: "/images/IMG_20210217_090313_884.jpg", alt: "Girl with a Pearl Earring as a walrus" },
 ];
 
 const extraPaintings = [
-  { src: "/shared_assets/images/20250111_095921.jpg", alt: "Frida Kahlo as a walrus" },
-  { src: "/shared_assets/images/IMG_20210131_221746_948.jpg", alt: "Napoleon as a walrus" },
-  { src: "/shared_assets/images/20250111_100242.jpg", alt: "Son of Man as a walrus" },
+  { src: "/images/20250111_095921.jpg", alt: "Frida Kahlo as a walrus" },
+  { src: "/images/IMG_20210131_221746_948.jpg", alt: "Napoleon as a walrus" },
+  { src: "/images/20250111_100242.jpg", alt: "Son of Man as a walrus" },
 ];
 
 export default function Hobbies() {
