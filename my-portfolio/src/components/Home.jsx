@@ -44,15 +44,15 @@ export default function Home() {
                 </a>
               </p>
             </div>
-            <div className="col-md-6 col-10 mx-auto mx-md-0">
-              <img
-                src="/images/f7ad9720-7002-4c57-8d44-0405b7e00ee2.jpg"
-                alt="Ana's face"
-                className="img-fluid rounded-4 position-relative"
-                loading="lazy"
-                style={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </div>
+            <div className="col-md-6 col-10 mx-auto mx-md-0 text-center">
+  <img
+    src="/images/f7ad9720-7002-4c57-8d44-0405b7e00ee2.jpg"
+    alt="Ana's face"
+    className="face-img"
+    loading="lazy"
+  />
+</div>
+
           </div>
         </div>
       </header>

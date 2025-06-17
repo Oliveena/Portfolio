@@ -1,5 +1,6 @@
 import React from "react";
 import { Grid, Typography, Box } from "@mui/material";
+import { FaLightbulb, FaUsers, FaHeartbeat, FaComments } from "react-icons/fa";
 
 const techSkills = [
   { alt: "AWS Certificate", src: "/images/aws-academy-graduate-aws-academy-cloud-security-foundations.png" },
@@ -15,10 +16,10 @@ const techSkills = [
 ];
 
 const softSkills = [
-  "Efficient problem-solver",
-  "Multicultural approach",
-  "Performs well under pressure",
-  "Balanced communication",
+  { label: "Efficient problem-solver", icon: <FaLightbulb /> },
+  { label: "Multicultural approach", icon: <FaUsers /> },
+  { label: "Performs well under pressure", icon: <FaHeartbeat /> },
+  { label: "Balanced communication", icon: <FaComments /> },
 ];
 
 const languages = [
@@ -64,10 +65,13 @@ export default function Skills() {
         </p>
         <div className="transparent-background-cold py-3">
           <ul className="list-unstyled text-center">
-            {softSkills.map((skill, idx) => (
-              <li key={idx} className="skill my-2">{skill}</li>
-            ))}
-          </ul>
+  {softSkills.map((skill, idx) => (
+    <li key={idx} className="skill my-2 d-flex align-items-center justify-content-center gap-2">
+      <span className="fs-5 text-primary">{skill.icon}</span>
+      <span>{skill.label}</span>
+    </li>
+  ))}
+</ul>
         </div>
       </section>
 

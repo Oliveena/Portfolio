@@ -90,18 +90,48 @@ h1, p {
 }
 
 h3, h5, h6 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   padding: 2%;
   margin: 1%;
 }
 
 h4 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   margin-top: 1vw;
 }
 
 p.legibility {
   text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset input elements */
+input, textarea, select, button {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Reset images */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Reset margins and paddings for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.5;
 }
 
 /*
@@ -156,13 +186,13 @@ h1, p {
 }
 
 h3, h5, h6 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   padding: 2%;
   margin: 1%;
 }
 
 h4 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   margin-top: 1vw;
 }
 
@@ -170,20 +200,37 @@ p.legibility {
   text-rendering: optimizeLegibility;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset input elements */
+input, textarea, select, button {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Reset images */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Reset margins and paddings for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.5;
+}
+
 /*========================== BODY, GRID, other positioning info ==========================*/
-body {
-  font-family: "Raleway", Helvetica, serif-sans;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow-y: auto;
-}
-
-main {
-  flex-grow: 1;
-}
-
 #gradient-background {
   background: linear-gradient(0deg, rgba(186, 113, 254, 0.5), #7d83ff);
 }
@@ -206,6 +253,10 @@ main {
   background-color: rgba(156, 71, 100, 0.5);
 }
 
+.container {
+  background: linear-gradient(0deg, #d8c99b, , );
+}
+
 /*
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v8.4.14,
@@ -258,18 +309,48 @@ h1, p {
 }
 
 h3, h5, h6 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   padding: 2%;
   margin: 1%;
 }
 
 h4 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   margin-top: 1vw;
 }
 
 p.legibility {
   text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset input elements */
+input, textarea, select, button {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Reset images */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Reset margins and paddings for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.5;
 }
 
 /*========================== NAVBAR ==========================*/
@@ -309,6 +390,7 @@ p.legibility {
 .navbar-nav .navbar-item.active {
   color: #7d83ff;
   text-decoration: underline;
+  background-color: #001f3f;
   font-weight: bold;
 }
 .navbar-nav .dropdown-menu {
@@ -394,18 +476,48 @@ h1, p {
 }
 
 h3, h5, h6 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   padding: 2%;
   margin: 1%;
 }
 
 h4 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   margin-top: 1vw;
 }
 
 p.legibility {
   text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset input elements */
+input, textarea, select, button {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Reset images */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Reset margins and paddings for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.5;
 }
 
 /*========================== FOOTER ==========================*/
@@ -549,13 +661,13 @@ h1, p {
 }
 
 h3, h5, h6 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   padding: 2%;
   margin: 1%;
 }
 
 h4 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   margin-top: 1vw;
 }
 
@@ -563,116 +675,109 @@ p.legibility {
   text-rendering: optimizeLegibility;
 }
 
-/*========================== HEADER ==========================*/
-.hero {
-  background: linear-gradient(0deg, rgba(186, 113, 254, 0.5), #7d83ff);
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  height: 100vh;
-  color: #ddfff7;
-  text-shadow: 2px 2px #7d83ff;
-  text-align: center;
-  overflow: hidden;
-}
-.hero #hero-img {
-  position: absolute;
-  -o-object-fit: cover;
-  object-fit: cover;
-  -o-object-position: top;
-  object-position: top;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  filter: blur(5px);
-}
-.hero #hero-text {
-  z-index: 1;
-  position: absolute;
-  margin-top: 15vw;
-  margin-left: 33vw;
-  max-width: 66%;
-  padding: 0.5vw;
-  transform: translateX(-50%);
-  -ms-text-align-last: right;
-  -moz-text-align-last: right;
-  text-align-last: right;
-  z-index: 9;
-  font-family: "RF Dewi", "Raleway", Helvetica, serif-sans, "Raleway", Helvetica, serif-sans;
-}
-.hero #hero-text h1 {
-  font-family: "RF Dewi", "Raleway", Helvetica, serif-sans;
-  font-size: 5vw;
-}
-.hero #hero-text h2 {
-  font-family: "Raleway", Helvetica, serif-sans;
-  font-size: 3vw;
-}
-.hero .button {
-  background-color: #9c4764;
-  border: 2px solid #7d83ff;
-  transition: all 0.3s ease;
-}
-.hero .button:hover {
-  transform: translate(-10deg);
-  box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
-  transform: scale(1.2);
-  overflow: hidden;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-@media screen and (max-width: 768px) {
+/* Reset input elements */
+input, textarea, select, button {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Reset images */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Reset margins and paddings for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/*========================== HEADER ==========================*/
+.hero {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(0deg, rgba(186, 113, 254, 0.5), #7d83ff);
+  color: #ddfff7;
+  text-shadow: 2px 2px #7d83ff;
+  overflow: hidden;
+}
+.hero .hero-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  filter: blur(5px);
+  z-index: 1;
+}
+body.dark-theme .hero .hero-img {
+  display: none;
+}
+.hero .face-img {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  border-radius: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: block;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .hero .face-img {
+    max-width: 180px;
+  }
+}
+.hero .face-img {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  border-radius: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: block;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .hero .face-img {
+    max-width: 180px;
+  }
+}
+.hero #hero-text {
+  font-family: "RF Dewi", "Raleway", Helvetica, sans-serif, "Raleway", Helvetica, serif-sans;
+}
+.hero #hero-text h1 {
+  font-size: 4vw;
+}
+.hero #hero-text h2 {
+  font-size: 2vw;
+}
+@media (max-width: 768px) {
   .hero {
-    height: 80vh;
+    height: auto;
   }
-  #hero-text {
-    margin-top: 20vw;
-    margin-left: 20vw;
-    max-width: 80%;
-    padding: 2vw;
+  .hero #hero-text {
+    text-align: center;
+    margin-top: 2rem;
   }
-  h1 {
+  .hero #hero-text h1 {
     font-size: 6vw;
   }
-  h2 {
+  .hero #hero-text h2 {
     font-size: 4vw;
   }
 }
-@media screen and (max-width: 480px) {
-  .hero {
-    min-height: 30vh;
-  }
-  #hero-text {
-    margin-top: 25vw;
-    margin-left: 10vw;
-    max-width: 90%;
-    padding: 4vw;
-  }
-  h1 {
-    font-size: 8vw;
-  }
-  h2 {
-    font-size: 5vw;
-  }
-}
-@media screen and (max-width: 320px) {
-  .hero {
-    min-height: 30vh;
-  }
-  #hero-text {
-    margin-top: 30vw;
-    margin-left: 5vw;
-    max-width: 95%;
-    padding: 5vw;
-  }
-  h1 {
-    font-size: 10vw;
-  }
-  h2 {
-    font-size: 6vw;
-  }
-}
+
 /*
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v8.4.14,
@@ -731,18 +836,48 @@ h1, p {
 }
 
 h3, h5, h6 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   padding: 2%;
   margin: 1%;
 }
 
 h4 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   margin-top: 1vw;
 }
 
 p.legibility {
   text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset input elements */
+input, textarea, select, button {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Reset images */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Reset margins and paddings for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.5;
 }
 
 /*========================== reset styles for clearing pre-made styles on any page ==========================*/
@@ -751,9 +886,23 @@ p.legibility {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: "Raleway", Helvetica, sans-serif;
+  font-family: "RF Dewi", "Raleway", Helvetica, serif, sans-serif;
   font-size: 100%;
   list-style: none;
+}
+
+body {
+  font-family: "Raleway", Helvetica, sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+main {
+  flex-grow: 1;
+  max-width: 100vw;
 }
 
 /* display a link without lines*/
@@ -839,13 +988,13 @@ h1, p {
 }
 
 h3, h5, h6 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   padding: 2%;
   margin: 1%;
 }
 
 h4 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   margin-top: 1vw;
 }
 
@@ -853,46 +1002,75 @@ p.legibility {
   text-rendering: optimizeLegibility;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset input elements */
+input, textarea, select, button {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Reset images */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Reset margins and paddings for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.5;
+}
+
 /*========================== review carrousel on Welcome page  ==========================*/
 #testimonials {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-#testimonials #reviews-display {
-  margin: 2vw;
-  padding: 2vw;
-  background-color: #150578;
-  border-radius: 15px 50px;
-  box-shadow: 0 4px 8px 0 rgba(86, 136, 199, 0.5), 0 6px 20px 0 rgba(86, 136, 199, 0.75);
-  max-width: 50vw;
-  max-height: auto;
+  background-color: #000;
+  color: #ff69b4;
 }
 #testimonials .review {
-  background-color: #ffffff;
+  background-color: #111;
+  color: #f5c2e7;
+  padding: 1rem;
+  border-radius: 15px 40px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.review {
+  background-color: #ddfff7;
   margin-bottom: 1vw;
   padding: 1vw;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 15px 40px;
 }
-#testimonials .review p {
+.review p {
   font-size: 2vw;
-  color: #5688c7;
+  color: #ddfff7;
   text-shadow: 1px 1px #7d83ff;
   letter-spacing: 0.5vw;
 }
-#testimonials .review p em {
+.review p em {
   font-style: italic;
   line-height: 0.8;
   text-shadow: 1px 0.5px #ba71fe;
 }
-#testimonials .carousel {
+
+.carousel {
   position: relative;
   z-index: 1;
 }
-#testimonials .carousel-control-prev,
-#testimonials .carousel-control-next {
+
+.carousel-control-prev,
+.carousel-control-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -902,22 +1080,24 @@ p.legibility {
   border-radius: 25%;
   padding: 1vw;
 }
-#testimonials .carousel-control-prev {
+
+.carousel-control-prev {
   left: 10px;
 }
-#testimonials .carousel-control-next {
+
+.carousel-control-next {
   right: 10px;
 }
+
 @media (max-width: 768px) {
-  #testimonials .review {
+  .review {
     font-size: 4vw;
   }
-  #testimonials .carousel-control-prev,
-  #testimonials .carousel-control-next {
+  .carousel-control-prev,
+  .carousel-control-next {
     font-size: 1.5rem;
   }
 }
-
 #reviewForm {
   display: flex;
   flex-wrap: wrap;
@@ -966,9 +1146,47 @@ body.bright-theme .carousel-control-next {
   color: #ddfff7;
 }
 
+body.bright-theme {
+  background-color: #ffffff;
+  color: #000000;
+}
+body.bright-theme a, body.bright-theme p, body.bright-theme h1, body.bright-theme h2, body.bright-theme h3, body.bright-theme h4, body.bright-theme h5, body.bright-theme h6, body.bright-theme label {
+  color: #000000;
+}
+body.bright-theme .navbar, body.bright-theme footer {
+  background-color: #f8f9fa;
+  color: #000000;
+}
+body.bright-theme .btn-outline-light {
+  border-color: #000000;
+  color: #000000;
+}
+body.bright-theme .form-control {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ccc;
+}
+
 body.dark-theme {
-  background-color: #121212;
-  color: #f0f0f0;
+  --color-bg: #050509;
+  --color-surface: #101014;
+  --color-text: #e0e0e0;
+  --color-muted-text: #a0a0a0;
+  --color-accent: #7d83ff;
+  --color-accent-hover: #9da2ff;
+  --color-accent-muted: #272a4f;
+  --color-navbar-bg: #111320;
+  --color-navbar-text: #e0e0e0;
+  --color-button-bg: var(--color-accent);
+  --color-button-text: #ffffff;
+  --color-button-border: var(--color-accent-hover);
+}
+body.dark-theme a, body.dark-theme p, body.dark-theme h1, body.dark-theme h2, body.dark-theme h3, body.dark-theme h4, body.dark-theme h5, body.dark-theme h6, body.dark-theme label {
+  color: #e0e0e0;
+}
+body.dark-theme .navbar, body.dark-theme footer {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
 }
 body.dark-theme .navbar-nav {
   background-color: #0c0347;
@@ -1002,6 +1220,49 @@ body.dark-theme .carousel-control-prev,
 body.dark-theme .carousel-control-next {
   background-color: rgba(100, 100, 100, 0.4);
   color: #7d83ff;
+}
+body.dark-theme .btn-outline-light {
+  border-color: #e0e0e0;
+  color: #e0e0e0;
+}
+body.dark-theme .form-control {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar, footer {
+  background-color: var(--color-navbar-bg);
+  color: var(--color-navbar-text);
+}
+.navbar .nav-link, footer .nav-link {
+  color: var(--color-navbar-text);
+}
+.navbar .nav-link:hover, footer .nav-link:hover {
+  color: var(--color-accent);
+}
+
+.btn {
+  background-color: var(--color-button-bg);
+  color: var(--color-button-text);
+  border: 1px solid var(--color-button-border);
+}
+.btn:hover {
+  background-color: var(--color-accent-hover);
+  color: var(--color-button-text);
+}
+
+a {
+  color: var(--color-accent);
+}
+a:hover {
+  color: var(--color-accent-hover);
 }
 
 /*
@@ -1062,18 +1323,48 @@ h1, p {
 }
 
 h3, h5, h6 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   padding: 2%;
   margin: 1%;
 }
 
 h4 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   margin-top: 1vw;
 }
 
 p.legibility {
   text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset input elements */
+input, textarea, select, button {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Reset images */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Reset margins and paddings for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.5;
 }
 
 /*========================== CONTACT ==========================*/
@@ -1086,7 +1377,6 @@ p.legibility {
   color: #7d83ff;
   margin-top: 2vw;
   padding: 2%;
-  border-radius: map-get($border-radius, usual);
 }
 .contact fieldset {
   display: block;
@@ -1124,11 +1414,22 @@ p.legibility {
   background-color: #9c4764;
   border: 2px solid #7d83ff;
   transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .contact .btn:hover {
-  transform: translate(-10deg);
+  transform: scale(1.2);
+  box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
+  overflow: hidden;
+}
+.contact .btn:hover {
+  transform: scale(1.2) translate(-10deg);
   box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
   transform: scale(1.2);
+  overflow: hidden;
+}
+.contact .btn:hover {
+  transform: scale(1.2) translate(-10deg);
+  box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
   overflow: hidden;
 }
 
@@ -1181,7 +1482,6 @@ h2.display-2 {
     padding: 1rem 0;
   }
 }
-/*========================== FEATURED PROJECTS ==========================*/
 /*
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v8.4.14,
@@ -1240,18 +1540,48 @@ h1, p {
 }
 
 h3, h5, h6 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   padding: 2%;
   margin: 1%;
 }
 
 h4 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   margin-top: 1vw;
 }
 
 p.legibility {
   text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset input elements */
+input, textarea, select, button {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Reset images */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Reset margins and paddings for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.5;
 }
 
 /*========================== FEATURED PROJECTS ==========================*/
@@ -1262,9 +1592,9 @@ h3 {
   margin: 2vw;
 }
 
-.row {
+.projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates responsive grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2vw;
 }
 
@@ -1274,7 +1604,6 @@ h3 {
   text-align: center;
   margin: 1rem;
   padding: 1.5rem;
-  /* Card Image */
 }
 .card .card-img-top {
   -o-object-fit: cover;
@@ -1373,18 +1702,48 @@ h1, p {
 }
 
 h3, h5, h6 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   padding: 2%;
   margin: 1%;
 }
 
 h4 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   margin-top: 1vw;
 }
 
 p.legibility {
   text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset input elements */
+input, textarea, select, button {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Reset images */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Reset margins and paddings for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.5;
 }
 
 #soft_skills {
@@ -1409,7 +1768,7 @@ p.legibility {
 }
 #soft_skills .skill {
   font-size: 1.2vw;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem;
   background-color: #ddfff7;
   border-radius: 5%;
   box-shadow: 0 2px 4px rgba(64, 61, 57, 0.3);
@@ -1420,11 +1779,12 @@ p.legibility {
   box-shadow: 0 6px 12px rgba(64, 61, 57, 0.3);
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   #soft_skills {
     padding: 3%;
   }
-  .skill {
+  #soft_skills .skill {
     font-size: 3rem;
   }
 }
@@ -1432,8 +1792,8 @@ p.legibility {
   #soft_skills {
     padding: 4vw;
   }
-  .skill {
-    font-size: 10rem;
+  #soft_skills .skill {
+    font-size: 6rem;
   }
 }
 /*
@@ -1494,13 +1854,13 @@ h1, p {
 }
 
 h3, h5, h6 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   padding: 2%;
   margin: 1%;
 }
 
 h4 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   margin-top: 1vw;
 }
 
@@ -1508,13 +1868,42 @@ p.legibility {
   text-rendering: optimizeLegibility;
 }
 
-/*========================== TECH SKILLS  ==========================*/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset input elements */
+input, textarea, select, button {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Reset images */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Reset margins and paddings for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.5;
+}
+
 .tech_skills {
   background-color: transparent;
   margin-top: 2vw;
 }
 .tech_skills h2, .tech_skills h3 {
-  margin: 0 2vw;
+  margin: 1vw 0;
   color: #ddfff7;
 }
 .tech_skills p {
@@ -1524,117 +1913,99 @@ p.legibility {
   margin-top: 2vw;
 }
 .tech_skills .tech-skills-grid {
-  background-color: transparent;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
   gap: 1vw;
   width: 100%;
   justify-items: center;
-  margin: 3vw;
+  margin-left: auto;
+  margin-right: auto;
   box-sizing: border-box;
+  display: -ms-grid;
+  -ms-grid-columns: 1fr 1vw 1fr 1vw 1fr;
+  -ms-grid-rows: auto;
+  /* IE11 grid positioning - optional */
+  /*
+  > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  > *:nth-child(3) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+  }
+  */
 }
 .tech_skills .tech-skills-grid .tech-skill {
-  display: block;
   width: 100%;
-  height: auto;
-  -o-object-fit: contain;
-  object-fit: contain;
-  max-width: 10vw;
+  max-width: clamp(80px, 10vw, 140px);
   max-height: 10vw;
+  -o-object-fit: contain;
+     object-fit: contain;
   border-radius: 10%;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.5s ease;
   background-color: transparent;
   margin: 1vw;
+  transition: transform 0.2s ease, box-shadow 0.5s ease;
 }
 .tech_skills .tech-skills-grid .tech-skill:hover {
-  transform: translate(-10deg);
+  transform: translate(-10deg) scale(1.2);
   box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
-  transform: scale(1.2);
-  overflow: hidden;
-}
-.tech_skills .tech-skills-grid > *:nth-child(1) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-}
-.tech_skills .tech-skills-grid > *:nth-child(2) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
-}
-.tech_skills .tech-skills-grid > *:nth-child(3) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 5;
 }
 .tech_skills .portfolio {
   display: inline-block;
   width: 15vw;
-  height: auto;
   -o-object-fit: contain;
-  object-fit: contain;
-  transition: transform 0.2s ease, box-shadow 0.5s ease;
-  background-color: transparent;
+     object-fit: contain;
   margin: 0.5vw;
+  background-color: transparent;
+  transition: transform 0.2s ease, box-shadow 0.5s ease;
 }
 .tech_skills .portfolio:hover {
-  transform: translate(-10deg);
+  transform: translate(-10deg) scale(1.2);
   box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
-  transform: scale(1.2);
   overflow: hidden;
 }
 
-/* ============================ RESPONSIVE LAYOUT ============================ */
-/* Large screens (Desktop - 3 columns)*/
+/* Responsive Layout */
+/* Large screens (Desktop - 3 columns) */
 @media (min-width: 1024px) {
-  .tech-skills-grid {
+  .tech_skills .tech-skills-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  .tech-skills-grid .tech-skill {
+  .tech_skills .tech-skills-grid .tech-skill {
     max-width: 10vw;
   }
 }
-/*Medium screens (Tablets - 2 columns) */
-@media screen and (max-width: 768px) {
-  .tech-skills-grid {
+/* Medium screens (Tablets - 2 columns) */
+@media (max-width: 768px) {
+  .tech_skills .tech-skills-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2vw;
     margin: 2vw;
   }
-  .tech-skill {
+  .tech_skills .tech-skills-grid .tech-skill {
+    max-width: 12vw;
     margin: 2vw 0;
   }
-  .tech-skill .tech-skill {
-    max-width: 12vw;
-  }
 }
-@media screen and (max-width: 480px) {
-  .tech-skills-grid {
+/* Small screens (Mobile - 1 column) */
+@media (max-width: 480px) {
+  .tech_skills .tech-skills-grid {
     grid-template-columns: 1fr;
-    margin: 1vw;
     gap: 1.5vw;
+    margin: 1vw;
+    -ms-grid-columns: 1fr;
   }
-  .tech-skill {
+  .tech_skills .tech-skills-grid .tech-skill {
+    max-width: 30vw;
     margin: 1vw 0;
   }
-  .tech-skill .tech-skill {
-    max-width: 30vw;
-  }
 }
-.tech_skills {
-  background-color: transparent;
-  margin-top: 2vw;
-}
-.tech_skills h2, .tech_skills h3 {
-  margin: 1vw 0vw;
-  color: #ddfff7;
-}
-.tech_skills p {
-  color: #ddfff7;
-  padding: 1.2vw;
-  font-size: 1.5vw;
-  margin-top: 2vw;
-}
-
 /*
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v8.4.14,
@@ -1693,13 +2064,13 @@ h1, p {
 }
 
 h3, h5, h6 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   padding: 2%;
   margin: 1%;
 }
 
 h4 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   margin-top: 1vw;
 }
 
@@ -1707,15 +2078,57 @@ p.legibility {
   text-rendering: optimizeLegibility;
 }
 
-/*========================== WELCOME ==========================*/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset input elements */
+input, textarea, select, button {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Reset images */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Reset margins and paddings for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.5;
+}
+
 .welcome {
   display: flex;
   align-items: center;
   justify-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background: linear-gradient(0deg, rgba(186, 113, 254, 0.5), #7d83ff);
   position: relative;
   width: 100%;
   height: 30vh;
+  transition: all 0.3s ease-in-out;
+}
+.welcome .welcome.hero {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+  background: linear-gradient(0deg, rgba(186, 113, 254, 0.5), #7d83ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .welcome #download_text {
   text-align: center;
@@ -1729,22 +2142,22 @@ p.legibility {
   width: 100%;
   max-width: 30vw;
   margin-right: 10vw;
-  transition: all 0.3s ease-in-out;
-  /* I couldn't override the Bootstrap style directly with the @media*/
 }
 .welcome .cv_download a:hover {
   border: 1px solid rgba(221, 255, 247, 0.5);
   -webkit-text-decoration: dotted;
-  text-decoration: dotted;
+          text-decoration: dotted;
   color: rgba(186, 113, 254, 0.5);
 }
-.welcome .cv_download .cv_download .btn {
+.welcome .cv_download .btn {
   background-color: #9c4764;
   border: 2px solid #7d83ff;
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
+/* Responsive tweaks */
 @media screen and (max-width: 768px) {
   .welcome {
     flex-direction: column;
@@ -1835,18 +2248,48 @@ h1, p {
 }
 
 h3, h5, h6 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   padding: 2%;
   margin: 1%;
 }
 
 h4 {
-  font-family: "Raleway", Helvetica, serif-sans;
+  font-family: "Raleway", Helvetica, sans-serif;
   margin-top: 1vw;
 }
 
 p.legibility {
   text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset input elements */
+input, textarea, select, button {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Reset images */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Reset margins and paddings for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.5;
 }
 
 /*========================== HOBBIES ==========================*/
@@ -1866,7 +2309,7 @@ h3 {
 p {
   color: #ddfff7;
   padding: 1.2vw;
-  font-size: 1.5vw;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
   margin-top: 2vw;
 }
 
@@ -1880,12 +2323,11 @@ section {
 section ul {
   list-style: none;
   padding-left: 0;
-  margin: 0;
+  margin: 1vw 0 0 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   justify-items: center;
-  margin: 1vw;
 }
 section ul li {
   font-size: 1.2vw;
@@ -1902,30 +2344,30 @@ section ul li:hover {
 }
 
 #panel {
-  padding: 5px;
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
   text-align: center;
   background-color: #5688c7;
-  border: solid 1px #150578;
-  padding: 50px;
+  border: 1px solid #150578;
   display: none;
 }
 
 table,
 th,
 td {
-  text-align: left;
   width: 50vw;
   margin: 2vw auto;
   border-collapse: collapse;
   border: 1px solid #5688c7;
   background-color: #ddfff7;
-  border-collapse: collapse;
   padding: 1vw;
+  text-align: left;
 }
 
 th {
-  text-align: center;
   background-color: #5688c7;
+  text-align: center;
 }
 
 .form-container {
@@ -1933,12 +2375,30 @@ th {
 }
 
 .book-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 2vw;
+  margin: 2rem auto;
   background-color: #ddfff7;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 2vw;
-  padding: 1vw;
-  justify-content: space-evenly;
+  max-width: 1000px;
+}
+
+.book-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.books .panel img {
+  max-width: 150px;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-desc {
+  color: #150578 !important;
 }
 
 .book {
@@ -1956,30 +2416,26 @@ th {
   box-sizing: border-box;
   box-shadow: 2px 2px #7d83ff;
 }
-
 .book img {
   width: 100%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 .book h3 {
   font-size: 1.4em;
   margin-bottom: 1vw;
 }
-
 .book p {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
   margin-bottom: 1vw;
 }
-
 .book a {
   display: block;
   font-size: 0.8em;
   color: #150578;
   text-decoration: none;
 }
-
 .book a:hover {
   text-decoration: underline;
 }
@@ -2011,98 +2467,33 @@ th {
 }
 .watercolor-art-gallery button:hover {
   background-color: #f57daa;
-  transform: translate(-10deg);
+  transform: scale(1.2) translate(-10deg);
   box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
-  transform: scale(1.2);
   overflow: hidden;
 }
 
-/*
-.image-container{
-  position:relative;
-  width:200px;
-  height:200px;
-  transform-style: preserve-3d;
-  transform: perspective(1000px) rotateY(0deg);
-  transition: transform 0.7s;
-}
-.image-container span{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
-}
-.image-container span img{
-  position:absolute;
-  left:0;
-  top:0;
-  width:100%;
-  border-radius: 5px;
-}
-.btn-container{
-  position:relative;
-  width:80%;
+.paintings img {
+  filter: grayscale(70%);
+  transition: all 0.3s ease-in-out;
 }
 
-.btn{
-  position: absolute;
-  bottom:-80px;
-  background-color: orangered;
-  color:white;
-  padding:10px 20px;
-  border-radius: 5px;
-  border:none;
-  cursor: pointer;
-}
-.btn:hover{
-  filter:brightness(1.5);
-}
-#prev{
-  left:20%;
-}
-#next{
-  right:20%;
-}*/
-/*================= THEME STYLES =================*/
-body.dark-theme {
-  background-color: green !important;
-  color: #e0e0e0;
-}
-body.dark-theme a, body.dark-theme p, body.dark-theme h1, body.dark-theme h2, body.dark-theme h3, body.dark-theme h4, body.dark-theme h5, body.dark-theme h6, body.dark-theme label {
-  color: #e0e0e0;
-}
-body.dark-theme .navbar, body.dark-theme footer {
-  background-color: #1a1a1a;
-  color: #e0e0e0;
-}
-body.dark-theme .btn-outline-light {
-  border-color: #e0e0e0;
-  color: #e0e0e0;
-}
-body.dark-theme .form-control {
-  background-color: #2a2a2a;
-  color: #e0e0e0;
-  border: 1px solid #444;
+.paintings img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
 }
 
-body.bright-theme {
-  background-color: #ffffff;
-  color: #000000;
+@media screen and (max-width: 768px) {
+  section ul {
+    grid-template-columns: 1fr;
+  }
+  section ul li {
+    font-size: 1rem;
+    width: 90%;
+  }
 }
-body.bright-theme a, body.bright-theme p, body.bright-theme h1, body.bright-theme h2, body.bright-theme h3, body.bright-theme h4, body.bright-theme h5, body.bright-theme h6, body.bright-theme label {
-  color: #000000;
-}
-body.bright-theme .navbar, body.bright-theme footer {
-  background-color: #f8f9fa;
-  color: #000000;
-}
-body.bright-theme .btn-outline-light {
-  border-color: #000000;
-  color: #000000;
-}
-body.bright-theme .form-control {
-  background-color: #ffffff;
-  color: #000000;
-  border: 1px solid #ccc;
+@media screen and (max-width: 576px) {
+  .book {
+    width: 100%;
+    max-height: none;
+  }
 }/*# sourceMappingURL=main.css.map */

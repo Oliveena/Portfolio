@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function ReviewCarousel({ onSubmit }) {
   const [reviews, setReviews] = useState([
@@ -13,6 +13,14 @@ export default function ReviewCarousel({ onSubmit }) {
   const [reviewText, setReviewText] = useState('');
   const [reviewName, setReviewName] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % reviews.length);
+    }, 6000); // rotates every 6 seconds
+
+    return () => clearInterval(interval); // cleanup on unmount
+  }, [reviews.length]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,7 +48,7 @@ export default function ReviewCarousel({ onSubmit }) {
     setReviews([...reviews, newReview]);
     setReviewText('');
     setReviewName('');
-    setCurrentIndex(reviews.length);
+    setCurrentIndex(reviews.length); // show the new review
 
     if (onSubmit) onSubmit(newReview);
   };

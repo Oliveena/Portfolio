@@ -8,6 +8,8 @@ import {
   TableRow,
   Paper
 } from "@mui/material";
+import BookTable from "./BookTable";
+import BookSearch from "./BookSearch";
 
 const books = [
   {
@@ -52,27 +54,79 @@ const extraPaintings = [
 
 export default function Hobbies() {
 
-   // Suggested books state
+   // state of suggested books
   const [suggestedBooks, setSuggestedBooks] = useState(initialSuggestedBooks);
 
-  // Controlled inputs for the form
+  <ul className="books list-unstyled">
+  {books.map((book, idx) => (
+    <li key={idx} className="flip my-3">
+      <strong>"{book.title}"</strong> by {book.author}
+      <div className="panel mt-2 d-flex flex-column align-items-center text-start">
+        {book.cover && (
+          <img
+            src={book.cover}
+            alt={`Cover of ${book.title}`}
+            className="mb-2 rounded shadow-sm"
+            style={{ maxWidth: "150px", height: "auto" }}
+          />
+        )}
+        <p>{book.review}</p>
+      </div>
+    </li>
+  ))}
+</ul>
+
+
+  // controlling inputs from form
   const [newTitle, setNewTitle] = useState("");
   const [newAuthor, setNewAuthor] = useState("");
 
-  // Form submit handler
+  // handling a book suggestion
   const handleAddBook = (e) => {
-    e.preventDefault();
-    if (!newTitle.trim() || !newAuthor.trim()) return;
+  e.preventDefault();
 
-    setSuggestedBooks([
-      ...suggestedBooks,
-      { title: newTitle.trim(), author: newAuthor.trim(), reason: "User suggested" },
-    ]);
+  // Trim user input
+  const title = newTitle.trim();
+  const author = newAuthor.trim();
 
-    // Clear inputs
+  // allowing an empty input
+  if (!title && !author) {
     setNewTitle("");
     setNewAuthor("");
-  };
+    return;
+  }
+
+  // Validation
+  const textRegex = /^[A-Za-z0-9\s.,'-]+$/;
+
+  if (title && !textRegex.test(title)) {
+    alert("Book title may contain letters, numbers, spaces, commas, periods, and hyphens.");
+    return;
+  }
+
+  if (author && !textRegex.test(author)) {
+    alert("Author name may contain letters, numbers, spaces, commas, periods, and hyphens.");
+    return;
+  }
+
+  // Save to state
+  setSuggestedBooks((prevBooks) => [
+    ...prevBooks,
+    { title, author, reason: "User suggested" },
+  ]);
+
+  // Save to localStorage
+  localStorage.setItem("bookTitle", title);
+  localStorage.setItem("bookAuthor", author);
+
+  // Clear form
+  setNewTitle("");
+  setNewAuthor("");
+
+  // Feedback
+  alert("Thank you for suggesting a book! We appreciate your input.");
+};
+
 
   const [showMorePaintings, setShowMorePaintings] = useState(false);
 
@@ -81,8 +135,8 @@ export default function Hobbies() {
     <div id="content">
       {/* =============== READING REVIEWS =============== */}
       <section className="reading-reviews text-center py-5">
-        <h3>Reading Reviews</h3>
         <div className="transparent-background-warm p-4">
+          <h3>Reading Reviews</h3>
           <p>Ana has always been an avid reader. Here are some recent reads.</p>
           <ul className="books list-unstyled">
             {books.map((book, idx) => (
@@ -94,99 +148,25 @@ export default function Hobbies() {
           </ul>
 
           {/* Suggested Books Section */}
-          <div className="suggested-books mt-4">
-            <p>Books recommended by users</p>
-            <TableContainer
-  component={Paper}
-  sx={{
-    maxWidth: 600,
-    margin: "0 auto",
-    boxShadow: "none",
-    backgroundColor: "transparent",
-  }}
->
-              <Table aria-label="suggested books table" size="small">
-                <TableHead>
-                  <TableRow>
-                    <TableCell><strong>Title</strong></TableCell>
-                    <TableCell><strong>Author</strong></TableCell>
-                    <TableCell><strong>Reason</strong></TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {suggestedBooks.map((book, idx) => (
-                    <TableRow key={idx}>
-                      <TableCell>{book.title}</TableCell>
-                      <TableCell>{book.author}</TableCell>
-                      <TableCell>{book.reason}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
-          </div>
-
-          {/* Book Suggestion Form */}
-          <fieldset className="border p-4 rounded mt-4 contact">
-            <p>Would you like to suggest a book?</p>
-            <form
-              className="mx-auto"
-              style={{ maxWidth: "500px" }}
-              onSubmit={handleAddBook}
-            >
-              <div className="mb-3">
-                <label htmlFor="bookTitle" className="form-label">
-                  Book Title
-                </label>
-                <input
-                  type="text"
-                  id="bookTitle"
-                  className="form-control"
-                  value={newTitle}
-                  onChange={(e) => setNewTitle(e.target.value)}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="bookAuthor" className="form-label">
-                  Author
-                </label>
-                <input
-                  type="text"
-                  id="bookAuthor"
-                  className="form-control"
-                  value={newAuthor}
-                  onChange={(e) => setNewAuthor(e.target.value)}
-                />
-              </div>
-              <div className="text-center">
-                <button type="submit" className="btn btn-primary w-75">
-                  Add Book
-                </button>
-              </div>
-            </form>
-          </fieldset>
+         <div className="container my-4">
+  <BookTable />
+</div>
 
           {/* Google Book Search */}
-          <fieldset className="border p-4 rounded mt-4 contact">
-            <p>Searching for a book? Try Google Books API!</p>
-            <div className="mb-3">
-              <label htmlFor="search" className="form-label">Enter Book Title</label>
-              <input type="text" id="search" className="form-control" />
-            </div>
-            <div className="text-center">
-              <button type="button" className="btn btn-primary w-100">Search</button>
-            </div>
-            <div className="book-container mt-4" id="bookResults">{/* Results here */}</div>
-          </fieldset>
+<div className="container my-4">
+  <BookSearch />
+</div>
         </div>
       </section>
 
       {/* =============== WATERCOLOR GALLERY =============== */}
       <section className="watercolor-art-gallery py-5">
-        <h3 className="text-center">Watercolor Painting</h3>
+        
         <div className="transparent-background-cold p-4">
+          <h3 className="text-center">Watercolor Painting</h3>
           <p className="text-center">
-            Painting is very relaxing.<br />Here are some of my recent works.
+            Painting is very relaxing.<br />Here are some of my recent works.<br />
+            Hover over them!
           </p>
 
           <div className="row row-cols-sm-2 row-cols-md-3 g-4 paintings">
@@ -221,11 +201,11 @@ export default function Hobbies() {
             )}
           </div>
 
-          <div className="text-center mt-4">
+          {/* <div className="text-center mt-4">
             <p>For more art, see my gallery</p>
             <button className="btn btn-primary">Visit Gallery</button>
-          </div>
-        </div>
+          </div> */}
+        </div> 
       </section>
     </div>
   );

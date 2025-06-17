@@ -31,7 +31,7 @@ p {
 }
 
 section {
-  @include flexbox; // Assuming sets flex, align-items, justify-content, etc.
+  @include flexbox; 
   flex-direction: column;
   margin-top: $margin-top;
   color: map-get($colors, off-white);
@@ -41,7 +41,7 @@ section {
     padding-left: 0;
     margin: 1vw 0 0 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); // default: 2 columns
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     justify-items: center;
 
@@ -95,12 +95,30 @@ th {
 }
 
 .book-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 2vw;
+  margin: 2rem auto;
   background-color: map-get($colors, eggshell);
-  display: flex;
-  flex-wrap: wrap;
-  margin: 2vw;
-  padding: 1vw;
-  justify-content: space-evenly;
+  max-width: 1000px;
+}
+
+.book-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.books .panel img {
+  max-width: 150px;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.book-desc {
+  color: map-get($colors, navy-blue) !important;
 }
 
 .book {
@@ -132,6 +150,7 @@ th {
   p {
     font-size: clamp(1rem, 1.5vw, 1.3rem);
     margin-bottom: 1vw;
+    color: map-get($colors, black);
   }
 
   a {
@@ -186,6 +205,17 @@ th {
   }
 }
 
+.paintings img {
+  filter: grayscale(70%);
+  transition: all 0.3s ease-in-out;
+}
+
+.paintings img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+
 @media screen and (max-width: 768px) {
   section ul {
     grid-template-columns: 1fr; 
@@ -194,5 +224,12 @@ th {
   section ul li {
     font-size: 1rem; 
     width: 90%; 
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .book {
+    width: 100%;
+    max-height: none;
   }
 }
