@@ -211,7 +211,6 @@ https://favicon.io/favicon-converter/ for favicons
 https://bioub.github.io/dom-visualizer/ for DOM tree visualization 
 
 
-
 ```
 TARASSOVA_Anastassia_Portfolio_final_to_be_continued
 ├─ .idea
@@ -227,12 +226,21 @@ TARASSOVA_Anastassia_Portfolio_final_to_be_continued
 │     └─ main.css.map
 ├─ my-portfolio
 │  ├─ .next
-│  │  ├─ app-build-manifest.json
-│  │  ├─ build-manifest.json
 │  │  ├─ cache
 │  │  │  ├─ .rscinfo
 │  │  │  ├─ eslint
 │  │  │  │  └─ .cache_wj3d1e
+│  │  │  ├─ images
+│  │  │  │  ├─ cUwdh0VVVwBDOZwNg8gj2n8ZvxyUiPhOAfHyOg2oNe0
+│  │  │  │  │  └─ 60.1750104103558.ppbZA7u97jUn8nWjloCZqDfCEmJYukQFiEG155s02Ls.Vy8iMTVhNDItMTk3MDc3OTA3Mzgi.webp
+│  │  │  │  ├─ I0uU3gfVVXr1YTrVbDvr8YW8TRpeSVRC-SI78MqAoBE
+│  │  │  │  │  └─ 60.1750101936362.U583z3hINgTqrHg0Jf8KWG2VaBMuQEAtrFq8U2qvt7k.Vy8iMWFhZGUtMTk3MDc3OTA3NGEi.webp
+│  │  │  │  ├─ nUf32ht6n0Fh6JsvgJTpGETbOHCS1KpLy-KqP6ZE9vg
+│  │  │  │  │  └─ 60.1750104103557.sNOMMzdU6foED8E14vyxuw1jJTNKBD9krjlSkOHdVpQ.Vy8iMWFhZGUtMTk3MDc3OTA3NGEi.webp
+│  │  │  │  ├─ VOPLsoZUZPPwDZ8sQCcGBOv2czjPoyA2T30UN1fKfrM
+│  │  │  │  │  └─ 60.1750101938176.WijRsLGImdyNWR4ICX72qdbjIn7BqHZyYRi3zBDNngs.Vy8iMWFhZGUtMTk3MDc3OTA3NGEi.webp
+│  │  │  │  └─ zMvydjMwiJxI8RGlHo0RAUv-YqY8U_svICThCijMhBk
+│  │  │  │     └─ 60.1750100354038.NpQdQNbILVKw704vxAs9eMkjnvqzdXIM43LonhPASS0.Vy8iMWFhZGUtMTk3MDc3OTA3NGEi.webp
 │  │  │  ├─ swc
 │  │  │  │  └─ plugins
 │  │  │  │     └─ v7_windows_x86_64_9.0.0
@@ -240,6 +248,9 @@ TARASSOVA_Anastassia_Portfolio_final_to_be_continued
 │  │  │     ├─ client-development
 │  │  │     │  ├─ 0.pack.gz
 │  │  │     │  ├─ 1.pack.gz
+│  │  │     │  ├─ 10.pack.gz
+│  │  │     │  ├─ 11.pack.gz
+│  │  │     │  ├─ 12.pack.gz
 │  │  │     │  ├─ 2.pack.gz
 │  │  │     │  ├─ 3.pack.gz
 │  │  │     │  ├─ 4.pack.gz
@@ -262,7 +273,15 @@ TARASSOVA_Anastassia_Portfolio_final_to_be_continued
 │  │  │     │  ├─ 16.pack
 │  │  │     │  ├─ 17.pack
 │  │  │     │  ├─ 18.pack
+│  │  │     │  ├─ 19.pack
 │  │  │     │  ├─ 2.pack
+│  │  │     │  ├─ 20.pack
+│  │  │     │  ├─ 21.pack
+│  │  │     │  ├─ 22.pack
+│  │  │     │  ├─ 23.pack
+│  │  │     │  ├─ 24.pack
+│  │  │     │  ├─ 25.pack
+│  │  │     │  ├─ 26.pack
 │  │  │     │  ├─ 3.pack
 │  │  │     │  ├─ 4.pack
 │  │  │     │  ├─ 5.pack
@@ -278,6 +297,10 @@ TARASSOVA_Anastassia_Portfolio_final_to_be_continued
 │  │  │     ├─ server-development
 │  │  │     │  ├─ 0.pack.gz
 │  │  │     │  ├─ 1.pack.gz
+│  │  │     │  ├─ 10.pack.gz
+│  │  │     │  ├─ 11.pack.gz
+│  │  │     │  ├─ 12.pack.gz
+│  │  │     │  ├─ 13.pack.gz
 │  │  │     │  ├─ 2.pack.gz
 │  │  │     │  ├─ 3.pack.gz
 │  │  │     │  ├─ 4.pack.gz
@@ -285,6 +308,7 @@ TARASSOVA_Anastassia_Portfolio_final_to_be_continued
 │  │  │     │  ├─ 6.pack.gz
 │  │  │     │  ├─ 7.pack.gz
 │  │  │     │  ├─ 8.pack.gz
+│  │  │     │  ├─ 9.pack.gz
 │  │  │     │  ├─ index.pack.gz
 │  │  │     │  └─ index.pack.gz.old
 │  │  │     └─ server-production
@@ -298,7 +322,18 @@ TARASSOVA_Anastassia_Portfolio_final_to_be_continued
 │  │  │        ├─ 15.pack
 │  │  │        ├─ 16.pack
 │  │  │        ├─ 17.pack
+│  │  │        ├─ 18.pack
+│  │  │        ├─ 19.pack
 │  │  │        ├─ 2.pack
+│  │  │        ├─ 20.pack
+│  │  │        ├─ 21.pack
+│  │  │        ├─ 22.pack
+│  │  │        ├─ 23.pack
+│  │  │        ├─ 24.pack
+│  │  │        ├─ 25.pack
+│  │  │        ├─ 26.pack
+│  │  │        ├─ 27.pack
+│  │  │        ├─ 28.pack
 │  │  │        ├─ 3.pack
 │  │  │        ├─ 4.pack
 │  │  │        ├─ 5.pack
@@ -312,30 +347,26 @@ TARASSOVA_Anastassia_Portfolio_final_to_be_continued
 │  │  │  ├─ build-diagnostics.json
 │  │  │  └─ framework.json
 │  │  ├─ package.json
-│  │  ├─ react-loadable-manifest.json
 │  │  ├─ server
 │  │  │  ├─ app
+│  │  │  │  ├─ EN
+│  │  │  │  │  └─ contact
+│  │  │  │  │     ├─ page.js
+│  │  │  │  │     └─ page.js.nft.json
 │  │  │  │  ├─ favicon.ico
 │  │  │  │  │  ├─ route.js
 │  │  │  │  │  └─ route.js.nft.json
 │  │  │  │  ├─ page.js
 │  │  │  │  ├─ page.js.nft.json
-│  │  │  │  ├─ page_client-reference-manifest.js
 │  │  │  │  └─ _not-found
 │  │  │  │     ├─ page.js
-│  │  │  │     ├─ page.js.nft.json
-│  │  │  │     └─ page_client-reference-manifest.js
+│  │  │  │     └─ page.js.nft.json
 │  │  │  ├─ app-paths-manifest.json
 │  │  │  ├─ chunks
 │  │  │  │  ├─ 447.js
 │  │  │  │  ├─ 548.js
-│  │  │  │  └─ 845.js
-│  │  │  ├─ interception-route-rewrite-manifest.js
-│  │  │  ├─ middleware-build-manifest.js
-│  │  │  ├─ middleware-manifest.json
-│  │  │  ├─ middleware-react-loadable-manifest.js
-│  │  │  ├─ next-font-manifest.js
-│  │  │  ├─ next-font-manifest.json
+│  │  │  │  ├─ 658.js
+│  │  │  │  └─ 772.js
 │  │  │  ├─ pages
 │  │  │  │  ├─ _app.js
 │  │  │  │  ├─ _app.js.nft.json
@@ -347,43 +378,12 @@ TARASSOVA_Anastassia_Portfolio_final_to_be_continued
 │  │  │  ├─ server-reference-manifest.js
 │  │  │  ├─ server-reference-manifest.json
 │  │  │  └─ webpack-runtime.js
-│  │  ├─ static
-│  │  │  ├─ 7ZUr9mEBV8zcdU3Qlvux4
-│  │  │  │  ├─ _buildManifest.js
-│  │  │  │  └─ _ssgManifest.js
-│  │  │  ├─ chunks
-│  │  │  │  ├─ 244-36abde0648f05c4c.js
-│  │  │  │  ├─ 341.df3329d77a5faa19.js
-│  │  │  │  ├─ 472.a3826d29d6854395.js
-│  │  │  │  ├─ 4bd1b696-52a6696c08e3276c.js
-│  │  │  │  ├─ 684-3451d1d2d29a3ed1.js
-│  │  │  │  ├─ 766-6e9d2b5a1771aeb3.js
-│  │  │  │  ├─ app
-│  │  │  │  │  ├─ layout-f51ec2dcac435ef2.js
-│  │  │  │  │  ├─ page-689c69f00209e411.js
-│  │  │  │  │  └─ _not-found
-│  │  │  │  │     └─ page-20ae41a38f97a4ba.js
-│  │  │  │  ├─ framework-f593a28cde54158e.js
-│  │  │  │  ├─ main-1a89dd1cd3e7d40b.js
-│  │  │  │  ├─ main-app-c48d2a8f5606956d.js
-│  │  │  │  ├─ pages
-│  │  │  │  │  ├─ _app-92f2aae776f86b9c.js
-│  │  │  │  │  └─ _error-71d2b6a7b832d02a.js
-│  │  │  │  ├─ polyfills-42372ed130431b0a.js
-│  │  │  │  └─ webpack-22473ab22b735b52.js
-│  │  │  ├─ css
-│  │  │  │  ├─ 57c0264e2722c196.css
-│  │  │  │  └─ f30152c0704fba31.css
-│  │  │  └─ media
-│  │  │     ├─ 569ce4b8f30dc480-s.p.woff2
-│  │  │     ├─ 747892c23ea88013-s.woff2
-│  │  │     ├─ 8d697b304b401681-s.woff2
-│  │  │     ├─ 93f479601ee12b01-s.p.woff2
-│  │  │     ├─ 9610d9e46709d722-s.woff2
-│  │  │     └─ ba015fad6dcf6784-s.woff2
 │  │  ├─ trace
 │  │  └─ types
 │  │     ├─ app
+│  │     │  ├─ EN
+│  │     │  │  └─ contact
+│  │     │  │     └─ page.ts
 │  │     │  ├─ layout.ts
 │  │     │  └─ page.ts
 │  │     ├─ cache-life.d.ts
@@ -459,35 +459,20 @@ TARASSOVA_Anastassia_Portfolio_final_to_be_continued
 │  │  │     ├─ 20250102_201236.jpg
 │  │  │     └─ 20250108_221350.jpg
 │  │  ├─ next.svg
-│  │  ├─ scss
-│  │  │  ├─ main.scss
-│  │  │  ├─ styling
-│  │  │  │  ├─ _footer.scss
-│  │  │  │  ├─ _grid.scss
-│  │  │  │  ├─ _header.scss
-│  │  │  │  ├─ _navbar.scss
-│  │  │  │  ├─ _reset.scss
-│  │  │  │  └─ _review_caroussel.scss
-│  │  │  ├─ themes
-│  │  │  │  ├─ _bright.scss
-│  │  │  │  └─ _dark.scss
-│  │  │  ├─ webpages
-│  │  │  │  ├─ _contact.scss
-│  │  │  │  ├─ _featured_projects.scss
-│  │  │  │  ├─ _hobbies.scss
-│  │  │  │  ├─ _soft_skills.scss
-│  │  │  │  ├─ _tech_skills.scss
-│  │  │  │  └─ _welcome.scss
-│  │  │  ├─ _fonts.scss
-│  │  │  ├─ _mixins.scss
-│  │  │  └─ _variables.scss
 │  │  ├─ vercel.svg
 │  │  └─ window.svg
 │  ├─ README.md
 │  ├─ src
 │  │  ├─ app
 │  │  │  ├─ EN
-│  │  │  │  └─ contact.jsx
+│  │  │  │  ├─ contact
+│  │  │  │  │  └─ page.jsx
+│  │  │  │  ├─ featuredProjects
+│  │  │  │  │  └─ FeaturedProjects.jsx
+│  │  │  │  ├─ hobbies
+│  │  │  │  │  └─ Hobbies.jsx
+│  │  │  │  └─ skills
+│  │  │  │     └─ Skills.jsx
 │  │  │  ├─ favicon.ico
 │  │  │  ├─ index.js
 │  │  │  ├─ layout.js
@@ -498,22 +483,23 @@ TARASSOVA_Anastassia_Portfolio_final_to_be_continued
 │  │  │  ├─ Footer.jsx
 │  │  │  ├─ Form.jsx
 │  │  │  ├─ MetaTags.jsx
+│  │  │  ├─ Modal.jsx
 │  │  │  ├─ Navbar.jsx
 │  │  │  ├─ ProjectCard.jsx
+│  │  │  ├─ ReviewCarousel.jsx
 │  │  │  └─ ThemeToggle.jsx
 │  │  └─ hooks
-│  │     └─ NavbarHighlight.jsx
+│  │     ├─ NavbarHighlight.jsx
+│  │     └─ useDownloadModal.jsx
 │  └─ styles
-│     ├─ componentsStyles
+│     ├─ main.scss
+│     ├─ styling
 │     │  ├─ _footer.scss
 │     │  ├─ _grid.scss
 │     │  ├─ _header.scss
 │     │  ├─ _navbar.scss
 │     │  ├─ _reset.scss
 │     │  └─ _review_caroussel.scss
-│     ├─ main.css
-│     ├─ main.css.map
-│     ├─ main.scss
 │     ├─ themes
 │     │  ├─ _bright.scss
 │     │  └─ _dark.scss

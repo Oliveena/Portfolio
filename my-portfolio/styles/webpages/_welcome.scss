@@ -26,7 +26,7 @@ $gradient-end: map-get($colors, lilac);
 
  .welcome.hero {
   position: relative;
-  width: 100vw;      
+  width: 100vw;
   overflow: hidden;
   background: linear-gradient(0deg, $gradient-start, $gradient-end);
   display: flex;

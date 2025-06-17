@@ -4,32 +4,30 @@
 
 
 /*========================== review carrousel on Welcome page  ==========================*/
-
 #testimonials {
-    @include flexbox;
-    flex-direction: column;
-// container
-    #reviews-display {
-        margin: 2vw;
-        padding: 2vw;
-        background-color: map-get($colors, navy-blue);
-        border-radius: $asymetric;
-        box-shadow: $shadow;
-        max-width: 50vw;
-        max-height: auto;
-    }
+  background-color: #000;
+  color: #ff69b4;
+
+  .review {
+    background-color: #111;
+    color: #f5c2e7;
+    padding: 1rem;
+    border-radius: 15px 40px;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+  }
+}
 
 //review itself 
     .review {
-        background-color: #ffffff;
+        background-color: map-get($map: $colors, $key: eggshell);
         margin-bottom: 1vw;
         padding: 1vw;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        border-radius: 15px 40px; // repeated $asymetric looked strange
+        border-radius: 15px 40px; 
 
         p {
             font-size: 2vw;
-            color: map-get($colors, light-blue);
+            color: map-get($colors, eggshell);
             text-shadow: 1px 1px map-get($colors, lilac);
             letter-spacing: 0.5vw;
 
@@ -82,7 +80,6 @@
             font-size: 1.5rem;
         }
     }
-}
 
 #reviewForm {
     @include basic-flexbox;

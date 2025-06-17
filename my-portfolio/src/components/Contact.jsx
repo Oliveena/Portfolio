@@ -1,3 +1,5 @@
+"use client";
+
 import Head from 'next/head';
 import Navbar from '@/components/Navbar';
 import ContactForm from '@/components/ContactForm';
@@ -29,8 +31,6 @@ export default function ContactPage() {
                 <ContactForm />
             </main>
             <Footer />
-
-            {/* You can add Bootstrap JS & Popper here if needed or add them globally */}
         </>
     );
 }

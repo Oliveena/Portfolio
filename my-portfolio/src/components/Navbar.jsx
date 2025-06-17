@@ -1,21 +1,21 @@
 "use client";
 
+import React, { useState } from "react";
 import Link from "next/link";
-import { useState } from "react";
-import { useActiveNav } from "@/hooks/NavbarHighlight";
+import { usePathname } from "next/navigation";
 
-export default function Navbar() {
+export default function MyNavbar() {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const toggleCollapse = () => setIsCollapsed(!isCollapsed);
 
-  const activePath = useActiveNav();
+  const pathname = usePathname();
 
   const navItems = [
-    { href: "/EN_portfolio_landing_page", label: "Welcome" },
-    { href: "/EN_skills", label: "Skills" },
-    { href: "/EN_featured_projects", label: "Featured Projects" },
-    { href: "/EN_hobbies", label: "Hobbies" },
-    { href: "/EN_contact", label: "Contact" },
+    { href: "/", label: "Welcome" },
+    { href: "/EN/skills", label: "Skills" },
+    { href: "/EN/projects", label: "Featured Projects" },
+    { href: "/EN/hobbies", label: "Hobbies" },
+    { href: "/EN/contact", label: "Contact" },
   ];
 
   return (
@@ -32,33 +32,24 @@ export default function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div
-          className={`${isCollapsed ? "collapse" : ""} navbar-collapse`}
-          id="navbarNav"
-        >
+        <div className={`${isCollapsed ? "collapse" : ""} navbar-collapse`} id="navbarNav">
           <ul className="navbar-nav ms-auto">
             {navItems.map(({ href, label }) => {
-              // Extract path segment to compare with activePath
-              const pathSegment = href.split("/").pop();
-              const isActive =
-                pathSegment === activePath ||
-                (pathSegment === "" && activePath === "");
+              const isActive = pathname === href;
 
               return (
-                <li
-                  key={href}
-                  className={`navbar-item nav-item${isActive ? " active" : ""}`}
-                  aria-current={isActive ? "page" : undefined}
-                >
-                  <Link href={href} className="nav-link">
-                    {label}
+                <li key={href} className={`nav-item${isActive ? " active" : ""}`}>
+                  <Link href={href} legacyBehavior>
+                    <a className="nav-link" aria-current={isActive ? "page" : undefined}>
+                      {label}
+                    </a>
                   </Link>
                 </li>
               );
             })}
 
-            {/* Dropdown menu for languages */}
-            <li className="navbar-item dropdown nav-item">
+            {/* Dropdown */}
+            <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
                 href="#"
@@ -69,32 +60,22 @@ export default function Navbar() {
               >
                 Languages
               </a>
-              <ul
-                className="dropdown-menu dropdown-menu-end"
-                aria-labelledby="navbarDropdown"
-                data-bs-popper="none"
-              >
+              <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <li>
-                  <a
-                    className="dropdown-item"
-                    href="/French/FR_Page_Principale"
-                  >
-                    Français
-                  </a>
+                  <Link href="/French/FR_Page_Principale" legacyBehavior>
+                    <a className="dropdown-item">Français</a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="dropdown-item"
-                    href="/Russian/RU_portfolio_landing_page"
-                  >
-                    Русский
-                  </a>
+                  <Link href="/Russian/RU_portfolio_landing_page" legacyBehavior>
+                    <a className="dropdown-item">Русский</a>
+                  </Link>
                 </li>
               </ul>
             </li>
 
-            {/* Theme toggle button */}
-            <li className="navbar-item nav-item">
+            {/* Theme toggle (non-functional placeholder) */}
+            <li className="nav-item">
               <button id="toggle-theme" className="btn btn-outline-light ms-2">
                 <i id="theme-icon" className="fas fa-moon"></i>
               </button>

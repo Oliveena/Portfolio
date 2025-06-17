@@ -16,7 +16,6 @@ export default function ReviewCarousel({ onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const trimmedText = reviewText.trim();
     const trimmedName = reviewName.trim();
 
@@ -41,11 +40,9 @@ export default function ReviewCarousel({ onSubmit }) {
     setReviews([...reviews, newReview]);
     setReviewText('');
     setReviewName('');
-    setCurrentIndex(reviews.length); // Jump to the new review
+    setCurrentIndex(reviews.length);
 
-    if (onSubmit) {
-      onSubmit(newReview);
-    }
+    if (onSubmit) onSubmit(newReview);
   };
 
   const prevReview = () => {
@@ -57,20 +54,27 @@ export default function ReviewCarousel({ onSubmit }) {
   };
 
   return (
-    <div className="mx-auto" style={{ maxWidth: '500px' }}>
-      <h3 class="text-center mb-4">Testimonials</h3>
+    <div className="container mb-5">
+      <h3 className="text-center mb-4">Testimonials</h3>
+
       {/* Review Carousel Display */}
-      <div id="testimonials" className="mb-4 border p-4 rounded bg-light">
-        <p className="fst-italic">"{reviews[currentIndex].text}"</p>
-        <p className="text-end">- {reviews[currentIndex].name}</p>
-        <div className="d-flex justify-content-between mt-2">
-          <button className="btn btn-outline-secondary" onClick={prevReview}>Previous</button>
-          <button className="btn btn-outline-secondary" onClick={nextReview}>Next</button>
+      <div id="testimonials" style={{ backgroundColor: 'white', color: 'white' }} className="bg-black text-light p-4 rounded">
+        <div id="reviews-display" className="mb-3">
+          <div className="review bg-secondary text-light p-3 rounded shadow-sm">
+            <p><em>"{reviews[currentIndex].text}"</em></p>
+            <p className="text-end">- {reviews[currentIndex].name}</p>
+          </div>
+        </div>
+
+        {/* Carousel Arrows */}
+        <div className="d-flex justify-content-between mt-3">
+          <button className="btn btn-outline-light" onClick={prevReview} aria-label="Previous">‹</button>
+          <button className="btn btn-outline-light" onClick={nextReview} aria-label="Next">›</button>
         </div>
       </div>
 
       {/* Form to Add Review */}
-      <form onSubmit={handleSubmit}>
+      <form id="reviewForm" onSubmit={handleSubmit} className="mt-4">
         <div className="mb-3">
           <label htmlFor="reviewText" className="form-label">Your Review:</label>
           <textarea
