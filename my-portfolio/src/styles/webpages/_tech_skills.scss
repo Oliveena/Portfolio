@@ -31,7 +31,8 @@
     gap: 1vw;
     width: 100%;
     justify-items: center;
-    margin: 3vw;
+    margin-left: auto;
+    margin-right: auto;
     box-sizing: border-box;
 
     display: -ms-grid;
@@ -40,7 +41,7 @@
 
     .tech-skill {
       width: 100%;
-      max-width: 10vw;
+      max-width: clamp(80px, 10vw, 140px); 
       max-height: 10vw;
       object-fit: contain;
       border-radius: map-get($border-radius, usual);

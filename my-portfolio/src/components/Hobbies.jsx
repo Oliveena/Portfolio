@@ -1,4 +1,13 @@
 import React, { useState } from "react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper
+} from "@mui/material";
 
 const books = [
   {
@@ -23,6 +32,12 @@ const books = [
   },
 ];
 
+const initialSuggestedBooks = [
+  { title: "1984", author: "George Orwell", reason: "Dystopian classic" },
+  { title: "The Wind-Up Bird Chronicle", author: "Haruki Murakami", reason: "Magical realism" },
+  { title: "To Kill a Mockingbird", author: "Harper Lee", reason: "Timeless themes" },
+];
+
 const initialPaintings = [
   { src: "/images/IMG_20210208_090255_351.jpg", alt: "Vlad Dracula as a walrus" },
   { src: "/images/20250111_100225.jpg", alt: "Birth of Venus as walruses" },
@@ -36,8 +51,32 @@ const extraPaintings = [
 ];
 
 export default function Hobbies() {
+
+   // Suggested books state
+  const [suggestedBooks, setSuggestedBooks] = useState(initialSuggestedBooks);
+
+  // Controlled inputs for the form
+  const [newTitle, setNewTitle] = useState("");
+  const [newAuthor, setNewAuthor] = useState("");
+
+  // Form submit handler
+  const handleAddBook = (e) => {
+    e.preventDefault();
+    if (!newTitle.trim() || !newAuthor.trim()) return;
+
+    setSuggestedBooks([
+      ...suggestedBooks,
+      { title: newTitle.trim(), author: newAuthor.trim(), reason: "User suggested" },
+    ]);
+
+    // Clear inputs
+    setNewTitle("");
+    setNewAuthor("");
+  };
+
   const [showMorePaintings, setShowMorePaintings] = useState(false);
 
+ 
   return (
     <div id="content">
       {/* =============== READING REVIEWS =============== */}
@@ -54,25 +93,75 @@ export default function Hobbies() {
             ))}
           </ul>
 
+          {/* Suggested Books Section */}
           <div className="suggested-books mt-4">
             <p>Books recommended by users</p>
-            {/* Table to be added here */}
+            <TableContainer
+  component={Paper}
+  sx={{
+    maxWidth: 600,
+    margin: "0 auto",
+    boxShadow: "none",
+    backgroundColor: "transparent",
+  }}
+>
+              <Table aria-label="suggested books table" size="small">
+                <TableHead>
+                  <TableRow>
+                    <TableCell><strong>Title</strong></TableCell>
+                    <TableCell><strong>Author</strong></TableCell>
+                    <TableCell><strong>Reason</strong></TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {suggestedBooks.map((book, idx) => (
+                    <TableRow key={idx}>
+                      <TableCell>{book.title}</TableCell>
+                      <TableCell>{book.author}</TableCell>
+                      <TableCell>{book.reason}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
           </div>
 
           {/* Book Suggestion Form */}
           <fieldset className="border p-4 rounded mt-4 contact">
             <p>Would you like to suggest a book?</p>
-            <form className="mx-auto" style={{ maxWidth: "500px" }}>
+            <form
+              className="mx-auto"
+              style={{ maxWidth: "500px" }}
+              onSubmit={handleAddBook}
+            >
               <div className="mb-3">
-                <label htmlFor="bookTitle" className="form-label">Book Title</label>
-                <input type="text" id="bookTitle" className="form-control" />
+                <label htmlFor="bookTitle" className="form-label">
+                  Book Title
+                </label>
+                <input
+                  type="text"
+                  id="bookTitle"
+                  className="form-control"
+                  value={newTitle}
+                  onChange={(e) => setNewTitle(e.target.value)}
+                />
               </div>
               <div className="mb-3">
-                <label htmlFor="bookAuthor" className="form-label">Author</label>
-                <input type="text" id="bookAuthor" className="form-control" />
+                <label htmlFor="bookAuthor" className="form-label">
+                  Author
+                </label>
+                <input
+                  type="text"
+                  id="bookAuthor"
+                  className="form-control"
+                  value={newAuthor}
+                  onChange={(e) => setNewAuthor(e.target.value)}
+                />
               </div>
               <div className="text-center">
-                <button type="submit" className="btn btn-primary w-75">Add Book</button>
+                <button type="submit" className="btn btn-primary w-75">
+                  Add Book
+                </button>
               </div>
             </form>
           </fieldset>

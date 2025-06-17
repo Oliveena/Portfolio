@@ -38,7 +38,6 @@ export default function Contact() {
       <main id="vector-image">
         <ContactForm />
       </main>
-      <Footer />
     </>
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Grid, Typography, Box } from "@mui/material";
 
 const techSkills = [
   { alt: "AWS Certificate", src: "/images/aws-academy-graduate-aws-academy-cloud-security-foundations.png" },
@@ -32,29 +33,28 @@ export default function Skills() {
   return (
     <div id="content">
       {/* ================= TECHNICAL SKILLS ================= */}
-      <section className="tech_skills py-5">
-        <h3 className="text-center">Technical Skills</h3>
-        <p className="text-center">
-          I began autonomously studying coding while working as a nurse.<br />
-          My approach is driven by curiosity and diligence.
-        </p>
-        <div className="transparent-background-warm py-4">
-          <div className="container">
-            <div className="row g-3 justify-content-center">
-              {techSkills.map((skill, idx) => (
-                <div key={idx} className="col-4 col-md-2 text-center">
-                  <img
-                    src={skill.src}
-                    alt={skill.alt}
-                    className="img-fluid tech-skill"
-                    style={{ maxHeight: "80px", objectFit: "contain" }}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+<section className="tech_skills py-5">
+  <Typography variant="h4" align="center">Technical Skills</Typography>
+  <Typography align="center" sx={{ mb: 4 }}>
+    I began autonomously studying coding while working as a nurse.<br />
+    My approach is driven by curiosity and diligence.
+  </Typography>
+  <Box sx={{ py: 4, backgroundColor: "rgba(255, 255, 255, 0.1)" }}>
+    <Grid container spacing={3} justifyContent="center">
+      {techSkills.map((skill, idx) => (
+        <Grid item xs={4} sm={2} key={idx}>
+          <Box
+            component="img"
+            src={skill.src}
+            alt={skill.alt}
+            sx={{ maxHeight: 80, objectFit: "contain", width: "100%" }}
+          />
+        </Grid>
+      ))}
+    </Grid>
+  </Box>
+</section>
+
 
       {/* ================= SOFT SKILLS ================= */}
       <section id="soft_skills" className="py-5">

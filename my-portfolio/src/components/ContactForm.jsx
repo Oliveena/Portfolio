@@ -74,8 +74,9 @@ export default function ContactForm() {
                   required
               />
                         </div>
-
-                        <button type="submit" className="btn btn-primary w-75">Submit</button>
+<div className="form-group mb-3">
+  <button type="submit" className="btn btn-primary w-75">Submit</button>
+</div>
                     </fieldset>
                 </form>
             </div>
