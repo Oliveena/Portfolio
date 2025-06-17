@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle"; 
 
 export default function MyNavbar() {
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -70,11 +71,9 @@ export default function MyNavbar() {
               </ul>
             </li>
 
-            {/* Theme toggle (non-functional placeholder) */}
+            {/* Theme toggle */}
             <li className="nav-item">
-              <button id="toggle-theme" className="btn btn-outline-light ms-2">
-                <i id="theme-icon" className="fas fa-moon"></i>
-              </button>
+              <ThemeToggle />
             </li>
           </ul>
         </div>

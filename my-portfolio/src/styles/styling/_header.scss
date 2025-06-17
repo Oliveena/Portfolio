@@ -24,6 +24,10 @@
     object-position: top;
     filter: blur(5px);
     z-index: 1;
+
+    body.dark-theme & {
+    display: none;
+  }
   }
 
   #hero-text {

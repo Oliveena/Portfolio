@@ -1,6 +1,24 @@
 body.dark-theme {
-  background-color: map-get($colors, dark-bg, #121212); // fallback to #121212
-  color: #e0e0e0;
+
+  // Base dark shades
+  --color-bg: #0e0e11;              // dark gray-black background
+  --color-surface: #1a1a1f;         // slightly lighter gray for cards/sections
+  --color-text: #e0e0e0;            // light gray text for contrast
+  --color-muted-text: #a0a0a0;      // less emphasis
+
+  // Accents: Navy and Lilac
+  --color-accent: #7d83ff;          // lilac (for links, highlights)
+  --color-accent-hover: #9da2ff;    // lighter lilac on hover
+  --color-accent-muted: #272a4f;    // navy-toned surface for accents
+
+  // Navbar / Footer
+  --color-navbar-bg: #111320;       // deep navy background
+  --color-navbar-text: #e0e0e0;     // light text
+
+  // Buttons
+  --color-button-bg: var(--color-accent);
+  --color-button-text: #ffffff;
+  --color-button-border: var(--color-accent-hover);
 
   a, p, h1, h2, h3, h4, h5, h6, label {
     color: #e0e0e0;
@@ -62,5 +80,42 @@ body.dark-theme {
     background-color: #2a2a2a;
     color: #e0e0e0;
     border: 1px solid #444;
+  }
+}
+
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar, footer {
+  background-color: var(--color-navbar-bg);
+  color: var(--color-navbar-text);
+
+  .nav-link {
+    color: var(--color-navbar-text);
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.btn {
+  background-color: var(--color-button-bg);
+  color: var(--color-button-text);
+  border: 1px solid var(--color-button-border);
+
+  &:hover {
+    background-color: var(--color-accent-hover);
+    color: var(--color-button-text);
+  }
+}
+
+a {
+  color: var(--color-accent);
+  &:hover {
+    color: var(--color-accent-hover);
   }
 }
