@@ -13,7 +13,6 @@ fields.forEach(({ id }) => {
   initialFormState[id] = initialValues[id] || "";
 });
 
-
 const [form, setForm] = useState(initialFormState);
 
   const handleChange = (e) => {
@@ -30,11 +29,11 @@ const [form, setForm] = useState(initialFormState);
   if (!fields.length) return null; // render nothing if no fields provided
 
   return (
-    <section className={`${className}`}>
-      <div className="container">
+    <section className={`${className} form-section`}>
+  <div className="form-wrapper">
         <form onSubmit={handleSubmit}>
           <fieldset className="border p-4 rounded">
-            <h3 className="text-center mb-4 text-white">{title}</h3>
+            <h2 className="mb-3">{title}</h2>
 
             {fields.map(({ id, label, type, placeholder, required }) => (
               <div className="form-group mb-3" key={id}>

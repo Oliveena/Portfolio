@@ -1,13 +1,11 @@
 body.dark-theme {
-  --color-bg-primary: #001f3f;
+  --color-bg-primary: #150578; // solid navy
   --color-surface: #0a0a2a;
-  --color-bg-gradient-start: #{rgba(map-get($colors, navy-blue), 0.4)};
-  --color-bg-gradient-end: #{map-get($colors, bloodstone)};
   --color-text: #e0e0e0;
   --color-muted: #aaa;
   --color-accent: #7d83ff;
 
-  background: var(--color-bg);
+  background: var(--color-bg-primary); // ← use solid color here
   color: var(--color-text);
 
   a, p, h1, h2, h3, h4, h5, h6, label {

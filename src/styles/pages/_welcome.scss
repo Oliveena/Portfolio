@@ -58,11 +58,17 @@ $gradient-end: map-get($colors, lilac);
   display: flex;
   align-items: center;
   justify-content: center;
-  /* color: white; */
 }
 
 .hero .container.h-100.position-relative {
   background-color: transparent !important;
+}
+
+.review-section-container {
+  width: 75vw;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 /* Responsive tweaks */
