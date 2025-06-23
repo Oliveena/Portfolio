@@ -1,212 +1,196 @@
 import React, { useState } from "react";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  Grid,
+  Pagination,
+  Container,
+  Alert
 } from "@mui/material";
 import BookTable from "./BookTable";
 import BookSearch from "./BookSearch";
+import Form from "./Form";
 
 const books = [
   {
     title: "My Favorite Thing Is Monsters",
     author: "Emil Ferris",
     review: "A haunting and beautifully illustrated story about monsters, both real and imagined...",
+    cover: "/images/book1.jpg",
   },
   {
     title: "Encabanée",
     author: "Gabrielle Filteau-Chiba",
     review: "A poetic and meditative exploration of solitude in nature, written with raw elegance...",
+    cover: "/images/book2.jpg",
   },
   {
     title: "Ahab's Wife",
     author: "Sena Jeter Naslund",
     review: "A sweeping historical novel that reimagines the life of Captain Ahab’s wife with depth and grace...",
+    cover: "/images/book3.jpg",
   },
   {
     title: "The Enchantress of Florence",
     author: "Salman Rushdie",
     review: "A tale of magical realism connecting East and West, rich with storytelling and imagination...",
+    cover: "/images/book4.jpg",
   },
 ];
 
-const initialSuggestedBooks = [
-  { title: "1984", author: "George Orwell", reason: "Dystopian classic" },
-  { title: "The Wind-Up Bird Chronicle", author: "Haruki Murakami", reason: "Magical realism" },
-  { title: "To Kill a Mockingbird", author: "Harper Lee", reason: "Timeless themes" },
-];
-
-const initialPaintings = [
-  { src: "/images/IMG_20210208_090255_351.jpg", alt: "Vlad Dracula as a walrus" },
-  { src: "/images/20250111_100225.jpg", alt: "Birth of Venus as walruses" },
-  { src: "/images/IMG_20210217_090313_884.jpg", alt: "Girl with a Pearl Earring as a walrus" },
-];
-
-const extraPaintings = [
-  { src: "/images/20250111_095921.jpg", alt: "Frida Kahlo as a walrus" },
-  { src: "/images/IMG_20210131_221746_948.jpg", alt: "Napoleon as a walrus" },
-  { src: "/images/20250111_100242.jpg", alt: "Son of Man as a walrus" },
-];
+const itemsPerPage = 2;
 
 export default function Hobbies() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [suggestedBooks, setSuggestedBooks] = useState([]);
+  const [successMessage, setSuccessMessage] = useState("");
 
-   // state of suggested books
-  const [suggestedBooks, setSuggestedBooks] = useState(initialSuggestedBooks);
+  const pageCount = Math.ceil(books.length / itemsPerPage);
 
-  <ul className="books list-unstyled">
-  {books.map((book, idx) => (
-    <li key={idx} className="flip my-3">
-      <strong>"{book.title}"</strong> by {book.author}
-      <div className="panel mt-2 d-flex flex-column align-items-center text-start">
-        {book.cover && (
-          <img
-            src={book.cover}
-            alt={`Cover of ${book.title}`}
-            className="mb-2 rounded shadow-sm"
-            style={{ maxWidth: "150px", height: "auto" }}
-          />
-        )}
-        <p>{book.review}</p>
-      </div>
-    </li>
-  ))}
-</ul>
+  const paginatedBooks = books.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
+  const suggestionFields = [
+    {
+      id: "title",
+      label: "Book Title",
+      type: "text",
+      placeholder: "e.g. The Adventures of Tom Sawyer",
+      required: true,
+    },
+    {
+      id: "author",
+      label: "Author",
+      type: "text",
+      placeholder: "e.g. Mark Twain",
+      required: true,
+    },
+  ];
 
-  // controlling inputs from form
-  const [newTitle, setNewTitle] = useState("");
-  const [newAuthor, setNewAuthor] = useState("");
+  const handleSuggestBook = (formData) => {
+    const title = formData.title.trim();
+    const author = formData.author.trim();
 
-  // handling a book suggestion
-  const handleAddBook = (e) => {
-  e.preventDefault();
+    if (!title && !author) return;
 
-  // Trim user input
-  const title = newTitle.trim();
-  const author = newAuthor.trim();
+    const textRegex = /^[A-Za-z0-9\s.,'-]+$/;
 
-  // allowing an empty input
-  if (!title && !author) {
-    setNewTitle("");
-    setNewAuthor("");
-    return;
-  }
+    if (title && !textRegex.test(title)) {
+      alert("Book title may contain letters, numbers, spaces, commas, periods, and hyphens.");
+      return;
+    }
 
-  // Validation
-  const textRegex = /^[A-Za-z0-9\s.,'-]+$/;
+    if (author && !textRegex.test(author)) {
+      alert("Author name may contain letters, numbers, spaces, commas, periods, and hyphens.");
+      return;
+    }
 
-  if (title && !textRegex.test(title)) {
-    alert("Book title may contain letters, numbers, spaces, commas, periods, and hyphens.");
-    return;
-  }
+    setSuggestedBooks((prev) => [
+      ...prev,
+      { title, author, reason: "User suggested" },
+    ]);
 
-  if (author && !textRegex.test(author)) {
-    alert("Author name may contain letters, numbers, spaces, commas, periods, and hyphens.");
-    return;
-  }
+    localStorage.setItem("bookTitle", title);
+    localStorage.setItem("bookAuthor", author);
 
-  // Save to state
-  setSuggestedBooks((prevBooks) => [
-    ...prevBooks,
-    { title, author, reason: "User suggested" },
-  ]);
+    setSuccessMessage("✅ Thank you for suggesting a book!");
+    setTimeout(() => setSuccessMessage(""), 3000);
+  };
 
-  // Save to localStorage
-  localStorage.setItem("bookTitle", title);
-  localStorage.setItem("bookAuthor", author);
-
-  // Clear form
-  setNewTitle("");
-  setNewAuthor("");
-
-  // Feedback
-  alert("Thank you for suggesting a book! We appreciate your input.");
-};
-
-
-  const [showMorePaintings, setShowMorePaintings] = useState(false);
-
- 
   return (
-    <div id="content">
+    <Container id="content" sx={{ py: 5 }}>
       {/* =============== READING REVIEWS =============== */}
-      <section className="reading-reviews text-center py-5">
-        <div className="transparent-background-warm p-4">
-          <h3>Reading Reviews</h3>
-          <p>Ana has always been an avid reader. Here are some recent reads.</p>
-          <ul className="books list-unstyled">
-            {books.map((book, idx) => (
-              <li key={idx} className="flip my-3">
-                <strong>"{book.title}"</strong> by {book.author}
-                <div className="panel mt-2">{book.review}</div>
-              </li>
-            ))}
-          </ul>
+      <section className="reading-reviews">
+        <Typography variant="h3" align="center" gutterBottom>
+          Reading Reviews
+        </Typography>
+        <Typography variant="body1" align="center" sx={{ mb: 4 }}>
+          Ana has always been an avid reader. Here are some recent reads.
+        </Typography>
 
-          {/* Suggested Books Section */}
-         <div className="container my-4">
-  <BookTable />
-</div>
+        <Grid container spacing={4} justifyContent="center">
+          {paginatedBooks.map((book, idx) => (
+            <Grid item xs={12} sm={6} md={4} key={idx}>
+              <Card
+                elevation={4}
+                sx={{
+                  transition: "transform 0.3s ease",
+                  "&:hover": {
+                    transform: "scale(1.02)",
+                  },
+                }}
+                aria-label={`Book card for ${book.title}`}
+              >
+                {book.cover && (
+                  <CardMedia
+                    component="img"
+                    height="200"
+                    image={book.cover}
+                    alt={`Cover of ${book.title}`}
+                    loading="lazy"
+                  />
+                )}
+                <CardContent>
+                  <Typography variant="h6" component="div" gutterBottom>
+                    "{book.title}"
+                  </Typography>
+                  <Typography variant="subtitle2" color="text.secondary">
+                    by {book.author}
+                  </Typography>
+                  <Typography variant="body2" mt={1}>
+                    {book.review}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
 
-          {/* Google Book Search */}
-<div className="container my-4">
-  <BookSearch />
-</div>
-        </div>
+        <Pagination
+          count={pageCount}
+          page={currentPage}
+          onChange={(e, value) => setCurrentPage(value)}
+          color="primary"
+          size="large"
+          sx={{ mt: 4, display: "flex", justifyContent: "center" }}
+          aria-label="Book pagination navigation"
+        />
       </section>
 
-      {/* =============== WATERCOLOR GALLERY =============== */}
-      <section className="watercolor-art-gallery py-5">
-        
-        <div className="transparent-background-cold p-4">
-          <h3 className="text-center">Watercolor Painting</h3>
-          <p className="text-center">
-            Painting is very relaxing.<br />Here are some of my recent works.<br />
-            Hover over them!
-          </p>
-
-          <div className="row row-cols-sm-2 row-cols-md-3 g-4 paintings">
-            {initialPaintings.map((img, idx) => (
-              <div key={idx} className="col">
-                <a href={img.src} target="_blank" rel="noopener noreferrer">
-                  <img src={img.src} alt={img.alt} className="img-fluid rounded-3" loading="lazy" />
-                </a>
-              </div>
-            ))}
-
-            {showMorePaintings &&
-              extraPaintings.map((img, idx) => (
-                <div key={`extra-${idx}`} className="col">
-                  <a href={img.src} target="_blank" rel="noopener noreferrer">
-                    <img src={img.src} alt={img.alt} className="img-fluid rounded-3" loading="lazy" />
-                  </a>
-                </div>
-              ))}
-          </div>
-
-          {/* Toggle buttons */}
-          <div className="text-center mt-4">
-            {!showMorePaintings ? (
-              <button className="btn btn-primary" onClick={() => setShowMorePaintings(true)}>
-                More walruses!
-              </button>
-            ) : (
-              <button className="btn btn-primary" onClick={() => setShowMorePaintings(false)}>
-                Less walruses...
-              </button>
-            )}
-          </div>
-
-          {/* <div className="text-center mt-4">
-            <p>For more art, see my gallery</p>
-            <button className="btn btn-primary">Visit Gallery</button>
-          </div> */}
-        </div> 
+      {/* =============== SUGGESTED BOOK TABLE =============== */}
+      <section className="suggested-books" style={{ marginTop: "4rem" }}>
+        <BookTable books={suggestedBooks} />
       </section>
-    </div>
+
+      {/* =============== BOOK SUGGESTION FORM =============== */}
+      <section style={{ marginTop: "4rem" }}>
+        <Form
+          title="Suggest a Book"
+          fields={suggestionFields}
+          onSubmit={handleSuggestBook}
+          className="my-5"
+        />
+        {successMessage && (
+          <Alert severity="success" sx={{ mt: 2 }}>
+            {successMessage}
+          </Alert>
+        )}
+      </section>
+
+      {/* =============== BOOK SEARCH =============== */}
+      <section className="book-search" style={{ marginTop: "4rem" }}>
+        <Typography variant="h5" gutterBottom>
+          Can't remember the title?
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          Use the Google Books API to search by keyword, author, or topic.
+        </Typography>
+        <BookSearch />
+      </section>
+    </Container>
   );
 }

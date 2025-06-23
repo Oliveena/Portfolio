@@ -48,4 +48,25 @@ body.dark-theme {
       opacity: 1;
     }
   }
+
+  
+  .card {
+    background-color: var(--color-surface);
+    border: 1px solid #333;
+
+    .card-body {
+      background-color: var(--color-surface);
+    }
+
+    .card-title,
+    p,
+    a {
+      color: var(--color-text);
+    }
+
+    a:hover {
+      color: var(--color-accent); 
+    }
+  }
 }
+

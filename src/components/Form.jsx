@@ -33,8 +33,7 @@ const [form, setForm] = useState(initialFormState);
   <div className="form-wrapper">
         <form onSubmit={handleSubmit}>
           <fieldset className="border p-4 rounded">
-            <h2 className="mb-3">{title}</h2>
-
+            <h2 className="form-title mb-3">{title}</h2>
             {fields.map(({ id, label, type, placeholder, required }) => (
               <div className="form-group mb-3" key={id}>
                 <label htmlFor={id} className="form-label text-white">

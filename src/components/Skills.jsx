@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography, Box } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import { FaLightbulb, FaUsers, FaHeartbeat, FaComments } from "react-icons/fa";
 
 const techSkills = [
@@ -34,28 +34,27 @@ export default function Skills() {
   return (
     <div id="content">
       {/* ================= TECHNICAL SKILLS ================= */}
-<section className="tech_skills py-5">
-  <Typography variant="h4" align="center">Technical Skills</Typography>
-  <Typography align="center" sx={{ mb: 4 }}>
-    I began autonomously studying coding while working as a nurse.<br />
-    My approach is driven by curiosity and diligence.
-  </Typography>
-  <Box sx={{ py: 4, backgroundColor: "rgba(255, 255, 255, 0.1)" }}>
-    <Grid container spacing={3} justifyContent="center">
-      {techSkills.map((skill, idx) => (
-        <Grid item xs={4} sm={2} key={idx}>
-          <Box
-            component="img"
-            src={skill.src}
-            alt={skill.alt}
-            sx={{ maxHeight: 80, objectFit: "contain", width: "100%" }}
-          />
-        </Grid>
-      ))}
-    </Grid>
-  </Box>
-</section>
-
+      <section className="tech_skills py-5 text-center">
+        <h3>Technical Skills</h3>
+        <p>
+          I began autonomously studying coding while working as a nurse.<br />
+          My approach is driven by curiosity and diligence.
+        </p>
+        <Box sx={{ py: 4, backgroundColor: "rgba(255, 255, 255, 0.1)" }}>
+          <Grid container spacing={3} justifyContent="center">
+            {techSkills.map((skill, idx) => (
+              <Grid item xs={4} sm={2} key={idx}>
+                <Box
+                  component="img"
+                  src={skill.src}
+                  alt={skill.alt}
+                  sx={{ maxHeight: 80, objectFit: "contain", width: "100%" }}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </section>
 
       {/* ================= SOFT SKILLS ================= */}
       <section id="soft_skills" className="py-5">
@@ -65,18 +64,18 @@ export default function Skills() {
         </p>
         <div className="transparent-background-cold py-3">
           <ul className="list-unstyled text-center">
-  {softSkills.map((skill, idx) => (
-    <li key={idx} className="skill my-2 d-flex align-items-center justify-content-center gap-2">
-      <span className="fs-5 text-primary">{skill.icon}</span>
-      <span>{skill.label}</span>
-    </li>
-  ))}
-</ul>
+            {softSkills.map((skill, idx) => (
+              <li key={idx} className="skill my-2 d-flex align-items-center justify-content-center gap-2">
+                <span className="fs-5 text-primary">{skill.icon}</span>
+                <span>{skill.label}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
       {/* ================= LANGUAGES ================= */}
-      <section className="py-5">
+      <section id="languages" className="py-5">
         <h3 className="text-center">Languages I Speak</h3>
         <div className="transparent-background-warm py-3">
           <div className="container">
@@ -100,6 +99,6 @@ export default function Skills() {
           </div>
         </div>
       </section>
-      </div>
+    </div>
   );
 }

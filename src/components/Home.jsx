@@ -55,7 +55,7 @@ export default function Home() {
             >
               <h1 className="display-4 fw-bold mt-2">Hello, this is Ana</h1>
               <h2 className="h3 m-2">Web Developer and Nurse Clinician</h2>
-              <p className="fw-bold m-2">
+              <p className="m-2">
                 <a
                   href="/images/DeansList.png"
                   target="_blank"

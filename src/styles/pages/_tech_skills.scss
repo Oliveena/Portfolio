@@ -14,41 +14,38 @@
   margin-top: $margin-top;
 
   h2, h3 {
-    margin: 1vw 0;
-    color: map-get($colors, eggshell); 
+    color: var(--color-text);
+    font-size: 3rem;
+    margin-bottom: 0.25rem;
+    text-align: center;
   }
 
   p {
-    color: map-get($colors, eggshell);
+    color: var(--color-text);
     padding: 1.2vw;
     font-size: 1.5vw;
     margin-top: $margin-top;
   }
 
   .tech-skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1vw;
-    width: 100%;
-    justify-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-
-    display: -ms-grid;
-    -ms-grid-columns: 1fr 1vw 1fr 1vw 1fr;
-    -ms-grid-rows: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 1vw;
+  width: 100%;
+  justify-items: center;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 
     .tech-skill {
       width: 100%;
-      max-width: clamp(80px, 10vw, 140px); 
+      max-width: clamp(80px, 10vw, 140px);
       max-height: 10vw;
       object-fit: contain;
       border-radius: map-get($border-radius, usual);
       overflow: hidden;
       background-color: transparent;
       margin: 1vw;
-
       transition: transform 0.2s ease, box-shadow 0.5s ease;
 
       &:hover {
@@ -56,22 +53,6 @@
         box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
       }
     }
-
-    /* IE11 grid positioning - optional */
-    /*
-    > *:nth-child(1) {
-      -ms-grid-row: 1;
-      -ms-grid-column: 1;
-    }
-    > *:nth-child(2) {
-      -ms-grid-row: 1;
-      -ms-grid-column: 3;
-    }
-    > *:nth-child(3) {
-      -ms-grid-row: 1;
-      -ms-grid-column: 5;
-    }
-    */
   }
 
   .portfolio {
@@ -80,62 +61,12 @@
     object-fit: contain;
     margin: 0.5vw;
     background-color: transparent;
-
     transition: transform 0.2s ease, box-shadow 0.5s ease;
 
     &:hover {
-      transform: translate(-10deg) scale(1.2);
+      transform: rotate(-10deg) scale(1.2);
       box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
       overflow: hidden;
     }
   }
-}
 
-/* Responsive Layout */
-
-/* Large screens (Desktop - 3 columns) */
-@media (min-width: 1024px) {
-  .tech_skills {
-    .tech-skills-grid {
-      grid-template-columns: repeat(3, 1fr);
-
-      .tech-skill {
-        max-width: 10vw;
-      }
-    }
-  }
-}
-
-/* Medium screens (Tablets - 2 columns) */
-@media (max-width: 768px) {
-  .tech_skills {
-    .tech-skills-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2vw;
-      margin: 2vw;
-      // -ms-grid-columns: 1fr 2vw 1fr; // for IE11 support
-
-      .tech-skill {
-        max-width: 12vw;
-        margin: 2vw 0;
-      }
-    }
-  }
-}
-
-/* Small screens (Mobile - 1 column) */
-@media (max-width: 480px) {
-  .tech_skills {
-    .tech-skills-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5vw;
-      margin: 1vw;
-      -ms-grid-columns: 1fr; // IE11 support
-
-      .tech-skill {
-        max-width: 30vw;
-        margin: 1vw 0;
-      }
-    }
-  }
-}

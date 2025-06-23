@@ -22,25 +22,32 @@ h3 {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2vw;
 }
-
 .card {
-  background-color: map-get($colors, lilac);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  margin: 1rem;
-  padding: 1.5rem;
+  cursor: pointer;
 
-  .card-img-top {
-    object-fit: cover;
-    height: 300px;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   }
 
   .card-body {
-    padding: 1rem;
-    background-color: map-get($colors, eggshell);
+    transition: background-color 0.3s ease;
+  }
 
-    p {
-      color: #333;
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+
+    &:hover {
+      text-decoration: none;
     }
   }
 }
@@ -58,6 +65,9 @@ h3 {
     font-size: 1.2rem;
     max-width: 20rem;
   }
+  .card-img-top {
+    height: 250px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -70,5 +80,8 @@ h3 {
   p {
     font-size: 1.1rem;
     max-width: 18rem;
+  }
+  .card-img-top {
+    height: 200px;
   }
 }

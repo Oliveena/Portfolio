@@ -29,6 +29,15 @@ p {
   margin-top: $margin-top;
 }
 
+.card {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+
 section {
   @include flexbox; 
   flex-direction: column;
@@ -99,7 +108,7 @@ th {
   gap: 1rem;
   padding: 2vw;
   margin: 2rem auto;
-  background-color: map-get($colors, eggshell);
+  background-color: transparent;
   max-width: 1000px;
 }
 

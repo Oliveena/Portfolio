@@ -34,8 +34,8 @@ export default function ProjectCard({ project }) {
   }}
 />
         <div className="card-body d-flex flex-column justify-content-between">
-          <h5 className="card-title">{project.title}</h5>
-          <p className="card-text" style={{ color: textColor }}>
+          <h5 className="card-title text-center">{project.title}</h5>
+          <p className="card-text text-center" style={{ color: textColor }}>
             {project.description}
           </p>
           {project.ppt && (

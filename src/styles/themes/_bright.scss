@@ -1,4 +1,3 @@
-// Define these colors somewhere in your $colors map or replace with hex codes directly
 $color-navy-blue: #150578;      // navy blue for navbar bg and active nav items
 $color-pink: #ba71fe;           // pink used in hover and gradient end
 $color-pink-alpha: rgba(186, 113, 254, 0.2); // pink with alpha for gradient start
@@ -10,6 +9,11 @@ body.bright-theme {
   // Gradient background variables for body
   --color-bg-gradient-start: #{$color-pink-alpha};
   --color-bg-gradient-end: #{$color-lilac};
+  --btn-bg: #{map-get($colors, eggshell)};
+  --btn-text: #111; 
+  --btn-border: darken(#{map-get($colors, eggshell)}, 10%);
+  --progress-bg: lighten(#{map-get($colors, eggshell)}, 30%);
+  --progress-fill: #ba71fe;
 
   // Body styles
   background: linear-gradient(
@@ -95,5 +99,86 @@ body.bright-theme {
     color: white;
     padding: 1rem;
     text-align: center;
+  }
+
+  // .btn {
+  //   background-color: var(--btn-bg);
+  //   color: var(--btn-text);
+  //   border: 1px solid var(--btn-border);
+  //   padding: 0.75rem 1.5rem;
+  //   cursor: pointer;
+  //   transition: background-color 0.3s ease, color 0.3s ease;
+
+  //   &:hover {
+  //     background-color: var(--progress-fill);
+  //     color: white;
+  //     border-color: var(--progress-fill);
+  //   }
+  // }
+
+  #languages {
+    .language {
+      background-color: var(--btn-bg);
+      border-radius: $radius;
+      box-shadow: 0 2px 4px rgba(64, 61, 57, 0.3);
+
+      .progress {
+        background-color: var(--progress-bg);
+        border-radius: 5px;
+        overflow: hidden;
+
+        .progress-bar {
+          background-color: var(--progress-fill);
+          height: 100%;
+          transition: width 0.3s ease;
+        }
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(64, 61, 57, 0.3);
+      }
+    }
+  }
+
+  #soft_skills {
+    .skill {
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
+      border-radius: 4px; // or your $radius
+      box-shadow: 0 2px 4px rgba(64, 61, 57, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(64, 61, 57, 0.3);
+      }
+    }
+  }
+
+  // Language blocks progress container
+  #languages {
+    .language {
+      background-color: var(--btn-bg);
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(64, 61, 57, 0.3);
+
+      .progress {
+        background-color: var(--progress-bg);
+        border-radius: 5px;
+        overflow: hidden;
+
+        .progress-bar {
+          background-color: var(--progress-fill);
+          height: 100%;
+          transition: width 0.3s ease;
+        }
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(64, 61, 57, 0.3);
+      }
+    }
   }
 }
