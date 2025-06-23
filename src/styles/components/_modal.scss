@@ -1,0 +1,114 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.modal-container {
+  background-color: white;
+  color: $color-text-dark;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  position: relative;
+  z-index: 1051;
+  animation: modalFadeIn 0.3s ease-out;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    color: $color-navy-blue;
+  }
+
+  form {
+    .form-group {
+      margin-bottom: 1rem;
+
+      label {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        display: block;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.5rem 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+      }
+    }
+
+    .error-list {
+      color: red;
+      margin-bottom: 1rem;
+      li {
+        list-style: disc;
+        margin-left: 1rem;
+      }
+    }
+
+    .status-message {
+      margin-bottom: 1rem;
+      &.loading {
+        color: $color-lilac;
+      }
+      &.success {
+        color: green;
+      }
+    }
+.button-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+
+    &.btn-cancel {
+      background: #ccc;
+      color: $color-text-dark;
+    }
+
+    &.btn-submit {
+      background-color: $color-navy-blue !important;
+      color: white !important;
+      border: none;
+
+      &:hover {
+        background-color: $color-pink !important;
+      }
+
+      &:disabled {
+        background-color: lighten($color-navy-blue, 20%) !important;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+  }
+}
+
+@keyframes modalFadeIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

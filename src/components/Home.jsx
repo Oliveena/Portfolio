@@ -4,15 +4,19 @@ import useDownloadModal from '../hooks/useDownloadModal';
 import ReviewCarousel from './ReviewCarousel';
 
 export default function Home() {
-  const {
-    modalOpen,
-    openModal,
-    closeModal,
-    formData,
-    setFormData,
-    errors,
-    handleSubmit,
-  } = useDownloadModal();
+const {
+  modalOpen,
+  openModal,
+  closeModal,
+  formData,
+  setFormData,
+  errors,
+  handleSubmit,
+  loading,    
+  success,    
+  downloadLink,
+} = useDownloadModal();
+
 
   return (
     <>
@@ -63,30 +67,32 @@ export default function Home() {
       {/* Download CV Section */}
 <section className="welcome text-center py-5" >
   <div id="download_text" className="mb-3">
-    <h2 className="fw-bold">Download My CV</h2>
-    <p>Choose a format:</p>
+    <h2>Download CV</h2>
+    <p className="text-center">Choose a format:</p>
   </div>
   <div className="cv_download">
     <button className="btn btn-primary" onClick={() => openModal('/shared_assets/images/Resume.pdf')}>
-      PDF
-    </button>
-    <button className="btn btn-success" onClick={() => openModal('/shared_assets/images/Resume.docx')}>
-      Word
-    </button>
+  PDF
+</button>
+<button className="btn btn-success" onClick={() => openModal('/shared_assets/images/Resume.docx')}>
+  Word
+</button>
+
+{modalOpen && (
+  <Modal
+    formData={formData}
+    setFormData={setFormData}
+    errors={errors}
+    loading={loading}
+    success={success}
+    onClose={closeModal}
+    onSubmit={handleSubmit}
+    downloadLink={downloadLink}
+  />
+)}
   </div>
 </section>
 
-
-
-      {modalOpen && (
-        <Modal
-          formData={formData}
-          setFormData={setFormData}
-          errors={errors}
-          onClose={closeModal}
-          onSubmit={handleSubmit}
-        />
-      )}
 
       {/* Reviews Section */}
       <section id="addReview" className="mt-5 text-center">

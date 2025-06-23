@@ -2,73 +2,60 @@ import { useState } from "react";
 
 export default function useDownloadModal() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedFile, setSelectedFile] = useState("");
   const [formData, setFormData] = useState({ userName: "", userEmail: "" });
   const [errors, setErrors] = useState([]);
+  const [downloadLink, setDownloadLink] = useState(null); 
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-  const openModal = (file) => {
-    setSelectedFile(file);
-    setErrors([]);
-    setFormData({ userName: "", userEmail: "" });
+  const openModal = (fileUrl) => {
+    setDownloadLink(fileUrl);
     setModalOpen(true);
+    setSuccess(false);
+    setLoading(false);
   };
 
-  const closeModal = () => setModalOpen(false);
+  const closeModal = () => {
+    setModalOpen(false);
+    setErrors([]);
+    setFormData({ userName: "", userEmail: "" });
+    setDownloadLink(null);
+    setLoading(false);
+    setSuccess(false);
+  };
 
-  const validateEmail = (email) =>
-    /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email);
-
-  const handleSubmit = async (e, onCloseCallback = () => {}) => {
-    e.preventDefault();
+  const handleSubmit = (data) => {
     const newErrors = [];
-
-    if (!formData.userName.trim())
-      newErrors.push("Please provide your Name or Company Name.");
-
-    if (!formData.userEmail.trim())
-      newErrors.push("Email cannot be empty.");
-    else if (!validateEmail(formData.userEmail.trim()))
-      newErrors.push("Please enter a valid email address.");
+    if (!data.userName.trim()) newErrors.push("Name is required");
+    if (!data.userEmail.trim()) newErrors.push("Email is required");
+    else if (!/\S+@\S+\.\S+/.test(data.userEmail)) newErrors.push("Email is invalid");
 
     if (newErrors.length > 0) {
       setErrors(newErrors);
       return;
     }
 
-    // Save to localStorage
-    localStorage.setItem("userName", formData.userName.trim());
-    localStorage.setItem("userEmail", formData.userEmail.trim());
+    setErrors([]);
+    setLoading(true);
 
-    try {
-      const response = await fetch("/save-info.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.userName.trim(),
-          email: formData.userEmail.trim(),
-        }),
-      });
-      if (!response.ok) console.error("Error saving data.");
-      else console.log("Data saved successfully.");
-    } catch (err) {
-      console.error("Error saving data:", err);
-    }
+    // Simulate async submission
+    setTimeout(() => {
+      if (downloadLink) {
+        const link = document.createElement("a");
+        link.href = downloadLink;
+        link.download = "";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+      setLoading(false);
+      setSuccess(true);
 
-    onCloseCallback();
-
-    // Download file
-    if (selectedFile) {
+      // Automatically close modal after a delay
       setTimeout(() => {
-        const a = document.createElement("a");
-        a.href = selectedFile;
-        a.download = selectedFile.split("/").pop() || "download";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-      }, 500);
-    } else {
-      alert("No file selected.");
-    }
+        closeModal();
+      }, 3000);
+    }, 1000);
   };
 
   return {
@@ -79,5 +66,8 @@ export default function useDownloadModal() {
     setFormData,
     errors,
     handleSubmit,
+    loading,
+    success,
+    downloadLink,
   };
 }

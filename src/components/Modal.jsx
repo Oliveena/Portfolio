@@ -1,54 +1,97 @@
-// components/Modal.jsx
-'use client';
+import React, { useEffect, useRef } from "react";
 
-import React from 'react';
+export default function Modal({
+  formData,
+  setFormData,
+  errors,
+  loading,
+  success,
+  onClose,
+  onSubmit,
+  downloadLink,
+}) {
+  const modalRef = useRef(null);
 
-export default function Modal({ formData, setFormData, errors, onClose, onSubmit }) {
+  const fileType = downloadLink?.endsWith(".pdf")
+    ? "PDF"
+    : downloadLink?.endsWith(".docx")
+    ? "Word"
+    : "";
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
+  const handleClickOutside = (e) => {
+    if (modalRef.current && !modalRef.current.contains(e.target)) {
+      onClose();
+    }
+  };
+
   return (
-    <div id="downloadModal" className="modal-fade fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-lg">
-        <h2 className="text-xl font-semibold mb-4">Please enter your details:</h2>
-
-        {errors.length > 0 && (
-          <div className="mb-3 text-red-500">
-            <ul className="list-disc pl-5">
-              {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-            </ul>
-          </div>
-        )}
-
-        <form onSubmit={onSubmit}>
-          <div className="mb-3">
-            <label className="block mb-1 font-medium">Name or Company Name</label>
+    <div className="modal-backdrop" onMouseDown={handleClickOutside}>
+      <div className="modal-container" ref={modalRef}>
+        <h2>Please enter your credentials for downloading {fileType}. Thank you!</h2>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            onSubmit(formData);
+          }}
+        >
+          <div className="form-group">
+            <label>Name or Company Name</label>
             <input
               type="text"
-              className="w-full border px-3 py-2 rounded"
               value={formData.userName}
-              onChange={(e) => setFormData({ ...formData, userName: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, userName: e.target.value })
+              }
               required
             />
           </div>
-          <div className="mb-3">
-            <label className="block mb-1 font-medium">Email Address</label>
+          <div className="form-group">
+            <label>Email Address</label>
             <input
               type="email"
-              className="w-full border px-3 py-2 rounded"
               value={formData.userEmail}
-              onChange={(e) => setFormData({ ...formData, userEmail: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, userEmail: e.target.value })
+              }
               required
             />
           </div>
 
-          <div className="flex justify-end gap-2">
+          {errors.length > 0 && (
+            <ul className="error-list">
+              {errors.map((error, i) => (
+                <li key={i}>{error}</li>
+              ))}
+            </ul>
+          )}
+
+          {loading && (
+            <p className="status-message loading">Submitting...</p>
+          )}
+          {success && (
+            <p className="status-message success">
+              Success! Your download should begin shortly.
+            </p>
+          )}
+
+          <div className="button-row">
             <button
-              type="button"
-              onClick={onClose}
-              className="px-4 py-2 bg-gray-300 rounded"
+              type="submit"
+              className="btn btn-submit"
+              disabled={loading}
             >
-              Cancel
-            </button>
-            <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded">
               Submit & Download
+            </button>
+                        <button type="button" className="btn btn-cancel" onClick={onClose}>
+              Cancel
             </button>
           </div>
         </form>
