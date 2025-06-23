@@ -4,7 +4,6 @@
 * Autoprefixer: v10.4.7
 * Browsers: last 4 version
 */
-
 @import "../utils/mixins";
 @import "../utils/variables";
 @import "../base/fonts";
@@ -24,17 +23,6 @@ $gradient-end: map-get($colors, lilac);
   height: 30vh;
   transition: all 0.3s ease-in-out;
 
- .welcome.hero {
-  position: relative;
-  width: 100vw;
-  overflow: hidden;
-  background: linear-gradient(0deg, $gradient-start, $gradient-end);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  //color: white;
-}
-
   #download_text {
     color: var(--color-text);
     text-align: center;
@@ -45,25 +33,36 @@ $gradient-end: map-get($colors, lilac);
 
   .cv_download {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: center; /* center buttons horizontally */
+    gap: 1rem;               /* space between buttons */
     max-width: 30vw;
-    margin-right: 10vw;
-
-    a:hover {
-      border: 1px solid rgba(map-get($colors, eggshell), 0.5);
-      text-decoration: dotted;
-      color: rgba(map-get($colors, pink), 0.5);
-    }
+    margin: 0 auto;          /* center container horizontally */
 
     .btn {
-      background-color: map-get($colors, brown);
-      border: 2px solid map-get($colors, lilac);
-      padding: 0.8rem 1.5rem;
+      background-color: initial !important;
+      border: initial !important;
+      padding: 0.6rem 1.2rem;
       font-size: 1rem;
+      min-width: 100px; /* optional, consistent button size */
       transition: background-color 0.3s ease;
+      cursor: pointer;
     }
   }
+}
+
+.welcome.hero {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+  background: linear-gradient(0deg, $gradient-start, $gradient-end);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* color: white; */
+}
+
+.hero .container.h-100.position-relative {
+  background-color: transparent !important;
 }
 
 /* Responsive tweaks */
@@ -73,6 +72,7 @@ $gradient-end: map-get($colors, lilac);
     align-items: center;
     height: auto;
   }
+
   .cv_download {
     max-width: 80vw;
     margin-right: 0;
@@ -82,7 +82,7 @@ $gradient-end: map-get($colors, lilac);
       width: 100%;
       padding: 1rem;
       font-size: 1.2rem;
-      margin: 10px 0;
+      margin: 0.5rem 0;
     }
   }
 }
@@ -91,12 +91,16 @@ $gradient-end: map-get($colors, lilac);
   .welcome {
     height: auto;
   }
-  .cv_download .btn {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
-    margin-bottom: 15px;
+
+  .cv_download {
+    .btn {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
   }
+
   #download_text {
     font-size: 1.2rem;
   }

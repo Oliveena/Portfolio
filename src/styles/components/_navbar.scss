@@ -21,30 +21,23 @@
   margin-bottom: 0;
   font-size: 2vw;
   overflow: visible !important;
+}
 
-  .navbar-item {
-    display: inline-block;
-    color: map-get($colors, lilac);
-    text-decoration: none;
-    transition: background-color 0.5s ease, font-weight 0.3s ease;
+/* Place this at root level in your SCSS file */
+.navbar-dark .navbar-nav .nav-link {
+  color: map-get($colors, lilac) !important;
 
-    &:link,
-    &:visited {
-      color: map-get($colors, navy-blue);
-      text-decoration: none;
-    }
+  &:hover {
+    background-color: map-get($colors, light-blue) !important;
+    font-weight: bolder;
+    color: white !important;
+  }
 
-    &:hover {
-      background-color: map-get($colors, light-blue);
-      font-weight: bolder;
-    }
-
-    &.active {
-      color: map-get($colors, lilac);
-      text-decoration: underline;
-      background-color: map-get($colors, dark-blue); 
-      font-weight: bold;
-    }
+  &.active {
+    background-color: map-get($colors, dark-blue) !important;
+    text-decoration: underline;
+    font-weight: bold;
+    color: map-get($colors, lilac) !important;
   }
 
   .dropdown-menu {
