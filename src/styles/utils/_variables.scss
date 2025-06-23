@@ -6,25 +6,12 @@
 */
 
 /*========================== VARIABLES ==========================*/
+
+@import '../themes/colors';
+
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 /*storage of all SCSS reusable variables*/
-
-$colors: (
-  eggshell: #ddfff7,
-  beige: #d8c99b,
-  yellow: #f2c078,
-  gold: #d8973c,
-  brown: #9c4764,
-  red: #a4243b,
-  bloodstone: #273e47,
-  lilac: #7d83ff,
-  light-blue: #5688c7,
-  navy-blue: #150578,
-  pink: #ba71fe,
-  light-pink: #f57daa,
-  dark-blue: #001f3f
-);
 
 $main-font: 'Raleway', Helvetica, sans-serif;
 
@@ -47,9 +34,9 @@ $radius: 5%;
 $asymetric: 15px 50px;
 
 $linear-gradient: linear-gradient(
-                0deg,
-                map-get($colors, light-blue),
-                map-get($colors, navy-blue)
+  135deg,
+  lighten(map-get($colors, light-blue), 10%),
+  desaturate(map-get($colors, navy-blue), 20%)
 );
 
 $margin-top: 2vw;

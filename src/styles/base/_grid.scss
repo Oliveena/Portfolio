@@ -1,0 +1,42 @@
+@import "../utils/_mixins";
+@import "../utils/_variables";
+@import "../base/fonts";
+
+/*========================== BODY, GRID, other positioning info ==========================*/
+
+// Transition for all
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  * {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+// Theme-neutral elements
+#gradient-background {
+// fallback
+  background: linear-gradient(
+    0deg,
+    var(--color-bg-gradient-start, pink),
+    var(--color-bg-gradient-end, lilac)
+  );
+}
+
+.transparent-background-cold {
+  @include full-width;
+  background-color: var(--color-overlay-cold);
+}
+
+.transparent-background-warm {
+  @include full-width;
+  background-color: var(--color-overlay-warm);
+}
+
+.container {
+  background: var(--color-container-bg);
+}
+
+#vector-image {
+  background-image: url(https://wallpapers.com/images/hd/vector-pictures-x1nze4l9fn79dlef.jpg);
+}

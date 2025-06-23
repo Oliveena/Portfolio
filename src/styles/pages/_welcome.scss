@@ -5,9 +5,9 @@
 * Browsers: last 4 version
 */
 
-@import "../_mixins";
-@import "../variables";
-@import "../fonts";
+@import "../utils/mixins";
+@import "../utils/variables";
+@import "../base/fonts";
 
 // Define gradient colors as variables outside selector
 $gradient-start: rgba(map-get($colors, pink), 0.5);
@@ -36,6 +36,7 @@ $gradient-end: map-get($colors, lilac);
 }
 
   #download_text {
+    color: var(--color-text);
     text-align: center;
     margin-bottom: 20px;
     width: 100%;

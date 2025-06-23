@@ -31,7 +31,7 @@ export default function Contact() {
       </Helmet>
 
       <Navbar />
-      <main id="vector-image">
+      <main>
         <ContactForm />
       </main>
     </>

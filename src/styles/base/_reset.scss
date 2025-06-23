@@ -5,12 +5,11 @@
 * Browsers: last 4 version
 */
 
-@import "../_mixins";
-@import "../variables";
-@import "../fonts";
+@import "../utils/_mixins";
+@import "../utils/variables";
+@import "../base/fonts";
 
 /*========================== reset styles for clearing pre-made styles on any page ==========================*/
-
 
 /* reset the margin/border of any page */
 * {

@@ -1,121 +1,159 @@
 body.dark-theme {
+  --color-bg-primary: #001f3f;
+  --color-surface: #0a0a2a;
+  --color-bg-gradient-start: #{rgba(map-get($colors, navy-blue), 0.4)};
+  --color-bg-gradient-end: #{map-get($colors, bloodstone)};
+  --color-text: #e0e0e0;
+  --color-muted: #aaa;
+  --color-accent: #7d83ff;
 
-  // Base dark shades
-  --color-bg: #050509;              // darker background
-  --color-surface: #101014;         // slightly lighter gray for cards/sections
-  --color-text: #e0e0e0;            // light gray text for contrast
-  --color-muted-text: #a0a0a0;      // less emphasis
-
-  // Accents: Navy and Lilac
-  --color-accent: #7d83ff;          // lilac (for links, highlights)
-  --color-accent-hover: #9da2ff;    // lighter lilac on hover
-  --color-accent-muted: #272a4f;    // navy-toned surface for accents
-
-  // Navbar / Footer
-  --color-navbar-bg: #111320;       // deep navy background
-  --color-navbar-text: #e0e0e0;     // light text
-
-  // Buttons
-  --color-button-bg: var(--color-accent);
-  --color-button-text: #ffffff;
-  --color-button-border: var(--color-accent-hover);
+  background: var(--color-bg);
+  color: var(--color-text);
 
   a, p, h1, h2, h3, h4, h5, h6, label {
-    color: #e0e0e0;
+    color: var(--color-text);
+  }
+
+  .container {
+    background: transparent;
   }
 
   .navbar, footer {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
+    background: var(--color-surface);
+    color: var(--color-text);
   }
 
-  .navbar-nav {
-    background-color: darken(map-get($colors, navy-blue), 10%);
-    color: map-get($colors, lilac);
+  .btn {
+    background: var(--color-accent);
+    color: white;
+    border: none;
 
-    .navbar-item {
-      color: map-get($colors, lilac);
-
-      &:hover {
-        background-color: lighten(map-get($colors, pink), 10%);
-      }
-
-      &.active {
-        background-color: map-get($colors, light-blue);
-        color: map-get($colors, navy-blue);
-      }
+    &:hover {
+      background: lighten(#7d83ff, 5%);
     }
-  }
-
-  #reviews-display {
-    background-color: darken(map-get($colors, navy-blue), 10%);
-  }
-
-  .review {
-    background-color: #1e1e1e;
-    color: map-get($colors, light-blue);
-
-    p {
-      color: map-get($colors, light-blue);
-      text-shadow: 1px 1px map-get($colors, lilac);
-
-      em {
-        color: lighten(map-get($colors, pink), 15%);
-      }
-    }
-  }
-
-  .carousel-control-prev,
-  .carousel-control-next {
-    background-color: rgba(100, 100, 100, 0.4);
-    color: map-get($colors, lilac);
-  }
-
-  .btn-outline-light {
-    border-color: #e0e0e0;
-    color: #e0e0e0;
   }
 
   .form-control {
-    background-color: #2a2a2a;
-    color: #e0e0e0;
-    border: 1px solid #444;
+    background: #1a1a22;
+    border: 1px solid #333;
+    color: var(--color-text);
   }
-}
 
+  header.hero {
+    background: var(--color-surface);
+    img.position-absolute {
+      display: none;
+    }
 
-body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar, footer {
-  background-color: var(--color-navbar-bg);
-  color: var(--color-navbar-text);
-
-  .nav-link {
-    color: var(--color-navbar-text);
-    &:hover {
-      color: var(--color-accent);
+    .hero-overlay {
+      background: var(--color-surface);
+      opacity: 1;
     }
   }
 }
 
-.btn {
-  background-color: var(--color-button-bg);
-  color: var(--color-button-text);
-  border: 1px solid var(--color-button-border);
 
-  &:hover {
-    background-color: var(--color-accent-hover);
-    color: var(--color-button-text);
-  }
-}
 
-a {
-  color: var(--color-accent);
-  &:hover {
-    color: var(--color-accent-hover);
-  }
-}
+// body.dark-theme {
+//   --color-bg-primary: #050509;
+//   --color-bg-gradient-start: #{rgba(map-get($colors, navy-blue), 0.6)};
+//   --color-bg-gradient-end: #{map-get($colors, lilac)};
+//   --color-overlay-cold: rgba(86, 136, 199, 0.3);
+//   --color-overlay-warm: rgba(180, 112, 112, 0.25);
+//   --color-container-bg: linear-gradient(
+//     0deg,
+//     #{map-get($colors, bloodstone)},
+//     #{map-get($colors, navy-blue)}
+//   );
+
+//   --color-bg: #050509;
+//   --color-surface: #101014;
+//   --color-text: #e0e0e0;
+//   --color-muted-text: #a0a0a0;
+//   --color-accent: #7d83ff;
+//   --color-accent-hover: #9da2ff;
+//   --color-accent-muted: #272a4f;
+//   --color-navbar-bg: #111320;
+//   --color-navbar-text: #e0e0e0;
+//   --color-button-bg: var(--color-accent);
+//   --color-button-text: #fff;
+//   --color-button-border: var(--color-accent-hover);
+
+//   background-color: var(--color-bg-primary);
+//   color: var(--color-text);
+
+//   a, p, h1, h2, h3, h4, h5, h6, label {
+//     color: var(--color-text);
+//   }
+
+//   .navbar, footer {
+//     background-color: var(--color-navbar-bg);
+//     color: var(--color-navbar-text);
+
+//     .nav-link {
+//       color: var(--color-navbar-text);
+//       &:hover {
+//         color: var(--color-accent);
+//       }
+//     }
+//   }
+
+//   .navbar-nav {
+//     background-color: darken(map-get($colors, navy-blue), 10%);
+//     color: map-get($colors, lilac);
+
+//     .navbar-item {
+//       color: map-get($colors, lilac);
+
+//       &:hover {
+//         background-color: lighten(map-get($colors, pink), 10%);
+//       }
+
+//       &.active {
+//         background-color: map-get($colors, light-blue);
+//         color: map-get($colors, navy-blue);
+//       }
+//     }
+//   }
+
+//   .btn {
+//     background-color: var(--color-button-bg);
+//     color: var(--color-button-text);
+//     border: 1px solid var(--color-button-border);
+
+//     &:hover {
+//       background-color: var(--color-accent-hover);
+//       color: var(--color-button-text);
+//     }
+//   }
+
+//   .btn-outline-light {
+//     border-color: #e0e0e0;
+//     color: #e0e0e0;
+//   }
+
+//   .form-control {
+//     background-color: #2a2a2a;
+//     color: #e0e0e0;
+//     border: 1px solid #444;
+//   }
+
+//   .container {
+//     background-color: var(--color-bg-primary);
+//     min-height: 100vh;
+//     width: 100%;
+//   }
+
+//   header.hero {
+//     background-color: var(--color-bg-primary);
+//   }
+
+//   header.hero img.position-absolute {
+//     display: none;
+//   }
+
+//   header.hero .hero-overlay {
+//     background-color: var(--color-bg-primary);
+//     opacity: 1; // show overlay if you want
+//   }
+// }

@@ -66,7 +66,7 @@ export default function ReviewCarousel({ onSubmit }) {
       <h3 className="text-center mb-4">Testimonials</h3>
 
       {/* Review Carousel Display */}
-      <div id="testimonials" style={{ backgroundColor: 'white', color: 'white' }} className="bg-black text-light p-4 rounded">
+      <div id="testimonials" className="review-carousel-container p-4 rounded">
         <div id="reviews-display" className="mb-3">
           <div className="review bg-secondary text-light p-3 rounded shadow-sm">
             <p><em>"{reviews[currentIndex].text}"</em></p>

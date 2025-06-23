@@ -1,6 +1,30 @@
+:root {
+  /* Only define shared colors here */
+  --color-overlay-cold: rgba(39, 62, 71, 0.2);
+  --color-overlay-warm: rgba(156, 71, 100, 0.2);
+}
+
+$beige: map-get($colors, beige);
+$light-blue: map-get($colors, light-blue);
+
 body.bright-theme {
-  background-color: #fdfdfd;
+  --color-bg-primary: #fdfdfd;
+  --color-bg-gradient-start: #{rgba(map-get($colors, pink), 0.2)}; 
+  --color-bg-gradient-end: #{map-get($colors, lilac)};
+  --color-overlay-cold: rgba(39, 62, 71, 0.2);
+  --color-overlay-warm: rgba(156, 71, 100, 0.2);
+  --color-container-bg: linear-gradient(0deg, #{$beige}, #{$light-blue});
+  background-color: var(--color-bg-primary);
   color: #111;
+
+  a, p, h1, h2, h3, h4, h5, h6, label {
+    color: #000;
+  }
+
+  .navbar, footer {
+    background-color: #f8f9fa;
+    color: #000;
+  }
 
   .navbar-nav {
     background-color: map-get($colors, light-blue);
@@ -20,53 +44,14 @@ body.bright-theme {
     }
   }
 
-  #reviews-display {
-    background-color: map-get($colors, navy-blue);
-  }
-
-  .review {
-    background-color: #ffffff;
-    color: map-get($colors, light-blue);
-
-    p {
-      color: map-get($colors, light-blue);
-      text-shadow: 1px 1px map-get($colors, lilac);
-
-      em {
-        color: map-get($colors, pink);
-      }
-    }
-  }
-
-  .carousel-control-prev,
-  .carousel-control-next {
-    background-color: rgba(86, 136, 199, 0.5);
-    color: map-get($colors, eggshell);
-  }
-}
-
-
-body.bright-theme {
-  background-color: #ffffff;
-  color: #000000;
-
-  a, p, h1, h2, h3, h4, h5, h6, label {
-    color: #000000;
-  }
-
-  .navbar, footer {
-    background-color: #f8f9fa;
-    color: #000000;
-  }
-
   .btn-outline-light {
-    border-color: #000000;
-    color: #000000;
+    border-color: #000;
+    color: #000;
   }
 
   .form-control {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #fff;
+    color: #000;
     border: 1px solid #ccc;
   }
 }

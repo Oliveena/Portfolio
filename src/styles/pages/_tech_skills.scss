@@ -5,9 +5,9 @@
 * Browsers: last 4 version
 */
 
-@import "../_mixins";
-@import "../variables";
-@import "../fonts";
+@import "../utils/mixins";
+@import "../utils/variables";
+@import "../base/fonts";
 
 .tech_skills {
   background-color: transparent;

@@ -25,6 +25,9 @@ export default function Home() {
           className="position-absolute w-100 h-100 object-fit-cover"
           style={{ objectFit: 'cover', zIndex: 1 }}
         />
+
+        <div className="hero-overlay position-absolute w-100 h-100"></div>
+
         <div className="container h-100 position-relative" style={{ zIndex: 3 }}>
           <div className="row h-100 align-items-center justify-content-center justify-content-md-between text-center text-md-start">
             <div
@@ -58,22 +61,16 @@ export default function Home() {
       </header>
 
       {/* Download CV Section */}
-      <section className="welcome text-center py-5">
-        <div className="cv_download mt-4">
-          <button
-            className="btn btn-primary"
-            onClick={() => openModal('/shared_assets/images/Resume.pdf')}
-          >
-            PDF
-          </button>
-          <button
-            className="btn btn-success"
-            onClick={() => openModal('/shared_assets/images/Resume.docx')}
-          >
-            Word
-          </button>
-        </div>
-      </section>
+<section className="welcome text-center py-5">
+  <div id="download_text" className="mb-3">
+    <h2 className="fw-bold">Download My CV</h2>
+    <p>Choose a format:</p>
+  </div>
+  <div className="cv_download mt-4">
+    <button className="btn btn-primary" onClick={() => openModal('/shared_assets/images/Resume.pdf')}>PDF</button>
+    <button className="btn btn-success" onClick={() => openModal('/shared_assets/images/Resume.docx')}>Word</button>
+  </div>
+</section>
 
       {modalOpen && (
         <Modal

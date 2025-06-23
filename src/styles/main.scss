@@ -1,21 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=RF+Dewi&family=Raleway:wght@300&display=swap');
-@import "./variables";
-@import "./mixins";
-@import "./fonts";
+// src/styles/main.scss
+@import 'utils/variables';
+@import 'utils/mixins';
 
-@import "./styling/grid";
-@import "./styling/navbar";
-@import "./styling/footer";
-@import "./styling/header";
-@import "./styling/reset";
-@import "./styling/review_caroussel";
+@import 'themes/colors';
+@import 'themes/bright';
+@import 'themes/dark';
 
-@import "./themes/bright";
-@import "./themes/dark";
+@import 'base/reset';
+@import 'base/fonts';
+@import 'base/grid';
 
-@import "./webpages/contact";
-@import "./webpages/featured_projects";
-@import "./webpages/soft_skills";
-@import "./webpages/tech_skills";
-@import "./webpages/welcome";
-@import "./webpages/hobbies";
+@import 'components/navbar';
+@import 'components/footer';
+@import 'components/review_carousel';
+@import 'components/header';
+
+@import 'pages/contact';
+@import 'pages/featured_projects';
+@import 'pages/hobbies';
+@import 'pages/soft_skills';
+@import 'pages/tech_skills';
+@import 'pages/welcome';
