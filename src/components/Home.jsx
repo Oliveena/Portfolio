@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 import useDownloadModal from '../hooks/useDownloadModal';
 import ReviewCarousel from './ReviewCarousel';
 import Form from './Form';
+import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 
 export default function Home() {
+
+  const { lang } = useParams();
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    if (lang && i18n.language !== lang.toLowerCase()) {
+      i18n.changeLanguage(lang.toLowerCase());
+    }
+  }, [lang, i18n]);
+
   const [reviews, setReviews] = useState([
     { text: "Good portfolio.", author: "somebody" },
     { text: "Very nice.", author: "somebody else" },
@@ -53,18 +65,18 @@ export default function Home() {
               className="col-md-6 col-12 d-flex flex-column justify-content-center align-items-center align-items-md-start mb-4 mb-md-0"
               id="hero-text"
             >
-              <h1 className="display-4 fw-bold mt-2">Hello, this is Ana</h1>
-              <h2 className="h3 m-2">Web Developer and Nurse Clinician</h2>
+              <h1 className="display-4 fw-bold mt-2">{t('hero.title')}</h1>
+              <h2 className="h3 m-2">{t('hero.subtitle')}</h2>
               <p className="m-2">
-                <a
-                  href="/images/DeansList.png"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-decoration-underline text-light"
-                >
-                  Dean's List Recipient
-                </a>
-              </p>
+  <a
+    href="/images/DeansList.png"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-decoration-underline text-light"
+  >
+    {t('hero.deansList')}
+  </a>
+</p>
             </div>
             <div className="col-md-6 col-10 mx-auto mx-md-0 text-center">
               <img
@@ -81,8 +93,8 @@ export default function Home() {
       {/* Download CV Section */}
       <section className="welcome text-center py-5 m-0">
         <div id="download_text" className="mb-3">
-          <h2>Download CV</h2>
-          <p className="text-center">Choose a format:</p>
+          <h2>{t('cv.download')}</h2>
+          <p className="text-center">{t('cv.chooseFormat')}</p>
         </div>
         <div className="cv_download">
           <button className="btn btn-primary" onClick={() => openModal('/shared_assets/images/Resume.pdf')}>
@@ -109,14 +121,26 @@ export default function Home() {
 
       {/* Reviews Section */}
       <section id="addReview" className="mt-5 text-center">
-        <h2 className="mb-3">Add Your Review</h2>
+        <h2 className="mb-3">{t('review.add')}</h2>
         <ReviewCarousel className="review-section-container" reviews={reviews} />
        <Form
   className="review-section-container form-section"
-  title="Share A Review"
+  title={t('review.share')}
   fields={[
-    { id: "name", label: "Your Name", type: "text", placeholder: "Enter your name", required: true },
-    { id: "review", label: "Review", type: "textarea", placeholder: "Write your review here", required: true }
+    {
+      id: "name",
+      label: t('review.yourName'),
+      type: "text",
+      placeholder: t('review.yourName'),
+      required: true,
+    },
+    {
+      id: "review",
+      label: t('review.yourReview'),
+      type: "textarea",
+      placeholder: t('review.yourReview'),
+      required: true,
+    }
   ]}
   onSubmit={addReview}
 />

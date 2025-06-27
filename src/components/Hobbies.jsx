@@ -12,6 +12,8 @@ import {
 import BookTable from "./BookTable";
 import BookSearch from "./BookSearch";
 import Form from "./Form";
+import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 
 const books = [
   {

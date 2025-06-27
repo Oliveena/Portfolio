@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "title": "Hello, this is Ana",
+    "subtitle": "Web Developer and Nurse Clinician",
+    "deansList": "Dean's List Recipient"
+  },
+  "cv": {
+    "download": "Download CV",
+    "chooseFormat": "Choose a format:"
+  },
+  "review": {
+    "add": "Add Your Review",
+    "share": "Share A Review",
+    "yourName": "Your Name",
+    "yourReview": "Write your review here"
+  }, 
+  "skills": {
+    "technical_skills": "Technical Skills",
+    "tech_description": "I began autonomously studying coding while working as a nurse. My approach is driven by curiosity and diligence.",
+    "soft_skills": "Soft Skills",
+    "soft_description": "After 5 years in nursing and management, I’ve developed strong interpersonal and leadership skills.",
+    "languages_i_speak": "Languages I Speak"
+  },
+  "soft_skill_labels": {
+    "problem_solver": "Efficient problem-solver",
+    "multicultural": "Multicultural approach",
+    "under_pressure": "Performs well under pressure",
+    "communication": "Balanced communication"
+  }
+
+}

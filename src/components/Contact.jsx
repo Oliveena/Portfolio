@@ -1,5 +1,7 @@
 import React from "react";
 import Form from "./Form";
+import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 
 const contactFields = [
   { id: "name", label: "Name", type: "text", placeholder: "Your Name Here", required: true },

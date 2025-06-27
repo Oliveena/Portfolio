@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "title": "Bonjour, je suis Ana",
+    "subtitle": "Développeuse web et infirmière clinicienne",
+    "deansList": "Lauréate du Dean's List"
+  },
+  "cv": {
+    "download": "Télécharger le CV",
+    "chooseFormat": "Choisissez un format :"
+  },
+  "review": {
+    "add": "Ajoutez votre commentaire",
+    "share": "Partagez votre avis",
+    "yourName": "Votre nom",
+    "yourReview": "Rédigez votre commentaire ici"
+  },
+  "skills": {
+    "technical_skills": "Compétences techniques",
+    "tech_description": "J'ai commencé à étudier le codage de manière autonome tout en travaillant comme infirmière. Mon approche est guidée par la curiosité et la diligence.",
+    "soft_skills": "Compétences douces",
+    "soft_description": "Après 5 ans en soins infirmiers et gestion, j'ai développé de solides compétences interpersonnelles et en leadership.",
+    "languages_i_speak": "Langues que je parle"
+  },
+  "soft_skill_labels": {
+    "problem_solver": "Résolutrice de problèmes efficace",
+    "multicultural": "Approche multiculturelle",
+    "under_pressure": "Performante sous pression",
+    "communication": "Communication équilibrée"
+  }
+
+}

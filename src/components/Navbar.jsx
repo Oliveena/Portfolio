@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import ThemeToggle from "./ThemeToggle"; 
+import ThemeToggle from "./ThemeToggle";
 
 export default function MyNavbar() {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const toggleCollapse = () => setIsCollapsed(!isCollapsed);
 
   const location = useLocation();
-  const pathname = location.pathname;
+  const pathParts = location.pathname.split("/");
+  const currentLang = pathParts[1] || "en";
 
   const navItems = [
-    { to: "/", label: "Welcome" },
-    { to: "/EN/skills", label: "Skills" },
-    { to: "/EN/projects", label: "Featured Projects" },
-    { to: "/EN/hobbies", label: "Hobbies" },
-    { to: "/EN/contact", label: "Contact" },
+    { to: `/${currentLang}/`, label: "Welcome" },
+    { to: `/${currentLang}/skills`, label: "Skills" },
+    { to: `/${currentLang}/projects`, label: "Featured Projects" },
+    { to: `/${currentLang}/hobbies`, label: "Hobbies" },
+    { to: `/${currentLang}/contact`, label: "Contact" },
   ];
 
   return (
@@ -34,7 +35,7 @@ export default function MyNavbar() {
         <div className={`${isCollapsed ? "collapse" : ""} navbar-collapse`} id="navbarNav">
           <ul className="navbar-nav ms-auto">
             {navItems.map(({ to, label }) => {
-              const isActive = pathname === to;
+              const isActive = location.pathname === to;
 
               return (
                 <li key={to} className={`nav-item${isActive ? " active" : ""}`}>
@@ -59,13 +60,18 @@ export default function MyNavbar() {
               </a>
               <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <li>
-                  <Link to="/French/FR_Page_Principale" className="dropdown-item">
+                  <Link to="/fr/" className="dropdown-item">
                     Français
                   </Link>
                 </li>
                 <li>
-                  <Link to="/Russian/RU_portfolio_landing_page" className="dropdown-item">
+                  <Link to="/ru/" className="dropdown-item">
                     Русский
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/en/" className="dropdown-item">
+                    English
                   </Link>
                 </li>
               </ul>
