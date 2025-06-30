@@ -41,7 +41,8 @@ _i18next["default"].use(_i18nextBrowserLanguagedetector["default"]).use(_reactI1
   detection: {
     order: ['path', 'navigator'],
     lookupFromPathIndex: 0
-  }
+  },
+  keySeparator: false,
 });
 
 var _default = _i18next["default"];

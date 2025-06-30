@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom';
 export default function Home() {
 
   const { lang } = useParams();
+  
   const { t, i18n } = useTranslation();
 
   useEffect(() => {

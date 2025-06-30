@@ -3,13 +3,16 @@ import Form from "./Form";
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
-const contactFields = [
-  { id: "name", label: "Name", type: "text", placeholder: "Your Name Here", required: true },
-  { id: "email", label: "Email Address", type: "email", placeholder: "your@mail.com", required: true },
-  { id: "phone", label: "Phone Number", type: "tel", placeholder: "123-456-7890", required: false },
-  { id: "message", label: "Message", type: "textarea", placeholder: "Your Message", required: true },
-];
 export default function ContactPage() {
+  const { t } = useTranslation();
+
+  const contactFields = [
+    { id: "name", label: t("contact.name"), type: "text", placeholder: t("contact.name_placeholder"), required: true },
+    { id: "email", label: t("contact.email"), type: "email", placeholder: t("contact.email_placeholder"), required: true },
+    { id: "phone", label: t("contact.phone"), type: "tel", placeholder: t("contact.phone_placeholder"), required: false },
+    { id: "message", label: t("contact.message"), type: "textarea", placeholder: t("contact.message_placeholder"), required: true },
+  ];
+
   const handleContactSubmit = (data) => {
     console.log("Contact form data:", data);
   };
@@ -17,10 +20,11 @@ export default function ContactPage() {
   return (
     <main className="form-section">
       <Form
-        title="Contact Me"
+        title={t("contact.title")} // you can localize this too
         fields={contactFields}
         onSubmit={handleContactSubmit}
       />
     </main>
   );
 }
+

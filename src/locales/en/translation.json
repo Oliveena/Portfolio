@@ -13,7 +13,7 @@
     "share": "Share A Review",
     "yourName": "Your Name",
     "yourReview": "Write your review here"
-  }, 
+  },
   "skills": {
     "technical_skills": "Technical Skills",
     "tech_description": "I began autonomously studying coding while working as a nurse. My approach is driven by curiosity and diligence.",
@@ -26,6 +26,78 @@
     "multicultural": "Multicultural approach",
     "under_pressure": "Performs well under pressure",
     "communication": "Balanced communication"
-  }
+  },
+  "projects": {
+    "featured_projects_title": "Featured Projects",
+    "featured_projects_footer": "...and much more! Visit my full GitHub below.",
+    "visit_github": "Visit GitHub"
+  },
+  "hobbies": {
+    "title": "Hobbies",
+    "reading_reviews_title": "Reading Reviews",
+    "reading_reviews_subtitle": "Ana has always been an avid reader. Here is a list of recent reads.",
+    "books_list": [
+      {
+        "title": "My Favorite Thing Is Monsters",
+        "author": "Emil Ferris",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa ducimus debitis in dolorem voluptates. Recusandae nihil tenetur voluptate nemo. Corporis voluptas expedita repudiandae architecto, ut quod aliquam labore a vitae!"
+      },
+      {
+        "title": "Encabanée",
+        "author": "Gabrielle Filteau-Chiba",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quod sed nobis ab ad iusto quo nesciunt consectetur et autem accusantium iure, provident ea laborum delectus tempora voluptas reprehenderit doloremque."
+      },
+      {
+        "title": "Ahab's Wife",
+        "author": "Sena Jeter Naslund",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem corrupti facere ducimus illum labore numquam repellendus explicabo pariatur reiciendis laboriosam maxime, facilis molestiae dignissimos quae libero nisi asperiores necessitatibus animi!"
+      },
+      {
+        "title": "The Enchantress of Florence",
+        "author": "Salman Rushdie",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel quam quisquam deserunt quo dolorum nulla tempore eum amet fugit exercitationem accusantium voluptates reiciendis quae, laboriosam facilis doloremque quia ducimus sapiente!"
+      }
+    ],
 
+
+    "book_reviews": {
+  "by": "by {{author}}",
+  "monsters": "A mesmerizing graphic novel about a girl obsessed with monster movies and trying to understand her world.",
+  "encabanee": "A poetic and raw reflection on solitude, wilderness, and inner peace.",
+  "ahab": "An expansive historical novel exploring the untold story of Captain Ahab’s wife.",
+  "florence": "A lush, complex tale that blends East and West through magic and storytelling."
+},
+    "user_books_header": "Books recommended by users",
+    "suggest_book_prompt": "Would you like to suggest a book?",
+    "form_labels": {
+      "book_title": "Enter book title",
+      "book_author": "Enter author name",
+      "add_book_button": "Add Book"
+    },
+    "google_books": {
+      "title": "Searching for a particular book?",
+      "subtitle": "Here's Google Books API!",
+      "search_label": "Enter Book Title",
+      "search_button": "Search",
+      "book_search_title": "Can't remember the title?",
+      "book_search_subtitle": "Use the Google Books API to search by keyword, author, or topic."
+    },
+    "suggestion_messages": {
+      "suggest_book": "Suggest a Book",
+      "book_placeholder": "e.g. The Adventures of Tom Sawyer",
+      "author_placeholder": "e.g. Mark Twain",
+      "book_suggested_success": "✅ Thank you for suggesting a book!"
+    }
+  },
+  "contact": {
+    "title": "Contact Me",
+    "name": "Name",
+    "name_placeholder": "Your Name Here",
+    "email": "Email Address",
+    "email_placeholder": "your@mail.com",
+    "phone": "Phone Number",
+    "phone_placeholder": "123-456-7890",
+    "message": "Message",
+    "message_placeholder": "Your Message"
+  }
 }

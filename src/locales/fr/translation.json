@@ -1,31 +1,48 @@
 {
   "hero": {
-    "title": "Bonjour, je suis Ana",
+    "title": "Bonjour, c’est Ana",
     "subtitle": "Développeuse web et infirmière clinicienne",
-    "deansList": "Lauréate du Dean's List"
+    "deansList": "Lauréate de la liste du doyen"
   },
   "cv": {
     "download": "Télécharger le CV",
     "chooseFormat": "Choisissez un format :"
   },
   "review": {
-    "add": "Ajoutez votre commentaire",
-    "share": "Partagez votre avis",
+    "add": "Ajoutez votre avis",
+    "share": "Partager un avis",
     "yourName": "Votre nom",
-    "yourReview": "Rédigez votre commentaire ici"
+    "yourReview": "Écrivez votre avis ici"
   },
   "skills": {
     "technical_skills": "Compétences techniques",
-    "tech_description": "J'ai commencé à étudier le codage de manière autonome tout en travaillant comme infirmière. Mon approche est guidée par la curiosité et la diligence.",
-    "soft_skills": "Compétences douces",
-    "soft_description": "Après 5 ans en soins infirmiers et gestion, j'ai développé de solides compétences interpersonnelles et en leadership.",
+    "tech_description": "J’ai commencé à apprendre le codage de manière autonome tout en travaillant comme infirmière. Ma démarche est motivée par la curiosité et la rigueur.",
+    "soft_skills": "Compétences interpersonnelles",
+    "soft_description": "Après 5 ans dans les soins infirmiers et la gestion, j’ai développé de solides compétences interpersonnelles et en leadership.",
     "languages_i_speak": "Langues que je parle"
   },
   "soft_skill_labels": {
-    "problem_solver": "Résolutrice de problèmes efficace",
+    "problem_solver": "Résolution efficace de problèmes",
     "multicultural": "Approche multiculturelle",
-    "under_pressure": "Performante sous pression",
+    "under_pressure": "Travail efficace sous pression",
     "communication": "Communication équilibrée"
+  },
+  "featured_projects_title": "Projets en vedette",
+  "featured_projects_footer": "...et bien plus encore ! Consultez mon GitHub complet ci-dessous.",
+  "visit_github": "Voir GitHub",
+  "projects": {
+    "budget_title": "Application Calculatrice de Budget",
+    "budget_desc": "Une application React pour définir un budget personnel et le comparer aux dépenses.",
+    "shelter_title": "Application Refuge pour Animaux",
+    "shelter_desc": "Une application Java pour gérer les adoptions et les retours d’animaux.",
+    "laravel_portfolio_title": "Version Laravel de ce portfolio (en cours)",
+    "laravel_portfolio_desc": "Une expérimentation Laravel + Herd pour recréer ce portfolio à partir de zéro.",
+    "duproprio_title": "Clone de DuProprio",
+    "duproprio_desc": "Une plateforme immobilière basée sur Laravel avec annonces et blog.",
+    "bonjour_title": "Clone de BonjourSanté",
+    "bonjour_desc": "Une plateforme de prise de rendez-vous pour professionnels de santé, réalisée en PHP.",
+    "auctions_title": "Site d’Enchères",
+    "auctions_desc": "Un site PHP pour publier et enchérir sur des objets aux enchères."
   }
-
 }
+
