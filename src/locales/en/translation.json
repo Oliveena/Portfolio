@@ -31,64 +31,40 @@
     "featured_projects_title": "Featured Projects",
     "featured_projects_footer": "...and much more! Visit my full GitHub below.",
     "visit_github": "Visit GitHub"
+  },"hobbies": {
+  "title": "Hobbies",
+  "reading_reviews_title": "Reading Reviews",
+  "reading_reviews_subtitle": "Ana has always been an avid reader. Here is a list of recent reads.",
+
+  "book_reviews": {
+    "by": "by {{author}}",
+    "no_review": "No review available.",
+    "monsters": "A mesmerizing graphic novel about a girl obsessed with monster movies and trying to understand her world.",
+    "encabanee": "A poetic and raw reflection on solitude, wilderness, and inner peace.",
+    "ahab": "A sweeping novel of identity and survival inspired by Moby Dick.",
+    "florence": "A tale weaving East and West, history and myth, in the Mughal Empire."
   },
-  "hobbies": {
-    "title": "Hobbies",
-    "reading_reviews_title": "Reading Reviews",
-    "reading_reviews_subtitle": "Ana has always been an avid reader. Here is a list of recent reads.",
-    "books_list": [
-      {
-        "title": "My Favorite Thing Is Monsters",
-        "author": "Emil Ferris",
-        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa ducimus debitis in dolorem voluptates. Recusandae nihil tenetur voluptate nemo. Corporis voluptas expedita repudiandae architecto, ut quod aliquam labore a vitae!"
-      },
-      {
-        "title": "Encabanée",
-        "author": "Gabrielle Filteau-Chiba",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quod sed nobis ab ad iusto quo nesciunt consectetur et autem accusantium iure, provident ea laborum delectus tempora voluptas reprehenderit doloremque."
-      },
-      {
-        "title": "Ahab's Wife",
-        "author": "Sena Jeter Naslund",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem corrupti facere ducimus illum labore numquam repellendus explicabo pariatur reiciendis laboriosam maxime, facilis molestiae dignissimos quae libero nisi asperiores necessitatibus animi!"
-      },
-      {
-        "title": "The Enchantress of Florence",
-        "author": "Salman Rushdie",
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel quam quisquam deserunt quo dolorum nulla tempore eum amet fugit exercitationem accusantium voluptates reiciendis quae, laboriosam facilis doloremque quia ducimus sapiente!"
-      }
-    ],
 
+  "form_labels": {
+    "book_title": "Book title",
+    "book_author": "Author",
+    "book_placeholder": "Enter book title",
+    "author_placeholder": "Enter author name"
+  },
 
-    "book_reviews": {
-  "by": "by {{author}}",
-  "monsters": "A mesmerizing graphic novel about a girl obsessed with monster movies and trying to understand her world.",
-  "encabanee": "A poetic and raw reflection on solitude, wilderness, and inner peace.",
-  "ahab": "An expansive historical novel exploring the untold story of Captain Ahab’s wife.",
-  "florence": "A lush, complex tale that blends East and West through magic and storytelling."
+  "form": {
+    "validation_title": "Please enter a valid title.",
+    "validation_author": "Please enter a valid author name."
+  },
+
+  "suggestion_messages": {
+    "suggest_book": "Suggest a Book",
+    "book_suggested_success": "Thanks! Your book suggestion was added."
+  },
+
+  "search_title": "Search Google Books",
+  "search_subtitle": "Enter a book title to find more reads you might like."
 },
-    "user_books_header": "Books recommended by users",
-    "suggest_book_prompt": "Would you like to suggest a book?",
-    "form_labels": {
-      "book_title": "Enter book title",
-      "book_author": "Enter author name",
-      "add_book_button": "Add Book"
-    },
-    "google_books": {
-      "title": "Searching for a particular book?",
-      "subtitle": "Here's Google Books API!",
-      "search_label": "Enter Book Title",
-      "search_button": "Search",
-      "book_search_title": "Can't remember the title?",
-      "book_search_subtitle": "Use the Google Books API to search by keyword, author, or topic."
-    },
-    "suggestion_messages": {
-      "suggest_book": "Suggest a Book",
-      "book_placeholder": "e.g. The Adventures of Tom Sawyer",
-      "author_placeholder": "e.g. Mark Twain",
-      "book_suggested_success": "✅ Thank you for suggesting a book!"
-    }
-  },
   "contact": {
     "title": "Contact Me",
     "name": "Name",

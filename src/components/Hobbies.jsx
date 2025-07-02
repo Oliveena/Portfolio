@@ -12,32 +12,32 @@ import {
 import BookTable from "./BookTable";
 import BookSearch from "./BookSearch";
 import Form from "./Form";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 const books = [
   {
     title: "My Favorite Thing Is Monsters",
     author: "Emil Ferris",
-    review: "book_reviews.monsters",
-    cover: "/images/book1.jpg",
+    review: "hobbies.book_reviews.monsters",
+    cover: "/images/readBooks/FerrisMyFavoriteThingIsMonsters.jpg"
   },
   {
     title: "Encabanée",
     author: "Gabrielle Filteau-Chiba",
-    review: "book_reviews.encabanee",
-    cover: "/images/book2.jpg",
+    review: "hobbies.book_reviews.encabanee",
+    cover: "/images/readBooks/FilteauCEncabanee.webp",
   },
   {
     title: "Ahab's Wife",
     author: "Sena Jeter Naslund",
-    review: "book_reviews.ahab",
-    cover: "/images/book3.jpg",
+    review: "hobbies.book_reviews.ahab",
+    cover: "/images/readBooks/Ahabs-Wife.jpg",
   },
   {
     title: "The Enchantress of Florence",
     author: "Salman Rushdie",
-    review: "book_reviews.florence",
-    cover: "/images/book4.jpg",
+    review: "hobbies.book_reviews.florence",
+    cover: "/images/readBooks/Enchantress_of_florence.jpg",
   },
 ];
 
@@ -51,21 +51,24 @@ export default function Hobbies() {
   const [successMessage, setSuccessMessage] = useState("");
 
   const pageCount = Math.ceil(books.length / itemsPerPage);
-  const paginatedBooks = books.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+  const paginatedBooks = books.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   const suggestionFields = [
     {
       id: "title",
-      label: t("form.book_title"),
+      label: t("hobbies.form_labels.book_title"),
       type: "text",
-      placeholder: t("form.book_title_placeholder"),
+      placeholder: t("hobbies.form_labels.book_placeholder"),
       required: true,
     },
     {
       id: "author",
-      label: t("form.book_author"),
+      label: t("hobbies.form_labels.book_author"),
       type: "text",
-      placeholder: t("form.book_author_placeholder"),
+      placeholder: t("hobbies.form_labels.author_placeholder"),
       required: true,
     },
   ];
@@ -79,20 +82,23 @@ export default function Hobbies() {
     const textRegex = /^[A-Za-z0-9\s.,'-]+$/;
 
     if (title && !textRegex.test(title)) {
-      alert(t("form.validation_title"));
+      alert(t("hobbies.form.validation_title"));
       return;
     }
 
     if (author && !textRegex.test(author)) {
-      alert(t("form.validation_author"));
+      alert(t("hobbies.form.validation_author"));
       return;
     }
 
-    setSuggestedBooks((prev) => [...prev, { title, author, reason: "User suggested" }]);
+    setSuggestedBooks((prev) => [
+      ...prev,
+      { title, author, reason: "User suggested" },
+    ]);
     localStorage.setItem("bookTitle", title);
     localStorage.setItem("bookAuthor", author);
 
-    setSuccessMessage(t("form.success"));
+    setSuccessMessage(t("hobbies.suggestion_messages.book_suggested_success"));
     setTimeout(() => setSuccessMessage(""), 3000);
   };
 
@@ -110,7 +116,13 @@ export default function Hobbies() {
         <Grid container spacing={4} justifyContent="center">
           {paginatedBooks.map((book, idx) => (
             <Grid item xs={12} sm={6} md={4} key={idx}>
-              <Card elevation={4} sx={{ transition: "transform 0.3s ease", "&:hover": { transform: "scale(1.02)" } }}>
+              <Card
+                elevation={4}
+                sx={{
+                  transition: "transform 0.3s ease",
+                  "&:hover": { transform: "scale(1.02)" },
+                }}
+              >
                 {book.cover && (
                   <CardMedia
                     component="img"
@@ -125,12 +137,13 @@ export default function Hobbies() {
                     "{book.title}"
                   </Typography>
                   <Typography variant="subtitle2" color="text.secondary">
-                    {t("book_reviews.by", { author: book.author })}
+                    {t("hobbies.book_reviews.by", { author: book.author })}
                   </Typography>
                   <Typography variant="body2" mt={1}>
-  {book.review ? t(book.review) : t("book_reviews.no_review")}
-</Typography>
-
+                    {book.review
+                      ? t(book.review)
+                      : t("hobbies.book_reviews.no_review")}
+                  </Typography>
                 </CardContent>
               </Card>
             </Grid>
@@ -156,7 +169,7 @@ export default function Hobbies() {
       {/* =============== BOOK SUGGESTION FORM =============== */}
       <section style={{ marginTop: "4rem" }}>
         <Form
-          title={t("hobbies.form.suggest_book")}
+          title={t("hobbies.suggestion_messages.suggest_book")}
           fields={suggestionFields}
           onSubmit={handleSuggestBook}
           className="my-5"

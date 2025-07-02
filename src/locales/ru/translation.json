@@ -27,21 +27,49 @@
     "under_pressure": "Работа под давлением",
     "communication": "Умеренное общение"
   },
-  "featured_projects_title": "Избранные проекты",
-  "featured_projects_footer": "...и многое другое! Посетите мой GitHub ниже.",
-  "visit_github": "Посетить GitHub",
   "projects": {
-    "budget_title": "Приложение Калькулятор Бюджета",
-    "budget_desc": "Приложение на React для планирования бюджета и сравнения с расходами.",
-    "shelter_title": "Приложение Приют для Животных",
-    "shelter_desc": "Приложение на Java для управления усыновлениями и возвратами животных.",
-    "laravel_portfolio_title": "Laravel-версия портфолио (в разработке)",
-    "laravel_portfolio_desc": "Laravel + Herd эксперимент по воссозданию этого портфолио с нуля.",
-    "duproprio_title": "Клон DuProprio",
-    "duproprio_desc": "Платформа недвижимости на Laravel с объявлениями и блогами.",
-    "bonjour_title": "Клон BonjourSanté",
-    "bonjour_desc": "Платформа записи к врачу на PHP.",
-    "auctions_title": "Сайт Аукционов",
-    "auctions_desc": "PHP-сайт для размещения и участия в аукционах."
+    "featured_projects_title": "Избранные проекты",
+    "featured_projects_footer": "...и многое другое! Посетите мой GitHub ниже.",
+    "visit_github": "Посетить GitHub"
+  },
+  "hobbies": {
+    "title": "Увлечения",
+    "reading_reviews_title": "Книжные обзоры",
+    "reading_reviews_subtitle": "Ана всегда была заядлой читательницей. Вот несколько её последних прочтений.",
+    "book_reviews": {
+      "by": "автор: {{author}}",
+      "no_review": "Отзыв отсутствует.",
+      "monsters": "Захватывающий графический роман о девочке, увлечённой фильмами о монстрах и пытающейся понять окружающий мир.",
+      "encabanee": "Поэтичное и глубокое размышление о одиночестве, дикой природе и внутреннем покое.",
+      "ahab": "Масштабный исторический роман о неизвестной истории жены капитана Ахава.",
+      "florence": "История, переплетающая Восток и Запад, магию и повествование в эпоху Моголов."
+    },
+    "form_labels": {
+      "book_title": "Название книги",
+      "book_author": "Автор",
+      "book_placeholder": "Введите название книги",
+      "author_placeholder": "Введите имя автора"
+    },
+    "form": {
+      "validation_title": "Пожалуйста, введите корректное название.",
+      "validation_author": "Пожалуйста, введите корректное имя автора."
+    },
+    "suggestion_messages": {
+      "suggest_book": "Предложить книгу",
+      "book_suggested_success": "Спасибо! Ваша книга была добавлена."
+    },
+    "search_title": "Поиск через Google Books",
+    "search_subtitle": "Введите название книги, чтобы найти похожие варианты."
+  },
+  "contact": {
+    "title": "Связаться со мной",
+    "name": "Имя",
+    "name_placeholder": "Ваше имя",
+    "email": "Электронная почта",
+    "email_placeholder": "your@email.com",
+    "phone": "Телефон",
+    "phone_placeholder": "123-456-7890",
+    "message": "Сообщение",
+    "message_placeholder": "Ваше сообщение"
   }
 }

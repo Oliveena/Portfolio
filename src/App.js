@@ -12,6 +12,7 @@ import './i18n';
 import { useTranslation } from 'react-i18next'; 
 import { useParams } from 'react-router-dom'; 
 import ScrollToTop from './components/ScrollToTop';
+import MetaTags from './components/MetaTags';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <>
+     <MetaTags title="Ana's Portfolio" description="Junior dev portfolio website" />
       <Navbar />
       <ScrollToTop /> 
       <main className="min-h-screen p-8" id="gradient-background">

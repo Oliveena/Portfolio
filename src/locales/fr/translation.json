@@ -27,22 +27,49 @@
     "under_pressure": "Travail efficace sous pression",
     "communication": "Communication équilibrée"
   },
-  "featured_projects_title": "Projets en vedette",
-  "featured_projects_footer": "...et bien plus encore ! Consultez mon GitHub complet ci-dessous.",
-  "visit_github": "Voir GitHub",
   "projects": {
-    "budget_title": "Application Calculatrice de Budget",
-    "budget_desc": "Une application React pour définir un budget personnel et le comparer aux dépenses.",
-    "shelter_title": "Application Refuge pour Animaux",
-    "shelter_desc": "Une application Java pour gérer les adoptions et les retours d’animaux.",
-    "laravel_portfolio_title": "Version Laravel de ce portfolio (en cours)",
-    "laravel_portfolio_desc": "Une expérimentation Laravel + Herd pour recréer ce portfolio à partir de zéro.",
-    "duproprio_title": "Clone de DuProprio",
-    "duproprio_desc": "Une plateforme immobilière basée sur Laravel avec annonces et blog.",
-    "bonjour_title": "Clone de BonjourSanté",
-    "bonjour_desc": "Une plateforme de prise de rendez-vous pour professionnels de santé, réalisée en PHP.",
-    "auctions_title": "Site d’Enchères",
-    "auctions_desc": "Un site PHP pour publier et enchérir sur des objets aux enchères."
+    "featured_projects_title": "Projets en vedette",
+    "featured_projects_footer": "...et bien plus encore ! Consultez mon GitHub complet ci-dessous.",
+    "visit_github": "Voir GitHub"
+  },
+  "hobbies": {
+    "title": "Loisirs",
+    "reading_reviews_title": "Avis de lecture",
+    "reading_reviews_subtitle": "Ana a toujours été une lectrice passionnée. Voici quelques lectures récentes.",
+    "book_reviews": {
+      "by": "par {{author}}",
+      "no_review": "Aucun avis disponible.",
+      "monsters": "Un roman graphique envoûtant sur une fille passionnée par les films de monstres et qui cherche à comprendre le monde qui l’entoure.",
+      "encabanee": "Une réflexion poétique et brute sur la solitude, la nature sauvage et la paix intérieure.",
+      "ahab": "Un roman historique ample explorant l’histoire oubliée de l’épouse du capitaine Achab.",
+      "florence": "Un récit luxuriant mêlant Orient et Occident, magie et narration."
+    },
+    "form_labels": {
+      "book_title": "Titre du livre",
+      "book_author": "Auteur",
+      "book_placeholder": "Entrez le titre du livre",
+      "author_placeholder": "Entrez le nom de l’auteur"
+    },
+    "form": {
+      "validation_title": "Veuillez entrer un titre valide.",
+      "validation_author": "Veuillez entrer un nom d’auteur valide."
+    },
+    "suggestion_messages": {
+      "suggest_book": "Suggérer un livre",
+      "book_suggested_success": "Merci ! Votre suggestion de livre a été ajoutée."
+    },
+    "search_title": "Rechercher dans Google Livres",
+    "search_subtitle": "Entrez un titre de livre pour trouver d'autres suggestions de lecture."
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "name": "Nom",
+    "name_placeholder": "Votre nom ici",
+    "email": "Adresse e-mail",
+    "email_placeholder": "votre@email.com",
+    "phone": "Numéro de téléphone",
+    "phone_placeholder": "123-456-7890",
+    "message": "Message",
+    "message_placeholder": "Votre message"
   }
 }
-
