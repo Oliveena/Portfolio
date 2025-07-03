@@ -6,8 +6,8 @@ const projects = [
     title: "Budget Calculator App",
     description: "A React app used for setting a personal budget and comparing it to spending.",
     image: "/images/BudgetApp.png",
-    github: "https://github.com/Oliveena/WebDevIIFinalProject", // replace with actual repo if needed
-    ppt: "https://docs.google.com/presentation/d/16Vh3pTAYnaRGzu6wIXt-z8ueZwlnXIxK/edit", // update filename if needed
+    github: "https://github.com/Oliveena/WebDevIIFinalProject", 
+    ppt: "https://docs.google.com/presentation/d/16Vh3pTAYnaRGzu6wIXt-z8ueZwlnXIxK/edit", 
   },
   {
     title: "Animal Shelter App",
@@ -34,7 +34,7 @@ const projects = [
     description: "A PHP-based appointment booking platform for medical professionals.",
     image: "/images/BonjourSante.png",
     github: "https://github.com/Oliveena/fsd13portfolioana",
-    ppt: "/shared_assets/WebServicesPwP2 1.pptx",
+    ppt: "https://docs.google.com/presentation/d/18vhUeVyAaiufGFgoUW3y5WznpWilIHeelaLMi3UDbrE/edit?slide=id.p3#slide=id.p3",
   },
   {
     title: "Auctions Website",
