@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "./Form";
-import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 
 export default function ContactPage() {
   const { t } = useTranslation();
+  const [submitted, setSubmitted] = useState(false);
 
   const contactFields = [
     { id: "name", label: t("contact.name"), type: "text", placeholder: t("contact.name_placeholder"), required: true },
@@ -13,18 +13,25 @@ export default function ContactPage() {
     { id: "message", label: t("contact.message"), type: "textarea", placeholder: t("contact.message_placeholder"), required: true },
   ];
 
-  const handleContactSubmit = (data) => {
-    console.log("Contact form data:", data);
+  // Fake submit handler to demo success message without sending anything
+  const handleSubmit = (formData) => {
+    setSubmitted(true);
+    console.log("Demo form submission data:", formData);
   };
 
   return (
     <main className="form-section">
       <Form
-        title={t("contact.title")} // you can localize this too
+        title={t("contact.title")}
         fields={contactFields}
-        onSubmit={handleContactSubmit}
+        onSubmit={handleSubmit}
+        disableOnSubmit={submitted}  
       />
+      {submitted && (
+        <p style={{ textAlign: "center", marginTop: "1rem", color: "green", fontWeight: "bold" }}>
+          Thanks for reaching out! (Demo only — no message sent)
+        </p>
+      )}
     </main>
   );
 }
-
