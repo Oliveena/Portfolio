@@ -7,14 +7,14 @@ const projects = [
     description: "A React app used for setting a personal budget and comparing it to spending.",
     image: "/images/BudgetApp.png",
     github: "https://github.com/Oliveena/WebDevIIFinalProject", 
-    ppt: "https://docs.google.com/presentation/d/16Vh3pTAYnaRGzu6wIXt-z8ueZwlnXIxK/edit", 
+    ppt: "/powerpoints/BudgetApp_PRESENTATION.pptx.pdf", 
   },
   {
     title: "Animal Shelter App",
     description: "A Java-based desktop app for managing animal adoptions, returns, and shelter capacity.",
     image: "/images/AnimalShelter.png",
     github: "https://github.com/Oliveena/DSAAnimalShelter/tree/master",
-    ppt: "https://docs.google.com/presentation/d/109J_gezmR7Tm457N6gSH5Jl_MkUrg3Jj/edit",  
+    ppt: "/powerpoints/PresentationTitle.pptx.pdf",  
   },
   {
     title: "Laravel Version of this Portfolio (in progress)",
@@ -27,14 +27,14 @@ const projects = [
     description: "A Laravel-based real estate platform with listings and blogs.",
     image: "/images/RemaxClone.png",
     github: "https://github.com/Oliveena/realestate",
-    ppt: "https://docs.google.com/presentation/d/1RFmo-qg8mWooYjx1xILI93lzb1NIbYf7PO2tYs6C4-s/edit?slide=id.p1#slide=id.p1",
+    ppt: "/powerpoints/RemaxClone.pdf",
   },
   {
     title: "BonjourSanté Clone",
     description: "A PHP-based appointment booking platform for medical professionals.",
     image: "/images/BonjourSante.png",
     github: "https://github.com/Oliveena/fsd13portfolioana",
-    ppt: "https://docs.google.com/presentation/d/18vhUeVyAaiufGFgoUW3y5WznpWilIHeelaLMi3UDbrE/edit?slide=id.p3#slide=id.p3",
+    ppt: "/powerpoints/Bonjour-SantéClone.pdf",
   },
   {
     title: "Auctions Website",
