@@ -14,6 +14,7 @@ body.dark-theme {
 
   .container {
     background: transparent;
+    padding: 2rem;
   }
 
   .navbar, footer {
@@ -48,7 +49,6 @@ body.dark-theme {
       opacity: 1;
     }
   }
-
   
   .card {
     background-color: var(--color-surface);

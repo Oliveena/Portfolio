@@ -38,35 +38,22 @@ export default function BookSearch() {
           <button className="btn btn-primary w-100" onClick={handleSearch}>Search</button>
         </div>
         {error && <p className="text-danger">{error}</p>}
-
-        <div className="book-container mt-4 row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-          {results.map((book, idx) => {
-            const info = book.volumeInfo;
-            return (
-              <div key={idx} className="col">
-                <div className="border p-3 rounded shadow-sm h-100 bg-white">
-                  {info.imageLinks?.thumbnail && (
-                    <img
-                      src={info.imageLinks.thumbnail}
-                      alt={info.title}
-                      className="mb-2 img-fluid"
-                    />
-                  )}
-                  <h5>{info.title}</h5>
-                  <p><strong>Authors:</strong> {info.authors?.join(", ") || "Unknown"}</p>
-                  <p style={{ fontSize: "0.9em"}}>
-                    {info.description
-                      ? info.description.slice(0, 150) + "..."
-                      : "No description available."}
-                  </p>
-                  <a href={info.infoLink} target="_blank" rel="noopener noreferrer">
-                    More Info
-                  </a>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+<div className="book-container mt-4 row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+  {results.map((book, idx) => {
+    const info = book.volumeInfo;
+    return (
+      <div key={idx} className="col">
+        <BookCard
+          title={info.title}
+          authors={info.authors}
+          description={info.description}
+          cover={info.imageLinks?.thumbnail}
+          infoLink={info.infoLink}
+        />
+      </div>
+    );
+  })}
+</div>
       </fieldset>
     </div>
   );

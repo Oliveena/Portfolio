@@ -1,24 +1,22 @@
-import React from "react";
+// RecommendedTable.jsx
 import { Table, TableHead, TableRow, TableCell, TableBody, Typography } from "@mui/material";
 
-export default function BookTable({ books }) {
-  if (books.length === 0) return null;
-
+export default function RecommendedTable({ books }) {
   return (
     <>
-      <Typography variant="h5" align="center" gutterBottom>
-        User-Recommended Books
+      <Typography variant="h5" gutterBottom align="center">
+        Recommended Books
       </Typography>
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell sx={{ fontWeight: 'bold', fontSize: '1.2rem' }}>Title</TableCell>
-<TableCell sx={{ fontWeight: 'bold', fontSize: '1.2rem' }}>Author</TableCell>
+            <TableCell>Title</TableCell>
+            <TableCell>Author</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {books.map((book, i) => (
-            <TableRow key={i}>
+          {books.map((book, idx) => (
+            <TableRow key={idx}>
               <TableCell>{book.title}</TableCell>
               <TableCell>{book.author}</TableCell>
             </TableRow>

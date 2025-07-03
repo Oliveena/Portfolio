@@ -22,10 +22,11 @@
     "languages_i_speak": "Languages I Speak"
   },
   "soft_skill_labels": {
-    "problem_solver": "Efficient problem-solver",
-    "multicultural": "Multicultural approach",
-    "under_pressure": "Performs well under pressure",
-    "communication": "Balanced communication"
+    "scrum_leader": "Effective Scrum Leader, Highly Proficient with Kanban, Trello, Agile & Scrum",
+    "communication": "Empathetic Communicator Skilled in User-Focused Collaboration",
+    "problem_solver": "Creative Problem Solver, Adapts Quickly to Complex IT Challenges",
+    "multicultural": "Culturally Adaptable Team Player with Experience in Diverse Environments",
+    "under_pressure": "Calm Under Pressure, Excels in High-Stakes Situations"
   },
   "projects": {
     "featured_projects_title": "Featured Projects",
@@ -35,21 +36,24 @@
   "title": "Hobbies",
   "reading_reviews_title": "Reading Reviews",
   "reading_reviews_subtitle": "Ana has always been an avid reader. Here is a list of recent reads.",
-
-  "book_reviews": {
-    "by": "by {{author}}",
-    "no_review": "No review available.",
-    "monsters": "A mesmerizing graphic novel about a girl obsessed with monster movies and trying to understand her world.",
-    "encabanee": "A poetic and raw reflection on solitude, wilderness, and inner peace.",
-    "ahab": "A sweeping novel of identity and survival inspired by Moby Dick.",
-    "florence": "A tale weaving East and West, history and myth, in the Mughal Empire."
-  },
+  
+ "book_reviews": {
+  "by": "by {{author}}",
+  "no_review": "No review available.",
+  "design": "A critical look at how poor design can harm users — and how to design with empathy.",
+  "terre": "A poetic memoir blending aviation with humanist philosophy and reflection on connection.",
+  "master": "A surreal, satirical novel exploring good, evil, and forbidden love in Soviet-era Russia.",
+  "florence": "A tale weaving East and West, history and myth, in the Mughal Empire.",
+  "encabanee": "A poetic and raw reflection on solitude, wilderness, and inner peace.",
+  "ahab": "A sweeping novel of identity and survival inspired by Moby Dick.",
+  "monsters": "A mesmerizing graphic novel about a girl obsessed with monster movies and trying to understand her world."
+},
 
   "form_labels": {
     "book_title": "Book title",
     "book_author": "Author",
-    "book_placeholder": "Enter book title",
-    "author_placeholder": "Enter author name"
+    "book_placeholder": "e.g. The Adventures of Tom Sawyer",
+    "author_placeholder": "e.g. Mark Twain"
   },
 
   "form": {

@@ -3,6 +3,7 @@ import { Grid, Box } from "@mui/material";
 import { FaLightbulb, FaUsers, FaHeartbeat, FaComments } from "react-icons/fa";
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
+import { FaProjectDiagram } from "react-icons/fa";
 
 const techSkills = [
   { alt: "AWS Certificate", src: "/images/aws-academy-graduate-aws-academy-cloud-security-foundations.png" },
@@ -18,10 +19,11 @@ const techSkills = [
 ]
 
 const softSkills = [
+  { labelKey: "scrum_leader", icon: <FaProjectDiagram /> },
   { labelKey: "problem_solver", icon: <FaLightbulb /> },
   { labelKey: "multicultural", icon: <FaUsers /> },
   { labelKey: "under_pressure", icon: <FaHeartbeat /> },
-  { labelKey: "communication", icon: <FaComments /> },
+  { labelKey: "communication", icon: <FaComments /> }
 ];
 
 const languages = [

@@ -35,11 +35,11 @@
     background-color: var(--color-surface);
     border-radius: $radius;
     box-shadow: 0 2px 4px rgba(64, 61, 57, 0.3);
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    // transition: transform 0.2s ease, box-shadow 0.3s ease;
 
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(64, 61, 57, 0.3);
-    }
+    // &:hover {
+    //   transform: translateY(-5px);
+    //   box-shadow: 0 6px 12px rgba(64, 61, 57, 0.3);
+    // }
   }
 }

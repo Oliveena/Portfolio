@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { Container, Typography, Box, Divider, Alert } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
-import BooksList from "./BooksList";
+import ReadBooksGrid from "./ReadBooks";  // <--- updated import here
 import RecommendedTable from "./RecommendedTable";
 import BookTable from "./BookTable"; 
 import Form from "./Form";
 import BookSearch from "./BookSearch";
-import { Pagination } from "@mui/material";
 
 const readBooks = [
   {
@@ -17,10 +16,10 @@ const readBooks = [
     cover: "/images/readBooks/ShariatSaucierTragicDesign.jpg",
   },
   {
-    title: "La Terre Des Hommes",
-    author: "Antoine De Saint-Exupery",
-    reviewKey: "hobbies.book_reviews.terre",
-    cover: "/images/readBooks/ExuperyTerreDesHommes.jpg",
+    title: "My Favorite Thing Is Monsters",
+    author: "Emil Ferris",
+    reviewKey: "hobbies.book_reviews.monsters",
+    cover: "/images/readBooks/FerrisMyFavoriteThingIsMonsters.jpg",
   },
   {
     title: "Encabanée",
@@ -29,28 +28,16 @@ const readBooks = [
     cover: "/images/readBooks/FilteauCEncabanee.webp",
   },
   {
-    title: "The Enchantress of Florence",
-    author: "Salman Rushdie",
-    reviewKey: "hobbies.book_reviews.florence",
-    cover: "/images/readBooks/Enchantress_of_florence.jpg",
-  },
- {
     title: "Ahab's Wife",
     author: "Sena Jeter Naslund",
     reviewKey: "hobbies.book_reviews.ahab",
     cover: "/images/readBooks/Ahabs-Wife.jpg",
   },
-   {
-    title: "Master And Margarita",
-    author: "Mikhail Bulgakov",
-    reviewKey: "hobbies.book_reviews.master",
-    cover: "/images/readBooks/BulgakovMasterAndMargarita.jpg",
-  },
   {
-    title: "My Favorite Thing Is Monsters",
-    author: "Emil Ferris",
-    reviewKey: "hobbies.book_reviews.monsters",
-    cover: "/images/readBooks/FerrisMyFavoriteThingIsMonsters.jpg",
+    title: "The Enchantress of Florence",
+    author: "Salman Rushdie",
+    reviewKey: "hobbies.book_reviews.florence",
+    cover: "/images/readBooks/Enchantress_of_florence.jpg",
   },
 ];
 
@@ -63,19 +50,8 @@ const recommendedBooks = [
 
 export default function Hobbies() {
   const { t } = useTranslation();
-
-  const booksPerPage = 3;
-  const [currentPage, setCurrentPage] = useState(1); 
-
-  const startIndex = (currentPage - 1) * booksPerPage;
-  const paginatedBooks = readBooks.slice(startIndex, startIndex + booksPerPage);
-
   const [suggestedBooks, setSuggestedBooks] = useState([]);
   const [successMessage, setSuccessMessage] = useState("");
-
-  const handlePageChange = (event, value) => {
-    setCurrentPage(value);
-  };
 
   const handleSuggestBook = (formData) => {
     const title = formData.title.trim();
@@ -115,15 +91,8 @@ export default function Hobbies() {
         <Typography variant="body1">{t("hobbies.reading_reviews_subtitle")}</Typography>
       </Box>
 
-      <BooksList books={paginatedBooks} variant="grid" showReview title={t("hobbies.reading_reviews_title")} />
-      <Box display="flex" justifyContent="center" mt={4}>
-        <Pagination
-          count={Math.ceil(readBooks.length / booksPerPage)}
-          page={currentPage}
-          onChange={handlePageChange}
-          color="primary"
-        />
-      </Box>
+      {/* Use ReadBooksGrid instead of old ReadBooks */}
+      <ReadBooksGrid books={readBooks} />
 
       {/* Recommended Books */}
       <Divider sx={{ my: 6 }} />
