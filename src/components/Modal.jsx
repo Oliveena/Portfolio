@@ -35,7 +35,7 @@ export default function Modal({
   return (
     <div className="modal-backdrop" onMouseDown={handleClickOutside}>
       <div className="modal-container" ref={modalRef}>
-        <h2>Please enter your credentials for downloading {fileType}. Thank you!</h2>
+        <h2>Please enter your credentials to download {fileType}</h2>
         <form
           onSubmit={(e) => {
             e.preventDefault();

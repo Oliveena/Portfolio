@@ -40,10 +40,10 @@ export default function Home() {
     downloadLink,
   } = useDownloadModal();
 
-  // Called when form submits a new review
+
   const addReview = ({ name, review }) => {
     if (!name.trim() || !review.trim()) {
-      alert("Please fill out both fields."); // simple validation alert
+      alert("Please fill out both fields.");
       return;
     }
     setReviews(prev => [...prev, { author: name.trim(), text: review.trim() }]);
@@ -98,10 +98,10 @@ export default function Home() {
           <p className="text-center">{t('cv.chooseFormat')}</p>
         </div>
         <div className="cv_download">
-          <button className="btn btn-primary" onClick={() => openModal('/shared_assets/images/Resume.pdf')}>
+          <button className="btn btn-primary" onClick={() => openModal('/documents/TARASSOVA_Anastassia_Dev_CV.docx')}>
             PDF
           </button>
-          <button className="btn btn-success" onClick={() => openModal('/shared_assets/images/Resume.docx')}>
+          <button className="btn btn-success" onClick={() => openModal('/documents/TARASSOVA_Anastassia_Dev_CV.docx')}>
             Word
           </button>
 

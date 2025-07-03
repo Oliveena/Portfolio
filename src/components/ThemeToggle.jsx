@@ -21,15 +21,11 @@ export default function ThemeToggle() {
 
   return (
     <button
-      onClick={toggleTheme}
-      className="btn btn-outline-light ms-2"
-      aria-label="Toggle theme"
-    >
-      {theme === "bright-theme" ? (
-        <i className="fas fa-moon"></i> // moon icon when in light mode
-      ) : (
-        <i className="fas fa-sun"></i> // sun icon when in dark mode
-      )}
-    </button>
+  onClick={toggleTheme}
+  className="btn btn-outline-light ms-2 theme-toggle"
+  aria-label="Toggle theme"
+>
+  <i className={`fas ${theme === "bright-theme" ? "fa-moon" : "fa-sun"} theme-icon`}></i>
+</button>
   );
 }

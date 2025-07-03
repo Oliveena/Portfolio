@@ -6,19 +6,15 @@ const projects = [
     title: "Budget Calculator App",
     description: "A React app used for setting a personal budget and comparing it to spending.",
     image: "/images/BudgetApp.png",
-    // TODO: add PwP 
-    // TODO: add GitHub link
-    github: "https://github.com/Oliveena/artist-portfolio",
-    ppt: "/shared_assets/20250328124727_RemaxClone.pptx",
+    github: "https://github.com/Oliveena/WebDevIIFinalProject", // replace with actual repo if needed
+    ppt: "https://docs.google.com/presentation/d/16Vh3pTAYnaRGzu6wIXt-z8ueZwlnXIxK/edit", // update filename if needed
   },
   {
     title: "Animal Shelter App",
-    description: "A Java-based app used for managing adoptions/returns of various critters.",
+    description: "A Java-based desktop app for managing animal adoptions, returns, and shelter capacity.",
     image: "/images/AnimalShelter.png",
-    // TODO: add PwP 
-    // TODO: add GitHub link
-    github: "https://github.com/Oliveena/fsd13portfolioana",
-    ppt: "/shared_assets/20250328124727_RemaxClone.pptx",
+    github: "https://github.com/Oliveena/DSAAnimalShelter/tree/master",
+    ppt: "https://docs.google.com/presentation/d/109J_gezmR7Tm457N6gSH5Jl_MkUrg3Jj/edit",  
   },
   {
     title: "Laravel Version of this Portfolio (in progress)",
@@ -27,14 +23,14 @@ const projects = [
     github: "https://github.com/Oliveena/fsd13portfolioana",
   },
   {
-    title: "DuProprio Clone",
+    title: "Remax Clone",
     description: "A Laravel-based real estate platform with listings and blogs.",
     image: "/images/RemaxClone.png",
-    github: "https://github.com/Oliveena/fsd13portfolioana",
-    ppt: "/shared_assets/20250328124727_RemaxClone.pptx",
+    github: "https://github.com/Oliveena/realestate",
+    ppt: "https://docs.google.com/presentation/d/1RFmo-qg8mWooYjx1xILI93lzb1NIbYf7PO2tYs6C4-s/edit?slide=id.p1#slide=id.p1",
   },
   {
-    title: "BonjourSante Clone",
+    title: "BonjourSanté Clone",
     description: "A PHP-based appointment booking platform for medical professionals.",
     image: "/images/BonjourSante.png",
     github: "https://github.com/Oliveena/fsd13portfolioana",
@@ -47,7 +43,6 @@ const projects = [
     github: "https://github.com/Oliveena/midterm1auctions",
   },
 ];
-
 
 export default function FeaturedProjects() {
   return (

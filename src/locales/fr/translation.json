@@ -1,54 +1,58 @@
 {
   "hero": {
-    "title": "Bonjour, c’est Ana",
-    "subtitle": "Développeuse web et infirmière clinicienne",
-    "deansList": "Lauréate de la liste du doyen"
+    "title": "Bonjour, je suis Ana",
+    "subtitle": "Développeuse Web et Infirmière Clinicienne",
+    "deansList": "Lauréate de la Liste du Doyen"
   },
   "cv": {
     "download": "Télécharger le CV",
-    "chooseFormat": "Choisissez un format :"
+    "chooseFormat": "Choisissez un format :"
   },
   "review": {
-    "add": "Ajoutez votre avis",
+    "add": "Ajouter votre avis",
     "share": "Partager un avis",
     "yourName": "Votre nom",
     "yourReview": "Écrivez votre avis ici"
   },
   "skills": {
     "technical_skills": "Compétences techniques",
-    "tech_description": "J’ai commencé à apprendre le codage de manière autonome tout en travaillant comme infirmière. Ma démarche est motivée par la curiosité et la rigueur.",
-    "soft_skills": "Compétences interpersonnelles",
-    "soft_description": "Après 5 ans dans les soins infirmiers et la gestion, j’ai développé de solides compétences interpersonnelles et en leadership.",
-    "languages_i_speak": "Langues que je parle"
+    "tech_description": "J'ai commencé à étudier le code de manière autonome en travaillant comme infirmière. Ma démarche est guidée par la curiosité et la rigueur.",
+    "soft_skills": "Compétences humaines",
+    "soft_description": "Après cinq ans en soins infirmiers et en gestion, j’ai développé de solides compétences interpersonnelles et de leadership.",
+    "languages_i_speak": "Langues parlées"
   },
   "soft_skill_labels": {
-    "problem_solver": "Résolution efficace de problèmes",
-    "multicultural": "Approche multiculturelle",
-    "under_pressure": "Travail efficace sous pression",
-    "communication": "Communication équilibrée"
+    "scrum_leader": "Leader Scrum efficace, grande maîtrise de Kanban, Trello, Agile & Scrum",
+    "communication": "Communicante empathique, experte en collaboration centrée utilisateur",
+    "problem_solver": "Résolveuse créative de problèmes, s'adapte rapidement aux défis IT complexes",
+    "multicultural": "Coéquipière culturellement adaptable, expérience en milieux divers",
+    "under_pressure": "Calme sous pression, excelle en situations critiques"
   },
   "projects": {
-    "featured_projects_title": "Projets en vedette",
-    "featured_projects_footer": "...et bien plus encore ! Consultez mon GitHub complet ci-dessous.",
-    "visit_github": "Voir GitHub"
+    "featured_projects_title": "Projets phares",
+    "featured_projects_footer": "...et bien plus ! Consultez mon GitHub complet ci-dessous.",
+    "visit_github": "Voir sur GitHub"
   },
   "hobbies": {
     "title": "Loisirs",
-    "reading_reviews_title": "Avis de lecture",
-    "reading_reviews_subtitle": "Ana a toujours été une lectrice passionnée. Voici quelques lectures récentes.",
+    "reading_reviews_title": "Critiques de lecture",
+    "reading_reviews_subtitle": "Ana a toujours été une grande lectrice. Voici une sélection de lectures récentes.",
     "book_reviews": {
-      "by": "par {{author}}",
-      "no_review": "Aucun avis disponible.",
-      "monsters": "Un roman graphique envoûtant sur une fille passionnée par les films de monstres et qui cherche à comprendre le monde qui l’entoure.",
+      "by": "de {{author}}",
+      "no_review": "Pas de critique disponible.",
+      "design": "Une analyse critique de l'impact du mauvais design — et comment concevoir avec empathie.",
+      "terre": "Un mémoire poétique mêlant aviation, philosophie humaniste et réflexion sur la connexion.",
+      "master": "Un roman surréaliste et satirique explorant le bien, le mal et l’amour interdit dans la Russie soviétique.",
+      "florence": "Une histoire tissant Orient et Occident, histoire et mythe dans l’Empire moghol.",
       "encabanee": "Une réflexion poétique et brute sur la solitude, la nature sauvage et la paix intérieure.",
-      "ahab": "Un roman historique ample explorant l’histoire oubliée de l’épouse du capitaine Achab.",
-      "florence": "Un récit luxuriant mêlant Orient et Occident, magie et narration."
+      "ahab": "Un roman épique d’identité et de survie inspiré de Moby Dick.",
+      "monsters": "Un roman graphique envoûtant sur une jeune fille passionnée de films de monstres et en quête de compréhension du monde."
     },
     "form_labels": {
       "book_title": "Titre du livre",
       "book_author": "Auteur",
-      "book_placeholder": "Entrez le titre du livre",
-      "author_placeholder": "Entrez le nom de l’auteur"
+      "book_placeholder": "ex. Les Aventures de Tom Sawyer",
+      "author_placeholder": "ex. Mark Twain"
     },
     "form": {
       "validation_title": "Veuillez entrer un titre valide.",
@@ -56,19 +60,19 @@
     },
     "suggestion_messages": {
       "suggest_book": "Suggérer un livre",
-      "book_suggested_success": "Merci ! Votre suggestion de livre a été ajoutée."
+      "book_suggested_success": "Merci ! Votre suggestion de livre a été ajoutée."
     },
-    "search_title": "Rechercher dans Google Livres",
-    "search_subtitle": "Entrez un titre de livre pour trouver d'autres suggestions de lecture."
+    "search_title": "Recherche Google Books",
+    "search_subtitle": "Entrez un titre de livre pour découvrir de nouvelles lectures."
   },
   "contact": {
     "title": "Contactez-moi",
     "name": "Nom",
     "name_placeholder": "Votre nom ici",
     "email": "Adresse e-mail",
-    "email_placeholder": "votre@email.com",
+    "email_placeholder": "vous@courriel.com",
     "phone": "Numéro de téléphone",
-    "phone_placeholder": "123-456-7890",
+    "phone_placeholder": "123‑456‑7890",
     "message": "Message",
     "message_placeholder": "Votre message"
   }

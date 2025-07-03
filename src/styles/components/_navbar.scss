@@ -47,6 +47,16 @@
     min-width: 180px;
     z-index: 1000;
   }
+
+  .theme-toggle .theme-icon {
+  font-size: 1.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.5rem; 
+  vertical-align: middle;
+}
 }
 
 @media (max-width: 768px) {
