@@ -57,6 +57,14 @@
   line-height: 1.5rem; 
   vertical-align: middle;
 }
+
+.navbar-dark .navbar-nav .nav-link.active {
+  background-color: map-get($colors, dark-blue) !important;
+  text-decoration: underline;
+  font-weight: bold;
+  color: map-get($colors, lilac) !important;
+}
+
 }
 
 @media (max-width: 768px) {

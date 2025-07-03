@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 
 export default function MyNavbar() {
@@ -39,9 +39,14 @@ export default function MyNavbar() {
 
               return (
                 <li key={to} className={`nav-item${isActive ? " active" : ""}`}>
-                  <Link to={to} className="nav-link" aria-current={isActive ? "page" : undefined}>
-                    {label}
-                  </Link>
+    <NavLink
+  to={to}
+  className={({ isActive }) => `nav-link${isActive ? " active" : ""}`}
+  end
+>
+  {label}
+</NavLink>
+
                 </li>
               );
             })}
