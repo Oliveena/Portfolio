@@ -41,6 +41,7 @@ const projects = [
     description: "A PHP site for listing and bidding on auctions.",
     image: "/images/auctions.png",
     github: "https://github.com/Oliveena/midterm1auctions",
+    liveDemo: "https://vimeo.com/1066663208/7ebba50ec7",
   },
 ];
 
