@@ -5,12 +5,13 @@ import { Card, CardMedia, CardContent, Typography } from "@mui/material";
 const BookCard = ({ title, author, reviewText, cover }) => {
   return (
     <Card
+    className="book-card"
       sx={{
         height: "100%",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-      }}
+  }}
     >
       <CardMedia
         component="img"

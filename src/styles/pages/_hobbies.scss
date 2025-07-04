@@ -9,18 +9,18 @@
 @import "../base/fonts";
 /*========================== HOBBIES ==========================*/
 
-// h2 {
-//   margin: 1vw;
-//   color: map-get($colors, eggshell);
-//   text-shadow: 1px 1px map-get($colors, light-pink);
-// }
+h2 {
+  margin: 1vw;
+  color: map-get($colors, eggshell);
+  text-shadow: 1px 1px map-get($colors, light-pink);
+}
 
-// h3 {
-//   color: map-get($colors, eggshell);
-//   font-size: 3rem;
-//   margin-bottom: 1rem;
-//   text-align: center;
-// }
+h3 {
+  //color: map-get($colors, eggshell);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
 
 // p {
 //   color: map-get($colors, eggshell);

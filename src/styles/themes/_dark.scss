@@ -1,11 +1,11 @@
 body.dark-theme {
-  --color-bg-primary: #150578; // solid navy
+  --color-bg-primary: #150578;
   --color-surface: #0a0a2a;
   --color-text: #e0e0e0;
   --color-muted: #aaa;
   --color-accent: #7d83ff;
 
-  background: var(--color-bg-primary); // ← use solid color here
+  background: var(--color-bg-primary);
   color: var(--color-text);
 
   a, p, h1, h2, h3, h4, h5, h6, label {
@@ -40,6 +40,7 @@ body.dark-theme {
 
   header.hero {
     background: var(--color-surface);
+
     img.position-absolute {
       display: none;
     }
@@ -49,7 +50,7 @@ body.dark-theme {
       opacity: 1;
     }
   }
-  
+
   .card {
     background-color: var(--color-surface);
     border: 1px solid #333;
@@ -65,8 +66,51 @@ body.dark-theme {
     }
 
     a:hover {
-      color: var(--color-accent); 
+      color: var(--color-accent);
+    }
+  }
+
+  .recommended-table {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    border-collapse: collapse;
+
+    th,
+    td {
+      border: 1px solid #333;
+      color: var(--color-text);
+    }
+
+    thead {
+      background-color: darken(#0a0a2a, 5%);
+    }
+
+    tbody tr:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  // ✅ Book card styling only in dark theme
+  .book-card {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid #333;
+
+    .MuiCardContent-root {
+      background-color: var(--color-surface);
+    }
+
+    .MuiTypography-root {
+      color: var(--color-text);
+    }
+
+    .MuiTypography-subtitle2 {
+      color: var(--color-muted);
+    }
+
+    img {
+      filter: brightness(0.9) contrast(1.1);
+      transition: filter 0.3s ease;
     }
   }
 }
-

@@ -7,7 +7,8 @@ export default function RecommendedTable({ books }) {
       <Typography variant="h5" gutterBottom align="center">
         Recommended Books
       </Typography>
-      <Table>
+      <div style={{ overflowX: "auto" }}>
+      <Table className="recommended-table">
         <TableHead>
           <TableRow>
             <TableCell>Title</TableCell>
@@ -23,6 +24,7 @@ export default function RecommendedTable({ books }) {
           ))}
         </TableBody>
       </Table>
+      </div>
     </>
   );
 }
