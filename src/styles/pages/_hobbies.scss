@@ -19,14 +19,14 @@ h3 {
   //color: map-get($colors, eggshell);
   font-size: 3rem;
   margin-bottom: 1rem;
+  margin-top: 1.5rem;
   text-align: center;
 }
 
 // p {
-//   color: map-get($colors, eggshell);
+//   //color: map-get($colors, eggshell);
 //   padding: 1.2vw;
 //   font-size: clamp(1rem, 1.5vw, 1.3rem);
-//   margin-top: $margin-top;
 // }
 
 // .card {
@@ -137,11 +137,11 @@ h3 {
 //   max-width: 1000px;
 // }
 
-// .book-wrapper {
-//   max-width: 1000px;
-//   margin: 0 auto;
-//   padding: 1rem;
-// }
+.book-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
 
 // .books .panel img {
 //   max-width: 150px;

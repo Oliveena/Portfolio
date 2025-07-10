@@ -91,7 +91,6 @@ export default function Hobbies() {
         <Typography variant="body1">{t("hobbies.reading_reviews_subtitle")}</Typography>
       </Box>
 
-      {/* Use ReadBooksGrid instead of old ReadBooks */}
       <ReadBooksGrid books={readBooks} />
 
       {/* Recommended Books */}

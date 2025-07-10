@@ -111,11 +111,11 @@ export default function Hobbies() {
     <Container id="hobbies" sx={{ py: 12 }}>
       {/* Read Books */}
       <Box textAlign="center" mb={5}>
-        <Typography variant="h3">{t("hobbies.reading_reviews_title")}</Typography>
+        <Typography variant="h3"  mb={2}>{t("hobbies.reading_reviews_title")}</Typography>
         <Typography variant="body1">{t("hobbies.reading_reviews_subtitle")}</Typography>
       </Box>
 
-      <BooksList books={paginatedBooks} variant="grid" showReview title={t("hobbies.reading_reviews_title")} />
+      <BooksList books={paginatedBooks} variant="grid" showReview/>
       <Box display="flex" justifyContent="center" mt={4}>
         <Pagination
           count={Math.ceil(readBooks.length / booksPerPage)}
@@ -125,34 +125,37 @@ export default function Hobbies() {
         />
       </Box>
 
-      {/* Recommended Books */}
-      <Divider sx={{ my: 6 }} />
-      <RecommendedTable books={recommendedBooks} />
+      <Box sx={{ maxWidth: 1000, mx: "auto", px: 2 }}>
+  <RecommendedTable books={recommendedBooks} />
+</Box>
 
-      {/* Suggest a Book */}
-      <Divider sx={{ my: 6 }} />
-      <Box>
-        <Typography variant="h5" align="center" mb={3}>
-          {t("hobbies.suggestion_messages.suggest_book")}
-        </Typography>
-        <Form fields={suggestionFields} onSubmit={handleSuggestBook} />
-        {successMessage && (
-          <Alert severity="success" sx={{ mt: 2, maxWidth: 600, mx: "auto" }}>
-            {successMessage}
-          </Alert>
-        )}
-      </Box>
+<Divider sx={{ my: 6 }} />
 
-      {/* Display Suggested Books */}
-      {suggestedBooks.length > 0 && (
-        <Box mt={6}>
-          <BookTable books={suggestedBooks} />
-        </Box>
-      )}
+<Box sx={{ maxWidth: 600, mx: "auto", px: 2 }}>
+  <Typography variant="h5" align="center" mt={3} mb={3}>
+    {t("hobbies.suggestion_messages.suggest_book")}
+  </Typography>
+  <Form fields={suggestionFields} onSubmit={handleSuggestBook} />
+  {successMessage && (
+    <Alert severity="success" sx={{ mt: 2 }}>
+      {successMessage}
+    </Alert>
+  )}
+</Box>
 
-      {/* Book Search */}
-      <Divider sx={{ my: 6 }} />
-      <BookSearch />
-    </Container>
+<Divider sx={{ my: 6 }} />
+
+{suggestedBooks.length > 0 && (
+  <Box sx={{ maxWidth: 1000, mx: "auto", px: 2 }}>
+    <BookTable books={suggestedBooks} />
+  </Box>
+)}
+
+<Divider sx={{ my: 6 }} />
+
+<Box sx={{ maxWidth: 1000, mx: "auto", px: 2 }}>
+  <BookSearch />
+</Box>
+</Container>
   );
 }
