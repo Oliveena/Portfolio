@@ -11,10 +11,10 @@ export default function ProjectCard({ project }) {
 
   const textColor = isHovered ? "#9c4764" : "";
 
-  const { title, description, image, github, ppt, liveDemo } = project;
+ const { title, description, image, github, ppt, liveDemo, techStack } = project;
 
   return (
-    <div className="col-md-6 col-lg-4 mb-4 d-flex">
+   <div className="col-12 col-md-6 mb-4 d-flex">
       <div className="card h-100 w-100 d-flex flex-column">
         {ppt ? (
           <a href={ppt} target="_blank" rel="noopener noreferrer">
@@ -28,6 +28,21 @@ export default function ProjectCard({ project }) {
           <h5 className="card-title">{title}</h5>
           <p className="card-text flex-grow-1">{description}</p>
 
+{/*Tech Stack description*/}
+          {techStack && techStack.length > 0 && (
+  <div className="tech-stack mt-3">
+    <h6 className="mb-1">Tech Stack:</h6>
+    <ul className="list-inline">
+      {techStack.map((tech, idx) => (
+        <li key={idx} className="list-inline-item badge bg-secondary me-1">
+          {tech}
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+
+{/*Links*/}
           <div className="mt-auto d-flex justify-content-center flex-wrap gap-2">
             {github && (
               <a

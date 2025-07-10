@@ -14,6 +14,9 @@
 
   .navbar-toggler {
     border: none;
+    color: map-get($colors, navy-blue);
+    background-color: transparent;
+    transition: color 0.3s ease;
   }
 
   .navbar-brand {
@@ -88,7 +91,14 @@
     text-align: center;
     line-height: 1.5rem;
     vertical-align: middle;
+  border: none;
+  color: map-get($colors, navy-blue);
+  background-color: transparent;
+  &:hover,
+  &:focus {
+    color: map-get($colors, lilac);
   }
+}
 }
 
 @media (max-width: 768px) {

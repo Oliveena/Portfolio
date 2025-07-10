@@ -34,8 +34,7 @@ body.bright-theme {
       text-decoration: underline;
     }
   }
-
-  .navbar {
+.navbar {
     background-color: $color-navy-blue;
     color: white;
 
@@ -58,6 +57,19 @@ body.bright-theme {
           background-color: #{darken($color-navy-blue, 10%)};
           color: $color-pink;
         }
+      }
+    }
+
+    .navbar-toggler {
+      border: none;
+      color: $color-navy-blue !important;
+      background-color: transparent !important;
+      transition: color 0.3s ease;
+
+      &:hover,
+      &:focus {
+        color: $color-lilac !important;
+        background-color: rgba(0, 0, 128, 0.1) !important;
       }
     }
   }
