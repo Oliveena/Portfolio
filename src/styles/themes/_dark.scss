@@ -4,6 +4,10 @@ body.dark-theme {
   --color-text: #e0e0e0;
   --color-muted: #aaa;
   --color-accent: #7d83ff;
+  --btn-bg: #2e2f4f;       // dark bluish button bg
+  --btn-text: #e0e0e0;     // light text
+  --btn-border: #444566;   // subtle dark border
+  --color-accent: #7d83ff; 
 
   background: var(--color-bg-primary);
   color: var(--color-text);

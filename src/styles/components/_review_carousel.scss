@@ -14,7 +14,7 @@ $color-bloodstone: #273e47;
   position: relative;
   max-width: 700px;
   margin: 2rem auto;
-  padding: 1rem;
+  padding: 1rem 3.5rem; 
   background: linear-gradient(0deg, $color-pink-alpha, $color-lilac);
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(21, 5, 120, 0.2);
@@ -24,6 +24,7 @@ $color-bloodstone: #273e47;
   .reviews-wrapper {
     position: relative;
     min-height: 150px;
+    padding: 0 3rem; 
   }
 
   .review {
@@ -61,7 +62,7 @@ $color-bloodstone: #273e47;
     position: relative;
   }
 
-  .carousel-btn {
+   .carousel-btn {
     background-color: rgba($color-navy-blue, 0.7);
     border-radius: 50%;
     width: 3rem;
@@ -88,14 +89,14 @@ $color-bloodstone: #273e47;
       outline: none;
       box-shadow: 0 0 8px $color-pink;
     }
-  }
 
-  .carousel-control-prev {
-    left: 10px;
-  }
+    &.carousel-control-prev {
+      left: 1rem;
+    }
 
-  .carousel-control-next {
-    right: 10px;
+    &.carousel-control-next {
+      right: 1rem; 
+    }
   }
 
   .dots {
@@ -127,6 +128,7 @@ $color-bloodstone: #273e47;
 
   @media (max-width: 768px) {
     max-width: 90%;
+    padding: 1rem 2.5rem; 
     .review {
       font-size: 1rem;
       padding: 1.5rem;

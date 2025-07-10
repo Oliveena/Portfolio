@@ -40,14 +40,21 @@ $gradient-end: map-get($colors, lilac);
     margin: 0 auto;          /* center container horizontally */
 
     .btn {
-      background-color: initial !important;
-      border: initial !important;
-      padding: 0.6rem 1.2rem;
-      font-size: 1rem;
-      min-width: 100px; /* optional, consistent button size */
-      transition: background-color 0.3s ease;
-      cursor: pointer;
-    }
+  background-color: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  color: var(--btn-text);
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  min-width: 100px; /* optional, consistent button size */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent);
+  }
+}
   }
 }
 

@@ -98,7 +98,7 @@ export default function Home() {
           <p className="text-center">{t('cv.chooseFormat')}</p>
         </div>
         <div className="cv_download">
-          <button className="btn btn-primary" onClick={() => openModal('/documents/TARASSOVA_Anastassia_Dev_CV.docx')}>
+          <button className="btn btn-primary" onClick={() => openModal('/documents/TARASSOVA_Anastassia_Dev_CV.pdf')}>
             PDF
           </button>
           <button className="btn btn-success" onClick={() => openModal('/documents/TARASSOVA_Anastassia_Dev_CV.docx')}>
