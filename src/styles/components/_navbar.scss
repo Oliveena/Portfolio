@@ -3,92 +3,111 @@
 @import "../base/fonts";
 /*========================== NAVBAR ==========================*/
 
-.navbar-nav {
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  list-style: none;
-  background-color: map-get($colors, navy-blue);
-  color: map-get($colors, lilac);
+.navbar {
   position: fixed;
-  justify-content: space-evenly;
+  margin: 0;
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
-  height: auto;
-  padding: 10px;
-  margin-bottom: 0;
-  font-size: 2vw;
-  overflow: visible !important;
-}
+  z-index: 1000;
+  //padding: 0.5rem 1rem;
 
-/* Place this at root level in your SCSS file */
-.navbar-dark .navbar-nav .nav-link {
-  color: map-get($colors, lilac) !important;
-
-  &:hover {
-    background-color: map-get($colors, light-blue) !important;
-    font-weight: bolder;
-    color: white !important;
+  .navbar-toggler {
+    border: none;
   }
 
-  &.active {
-    background-color: map-get($colors, dark-blue) !important;
-    text-decoration: underline;
+  .navbar-brand {
+    color: map-get($colors, lilac);
     font-weight: bold;
-    color: map-get($colors, lilac) !important;
+    font-size: 1.5rem;
   }
 
-  .dropdown-menu {
-    position: absolute;
-    top: 100%; 
-    left: 0;
-    min-width: 180px;
-    z-index: 1000;
+  .navbar-collapse {
+    background-color: map-get($colors, navy-blue); // shown on collapse in mobile
+  }
+
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    //padding: 10px 0;
+
+    .nav-item {
+      margin: 0 0.5rem;
+
+      .nav-link {
+        color: map-get($colors, lilac) !important;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+
+        &:hover {
+          background-color: map-get($colors, light-blue) !important;
+          font-weight: bold;
+          color: white !important;
+        }
+
+        &.active {
+          background-color: map-get($colors, dark-blue) !important;
+          text-decoration: underline;
+          font-weight: bold;
+          color: map-get($colors, lilac) !important;
+        }
+      }
+    }
+
+    .dropdown-menu {
+      background-color: map-get($colors, navy-blue);
+      border: 1px solid #333;
+
+      .dropdown-item {
+        color: map-get($colors, lilac);
+
+        &:hover,
+        &:focus {
+          background-color: rgba(255, 255, 255, 0.05);
+          color: map-get($colors, light-pink);
+        }
+
+        &.active,
+        &:active {
+          background-color: map-get($colors, light-pink);
+          color: white;
+        }
+      }
+    }
   }
 
   .theme-toggle .theme-icon {
-  font-size: 1.25rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  display: inline-block;
-  text-align: center;
-  line-height: 1.5rem; 
-  vertical-align: middle;
-}
-
-.navbar-dark .navbar-nav .nav-link.active {
-  background-color: map-get($colors, dark-blue) !important;
-  text-decoration: underline;
-  font-weight: bold;
-  color: map-get($colors, lilac) !important;
-}
-
+    font-size: 1.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.5rem;
+    vertical-align: middle;
+  }
 }
 
 @media (max-width: 768px) {
   .navbar-nav {
-    font-size: 3vw;
     flex-direction: column;
-    background-color: map-get($colors, navy-blue);
-    color: map-get($colors, lilac);
-    position: absolute;
-    left: 0;
+    align-items: flex-start;
+    font-size: 1rem;
+    padding: 1rem;
     width: 100%;
-    padding: 0;
   }
 
-  .navbar-nav .navbar-item {
-    padding: 10px;
-    width: 100%; 
+  .navbar-nav .nav-item {
+    width: 100%;
+    padding: 0.5rem 0;
   }
 }
 
 @media (max-width: 450px) {
   .navbar-nav {
-    font-size: 4vw;
-    background-color: map-get($colors, navy-blue);
-    color: map-get($colors, lilac);
+    font-size: 0.95rem;
   }
 }

@@ -20,7 +20,8 @@ $gradient-end: map-get($colors, lilac);
   background: linear-gradient(0deg, $gradient-start, $gradient-end);
   position: relative;
   width: 100%;
-  height: 30vh;
+  height: auto;
+  min-height: 30vh;
   transition: all 0.3s ease-in-out;
 
   #download_text {

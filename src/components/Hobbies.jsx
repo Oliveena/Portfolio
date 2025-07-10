@@ -108,7 +108,7 @@ export default function Hobbies() {
   ];
 
   return (
-    <Container id="hobbies" sx={{ py: 5 }}>
+    <Container id="hobbies" sx={{ py: 12 }}>
       {/* Read Books */}
       <Box textAlign="center" mb={5}>
         <Typography variant="h3">{t("hobbies.reading_reviews_title")}</Typography>

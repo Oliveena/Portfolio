@@ -15,12 +15,11 @@ export default function MyNavbar() {
     { to: `/${currentLang}/skills`, label: "Skills" },
     { to: `/${currentLang}/projects`, label: "Featured Projects" },
     { to: `/${currentLang}/hobbies`, label: "Hobbies" },
-    { to: `/${currentLang}/contact`, label: "Contact" },
+    //{ to: `/${currentLang}/contact`, label: "Contact" },
   ];
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container-fluid">
+    <nav className="navbar navbar-expand-lg navbar-dark container-fluid">
         <button
           className="navbar-toggler"
           type="button"
@@ -88,7 +87,6 @@ export default function MyNavbar() {
             </li>
           </ul>
         </div>
-      </div>
     </nav>
   );
 }

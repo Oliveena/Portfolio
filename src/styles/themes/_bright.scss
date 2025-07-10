@@ -1,4 +1,4 @@
-$color-navy-blue: #150578;      // navy blue for navbar bg and active nav items
+$color-navy-blue: #150578;      // navy blue for navbar bg and a  font-family: system-ui, sans-serif;ctive nav items
 $color-pink: #ba71fe;           // pink used in hover and gradient end
 $color-pink-alpha: rgba(186, 113, 254, 0.2); // pink with alpha for gradient start
 $color-lilac: #7d83ff;          // lilac for gradient end
@@ -24,7 +24,7 @@ body.bright-theme {
   color: $color-text-dark;
   min-height: 100vh;
   margin: 0;
-  font-family: system-ui, sans-serif;
+  padding: 0;
 
   // Links
   a {
@@ -39,8 +39,8 @@ body.bright-theme {
   // Navbar styles
   .navbar {
     background-color: $color-navy-blue;
-    color: white; // white text on dark background
-    padding: 1rem;
+    color: white; 
+    //padding: 1rem;
 
     .navbar-nav {
       display: flex;

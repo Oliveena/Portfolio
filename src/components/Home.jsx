@@ -92,8 +92,8 @@ export default function Home() {
       </header>
 
       {/* Download CV Section */}
-      <section className="welcome text-center py-5 m-0">
-        <div id="download_text" className="mb-3">
+      <section className="welcome text-center py-5 pb-6 m-0">
+        <div id="download_text" className="mb-3 mt-5 pb-6">
           <h2>{t('cv.download')}</h2>
           <p className="text-center">{t('cv.chooseFormat')}</p>
         </div>
