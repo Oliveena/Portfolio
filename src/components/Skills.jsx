@@ -6,16 +6,22 @@ import { useParams } from 'react-router-dom';
 import { FaProjectDiagram } from "react-icons/fa";
 
 const techSkills = [
+  { alt: "Java Logo", src: "/images/java.png" },
+  { alt: "React Logo", src: "/images/React-Logo-PNG-Image-File.png" },
+  { alt: "C# Logo", src: "/images/C_Sharp_Logo_2023.svg.png" },
   { alt: "AWS Certificate", src: "/images/aws-academy-graduate-aws-academy-cloud-security-foundations.png" },
   { alt: "PHP Logo", src: "/images/php-logo-bigger.png" },
   { alt: "Laravel Logo", src: "/images/laravel-logo-png-laravel-lumen-manipulating-route-parameters-syed-sirajul-islam-1024x400.png" },
+  { alt: "JavaScript Logo", src: "/images/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png" },
+  { alt: "Node.js Logo", src: "/images/js-logo-node-logos-and-brands-icon.png" },
+  { alt: "MySQL Logo", src: "/images/sql-database-icon-png-17.png" },
+  { alt: "PostgreSQL Logo", src: "/images/postgresql-plain-wordmark-logo-icon.png" },
+  { alt: "Postman Logo", src: "/images/postman-api-platform-logo-png_seeklogo-446859.png"},
   { alt: "Bootstrap Logo", src: "/images/bootstrap-logo-png-bootstrap-logo-390.png" },
   { alt: "HTML Logo", src: "/images/html-logo.png" },
   { alt: "CSS Logo", src: "/images/css3-logo-png-transparent.png" },
   { alt: "Figma Logo", src: "/images/figma.png" },
-  { alt: "JavaScript Logo", src: "/images/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png" },
-  { alt: "MySQL Logo", src: "/images/sql-database-icon-png-17.png" },
-  { alt: "Java Logo", src: "/images/java.png" },
+  { alt: "Rust Logo", src: "/images/Rust_programming_language_black_logo.png"},
 ]
 
 const softSkills = [
@@ -25,12 +31,16 @@ const softSkills = [
   { labelKey: "under_pressure", icon: <FaHeartbeat /> },
   { labelKey: "communication", icon: <FaComments /> }
 ];
-
 const languages = [
   { name: "English", level: 100 },
   { name: "French", level: 100 },
   { name: "Russian", level: 100 },
   { name: "Spanish", level: 75 },
+  {
+    name: "Track my language learning progress on Duolingo",
+    level: 0,
+    link: "https://www.duolingo.com/profile/a_blue_kettle"
+  },
   { name: "Romanian", level: 25 },
 ];
 
@@ -41,24 +51,19 @@ export default function Skills() {
   return (
     <div id="content">
        {/* =============== TECHNICALLY SKILLS =============== */}
-      <section className="tech_skills py-5 text-center">
-        <h3>{t('skills.technical_skills')}</h3>
-        <p>{t('skills.tech_description')}</p>
-        <Box sx={{ py: 4, backgroundColor: "rgba(255, 255, 255, 0.1)" }}>
-          <Grid container spacing={3} justifyContent="center">
-            {techSkills.map((skill, idx) => (
-              <Grid item xs={4} sm={2} key={idx}>
-                <Box
-                  component="img"
-                  src={skill.src}
-                  alt={t(skill.alt) || skill.alt}
-                  sx={{ maxHeight: 80, objectFit: "contain", width: "100%" }}
-                />
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-      </section>
+
+       <section className="tech_skills py-5 text-center">
+  <h3>{t('skills.technical_skills')}</h3>
+  <p>{t('skills.tech_description')}</p>
+
+  <div className="tech-skills-grid">
+    {techSkills.map((skill, idx) => (
+      <div className="tech-skill" key={idx}>
+        <img src={skill.src} alt={t(skill.alt) || skill.alt} />
+      </div>
+    ))}
+  </div>
+</section>
 
        {/* =============== SOFT SKILLS =============== */}
       <section id="soft_skills" className="py-5">
@@ -81,23 +86,31 @@ export default function Skills() {
         <h3 className="text-center">{t('skills.languages_i_speak')}</h3>
         <div className="transparent-background-warm py-3">
           <div className="container">
-            <ul className="list-unstyled d-flex flex-wrap justify-content-center gap-4">
-              {languages.map((lang, idx) => (
-                <li key={idx} className="language w-100 text-center" style={{ maxWidth: "300px" }}>
-                  <strong>{lang.name}</strong>
-                  <div className="progress mt-2">
-                    <div
-                      className="progress-bar"
-                      role="progressbar"
-                      style={{ width: `${lang.level}%` }}
-                      aria-valuenow={lang.level}
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    />
-                  </div>
-                </li>
-              ))}
-            </ul>
+           <ul className="list-unstyled d-flex flex-wrap justify-content-center gap-4">
+  {languages.map((lang, idx) => (
+    <li key={idx} className="language w-100 text-center" style={{ maxWidth: "300px" }}>
+      {lang.link ? (
+        <a href={lang.link} target="_blank" rel="noopener noreferrer">
+          {lang.name}
+        </a>
+      ) : (
+        <>
+          <strong>{lang.name}</strong>
+          <div className="progress mt-2">
+            <div
+              className="progress-bar"
+              role="progressbar"
+              style={{ width: `${lang.level}%` }}
+              aria-valuenow={lang.level}
+              aria-valuemin="0"
+              aria-valuemax="100"
+            />
+          </div>
+        </>
+      )}
+    </li>
+  ))}
+</ul>
           </div>
         </div>
       </section>

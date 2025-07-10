@@ -11,62 +11,80 @@
 
 .tech_skills {
   background-color: transparent;
-  margin-top: $margin-top;
+  margin: 3rem;
 
   h2, h3 {
     color: var(--color-text);
-    font-size: 3rem;
-    margin-bottom: 0.25rem;
+    font-size: 2rem;
     text-align: center;
+    margin-bottom: 1rem;
   }
 
   p {
     color: var(--color-text);
-    padding: 1.2vw;
-    font-size: 1.5vw;
-    margin-top: $margin-top;
+    padding: 1rem;
+    font-size: 1rem;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
   }
 
   .tech-skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 1vw;
-  width: 100%;
-  justify-items: center;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 120px));
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
 
-    .tech-skill {
-      width: 100%;
-      max-width: clamp(80px, 10vw, 140px);
-      max-height: 10vw;
+  .tech-skill {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: $color-eggshell;
+    border-radius: $radius;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
       object-fit: contain;
-      border-radius: map-get($border-radius, usual);
-      overflow: hidden;
-      background-color: transparent;
-      margin: 1vw;
-      // transition: transform 0.2s ease, box-shadow 0.5s ease;
-
-      // &:hover {
-      //   transform: translate(-10deg) scale(1.2);
-      //   box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
-      // }
     }
   }
+}
 
-  .portfolio {
-    display: inline-block;
-    width: 15vw;
-    object-fit: contain;
-    margin: 0.5vw;
-    background-color: transparent;
-    transition: transform 0.2s ease, box-shadow 0.5s ease;
-
-    // &:hover {
-    //   transform: rotate(-10deg) scale(1.2);
-    //   box-shadow: 0 4px 4px rgba(64, 61, 57, 0.3);
-    //   overflow: hidden;
-    // }
+@media (max-width: 768px) {
+  .tech_skills h3,
+  #soft_skills h3 {
+    font-size: 1.6rem;
   }
+
+  .tech_skills p,
+  #soft_skills p {
+    font-size: 0.95rem;
+  }
+
+  .skill {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech_skills h3,
+  #soft_skills h3 {
+    font-size: 1.4rem;
+  }
+
+  .tech-skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 1rem;
+  }
+
+  .skill {
+    font-size: 0.85rem;
+  }
+}
 
