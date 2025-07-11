@@ -41,13 +41,13 @@ export default function Home() {
   } = useDownloadModal();
 
 
-  const addReview = ({ name, review }) => {
-    if (!name.trim() || !review.trim()) {
-      alert("Please fill out both fields.");
-      return;
-    }
-    setReviews(prev => [...prev, { author: name.trim(), text: review.trim() }]);
-  };
+ const addReview = ({ reviewerName, review }) => {
+  if (!reviewerName.trim() || !review.trim()) {
+    alert("Please fill out both fields.");
+    return;
+  }
+  setReviews(prev => [...prev, { author: reviewerName.trim(), text: review.trim() }]);
+};
 
   return (
     <>
@@ -124,12 +124,12 @@ export default function Home() {
       <section id="addReview" className="mt-5 text-center">
         <h2 className="mb-3">{t('review.add')}</h2>
         <ReviewCarousel className="review-section-container" reviews={reviews} />
-       <Form
+      <Form
   className="review-section-container form-section"
   title={t('review.share')}
   fields={[
     {
-      id: "name",
+      id: "reviewerName",
       label: t('review.yourName'),
       type: "text",
       placeholder: t('review.yourName'),

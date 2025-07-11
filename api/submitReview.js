@@ -1,7 +1,7 @@
-import { supabaseAdmin } from '../../lib/supabaseAdmin';
+import { supabaseAdmin } from './supabaseAdmin.js';
 import { body, validationResult } from 'express-validator';
 
-// Middleware to run express-validator in a serverless function
+// Middleware for express-validator
 export const validate = (validations) => async (req, res, next) => {
   for (let validation of validations) {
     await validation.run(req);
@@ -15,31 +15,30 @@ export const validate = (validations) => async (req, res, next) => {
   return next();
 };
 
+const validations = [
+  body('reviewerName').trim().escape().notEmpty().withMessage('Name is required'),
+  body('review').trim().escape().notEmpty().withMessage('Review cannot be empty'),
+];
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const validations = [
-    body('name').trim().escape().notEmpty().withMessage('Name is required'),
-    body('email').normalizeEmail().isEmail().withMessage('Invalid email'),
-    body('message').trim().escape().notEmpty().withMessage('Message cannot be empty'),
-  ];
-
   await validate(validations)(req, res, async () => {
-    const { name, email, message } = req.body;
+    const { reviewerName, review } = req.body;
 
     const { data, error } = await supabaseAdmin
-      .from('submissions')
-      .insert([{ name, email, message }])
+      .from('reviews')
+      .insert([{ reviewerName, review }])
       .select()
       .single();
 
     if (error) {
-      console.error(error);
+      console.error('Supabase error:', error);
       return res.status(500).json({ error: 'Database error' });
     }
 
-    res.status(201).json({ message: 'Submission saved', data });
+    res.status(201).json({ message: 'Review submitted', data });
   });
 }

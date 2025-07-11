@@ -8,7 +8,7 @@ export default function useProfanityCheck() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch("/api/moderate", {
+      const response = await fetch("http://localhost:3001/moderate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text }),
@@ -19,9 +19,8 @@ export default function useProfanityCheck() {
       }
 
       const data = await response.json();
-      console.log("🛡️ OpenAI moderation result:", data);
+      console.log("OpenAI moderation result:", data);
 return data.results[0].flagged;
-      return data.results[0].flagged;
     } catch (err) {
       console.error("Profanity check failed:", err);
       setError("Moderation API error.");

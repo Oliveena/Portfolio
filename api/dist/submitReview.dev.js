@@ -10,7 +10,7 @@ var _supabaseAdmin = require("./supabaseAdmin.js");
 
 var _expressValidator = require("express-validator");
 
-// Middleware to run express-validator in a serverless function
+// Middleware for express-validator
 var validate = function validate(validations) {
   return function _callee(req, res, next) {
     var _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, validation, errors;
@@ -99,9 +99,9 @@ var validate = function validate(validations) {
 };
 
 exports.validate = validate;
+var validations = [(0, _expressValidator.body)('reviewerName').trim().escape().notEmpty().withMessage('Name is required'), (0, _expressValidator.body)('review').trim().escape().notEmpty().withMessage('Review cannot be empty')];
 
 function handler(req, res) {
-  var validations;
   return regeneratorRuntime.async(function handler$(_context3) {
     while (1) {
       switch (_context3.prev = _context3.next) {
@@ -116,21 +116,19 @@ function handler(req, res) {
           }));
 
         case 2:
-          validations = [(0, _expressValidator.body)('name').trim().escape().notEmpty().withMessage('Name is required'), (0, _expressValidator.body)('email').normalizeEmail().isEmail().withMessage('Invalid email'), (0, _expressValidator.body)('message').trim().escape().notEmpty().withMessage('Message cannot be empty')];
-          _context3.next = 5;
+          _context3.next = 4;
           return regeneratorRuntime.awrap(validate(validations)(req, res, function _callee2() {
-            var _req$body, name, email, message, _ref, data, error;
+            var _req$body, reviewerName, review, _ref, data, error;
 
             return regeneratorRuntime.async(function _callee2$(_context2) {
               while (1) {
                 switch (_context2.prev = _context2.next) {
                   case 0:
-                    _req$body = req.body, name = _req$body.name, email = _req$body.email, message = _req$body.message;
+                    _req$body = req.body, reviewerName = _req$body.reviewerName, review = _req$body.review;
                     _context2.next = 3;
-                    return regeneratorRuntime.awrap(_supabaseAdmin.supabaseAdmin.from('submissions').insert([{
-                      name: name,
-                      email: email,
-                      message: message
+                    return regeneratorRuntime.awrap(_supabaseAdmin.supabaseAdmin.from('reviews').insert([{
+                      reviewerName: reviewerName,
+                      review: review
                     }]).select().single());
 
                   case 3:
@@ -143,14 +141,14 @@ function handler(req, res) {
                       break;
                     }
 
-                    console.error(error);
+                    console.error('Supabase error:', error);
                     return _context2.abrupt("return", res.status(500).json({
                       error: 'Database error'
                     }));
 
                   case 9:
                     res.status(201).json({
-                      message: 'Submission saved',
+                      message: 'Review submitted',
                       data: data
                     });
 
@@ -162,7 +160,7 @@ function handler(req, res) {
             });
           }));
 
-        case 5:
+        case 4:
         case "end":
           return _context3.stop();
       }
