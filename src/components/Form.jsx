@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import useProfanityCheck from "../hooks/CheckProfanity";
-import CheckProfanity from "../hooks/CheckProfanity";
 
 export default function Form({
   title = "Form", 
@@ -15,33 +14,58 @@ fields.forEach(({ id }) => {
   initialFormState[id] = initialValues[id] || "";
 });
 
- const { checkText, loading, error } = CheckProfanity();
+const { checkText, loading, error } = useProfanityCheck();
 
 const [form, setForm] = useState(initialFormState);
 
   const handleChange = async (e) => {
     setForm((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // Check for profanity
+  for (let { id } of fields) {
+    const value = form[id];
+    if (value.trim()) {
+      const isProfane = await checkText(value);
 
-    // using OpenAI Moderation API   https://cookbook.openai.com/examples/how_to_use_moderation
- for (let { id } of fields) {
-      const value = form[id];
-      if (value.trim()) {
-        const isProfane = await checkText(value);
-        if (isProfane) {
-          alert("Please remove inappropriate content.");
-          return;
-        }
+      if (isProfane === null) {
+        alert("Cannot check content now — please try later.");
+        return;
+      }
+
+      if (isProfane === true) {
+        alert("Please remove inappropriate content.");
+        return;
       }
     }
+  }
 
-    if (onSubmit) {
-      onSubmit(form);
+  // Submit to backend
+  try {
+    const response = await fetch("http://localhost:5000/api/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      alert("Submitted successfully!");
+      console.log("Success:", result);
+      setForm(initialFormState); // Reset form
+    } else {
+      console.error("Submission error:", result);
+      alert("Something went wrong. Please try again.");
     }
-  };
+  } catch (error) {
+    console.error("Network error:", error);
+    alert("Could not reach the server.");
+  }
+};
+
 
   if (!fields.length) return null; // render nothing if no fields provided
 

@@ -44,6 +44,12 @@ Portfolio
 │  ├─ modules.xml
 │  ├─ vcs.xml
 │  └─ workspace.xml
+├─ api
+│  ├─ dist
+│  │  ├─ moderate.dev.js
+│  │  └─ submit.dev.js
+│  ├─ moderate.js
+│  └─ submit.js
 ├─ deprecated
 │  └─ Portfolio with JS
 │     ├─ .htaccess
@@ -225,41 +231,34 @@ Portfolio
 ├─ postcss.config.mjs
 ├─ public
 │  ├─ documents
-│  │  ├─ 2024_Inf_Clin_CV_FR.pdf
-│  │  ├─ 20250328124727_RemaxClone.pptx
-│  │  └─ WebServicesPwP2 1.pptx
+│  │  ├─ TARASSOVA_Anastassia_Dev_CV.docx
+│  │  ├─ TARASSOVA_Anastassia_Dev_CV.pdf
+│  │  ├─ TARASSOVA_Anastassia_Dev_CV_FR.docx
+│  │  └─ TARASSOVA_Anastassia_Dev_CV_FR.pdf
 │  ├─ favicon.ico
 │  ├─ file.svg
 │  ├─ globe.svg
 │  ├─ images
-│  │  ├─ 1037--65505-800-u6q.jpg
 │  │  ├─ 1725819461instagram-logo.png
-│  │  ├─ 198747823f13e13270c6c8b87d0b1036a7631e78.jpeg
 │  │  ├─ 20250111_095825.jpg
 │  │  ├─ 20250111_095921.jpg
 │  │  ├─ 20250111_100225.jpg
 │  │  ├─ 20250111_100242.jpg
 │  │  ├─ 2062376.png
-│  │  ├─ 9781477319642.jpg
-│  │  ├─ 9781844081813-uk.jpg
-│  │  ├─ 9782894064993_large.webp
 │  │  ├─ 98ae159aa1bb8b4243fbe1f9e27d1b9f.png
-│  │  ├─ Ahabs-Wife.jpg
 │  │  ├─ AnimalShelter.png
 │  │  ├─ auctions.png
 │  │  ├─ aws-academy-graduate-aws-academy-cloud-security-foundations.png
 │  │  ├─ BonjourSante.png
 │  │  ├─ bootstrap-logo-png-bootstrap-logo-390.png
 │  │  ├─ BudgetApp.png
-│  │  ├─ chateaux-de-la-colere-folio-livre-occasion-29825_1.jpg
 │  │  ├─ css3-logo-png-transparent.png
+│  │  ├─ C_Sharp_Logo_2023.svg.png
 │  │  ├─ DeansList.png
-│  │  ├─ Enchantress_of_florence.jpg
 │  │  ├─ f7ad9720-7002-4c57-8d44-0405b7e00ee2.jpg
 │  │  ├─ FCC.jpg
 │  │  ├─ figma.png
 │  │  ├─ github-mark.png
-│  │  ├─ goodnight-punpun-vol-1-9781421586205_hr.jpg
 │  │  ├─ html-logo.png
 │  │  ├─ icons8-home-64.png
 │  │  ├─ IMG_20210131_221746_948.jpg
@@ -268,19 +267,37 @@ Portfolio
 │  │  ├─ java.png
 │  │  ├─ javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png
 │  │  ├─ jpeg.webp
+│  │  ├─ js-logo-node-logos-and-brands-icon.png
 │  │  ├─ laravel-logo-png-laravel-lumen-manipulating-route-parameters-syed-sirajul-islam-1024x400.png
 │  │  ├─ LaravelPortfolio.png
 │  │  ├─ linkedin-logo-linkedin-icon-transparent-free-png.webp
+│  │  ├─ logos
 │  │  ├─ Meta-Logo.png
+│  │  ├─ paintings
 │  │  ├─ php-logo-bigger.png
+│  │  ├─ postgresql-plain-wordmark-logo-icon.png
+│  │  ├─ postman-api-platform-logo-png_seeklogo-446859.png
+│  │  ├─ React-Logo-PNG-Image-File.png
+│  │  ├─ readBooks
+│  │  │  ├─ Ahabs-Wife.jpg
+│  │  │  ├─ barricoTheGame.jpeg
+│  │  │  ├─ BulgakovMasterAndMargarita.jpg
+│  │  │  ├─ chateaux-de-la-colere-folio-livre-occasion-29825_1.jpg
+│  │  │  ├─ Enchantress_of_florence.jpg
+│  │  │  ├─ ExuperyTerreDesHommes.jpg
+│  │  │  ├─ FerrisMyFavoriteThingIsMonsters.jpg
+│  │  │  ├─ FilteauCEncabanee.webp
+│  │  │  ├─ GoodmanWhyLhasaDeSelaMatters.jpg
+│  │  │  ├─ ShariatSaucierTragicDesign.jpg
+│  │  │  └─ WallsTheGlassCastle.jpg
 │  │  ├─ RemaxClone.png
+│  │  ├─ Rust_programming_language_black_logo.png
+│  │  ├─ Screenshot 2025-07-03 114540.png
 │  │  ├─ sql-database-icon-png-17.png
-│  │  ├─ thumbnail_20240601_143811.jpg
 │  │  ├─ vector1.jpg
 │  │  ├─ w3schools-1536.png
 │  │  ├─ walrus_favicon_io
 │  │  │  └─ site.webmanifest
-│  │  ├─ walrus_favicon_io.zip
 │  │  └─ walrus_progress
 │  │     ├─ 20250102_173417.jpg
 │  │     ├─ 20250102_182141.jpg
@@ -291,16 +308,22 @@ Portfolio
 │  │     └─ 20250108_221350.jpg
 │  ├─ index.html
 │  ├─ next.svg
+│  ├─ powerpoints
+│  │  ├─ AnimalShelter.pptx.pdf
+│  │  ├─ Bonjour-SantéClone.pdf
+│  │  ├─ BudgetApp_PRESENTATION.pptx.pdf
+│  │  └─ RemaxClone.pdf
 │  ├─ vercel.svg
 │  └─ window.svg
 ├─ README.md
 ├─ src
 │  ├─ App.js
 │  ├─ components
+│  │  ├─ BookCard.jsx
 │  │  ├─ BookSearch.jsx
+│  │  ├─ BooksList.jsx
 │  │  ├─ BookTable.jsx
 │  │  ├─ Contact.jsx
-│  │  ├─ ContactForm.jsx
 │  │  ├─ FeaturedProjects.jsx
 │  │  ├─ Footer.jsx
 │  │  ├─ Form.jsx
@@ -310,35 +333,56 @@ Portfolio
 │  │  ├─ Modal.jsx
 │  │  ├─ Navbar.jsx
 │  │  ├─ ProjectCard.jsx
+│  │  ├─ ReadBooks.jsx
+│  │  ├─ ReadBooksGrid.jsx
+│  │  ├─ RecommendedTable.jsx
 │  │  ├─ ReviewCarousel.jsx
+│  │  ├─ ScrollToTop.jsx
 │  │  ├─ Skills.jsx
 │  │  └─ ThemeToggle.jsx
+│  ├─ dist
+│  │  └─ i18n.dev.js
 │  ├─ hooks
+│  │  ├─ CheckProfanity.jsx
 │  │  ├─ NavbarHighlight.jsx
 │  │  └─ useDownloadModal.jsx
+│  ├─ i18n.js
 │  ├─ index.js
+│  ├─ locales
+│  │  ├─ en
+│  │  │  └─ translation.json
+│  │  ├─ fr
+│  │  │  └─ translation.json
+│  │  └─ ru
+│  │     └─ translation.json
 │  └─ styles
-│     ├─ main.scss
-│     ├─ styling
-│     │  ├─ _footer.scss
+│     ├─ base
+│     │  ├─ _fonts.scss
 │     │  ├─ _grid.scss
+│     │  └─ _reset.scss
+│     ├─ components
+│     │  ├─ _footer.scss
+│     │  ├─ _form.scss
 │     │  ├─ _header.scss
+│     │  ├─ _modal.scss
 │     │  ├─ _navbar.scss
-│     │  ├─ _reset.scss
-│     │  └─ _review_caroussel.scss
-│     ├─ themes
-│     │  ├─ _bright.scss
-│     │  └─ _dark.scss
-│     ├─ webpages
+│     │  └─ _review_carousel.scss
+│     ├─ main.scss
+│     ├─ pages
 │     │  ├─ _contact.scss
 │     │  ├─ _featured_projects.scss
 │     │  ├─ _hobbies.scss
+│     │  ├─ _languages.scss
 │     │  ├─ _soft_skills.scss
 │     │  ├─ _tech_skills.scss
 │     │  └─ _welcome.scss
-│     ├─ _fonts.scss
-│     ├─ _mixins.scss
-│     └─ _variables.scss
-└─ TARASSOVA_Anastassia_Portfolio_final_to_be_continued.iml
+│     ├─ themes
+│     │  ├─ _bright.scss
+│     │  ├─ _colors.scss
+│     │  └─ _dark.scss
+│     └─ utils
+│        ├─ _mixins.scss
+│        └─ _variables.scss
+└─ vercel.json
 
 ```

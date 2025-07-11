@@ -19,15 +19,18 @@ export default function useProfanityCheck() {
       }
 
       const data = await response.json();
+      console.log("🛡️ OpenAI moderation result:", data);
+return data.results[0].flagged;
       return data.results[0].flagged;
     } catch (err) {
       console.error("Profanity check failed:", err);
       setError("Moderation API error.");
-      return false;
+      return null;
     } finally {
       setLoading(false);
     }
   };
+
 
   return { checkText, loading, error };
 }
