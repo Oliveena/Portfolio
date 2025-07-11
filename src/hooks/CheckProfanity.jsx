@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function CheckProfanity() {
+export default function useProfanityCheck() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -8,21 +8,22 @@ export default function CheckProfanity() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch("https://api.openai.com/v1/moderations", {
+      const response = await fetch("/api/moderate", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
-        },
-        body: JSON.stringify({ input: text }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text }),
       });
+
+      if (!response.ok) {
+        throw new Error("Moderation API failed");
+      }
 
       const data = await response.json();
       return data.results[0].flagged;
     } catch (err) {
       console.error("Profanity check failed:", err);
       setError("Moderation API error.");
-      return false; // fail open or fail closed depending on your policy
+      return false;
     } finally {
       setLoading(false);
     }
