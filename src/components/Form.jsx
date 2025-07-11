@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import useProfanityCheck from "../hooks/CheckProfanity";
+import CheckProfanity from "../hooks/CheckProfanity";
 
 export default function Form({
   title = "Form", 
@@ -13,14 +15,29 @@ fields.forEach(({ id }) => {
   initialFormState[id] = initialValues[id] || "";
 });
 
+ const { checkText, loading, error } = CheckProfanity();
+
 const [form, setForm] = useState(initialFormState);
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     setForm((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // using OpenAI Moderation API   https://cookbook.openai.com/examples/how_to_use_moderation
+ for (let { id } of fields) {
+      const value = form[id];
+      if (value.trim()) {
+        const isProfane = await checkText(value);
+        if (isProfane) {
+          alert("Please remove inappropriate content.");
+          return;
+        }
+      }
+    }
+
     if (onSubmit) {
       onSubmit(form);
     }
@@ -72,6 +89,8 @@ const [form, setForm] = useState(initialFormState);
             </div>
           </fieldset>
         </form>
+      {loading && <p>Checking content...</p>}
+      {error && <p className="text-danger">{error}</p>}
       </div>
     </section>
   );

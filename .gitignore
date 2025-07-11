@@ -41,3 +41,6 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# OpenAI Moderaion profanity-checking API 
+REACT_APP_OPENAI_API_KEY=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

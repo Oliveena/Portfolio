@@ -4,16 +4,17 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-  "build": "react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "vercel-build": "npm install --legacy-peer-deps && npm run build"
-
-  },  "dependencies": {
+  },
+  "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^7.1.2",
     "@popperjs/core": "^2.11.8",
+    "@vercel/analytics": "^1.5.0",
     "ajv": "^8.17.1",
     "ajv-keywords": "^5.1.0",
     "bootstrap": "^5.3.6",
