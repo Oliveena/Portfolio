@@ -63,16 +63,17 @@ export default async function handler(req, res) {
   await validate(validations)(req, res, async () => {
     const { reviewerName, review } = req.body;
 
-    const profaneName = await checkProfanity(reviewerName);
-    const profaneReview = await checkProfanity(review);
+    //temporarily disabling profanity checking (API limit for today)
+    // const profaneName = await checkProfanity(reviewerName);
+    // const profaneReview = await checkProfanity(review);
 
-    if (profaneName === null || profaneReview === null) {
-      return res.status(503).json({ error: 'Moderation service unavailable' });
-    }
+    // if (profaneName === null || profaneReview === null) {
+    //   return res.status(503).json({ error: 'Moderation service unavailable' });
+    // }
 
-    if (profaneName || profaneReview) {
-      return res.status(400).json({ error: 'Please remove inappropriate content.' });
-    }
+    // if (profaneName || profaneReview) {
+    //   return res.status(400).json({ error: 'Please remove inappropriate content.' });
+    // }
 
     const { data, error } = await supabaseAdmin
       .from('reviews')

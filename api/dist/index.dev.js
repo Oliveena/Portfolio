@@ -14,10 +14,26 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 var app = (0, _express["default"])();
+var allowedOrigins = ['https://www.anatarassova.com', 'https://portfolio-ten-lime-32.vercel.app' // Vercel preview
+];
 app.use((0, _cors["default"])({
-  origin: 'https://portfolio-ten-lime-32.vercel.app'
+  origin: function origin(_origin, callback) {
+    if (!_origin || allowedOrigins.includes(_origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
 }));
-app.use(_express["default"].json());
+app.use((0, _cors["default"])({
+  origin: function origin(_origin2, callback) {
+    if (!_origin2 || allowedOrigins.includes(_origin2)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 app.get('/', function (req, res) {
   res.send('API is running!');
 });
