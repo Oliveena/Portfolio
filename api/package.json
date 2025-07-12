@@ -1,17 +1,16 @@
 {
   "name": "portfolio-backend",
-  "version": "1.0.0",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.50.5",
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.0",
-    "express": "^5.1.0",
-    "express-validator": "^7.2.1",
-    "node-fetch": "^3.3.2"
+    "express": "...",
+    "cors": "...",
+    "dotenv": "...",
+    "node-fetch": "...",
+    "express-validator": "...",
+    "@supabase/supabase-js": "..."
   }
 }
