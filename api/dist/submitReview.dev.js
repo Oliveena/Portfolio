@@ -10,7 +10,13 @@ var _supabaseAdmin = require("./supabaseAdmin.js");
 
 var _expressValidator = require("express-validator");
 
-// Middleware for express-validator
+require("dotenv/config");
+
+var _nodeFetch = _interopRequireDefault(require("node-fetch"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+// === 1. Validation Middleware ===
 var validate = function validate(validations) {
   return function _callee(req, res, next) {
     var _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, validation, errors;
@@ -96,65 +102,150 @@ var validate = function validate(validations) {
       }
     }, null, null, [[3, 14, 18, 26], [19,, 21, 25]]);
   };
-};
+}; // === 2. Input validations ===
+
 
 exports.validate = validate;
-var validations = [(0, _expressValidator.body)('reviewerName').trim().escape().notEmpty().withMessage('Name is required'), (0, _expressValidator.body)('review').trim().escape().notEmpty().withMessage('Review cannot be empty')];
+var validations = [(0, _expressValidator.body)('reviewerName').trim().notEmpty().withMessage('Name is required'), (0, _expressValidator.body)('review').trim().notEmpty().withMessage('Review cannot be empty')]; // === 3. Profanity check using OpenAI Moderation API ===
 
-function handler(req, res) {
-  return regeneratorRuntime.async(function handler$(_context3) {
+function checkProfanity(text) {
+  var response, data;
+  return regeneratorRuntime.async(function checkProfanity$(_context2) {
     while (1) {
-      switch (_context3.prev = _context3.next) {
+      switch (_context2.prev = _context2.next) {
         case 0:
-          if (!(req.method !== 'POST')) {
-            _context3.next = 2;
+          _context2.prev = 0;
+          _context2.next = 3;
+          return regeneratorRuntime.awrap((0, _nodeFetch["default"])("https://api.openai.com/v1/moderations", {
+            method: "POST",
+            headers: {
+              "Authorization": "Bearer ".concat(process.env.OPENAI_API_KEY),
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              input: text
+            })
+          }));
+
+        case 3:
+          response = _context2.sent;
+          _context2.next = 6;
+          return regeneratorRuntime.awrap(response.json());
+
+        case 6:
+          data = _context2.sent;
+
+          if (!(!data.results || !Array.isArray(data.results) || data.results.length === 0)) {
+            _context2.next = 10;
             break;
           }
 
-          return _context3.abrupt("return", res.status(405).json({
+          console.error("Unexpected OpenAI response:", data);
+          return _context2.abrupt("return", null);
+
+        case 10:
+          return _context2.abrupt("return", data.results[0].flagged);
+
+        case 13:
+          _context2.prev = 13;
+          _context2.t0 = _context2["catch"](0);
+          console.error("OpenAI API error:", _context2.t0);
+          return _context2.abrupt("return", null);
+
+        case 17:
+        case "end":
+          return _context2.stop();
+      }
+    }
+  }, null, null, [[0, 13]]);
+} // === 4. Handler ===
+
+
+function handler(req, res) {
+  return regeneratorRuntime.async(function handler$(_context4) {
+    while (1) {
+      switch (_context4.prev = _context4.next) {
+        case 0:
+          if (!(req.method !== 'POST')) {
+            _context4.next = 2;
+            break;
+          }
+
+          return _context4.abrupt("return", res.status(405).json({
             error: 'Method not allowed'
           }));
 
         case 2:
-          _context3.next = 4;
+          _context4.next = 4;
           return regeneratorRuntime.awrap(validate(validations)(req, res, function _callee2() {
-            var _req$body, reviewerName, review, _ref, data, error;
+            var _req$body, reviewerName, review, profaneName, profaneReview, _ref, data, error;
 
-            return regeneratorRuntime.async(function _callee2$(_context2) {
+            return regeneratorRuntime.async(function _callee2$(_context3) {
               while (1) {
-                switch (_context2.prev = _context2.next) {
+                switch (_context3.prev = _context3.next) {
                   case 0:
                     _req$body = req.body, reviewerName = _req$body.reviewerName, review = _req$body.review;
-                    _context2.next = 3;
+                    _context3.next = 3;
+                    return regeneratorRuntime.awrap(checkProfanity(reviewerName));
+
+                  case 3:
+                    profaneName = _context3.sent;
+                    _context3.next = 6;
+                    return regeneratorRuntime.awrap(checkProfanity(review));
+
+                  case 6:
+                    profaneReview = _context3.sent;
+
+                    if (!(profaneName === null || profaneReview === null)) {
+                      _context3.next = 9;
+                      break;
+                    }
+
+                    return _context3.abrupt("return", res.status(503).json({
+                      error: 'Moderation service unavailable'
+                    }));
+
+                  case 9:
+                    if (!(profaneName || profaneReview)) {
+                      _context3.next = 11;
+                      break;
+                    }
+
+                    return _context3.abrupt("return", res.status(400).json({
+                      error: 'Please remove inappropriate content.'
+                    }));
+
+                  case 11:
+                    _context3.next = 13;
                     return regeneratorRuntime.awrap(_supabaseAdmin.supabaseAdmin.from('reviews').insert([{
                       reviewerName: reviewerName,
                       review: review
                     }]).select().single());
 
-                  case 3:
-                    _ref = _context2.sent;
+                  case 13:
+                    _ref = _context3.sent;
                     data = _ref.data;
                     error = _ref.error;
 
                     if (!error) {
-                      _context2.next = 9;
+                      _context3.next = 19;
                       break;
                     }
 
                     console.error('Supabase error:', error);
-                    return _context2.abrupt("return", res.status(500).json({
+                    return _context3.abrupt("return", res.status(500).json({
                       error: 'Database error'
                     }));
 
-                  case 9:
+                  case 19:
                     res.status(201).json({
                       message: 'Review submitted',
                       data: data
                     });
 
-                  case 10:
+                  case 20:
                   case "end":
-                    return _context2.stop();
+                    return _context3.stop();
                 }
               }
             });
@@ -162,7 +253,7 @@ function handler(req, res) {
 
         case 4:
         case "end":
-          return _context3.stop();
+          return _context4.stop();
       }
     }
   });

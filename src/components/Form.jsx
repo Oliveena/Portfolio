@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import useProfanityCheck from "../hooks/CheckProfanity";
+import Filter from 'bad-words';
+
+const filter = new Filter();
 
 export default function Form({
   title = "Form", 
@@ -9,69 +12,73 @@ export default function Form({
   className = "",
 }) {
 
-const initialFormState = {};
-fields.forEach(({ id }) => {
-  initialFormState[id] = initialValues[id] || "";
-});
+  const initialFormState = {};
+  fields.forEach(({ id }) => {
+    initialFormState[id] = initialValues[id] || "";
+  });
 
-const { checkText, loading, error } = useProfanityCheck();
+  const { checkText, loading, error } = useProfanityCheck();
 
-const [form, setForm] = useState(initialFormState);
+  const [form, setForm] = useState(initialFormState);
 
   const handleChange = async (e) => {
     setForm((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
-const handleSubmit = async (e) => {
-  e.preventDefault();
 
-  // Check for profanity
-  for (let { id } of fields) {
-    const value = form[id];
-    if (value.trim()) {
-      const isProfane = await checkText(value);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-      if (isProfane === null) {
-        alert("Cannot check content now — please try later.");
-        return;
-      }
+    // Check for profanity
+    for (let { id } of fields) {
+      const value = form[id];
+      if (value.trim()) {
 
-      if (isProfane === true) {
-        alert("Please remove inappropriate content.");
-        return;
+        // Temporarily skip moderation check to test DB insertion
+        /*
+        const isProfane = await checkText(value);
+
+        if (isProfane === null) {
+          alert("Cannot check content now — please try later.");
+          return;
+        }
+
+        if (isProfane === true) {
+          alert("Please remove inappropriate content.");
+          return;
+        }
+        */
       }
     }
-  }
 
-  // Submit to backend
-  try {
-    const response = await fetch("http://localhost:3001/api/submit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
+    // Submit to backend
+    try {
+      const response = await fetch("https://portfolio-dfwu.onrender.com/api/submit-review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    const result = await response.json();
+      const result = await response.json();
 
-    if (response.ok) {
-      alert("Submitted successfully!");
-      console.log("Success:", result);
-      setForm(initialFormState); // Reset form
-    } else {
-      console.error("Submission error:", result);
-      alert("Something went wrong. Please try again.");
+      if (response.ok) {
+        alert("Submitted successfully!");
+        console.log("Success:", result);
+        setForm(initialFormState); // Reset form
+      } else {
+        console.error("Submission error:", result);
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+      alert("Could not reach the server.");
     }
-  } catch (error) {
-    console.error("Network error:", error);
-    alert("Could not reach the server.");
-  }
-};
-
+  };
 
   if (!fields.length) return null; // render nothing if no fields provided
 
   return (
     <section className={`${className} form-section`}>
-  <div className="form-wrapper">
+      <div className="form-wrapper">
         <form onSubmit={handleSubmit}>
           <fieldset className="border p-4 rounded">
             <h2 className="form-title mb-3">{title}</h2>
@@ -113,8 +120,8 @@ const handleSubmit = async (e) => {
             </div>
           </fieldset>
         </form>
-      {loading && <p>Checking content...</p>}
-      {error && <p className="text-danger">{error}</p>}
+        {loading && <p>Checking content...</p>}
+        {error && <p className="text-danger">{error}</p>}
       </div>
     </section>
   );

@@ -4,15 +4,17 @@ export default function useProfanityCheck() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   const checkText = async (text) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch("http://localhost:3001/moderate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text }),
-      });
+      const response = await fetch(`${apiUrl}/moderate`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ text }),
+});
 
       if (!response.ok) {
         throw new Error("Moderation API failed");
