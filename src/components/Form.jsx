@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useProfanityCheck from "../hooks/CheckProfanity";
 
-const filter = new Filter();
-
 export default function Form({
   title = "Form", 
   fields = [],               // fields array passed in (required)
