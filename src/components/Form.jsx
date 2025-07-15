@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import useProfanityCheck from "../hooks/CheckProfanity";
-import Filter from 'bad-words';
 
 const filter = new Filter();
 
