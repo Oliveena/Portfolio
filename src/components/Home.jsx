@@ -3,6 +3,7 @@ import Modal from './Modal';
 import useDownloadModal from '../hooks/useDownloadModal';
 import ReviewCarousel from './ReviewCarousel';
 import Form from './Form';
+import ResponsiveImage from './ResponsiveImage';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
@@ -53,11 +54,13 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <header className="hero position-relative text-light w-100">
-        <img
-          src="/images/vector1.jpg"
+        <ResponsiveImage
+          src="vector1.jpg"
           alt="banner background"
           className="position-absolute w-100 h-100 object-fit-cover"
           style={{ objectFit: 'cover', zIndex: 1 }}
+          sizes={["100vw"]}
+          eager={true}
         />
         <div className="hero-overlay position-absolute w-100 h-100"></div>
         <div className="container h-100 position-relative" style={{ zIndex: 3 }}>
@@ -80,11 +83,12 @@ export default function Home() {
 </p>
             </div>
             <div className="col-md-6 col-10 mx-auto mx-md-0 text-center">
-              <img
-                src="/images/f7ad9720-7002-4c57-8d44-0405b7e00ee2.jpg"
+              <ResponsiveImage
+                src="f7ad9720-7002-4c57-8d44-0405b7e00ee2.jpg"
                 alt="Ana's face"
                 className="face-img"
-                loading="lazy"
+                sizes={["(max-width: 768px) 80vw", "40vw"]}
+                eager={true}
               />
             </div>
           </div>

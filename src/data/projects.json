@@ -1,0 +1,69 @@
+{
+  "featuredProjects": [
+    {
+      "id": 1,
+      "title": "Budget Calculator App",
+      "description": "A React app used for setting a personal budget and comparing it to spending.",
+      "image": "BudgetApp.png",
+      "github": "https://github.com/Oliveena/WebDevIIFinalProject",
+      "ppt": "/powerpoints/BudgetApp_PRESENTATION.pptx.pdf",
+      "techStack": ["Vercel", "React", "Bootstrap", "JavaScript", "HTML", "CSS"],
+      "featured": true,
+      "date": "2024-06"
+    },
+    {
+      "id": 2,
+      "title": "Laravel Version of this Portfolio (in progress)",
+      "description": "A Laravel + Herd experiment to recreate this portfolio from scratch.",
+      "image": "LaravelPortfolio.png",
+      "github": "https://github.com/Oliveena/fsd13portfolioana",
+      "techStack": ["PHP", "Laravel", "PHPMyAdmin", "Blade", "Javascript", "SCSS"],
+      "featured": true,
+      "date": "2024-07"
+    },
+    {
+      "id": 3,
+      "title": "Animal Shelter App",
+      "description": "A Java-based desktop app for managing animal adoptions, returns, and shelter capacity.",
+      "image": "AnimalShelter.png",
+      "github": "https://github.com/Oliveena/DSAAnimalShelter/tree/master",
+      "ppt": "/powerpoints/AnimalShelter.pptx.pdf",
+      "techStack": ["Java", "JavaFX", "Bootstrap", "Figma"],
+      "featured": true,
+      "date": "2024-05"
+    },
+    {
+      "id": 4,
+      "title": "Remax Clone",
+      "description": "A Laravel-based real estate platform with listings and blogs.",
+      "image": "RemaxClone.png",
+      "github": "https://github.com/Oliveena/realestate",
+      "ppt": "/powerpoints/RemaxClone.pdf",
+      "techStack": ["MySQL", "Cloud Hosting", "Laravel", "PHP", "JavaScript", "HTML"],
+      "featured": true,
+      "date": "2024-04"
+    },
+    {
+      "id": 5,
+      "title": "BonjourSanté Clone",
+      "description": "A front-end clone of an appointment booking platform for medical professionals.",
+      "image": "BonjourSante.png",
+      "github": "https://github.com/trangtrieu-code/BonjourSanteClone",
+      "ppt": "/powerpoints/Bonjour-SantéClone.pdf",
+      "techStack": ["Figma", "JavaScript", "HTML", "CSS"],
+      "featured": true,
+      "date": "2024-03"
+    },
+    {
+      "id": 6,
+      "title": "Auctions Website",
+      "description": "API-using site for listing and bidding on auctions.",
+      "image": "auctions.png",
+      "github": "https://github.com/Oliveena/midterm1auctions",
+      "liveDemo": "https://vimeo.com/1066663208/7ebba50ec7",
+      "techStack": ["Figma", "Postman", "PHP", "CSS"],
+      "featured": true,
+      "date": "2024-02"
+    }
+  ]
+}

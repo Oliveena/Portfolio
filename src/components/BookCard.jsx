@@ -1,8 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Card, CardMedia, CardContent, Typography } from "@mui/material";
+import { Card, CardContent, Typography } from "@mui/material";
+import ResponsiveImage from "./ResponsiveImage";
 
 const BookCard = ({ title, author, reviewText, cover }) => {
+  const coverFilename = cover ? cover.split('/').pop() : '';
+
   return (
     <Card
     className="book-card"
@@ -13,15 +16,15 @@ const BookCard = ({ title, author, reviewText, cover }) => {
         justifyContent: "space-between",
   }}
     >
-      <CardMedia
-        component="img"
-        image={cover}
-        alt={`Cover of ${title}`}
-        sx={{
-          height: 280,
-          objectFit: "cover",
-        }}
-      />
+      <div style={{ height: 280, overflow: 'hidden' }}>
+        <ResponsiveImage
+          src={coverFilename}
+          alt={`Cover of ${title}`}
+          folder="readBooks"
+          sizes={["(max-width: 576px) 100vw", "(max-width: 992px) 50vw", "33vw"]}
+          style={{ height: 280, objectFit: "cover", width: "100%" }}
+        />
+      </div>
       <CardContent sx={{ flexGrow: 1 }}>
         <Typography variant="h6" gutterBottom>
           "{title}"

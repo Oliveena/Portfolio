@@ -6,11 +6,13 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "...",
+    "@supabase/supabase-js": "...",
+    "bad-words": "^4.0.0",
     "cors": "...",
     "dotenv": "...",
-    "node-fetch": "...",
+    "express": "...",
+    "express-rate-limit": "^8.2.1",
     "express-validator": "...",
-    "@supabase/supabase-js": "..."
+    "node-fetch": "..."
   }
 }

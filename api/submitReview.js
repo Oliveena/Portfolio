@@ -1,7 +1,7 @@
 import { supabaseAdmin } from './supabaseAdmin.js';
 import { body, validationResult } from 'express-validator';
 import 'dotenv/config';
-import fetch from 'node-fetch';
+import Filter from 'bad-words';
 
 // === 1. Validation Middleware ===
 export const validate = (validations) => async (req, res, next) => {
@@ -23,33 +23,13 @@ const validations = [
   body('review').trim().notEmpty().withMessage('Review cannot be empty'),
 ];
 
-// === 3. Profanity check using OpenAI Moderation API ===
-async function checkProfanity(text) {
+// === 3. Profanity check using bad-words library ===
+function checkProfanity(text) {
   try {
-
-    // debug
-console.log("OpenAI Key Loaded:", process.env.OPENAI_API_KEY?.slice(0, 10));
-
-    const response = await fetch("https://api.openai.com/v1/moderations", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ input: text }),
-    });
-
-    const data = await response.json();
-
-    // Defensive check: ensure 'results' exists
-    if (!data.results || !Array.isArray(data.results) || data.results.length === 0) {
-      console.error("Unexpected OpenAI response:", data);
-      return null;
-    }
-
-    return data.results[0].flagged;
+    const filter = new Filter();
+    return filter.isProfane(text);
   } catch (err) {
-    console.error("OpenAI API error:", err);
+    console.error("Profanity check error:", err);
     return null;
   }
 }
@@ -63,17 +43,20 @@ export default async function handler(req, res) {
   await validate(validations)(req, res, async () => {
     const { reviewerName, review } = req.body;
 
-    //temporarily disabling profanity checking (API limit for today)
-    // const profaneName = await checkProfanity(reviewerName);
-    // const profaneReview = await checkProfanity(review);
+    // Profanity check using bad-words library
+    const profaneName = checkProfanity(reviewerName);
+    const profaneReview = checkProfanity(review);
 
-    // if (profaneName === null || profaneReview === null) {
-    //   return res.status(503).json({ error: 'Moderation service unavailable' });
-    // }
+    if (profaneName === null || profaneReview === null) {
+      return res.status(503).json({ error: 'Moderation service unavailable' });
+    }
 
-    // if (profaneName || profaneReview) {
-    //   return res.status(400).json({ error: 'Please remove inappropriate content.' });
-    // }
+    if (profaneName || profaneReview) {
+      return res.status(400).json({
+        error: 'Please remove inappropriate content.',
+        message: 'Your submission contains inappropriate language. Please revise and try again.'
+      });
+    }
 
     const { data, error } = await supabaseAdmin
       .from('reviews')

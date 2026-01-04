@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ResponsiveImage from "./ResponsiveImage";
 
 export default function ProjectCard({ project }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -18,10 +19,20 @@ export default function ProjectCard({ project }) {
       <div className="card h-100 w-100 d-flex flex-column">
         {ppt ? (
           <a href={ppt} target="_blank" rel="noopener noreferrer">
-            <img src={image} alt={title} className="card-img-top" />
+            <ResponsiveImage
+              src={image.split('/').pop()}
+              alt={title}
+              className="card-img-top"
+              sizes={["(max-width: 768px) 100vw", "(max-width: 1200px) 50vw", "600px"]}
+            />
           </a>
         ) : (
-          <img src={image} alt={title} className="card-img-top" />
+          <ResponsiveImage
+            src={image.split('/').pop()}
+            alt={title}
+            className="card-img-top"
+            sizes={["(max-width: 768px) 100vw", "(max-width: 1200px) 50vw", "600px"]}
+          />
         )}
 
         <div className="card-body d-flex flex-column">

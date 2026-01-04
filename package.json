@@ -8,7 +8,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "react-scripts start",
-    "vercel-build": "npm install --legacy-peer-deps && npm run build"
+    "vercel-build": "npm install --legacy-peer-deps && npm run build",
+    "optimize-images": "node scripts/optimizeImages.js"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -35,6 +36,7 @@
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "eslint": "^8.57.1",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5.3.3"
   },
