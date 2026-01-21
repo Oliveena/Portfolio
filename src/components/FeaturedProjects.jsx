@@ -1,10 +1,25 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import ProjectCard from "./ProjectCard";
 import projectsData from "../data/projects.json";
 
 export default function FeaturedProjects() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedTech, setSelectedTech] = useState("All");
+
+  // Initialize selectedTech from URL query param if present
+  const initialTech = searchParams.get("tech") || "All";
+  const [selectedTech, setSelectedTech] = useState(initialTech);
+
+  // Update URL when tech filter changes (optional - keeps URL in sync)
+  useEffect(() => {
+    if (selectedTech === "All") {
+      searchParams.delete("tech");
+    } else {
+      searchParams.set("tech", selectedTech);
+    }
+    setSearchParams(searchParams, { replace: true });
+  }, [selectedTech]);
 
   // Transform projects data to add /images/ prefix
   const allProjects = projectsData.featuredProjects.map(project => ({

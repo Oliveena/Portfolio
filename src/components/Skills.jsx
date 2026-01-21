@@ -2,30 +2,45 @@ import React from "react";
 import { Grid, Box } from "@mui/material";
 import { FaLightbulb, FaUsers, FaHeartbeat, FaComments } from "react-icons/fa";
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { FaProjectDiagram } from "react-icons/fa";
+
+/*
+ * TODO: Enhanced skill-project interaction
+ * Future enhancement: Instead of linking to projects page, implement an inline
+ * project carousel that appears when a skill is clicked.
+ *
+ * Implementation plan:
+ * 1. Add useState for selectedSkill
+ * 2. Create ProjectCarousel component that filters projects by tech
+ * 3. Layout: skills grid on left (desktop) / top (mobile), carousel on right/bottom
+ * 4. Highlight selected skill, show matching projects with smooth animation
+ *
+ * State needed: const [selectedSkill, setSelectedSkill] = useState(null);
+ * Filter logic: projects.filter(p => p.techStack.includes(selectedSkill))
+ */
 
 const techSkills = [
   // Row 1
-  { alt: "Java Logo", src: "/images/java.png" },
-  { alt: "React Logo", src: "/images/React-Logo-PNG-Image-File.png" },
-  { alt: "C# Logo", src: "/images/C_Sharp_Logo_2023.svg.png" },
-  { alt: "JavaScript Logo", src: "/images/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png" },
+  { alt: "Java Logo", src: "/images/java.png", tech: "Java" },
+  { alt: "React Logo", src: "/images/React-Logo-PNG-Image-File.png", tech: "React" },
+  { alt: "C# Logo", src: "/images/C_Sharp_Logo_2023.svg.png", tech: "C#" },
+  { alt: "JavaScript Logo", src: "/images/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png", tech: "JavaScript" },
   // Row 2
-  { alt: "PHP Logo", src: "/images/php-logo-bigger.png" },
-  { alt: "Laravel Logo", src: "/images/laravel-logo-png-laravel-lumen-manipulating-route-parameters-syed-sirajul-islam-1024x400.png" },
-  { alt: "Node.js Logo", src: "/images/js-logo-node-logos-and-brands-icon.png" },
-  { alt: "SQL Logo", src: "/images/sql-database-icon-png-17.png" },
+  { alt: "PHP Logo", src: "/images/php-logo-bigger.png", tech: "PHP" },
+  { alt: "Laravel Logo", src: "/images/laravel-logo-png-laravel-lumen-manipulating-route-parameters-syed-sirajul-islam-1024x400.png", tech: "Laravel" },
+  { alt: "Node.js Logo", src: "/images/js-logo-node-logos-and-brands-icon.png", tech: "Node.js" },
+  { alt: "SQL Logo", src: "/images/sql-database-icon-png-17.png", tech: "MySQL" },
   // Row 3
-  { alt: "Docker Logo", src: "/images/logos/docker.jpg" },
-  { alt: "Git Logo", src: "/images/logos/git-bash-logo-png_seeklogo-412974.png" },
-  { alt: "AWS Certificate", src: "/images/aws-academy-graduate-aws-academy-cloud-security-foundations.png" },
-  { alt: "Postman Logo", src: "/images/postman-api-platform-logo-png_seeklogo-446859.png" },
+  { alt: "Docker Logo", src: "/images/logos/docker.jpg", tech: null },
+  { alt: "Git Logo", src: "/images/logos/git-bash-logo-png_seeklogo-412974.png", tech: null },
+  { alt: "AWS Certificate", src: "/images/aws-academy-graduate-aws-academy-cloud-security-foundations.png", tech: null },
+  { alt: "Postman Logo", src: "/images/postman-api-platform-logo-png_seeklogo-446859.png", tech: "Postman" },
   // Row 4
-  { alt: "Dart Logo", src: "/images/logos/Dart.jpg" },
-  { alt: "Flutter Logo", src: "/images/logos/flutter.webp" },
-  { alt: "Bootstrap Logo", src: "/images/bootstrap-logo-png-bootstrap-logo-390.png" },
-  { alt: "Figma Logo", src: "/images/figma.png" },
+  { alt: "Dart Logo", src: "/images/logos/Dart.jpg", tech: "Dart" },
+  { alt: "Flutter Logo", src: "/images/logos/flutter.webp", tech: "Flutter" },
+  { alt: "Bootstrap Logo", src: "/images/bootstrap-logo-png-bootstrap-logo-390.png", tech: "Bootstrap" },
+  { alt: "Figma Logo", src: "/images/figma.png", tech: "Figma" },
 ]
 
 const softSkills = [
@@ -62,9 +77,20 @@ export default function Skills() {
 
   <div className="tech-skills-grid">
     {techSkills.map((skill, idx) => (
-      <div className="tech-skill" key={idx}>
-        <img src={skill.src} alt={t(skill.alt) || skill.alt} />
-      </div>
+      skill.tech ? (
+        <Link
+          to={`/en/projects?tech=${encodeURIComponent(skill.tech)}`}
+          className="tech-skill"
+          key={idx}
+          title={`View ${skill.tech} projects`}
+        >
+          <img src={skill.src} alt={t(skill.alt) || skill.alt} />
+        </Link>
+      ) : (
+        <div className="tech-skill" key={idx}>
+          <img src={skill.src} alt={t(skill.alt) || skill.alt} />
+        </div>
+      )
     ))}
   </div>
 </section>
