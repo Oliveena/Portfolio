@@ -22,9 +22,9 @@ const techSkills = [
   { alt: "AWS Certificate", src: "/images/aws-academy-graduate-aws-academy-cloud-security-foundations.png" },
   { alt: "Postman Logo", src: "/images/postman-api-platform-logo-png_seeklogo-446859.png" },
   // Row 4
+  { alt: "Dart Logo", src: "/images/logos/Dart.jpg" },
+  { alt: "Flutter Logo", src: "/images/logos/flutter.webp" },
   { alt: "Bootstrap Logo", src: "/images/bootstrap-logo-png-bootstrap-logo-390.png" },
-  { alt: "HTML Logo", src: "/images/html-logo.png" },
-  { alt: "CSS Logo", src: "/images/css3-logo-png-transparent.png" },
   { alt: "Figma Logo", src: "/images/figma.png" },
 ]
 
