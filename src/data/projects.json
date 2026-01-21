@@ -6,7 +6,7 @@
       "description": "A React-based art gallery showcasing the painting process of a walrus portrait, from sketch to finished piece.",
       "image": "gallery_cover_image.png",
       "liveDemo": "/en/gallery",
-      "techStack": ["React", "MUI", "JavaScript", "CSS"],
+      "techStack": ["React", "JavaScript", "CSS"],
       "featured": true,
       "date": "2025-01"
     },

@@ -45,7 +45,17 @@ export default function WalrusGallery() {
   };
 
   return (
-    <Box sx={{ backgroundColor: "#fff", minHeight: "100vh" }}>
+    <Box
+      className="gallery-page"
+      sx={{
+        backgroundColor: "#fff",
+        minHeight: "100vh",
+        // Override the parent gradient background
+        margin: "-2rem",
+        padding: "2rem",
+        width: "calc(100% + 4rem)",
+      }}
+    >
       {/* Header */}
       <Container maxWidth="lg" sx={{ pt: 8, pb: 4 }}>
         <Typography

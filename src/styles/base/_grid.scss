@@ -21,6 +21,12 @@ body {
     var(--color-bg-gradient-start, pink),
     var(--color-bg-gradient-end, lilac)
   );
+
+  // Override for gallery page - white background
+  &:has(.gallery-page) {
+    background: #fff;
+    padding: 0;
+  }
 }
 
 .transparent-background-cold {
