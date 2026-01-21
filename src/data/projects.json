@@ -64,6 +64,26 @@
       "techStack": ["Figma", "Postman", "PHP", "CSS"],
       "featured": true,
       "date": "2024-02"
+    },
+    {
+      "id": 7,
+      "title": "Walrus Art Gallery",
+      "description": "A React-based art gallery showcasing the painting process of a walrus portrait, from sketch to finished piece.",
+      "image": "WalrusGallery.jpg",
+      "liveDemo": "/en/gallery",
+      "techStack": ["React", "MUI", "JavaScript", "CSS"],
+      "featured": true,
+      "date": "2025-01"
+    },
+    {
+      "id": 8,
+      "title": "Geodesic Dome Visualizer",
+      "description": "An interactive 3D visualization tool for exploring geodesic dome structures and their geometric properties.",
+      "image": "geodesic_screenshot.jpg",
+      "github": "https://github.com/Oliveena/geodesic-dome-vis",
+      "techStack": ["JavaScript", "Three.js", "WebGL"],
+      "featured": true,
+      "date": "2025-01"
     }
   ]
 }

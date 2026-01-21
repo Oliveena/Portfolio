@@ -105,6 +105,21 @@ async function main() {
   const bookDir = path.join(PUBLIC_DIR, 'readBooks');
   await optimizeBookCovers(bookDir);
 
+  // Optimize walrus paintings
+  const walrusDir = path.join(PUBLIC_DIR, 'walrus_progress');
+  if (fs.existsSync(walrusDir)) {
+    const walrusImages = fs.readdirSync(walrusDir).filter((file) => {
+      return /\.(jpg|jpeg|png)$/i.test(file);
+    });
+
+    console.log(`🦭 Optimizing ${walrusImages.length} walrus paintings...\n`);
+
+    for (const img of walrusImages) {
+      const imgPath = path.join(walrusDir, img);
+      await optimizeImage(imgPath, walrusDir);
+    }
+  }
+
   console.log('━'.repeat(50));
   console.log('✨ Image optimization complete!');
   console.log('\n💡 Next steps:');

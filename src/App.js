@@ -7,10 +7,11 @@ import Skills from './components/Skills';
 import FeaturedProjects from './components/FeaturedProjects';
 import Hobbies from './components/Hobbies';
 import Contact from './components/Contact';
+import WalrusGallery from './components/WalrusGallery';
 import Footer from './components/Footer';
 import './i18n';
-import { useTranslation } from 'react-i18next'; 
-import { useParams } from 'react-router-dom'; 
+import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import MetaTags from './components/MetaTags';
 
@@ -32,6 +33,7 @@ function App() {
   <Route path="/:lang/projects" element={<FeaturedProjects />} />
   <Route path="/:lang/hobbies" element={<Hobbies />} />
   <Route path="/:lang/contact" element={<Contact />} />
+  <Route path="/:lang/gallery" element={<WalrusGallery />} />
 </Routes>
       </main>
       <Footer />

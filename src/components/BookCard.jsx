@@ -14,15 +14,17 @@ const BookCard = ({ title, author, reviewText, cover }) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
+        borderRadius: "10%",
+        overflow: "hidden",
   }}
     >
-      <div style={{ height: 280, overflow: 'hidden' }}>
+      <div style={{ height: 280, overflow: 'hidden', borderRadius: '10% 10% 0 0' }}>
         <ResponsiveImage
           src={coverFilename}
           alt={`Cover of ${title}`}
           folder="readBooks"
           sizes={["(max-width: 576px) 100vw", "(max-width: 992px) 50vw", "33vw"]}
-          style={{ height: 280, objectFit: "cover", width: "100%" }}
+          style={{ height: 280, objectFit: "cover", width: "100%", borderRadius: '10% 10% 0 0' }}
         />
       </div>
       <CardContent sx={{ flexGrow: 1 }}>

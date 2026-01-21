@@ -52,6 +52,24 @@ const readBooks = [
     reviewKey: "hobbies.book_reviews.monsters",
     cover: "/images/readBooks/FerrisMyFavoriteThingIsMonsters.jpg",
   },
+  {
+    title: "Salt Fat Acid Heat",
+    author: "Samin Nosrat",
+    reviewKey: null,
+    cover: "/images/readBooks/SaltFatAcidHeat.jpg",
+  },
+  {
+    title: "Olas",
+    author: "Maria Carla",
+    reviewKey: null,
+    cover: "/images/readBooks/olas.jpeg",
+  },
+  {
+    title: "Children of Dune",
+    author: "Frank Herbert",
+    reviewKey: null,
+    cover: "/images/readBooks/4f0d17e42274f6032fff586c667af254.webp",
+  },
 ];
 
 const recommendedBooks = [

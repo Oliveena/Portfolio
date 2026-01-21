@@ -79,5 +79,22 @@
     "phone_placeholder": "123-456-7890",
     "message": "Message",
     "message_placeholder": "Your Message"
+  },
+  "gallery": {
+    "title": "Walrus Art Gallery",
+    "subtitle": "A Journey Through Progress",
+    "description": "Watch the evolution of a walrus painting from initial sketch to finished artwork. This series documents the creative process, showing each stage of development.",
+    "about_title": "About This Series",
+    "about_text": "This collection showcases the step-by-step process of creating a walrus painting, documenting each stage from the initial concept to the finished piece. Each phase represents hours of careful work, layer by layer, building depth and character.",
+    "quote": "Art is not about the destination, but the journey of creation.",
+    "phases": {
+      "phase1": "Initial sketch and composition",
+      "phase2": "Base layers and color blocking",
+      "phase3": "Building texture and depth",
+      "phase4": "Adding highlights and shadows",
+      "phase5": "Refining details",
+      "phase6": "Final touches and adjustments",
+      "complete": "Finished painting"
+    }
   }
 }

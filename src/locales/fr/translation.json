@@ -75,5 +75,22 @@
     "phone_placeholder": "123‑456‑7890",
     "message": "Message",
     "message_placeholder": "Votre message"
+  },
+  "gallery": {
+    "title": "Galerie d'Art du Morse",
+    "subtitle": "Un Voyage à Travers le Progrès",
+    "description": "Suivez l'évolution d'une peinture de morse, du croquis initial à l'œuvre achevée. Cette série documente le processus créatif, montrant chaque étape du développement.",
+    "about_title": "À Propos de Cette Série",
+    "about_text": "Cette collection présente le processus étape par étape de création d'une peinture de morse, documentant chaque phase du concept initial à l'œuvre finale. Chaque phase représente des heures de travail minutieux, couche par couche, construisant profondeur et caractère.",
+    "quote": "L'art n'est pas une question de destination, mais de voyage de création.",
+    "phases": {
+      "phase1": "Croquis initial et composition",
+      "phase2": "Couches de base et blocage des couleurs",
+      "phase3": "Construction de la texture et de la profondeur",
+      "phase4": "Ajout des lumières et des ombres",
+      "phase5": "Raffinement des détails",
+      "phase6": "Touches finales et ajustements",
+      "complete": "Peinture terminée"
+    }
   }
 }
