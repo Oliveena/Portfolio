@@ -6,22 +6,26 @@ import { useParams } from 'react-router-dom';
 import { FaProjectDiagram } from "react-icons/fa";
 
 const techSkills = [
+  // Row 1
   { alt: "Java Logo", src: "/images/java.png" },
   { alt: "React Logo", src: "/images/React-Logo-PNG-Image-File.png" },
   { alt: "C# Logo", src: "/images/C_Sharp_Logo_2023.svg.png" },
-  { alt: "AWS Certificate", src: "/images/aws-academy-graduate-aws-academy-cloud-security-foundations.png" },
+  { alt: "JavaScript Logo", src: "/images/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png" },
+  // Row 2
   { alt: "PHP Logo", src: "/images/php-logo-bigger.png" },
   { alt: "Laravel Logo", src: "/images/laravel-logo-png-laravel-lumen-manipulating-route-parameters-syed-sirajul-islam-1024x400.png" },
-  { alt: "JavaScript Logo", src: "/images/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png" },
   { alt: "Node.js Logo", src: "/images/js-logo-node-logos-and-brands-icon.png" },
-  { alt: "MySQL Logo", src: "/images/sql-database-icon-png-17.png" },
-  { alt: "PostgreSQL Logo", src: "/images/postgresql-plain-wordmark-logo-icon.png" },
-  { alt: "Postman Logo", src: "/images/postman-api-platform-logo-png_seeklogo-446859.png"},
+  { alt: "SQL Logo", src: "/images/sql-database-icon-png-17.png" },
+  // Row 3
+  { alt: "Docker Logo", src: "/images/logos/docker.jpg" },
+  { alt: "Git Logo", src: "/images/logos/git-bash-logo-png_seeklogo-412974.png" },
+  { alt: "AWS Certificate", src: "/images/aws-academy-graduate-aws-academy-cloud-security-foundations.png" },
+  { alt: "Postman Logo", src: "/images/postman-api-platform-logo-png_seeklogo-446859.png" },
+  // Row 4
   { alt: "Bootstrap Logo", src: "/images/bootstrap-logo-png-bootstrap-logo-390.png" },
   { alt: "HTML Logo", src: "/images/html-logo.png" },
   { alt: "CSS Logo", src: "/images/css3-logo-png-transparent.png" },
   { alt: "Figma Logo", src: "/images/figma.png" },
-  { alt: "Rust Logo", src: "/images/Rust_programming_language_black_logo.png"},
 ]
 
 const softSkills = [

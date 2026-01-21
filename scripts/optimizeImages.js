@@ -17,6 +17,8 @@ const PRIORITY_IMAGES = [
   'auctions.png',
   'f7ad9720-7002-4c57-8d44-0405b7e00ee2.jpg', // Profile image
   'vector1.jpg', // Background
+  'WalrusGallery.jpg',
+  'geodesic_screenshot.jpg',
 ];
 
 async function optimizeImage(imagePath, outputDir) {

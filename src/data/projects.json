@@ -17,7 +17,7 @@
       "description": "A Laravel + Herd experiment to recreate this portfolio from scratch.",
       "image": "LaravelPortfolio.png",
       "github": "https://github.com/Oliveena/fsd13portfolioana",
-      "techStack": ["PHP", "Laravel", "PHPMyAdmin", "Blade", "Javascript", "SCSS"],
+      "techStack": ["PHP", "Laravel", "PHPMyAdmin", "Blade", "JavaScript", "SCSS"],
       "featured": true,
       "date": "2024-07"
     },

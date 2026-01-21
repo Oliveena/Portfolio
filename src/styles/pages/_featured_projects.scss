@@ -33,6 +33,8 @@ h3 {
   flex-direction: column;
   border-radius: 10%;
   overflow: hidden;
+  border: none;
+  background: transparent;
 
   .card-body {
     display: flex;
