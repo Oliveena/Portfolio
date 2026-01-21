@@ -11,8 +11,8 @@ export default function Footer() {
 
             </div>
             <p>&copy; {new Date().getFullYear()} Anastassia Tarassova. All rights reserved.</p>
-            <p>Built with 
-                <a href="https://www.linkedin.com/in/anastassia-tarassova-4a6573188/?trk=opento_sprofile_topcard" target="_blank" rel="noopener noreferrer">
+            <p>Built with
+                <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
                     <img src="/images/React-Logo-PNG-Image-File.png" alt="React logo" width="50" height="50" />
                 </a>
             </p>

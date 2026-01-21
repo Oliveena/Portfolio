@@ -19,6 +19,7 @@ const PRIORITY_IMAGES = [
   'vector1.jpg', // Background
   'WalrusGallery.jpg',
   'geodesic_screenshot.jpg',
+  'gallery_cover_image.png', // Walrus gallery cover
 ];
 
 async function optimizeImage(imagePath, outputDir) {
@@ -106,6 +107,21 @@ async function main() {
   // Optimize book covers
   const bookDir = path.join(PUBLIC_DIR, 'readBooks');
   await optimizeBookCovers(bookDir);
+
+  // Optimize finished paintings gallery
+  const paintingsDir = path.join(PUBLIC_DIR, 'paintings');
+  if (fs.existsSync(paintingsDir)) {
+    const paintingImages = fs.readdirSync(paintingsDir).filter((file) => {
+      return /\.(jpg|jpeg|png)$/i.test(file);
+    });
+
+    console.log(`🎨 Optimizing ${paintingImages.length} finished paintings...\n`);
+
+    for (const img of paintingImages) {
+      const imgPath = path.join(paintingsDir, img);
+      await optimizeImage(imgPath, paintingsDir);
+    }
+  }
 
   // Optimize walrus paintings
   const walrusDir = path.join(PUBLIC_DIR, 'walrus_progress');

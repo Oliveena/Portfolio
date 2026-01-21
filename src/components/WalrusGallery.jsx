@@ -197,6 +197,7 @@ export default function WalrusGallery() {
                 cursor: "pointer",
                 textAlign: "center",
                 transition: "transform 0.3s ease",
+                backgroundColor: "#fff",
                 "&:hover": {
                   transform: "translateY(-4px)",
                 },
@@ -211,6 +212,7 @@ export default function WalrusGallery() {
                   height: "auto",
                   display: "block",
                   boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
+                  backgroundColor: "#fff",
                 }}
               />
               <Typography

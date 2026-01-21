@@ -69,6 +69,28 @@ h3 {
   }
 }
 
+.tech-logos {
+  .tech-logo-small {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 4px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    padding: 0.3em 0.5em;
+    align-self: center;
+  }
+}
+
     .btn {
       min-width: 100px;
       text-align: center;

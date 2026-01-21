@@ -2,6 +2,26 @@
   "featuredProjects": [
     {
       "id": 1,
+      "title": "Walrus Art Gallery",
+      "description": "A React-based art gallery showcasing the painting process of a walrus portrait, from sketch to finished piece.",
+      "image": "gallery_cover_image.png",
+      "liveDemo": "/en/gallery",
+      "techStack": ["React", "MUI", "JavaScript", "CSS"],
+      "featured": true,
+      "date": "2025-01"
+    },
+    {
+      "id": 2,
+      "title": "Geodesic Dome Visualizer",
+      "description": "An interactive 3D visualization tool for exploring geodesic dome structures and their geometric properties.",
+      "image": "geodesic_screenshot.jpg",
+      "github": "https://github.com/Oliveena/geodesic-dome-vis",
+      "techStack": ["JavaScript", "Three.js", "WebGL"],
+      "featured": true,
+      "date": "2025-01"
+    },
+    {
+      "id": 3,
       "title": "Budget Calculator App",
       "description": "A React app used for setting a personal budget and comparing it to spending.",
       "image": "BudgetApp.png",
@@ -12,7 +32,7 @@
       "date": "2024-06"
     },
     {
-      "id": 2,
+      "id": 4,
       "title": "Laravel Version of this Portfolio (in progress)",
       "description": "A Laravel + Herd experiment to recreate this portfolio from scratch.",
       "image": "LaravelPortfolio.png",
@@ -22,7 +42,7 @@
       "date": "2024-07"
     },
     {
-      "id": 3,
+      "id": 5,
       "title": "Animal Shelter App",
       "description": "A Java-based desktop app for managing animal adoptions, returns, and shelter capacity.",
       "image": "AnimalShelter.png",
@@ -33,7 +53,7 @@
       "date": "2024-05"
     },
     {
-      "id": 4,
+      "id": 6,
       "title": "Remax Clone",
       "description": "A Laravel-based real estate platform with listings and blogs.",
       "image": "RemaxClone.png",
@@ -44,7 +64,7 @@
       "date": "2024-04"
     },
     {
-      "id": 5,
+      "id": 7,
       "title": "BonjourSanté Clone",
       "description": "A front-end clone of an appointment booking platform for medical professionals.",
       "image": "BonjourSante.png",
@@ -55,7 +75,7 @@
       "date": "2024-03"
     },
     {
-      "id": 6,
+      "id": 8,
       "title": "Auctions Website",
       "description": "API-using site for listing and bidding on auctions.",
       "image": "auctions.png",
@@ -64,26 +84,6 @@
       "techStack": ["Figma", "Postman", "PHP", "CSS"],
       "featured": true,
       "date": "2024-02"
-    },
-    {
-      "id": 7,
-      "title": "Walrus Art Gallery",
-      "description": "A React-based art gallery showcasing the painting process of a walrus portrait, from sketch to finished piece.",
-      "image": "WalrusGallery.jpg",
-      "liveDemo": "/en/gallery",
-      "techStack": ["React", "MUI", "JavaScript", "CSS"],
-      "featured": true,
-      "date": "2025-01"
-    },
-    {
-      "id": 8,
-      "title": "Geodesic Dome Visualizer",
-      "description": "An interactive 3D visualization tool for exploring geodesic dome structures and their geometric properties.",
-      "image": "geodesic_screenshot.jpg",
-      "github": "https://github.com/Oliveena/geodesic-dome-vis",
-      "techStack": ["JavaScript", "Three.js", "WebGL"],
-      "featured": true,
-      "date": "2025-01"
     }
   ]
 }
