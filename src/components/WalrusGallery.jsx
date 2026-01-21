@@ -1,114 +1,263 @@
 import React, { useState } from "react";
-import { Container, Typography, Box, Grid, Card, CardMedia, Modal, IconButton } from "@mui/material";
+import { Container, Typography, Box, Modal, IconButton } from "@mui/material";
 import { FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
-const walrusPaintingsData = [
-  { id: 1, image: "walrus_progress/20250102_173417.jpg", date: "2025-01-02", phaseKey: "phase1" },
-  { id: 2, image: "walrus_progress/20250102_182141.jpg", date: "2025-01-02", phaseKey: "phase2" },
-  { id: 3, image: "walrus_progress/20250102_193255.jpg", date: "2025-01-02", phaseKey: "phase3" },
-  { id: 4, image: "walrus_progress/20250102_194414.jpg", date: "2025-01-02", phaseKey: "phase4" },
-  { id: 5, image: "walrus_progress/20250102_200253.jpg", date: "2025-01-02", phaseKey: "phase5" },
-  { id: 6, image: "walrus_progress/20250102_201236.jpg", date: "2025-01-02", phaseKey: "phase6" },
-  { id: 7, image: "walrus_progress/20250108_221350.jpg", date: "2025-01-08", phaseKey: "complete" },
+// Progress images for the walrus painting process (carousel)
+const walrusProgressData = [
+  { id: 1, image: "walrus_progress/20250102_173417.jpg", phaseKey: "phase1" },
+  { id: 2, image: "walrus_progress/20250102_182141.jpg", phaseKey: "phase2" },
+  { id: 3, image: "walrus_progress/20250102_193255.jpg", phaseKey: "phase3" },
+  { id: 4, image: "walrus_progress/20250102_194414.jpg", phaseKey: "phase4" },
+  { id: 5, image: "walrus_progress/20250102_200253.jpg", phaseKey: "phase5" },
+  { id: 6, image: "walrus_progress/20250102_201236.jpg", phaseKey: "phase6" },
+  { id: 7, image: "walrus_progress/20250108_221350.jpg", phaseKey: "complete" },
+];
+
+// Finished paintings collection
+const paintingsData = [
+  { id: 1, image: "paintings/IMG_20210217_090313_884.jpg", title: "Walrus with a Pearl Earring", original: "After Vermeer" },
+  { id: 2, image: "paintings/IMG_20210131_221746_948.jpg", title: "Walrus Crossing the Alps", original: "After Jacques-Louis David" },
+  { id: 3, image: "paintings/20250111_095825.jpg", title: "Mona Walrus", original: "After Da Vinci" },
+  { id: 4, image: "paintings/20250111_100242.jpg", title: "The Son of Walrus", original: "After Magritte" },
+  { id: 5, image: "paintings/IMG_20210208_090255_351.jpg", title: "Royal Walrus", original: "After historical portraits" },
 ];
 
 export default function WalrusGallery() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [carouselIndex, setCarouselIndex] = useState(0);
 
-  // Build paintings array with translated descriptions
-  const walrusPaintings = walrusPaintingsData.map((p, idx) => ({
-    ...p,
-    title: `${t("gallery.title")} - ${idx + 1}`,
-    description: t(`gallery.phases.${p.phaseKey}`),
-    date: new Date(p.date).toLocaleDateString(i18n.language === "ru" ? "ru-RU" : i18n.language === "fr" ? "fr-FR" : "en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    }),
-  }));
-
-  const handleImageClick = (painting, index) => {
+  const handlePaintingClick = (painting) => {
     setSelectedImage(painting);
-    setCurrentIndex(index);
   };
 
   const handleClose = () => {
     setSelectedImage(null);
   };
 
-  const handleNext = () => {
-    const nextIndex = (currentIndex + 1) % walrusPaintings.length;
-    setCurrentIndex(nextIndex);
-    setSelectedImage(walrusPaintings[nextIndex]);
+  const handleCarouselPrev = () => {
+    setCarouselIndex((prev) => (prev - 1 + walrusProgressData.length) % walrusProgressData.length);
   };
 
-  const handlePrevious = () => {
-    const prevIndex = (currentIndex - 1 + walrusPaintings.length) % walrusPaintings.length;
-    setCurrentIndex(prevIndex);
-    setSelectedImage(walrusPaintings[prevIndex]);
+  const handleCarouselNext = () => {
+    setCarouselIndex((prev) => (prev + 1) % walrusProgressData.length);
   };
 
   return (
-    <Container sx={{ py: 8, minHeight: "100vh" }}>
-      {/* Hero Section */}
-      <Box textAlign="center" mb={6}>
-        <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 700 }}>
-          🦭 {t("gallery.title")}
+    <Box sx={{ backgroundColor: "#fff", minHeight: "100vh" }}>
+      {/* Header */}
+      <Container maxWidth="lg" sx={{ pt: 8, pb: 4 }}>
+        <Typography
+          variant="h3"
+          component="h1"
+          sx={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontWeight: 300,
+            letterSpacing: "0.15em",
+            textAlign: "center",
+            color: "#1a1a1a",
+            textTransform: "uppercase",
+            mb: 1,
+          }}
+        >
+          {t("gallery.title")}
         </Typography>
-        <Typography variant="h5" color="text.secondary" sx={{ mb: 2 }}>
-          {t("gallery.subtitle")}
-        </Typography>
-        <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 700, mx: "auto" }}>
+        <Box sx={{ width: 60, height: 1, backgroundColor: "#1a1a1a", mx: "auto", mb: 2 }} />
+        <Typography
+          variant="body1"
+          sx={{
+            textAlign: "center",
+            color: "#666",
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "1.1rem",
+            maxWidth: 600,
+            mx: "auto",
+          }}
+        >
           {t("gallery.description")}
         </Typography>
+      </Container>
+
+      {/* Walrus Progress Carousel Section */}
+      <Box sx={{ backgroundColor: "#fafafa", py: 6 }}>
+        <Container maxWidth="md">
+          <Typography
+            variant="h5"
+            sx={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 400,
+              textAlign: "center",
+              color: "#1a1a1a",
+              mb: 4,
+              letterSpacing: "0.1em",
+            }}
+          >
+            {t("gallery.subtitle")}
+          </Typography>
+
+          {/* Carousel */}
+          <Box sx={{ position: "relative", maxWidth: 500, mx: "auto" }}>
+            <Box
+              component="img"
+              src={`/images/${walrusProgressData[carouselIndex].image}`}
+              alt={t(`gallery.phases.${walrusProgressData[carouselIndex].phaseKey}`)}
+              sx={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+              }}
+            />
+
+            {/* Carousel Controls */}
+            <IconButton
+              onClick={handleCarouselPrev}
+              sx={{
+                position: "absolute",
+                left: -50,
+                top: "50%",
+                transform: "translateY(-50%)",
+                color: "#1a1a1a",
+                "&:hover": { backgroundColor: "rgba(0,0,0,0.05)" },
+              }}
+            >
+              <FaChevronLeft size={24} />
+            </IconButton>
+            <IconButton
+              onClick={handleCarouselNext}
+              sx={{
+                position: "absolute",
+                right: -50,
+                top: "50%",
+                transform: "translateY(-50%)",
+                color: "#1a1a1a",
+                "&:hover": { backgroundColor: "rgba(0,0,0,0.05)" },
+              }}
+            >
+              <FaChevronRight size={24} />
+            </IconButton>
+
+            {/* Progress Indicator */}
+            <Box sx={{ textAlign: "center", mt: 3 }}>
+              <Typography variant="body2" sx={{ color: "#666", fontFamily: "'Cormorant Garamond', serif" }}>
+                {t(`gallery.phases.${walrusProgressData[carouselIndex].phaseKey}`)}
+              </Typography>
+              <Box sx={{ display: "flex", justifyContent: "center", gap: 1, mt: 2 }}>
+                {walrusProgressData.map((_, idx) => (
+                  <Box
+                    key={idx}
+                    onClick={() => setCarouselIndex(idx)}
+                    sx={{
+                      width: 8,
+                      height: 8,
+                      borderRadius: "50%",
+                      backgroundColor: idx === carouselIndex ? "#1a1a1a" : "#ccc",
+                      cursor: "pointer",
+                      transition: "background-color 0.3s",
+                    }}
+                  />
+                ))}
+              </Box>
+            </Box>
+          </Box>
+        </Container>
       </Box>
 
-      {/* Gallery Grid */}
-      <Grid container spacing={3}>
-        {walrusPaintings.map((painting, index) => (
-          <Grid item xs={12} sm={6} md={4} key={painting.id}>
-            <Card
+      {/* Paintings Grid - Ellen Von Wiegand Style */}
+      <Container maxWidth="lg" sx={{ py: 8 }}>
+        <Typography
+          variant="h5"
+          sx={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontWeight: 400,
+            textAlign: "center",
+            color: "#1a1a1a",
+            mb: 6,
+            letterSpacing: "0.1em",
+          }}
+        >
+          {t("gallery.about_title")}
+        </Typography>
+
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", md: "1fr 1fr" },
+            gap: 6,
+            maxWidth: 900,
+            mx: "auto",
+          }}
+        >
+          {paintingsData.map((painting) => (
+            <Box
+              key={painting.id}
+              onClick={() => handlePaintingClick(painting)}
               sx={{
-                height: "100%",
                 cursor: "pointer",
-                transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                borderRadius: "10%",
-                overflow: "hidden",
+                textAlign: "center",
+                transition: "transform 0.3s ease",
                 "&:hover": {
-                  transform: "translateY(-8px)",
-                  boxShadow: 6,
+                  transform: "translateY(-4px)",
                 },
               }}
-              onClick={() => handleImageClick(painting, index)}
             >
-              <CardMedia
+              <Box
                 component="img"
-                image={`/images/${painting.image}`}
+                src={`/images/${painting.image}`}
                 alt={painting.title}
                 sx={{
-                  height: 300,
-                  objectFit: "cover",
-                  borderRadius: "10% 10% 0 0",
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
                 }}
               />
-              <Box sx={{ p: 2 }}>
-                <Typography variant="h6" gutterBottom>
-                  {painting.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-                  {painting.date}
-                </Typography>
-                <Typography variant="body2">
-                  {painting.description}
-                </Typography>
-              </Box>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+              <Typography
+                variant="h6"
+                sx={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 400,
+                  color: "#1a1a1a",
+                  mt: 2,
+                  fontSize: "1.1rem",
+                }}
+              >
+                {painting.title}
+              </Typography>
+              <Box sx={{ width: 30, height: 1, backgroundColor: "#1a1a1a", mx: "auto", my: 1 }} />
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "#888",
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontStyle: "italic",
+                }}
+              >
+                {painting.original}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
+      </Container>
+
+      {/* Quote Section */}
+      <Box sx={{ backgroundColor: "#fafafa", py: 6 }}>
+        <Container maxWidth="sm">
+          <Typography
+            variant="body1"
+            sx={{
+              textAlign: "center",
+              color: "#666",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontStyle: "italic",
+              fontSize: "1.2rem",
+            }}
+          >
+            "{t("gallery.quote")}"
+          </Typography>
+        </Container>
+      </Box>
 
       {/* Lightbox Modal */}
       <Modal
@@ -118,7 +267,7 @@ export default function WalrusGallery() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "rgba(0, 0, 0, 0.9)",
+          backgroundColor: "rgba(255, 255, 255, 0.95)",
         }}
       >
         <Box
@@ -131,99 +280,56 @@ export default function WalrusGallery() {
         >
           {selectedImage && (
             <>
-              {/* Close Button */}
               <IconButton
                 onClick={handleClose}
                 sx={{
                   position: "absolute",
                   top: -50,
                   right: 0,
-                  color: "white",
-                  zIndex: 2,
+                  color: "#1a1a1a",
                 }}
               >
-                <FaTimes size={30} />
+                <FaTimes size={24} />
               </IconButton>
 
-              {/* Previous Button */}
-              <IconButton
-                onClick={handlePrevious}
-                sx={{
-                  position: "absolute",
-                  left: -60,
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                  color: "white",
-                  zIndex: 2,
-                }}
-              >
-                <FaChevronLeft size={40} />
-              </IconButton>
-
-              {/* Image */}
               <Box
                 component="img"
                 src={`/images/${selectedImage.image}`}
                 alt={selectedImage.title}
                 sx={{
                   maxWidth: "100%",
-                  borderRadius: "3%",
-                  maxHeight: "90vh",
+                  maxHeight: "80vh",
                   objectFit: "contain",
+                  boxShadow: "0 8px 40px rgba(0,0,0,0.15)",
                 }}
               />
 
-              {/* Next Button */}
-              <IconButton
-                onClick={handleNext}
-                sx={{
-                  position: "absolute",
-                  right: -60,
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                  color: "white",
-                  zIndex: 2,
-                }}
-              >
-                <FaChevronRight size={40} />
-              </IconButton>
-
-              {/* Image Info */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: -80,
-                  left: 0,
-                  right: 0,
-                  color: "white",
-                  textAlign: "center",
-                }}
-              >
-                <Typography variant="h6">{selectedImage.title}</Typography>
-                <Typography variant="body2" color="grey.400">
-                  {selectedImage.description} • {selectedImage.date}
+              <Box sx={{ textAlign: "center", mt: 3 }}>
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    color: "#1a1a1a",
+                  }}
+                >
+                  {selectedImage.title}
                 </Typography>
-                <Typography variant="caption" color="grey.500">
-                  {currentIndex + 1} / {walrusPaintings.length}
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "#888",
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontStyle: "italic",
+                    mt: 1,
+                  }}
+                >
+                  {selectedImage.original}
                 </Typography>
               </Box>
             </>
           )}
         </Box>
       </Modal>
-
-      {/* Artist Statement */}
-      <Box sx={{ mt: 8, textAlign: "center", maxWidth: 700, mx: "auto" }}>
-        <Typography variant="h4" gutterBottom>
-          {t("gallery.about_title")}
-        </Typography>
-        <Typography variant="body1" color="text.secondary" paragraph>
-          {t("gallery.about_text")}
-        </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ fontStyle: "italic" }}>
-          "{t("gallery.quote")}"
-        </Typography>
-      </Box>
-    </Container>
+    </Box>
   );
 }
