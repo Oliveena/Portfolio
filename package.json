@@ -3,12 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev": "react-scripts start",
-    "vercel-build": "npm install --legacy-peer-deps && npm run build",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "optimize-images": "node scripts/optimizeImages.js"
   },
   "dependencies": {
@@ -29,7 +26,6 @@
     "react-i18next": "^15.5.3",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.6.2",
-    "react-scripts": "^0.0.0",
     "sass": "^1.89.2"
   },
   "devDependencies": {
@@ -38,7 +34,8 @@
     "eslint": "^8.57.1",
     "sharp": "^0.34.5",
     "tailwindcss": "^4",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vite": "^7.3.1"
   },
   "browserslist": {
     "production": [
