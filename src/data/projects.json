@@ -89,7 +89,7 @@
       "id": 9,
       "title": "Mixed Portfolio",
       "description": "A basic React portfolio por a multitalented human",
-      "image": "auctions.png",
+      "image": "Brice.png",
       "github": "https://github.com/Oliveena/mixedSkillsPortfolio",
       "liveDemo": "/brice",
       "techStack": ["React","JavaScript", "CSS"],
