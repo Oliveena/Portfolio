@@ -1,4 +1,7 @@
 {
+  "rewrites": [
+    { "source": "/brice/:path*", "destination": "https://mixed-skills-portfolio.vercel.app/brice/:path*" }
+  ],
   "build": {
     "env": {
       "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
